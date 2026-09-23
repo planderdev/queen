@@ -78,6 +78,8 @@ vercel deploy --prod
 ```
 
 - 프로젝트: `planderdevs-projects/queen-mandeok`, 프로덕션 https://queen-mandeok.vercel.app
+- 데모는 `/demo/` 아래에 배포됩니다(예: https://queen-mandeok.vercel.app/demo/). `tools/prerender.mjs`가 빌드 시 PHP 출력·JS·CSS의 절대 경로를 `/demo/…`로 바꾸므로 소스는 루트 경로 그대로 두고 `php -S`로 로컬 개발합니다. 기준 경로는 `DEMO_BASE` 환경 변수로 바꿀 수 있고(빈 값 = 루트), 도메인 루트 `/`는 실서비스가 올라가기 전까지 `/demo/`로 임시 리다이렉트됩니다. 예전 루트 주소(`/donate/` 등)는 `/demo/` 아래로 영구 리다이렉트됩니다.
+- 브랜드 가이드 `/design-system/`은 데모가 아니라 브랜드 문서이므로 루트에 그대로 둡니다.
 - GitHub `planderdev/queen`의 `main` 브랜치가 연결되어 있어 푸시하면 자동으로 프로덕션에 배포됩니다.
 - 설정은 `vercel.json`(빌드 명령, 출력 폴더, trailing slash, 정적 자산 캐시 헤더)에 있습니다.
 

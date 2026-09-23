@@ -11,8 +11,9 @@ const ARTIFACT = artifactIndex > -1;
 const out = ARTIFACT ? resolve(process.argv[artifactIndex + 1]) : join(root, 'public', 'design-system', 'index.html');
 const T = foundations.tokens;
 const SITE = 'https://queen-mandeok.vercel.app';
+const DEMO = `${SITE}/demo`;
 // Artifact pages may only load stylesheets from Google Fonts and no remote images, so inline photos there.
-const photo = name => ARTIFACT ? `data:image/jpeg;base64,${readFileSync(join(root, 'public/assets/images', name + '.jpg')).toString('base64')}` : `${SITE}/assets/images/${name}.jpg`;
+const photo = name => ARTIFACT ? `data:image/jpeg;base64,${readFileSync(join(root, 'public/assets/images', name + '.jpg')).toString('base64')}` : `${DEMO}/assets/images/${name}.jpg`;
 const VERSION = '1.0';
 const DATE = '2026-09-24';
 
@@ -468,7 +469,7 @@ const html = `${head}
   <a class="wordmark" href="#top" aria-label="퀸만덕 디자인 시스템 처음으로">${logoH}</a>
   <div class="railsub">Design System · v${VERSION}</div>
   ${nav}
-  <div class="railfoot">사이트 <a href="${SITE}/" target="_blank" rel="noopener">queen-mandeok.vercel.app</a><br>컴포넌트 카탈로그 <a href="${SITE}/design-system/catalog/" target="_blank" rel="noopener">/design-system/catalog/</a></div>
+  <div class="railfoot">데모 사이트 <a href="${DEMO}/" target="_blank" rel="noopener">/demo/</a><br>컴포넌트 카탈로그 <a href="${DEMO}/design-system/catalog/" target="_blank" rel="noopener">/demo/design-system/catalog/</a></div>
 </nav>
 <main id="top">
 <header class="hero">
@@ -677,7 +678,7 @@ const html = `${head}
 
 <!-- 09 -->
 <section id="components">
-  ${secHead('09 · Components', '컴포넌트', '실제 사이트(app.css)의 규격을 그대로 옮긴 동작 데모입니다. 24개 컴포넌트의 상세 사양은 사이트 안 컴포넌트 카탈로그(/design-system/catalog/)에서 확인합니다.')}
+  ${secHead('09 · Components', '컴포넌트', '실제 사이트(app.css)의 규격을 그대로 옮긴 동작 데모입니다. 24개 컴포넌트의 상세 사양은 데모 사이트 안 컴포넌트 카탈로그(/demo/design-system/catalog/)에서 확인합니다.')}
   <h3 class="sub">Button <small>Solid · Outlined · Assistive · Destructive / 32 · 48 · 56</small></h3>
   <div class="panel"><div class="demo left"><button class="btn primary" type="button">마음 전하기</button><button class="btn outlined" type="button">미리보기</button><button class="btn secondary" type="button">취소</button><button class="btn danger" type="button">삭제</button><button class="btn primary" type="button" disabled>비활성</button></div><div class="demo left gray"><button class="btn primary small" type="button">Small 32</button><button class="btn primary" type="button">Medium 48</button><button class="btn primary large" type="button">Large 56</button><button class="btn primary" type="button">${ic('hand-heart', 20)} 아이콘 포함</button></div><div class="caption">한 액션 영역에 Primary는 하나만. 기부하기 = Solid, 미리보기 = Outlined, 취소 = Assistive. 라운드 12px, 글자 15px 600.</div></div>
   <h3 class="sub">Icon button</h3>
@@ -718,7 +719,7 @@ const html = `${head}
 <footer>
   <div class="foot-inner">
     <div>${logoV}</div>
-    <div class="info"><b>퀸만덕 디자인 시스템 v${VERSION}</b> · ${DATE}<br>토큰 원본 <code>public/assets/js/design-system-foundations.js</code> · 로고 원본 <code>public/assets/brand/</code> · 컴포넌트 카탈로그 <a href="${SITE}/design-system/catalog/">/design-system/catalog/</a><br>이 문서는 <code>tools/build-guide.mjs</code>가 생성합니다. 값을 바꾸려면 원본을 수정하고 다시 빌드하세요.<br>© 2026 QUEEN MANDEOK. ALL RIGHTS RESERVED. 본 사이트는 체험용 데모입니다.</div>
+    <div class="info"><b>퀸만덕 디자인 시스템 v${VERSION}</b> · ${DATE}<br>토큰 원본 <code>public/assets/js/design-system-foundations.js</code> · 로고 원본 <code>public/assets/brand/</code> · 컴포넌트 카탈로그 <a href="${DEMO}/design-system/catalog/">/demo/design-system/catalog/</a><br>이 문서는 <code>tools/build-guide.mjs</code>가 생성합니다. 값을 바꾸려면 원본을 수정하고 다시 빌드하세요.<br>© 2026 QUEEN MANDEOK. ALL RIGHTS RESERVED. 본 사이트는 체험용 데모입니다.</div>
   </div>
 </footer>
 <div id="copytoast" role="status" aria-live="polite"></div>
