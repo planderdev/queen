@@ -21,18 +21,33 @@
       "permanent": true
     },
     {
-      "source": "/design-system/catalog/:path*",
-      "destination": "/demo/design-system/catalog/:path*",
+      "source": "/design-system/catalog",
+      "destination": "/demo/design-system/catalog/",
       "permanent": true
     },
     {
-      "source": "/:seg(donate|monthly|my|admin|auth|about|campaigns|organizations|search|stories|support)/:path*",
-      "destination": "/demo/:seg/:path*",
+      "source": "/design-system/catalog/",
+      "destination": "/demo/design-system/catalog/",
       "permanent": true
     },
     {
-      "source": "/assets/:path*",
-      "destination": "/demo/assets/:path*",
+      "source": "/:seg(donate|monthly|my|admin|auth|about|campaigns|organizations|search|stories|support)",
+      "destination": "/demo/:seg/",
+      "permanent": true
+    },
+    {
+      "source": "/:seg(donate|monthly|my|admin|auth|about|campaigns|organizations|search|stories|support)/",
+      "destination": "/demo/:seg/",
+      "permanent": true
+    },
+    {
+      "source": "/:seg(donate|monthly|my|admin|auth|about|campaigns|organizations|search|stories|support)/:path+",
+      "destination": "/demo/:seg/:path+",
+      "permanent": true
+    },
+    {
+      "source": "/assets/:path+",
+      "destination": "/demo/assets/:path+",
       "permanent": true
     }
   ],
