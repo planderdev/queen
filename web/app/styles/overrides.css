@@ -1,0 +1,11 @@
+/* Adjustments for the React port: lucide-react renders inline SVGs with the same footprint as the demo icons. */
+svg.lucide { width: var(--icon-size-20); height: var(--icon-size-20); flex: none; }
+.button svg.lucide, .icon-button svg.lucide { width: var(--icon-size-20); height: var(--icon-size-20); }
+.empty > svg.lucide, .community-empty > svg.lucide { width: var(--icon-size-32); height: var(--icon-size-32); }
+.home-values a > svg.lucide, .program-benefits article > svg.lucide, .about-promise svg.lucide { width: var(--icon-size-32); height: var(--icon-size-32); }
+.card-image img { display: block; }
+.form-error:empty { display: none; }
+.field .help.form-error { color: var(--status-negative); }
+.transfer-box { border: 1px solid var(--line-solid); border-radius: var(--radius-12); padding: var(--space-20); background: var(--brand-soft); display: grid; gap: var(--space-8); }
+.transfer-box b { font-size: var(--font-size-heading); }
+.seed-note { position: fixed; left: var(--space-16); bottom: var(--space-16); z-index: var(--z-demo-launch); font-size: var(--font-size-caption); background: var(--label-normal); color: #fff; padding: var(--space-8) var(--space-12); border-radius: var(--radius-8); opacity: .85; }

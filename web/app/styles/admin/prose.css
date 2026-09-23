@@ -1,0 +1,32 @@
+.source-original {
+  overflow-x: auto;
+  min-width: 0;
+  color: var(--semantic-label-normal);
+  font-size: var(--type-body-1-reading-size);
+  line-height: var(--type-body-1-reading-line);
+  letter-spacing: var(--type-body-1-reading-tracking);
+  overflow-wrap: anywhere;
+}
+.source-original .source-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+.source-original :where(p, ul, ol, blockquote, figure, pre, .source-table-wrap) { margin: 0 0 var(--space-24); }
+.source-original :where(h1, h2, h3, h4, h5, h6) { margin: var(--space-32) 0 var(--space-16); font-weight: var(--font-weight-bold); }
+.source-original :where(h1, h2) { font-size: var(--type-title-2-size); line-height: var(--type-title-2-line); letter-spacing: var(--type-title-2-tracking); }
+.source-original h3 { font-size: var(--type-title-3-size); line-height: var(--type-title-3-line); letter-spacing: var(--type-title-3-tracking); }
+.source-original :where(h4, h5, h6) { font-size: var(--type-heading-2-size); line-height: var(--type-heading-2-line); letter-spacing: var(--type-heading-2-tracking); }
+.source-original :where(ul, ol) { padding-inline-start: var(--space-24); }
+.source-original ul { list-style: disc; }
+.source-original ol { list-style: decimal; }
+.source-original li { margin-block: var(--space-8); }
+.source-original :where(img, video) { max-width: 100%; height: auto; vertical-align: middle; }
+.source-original :where(figure, iframe) { max-width: 100%; }
+.source-original iframe { width: 100%; aspect-ratio: 16 / 9; border: 0; }
+.source-original :where(pre, .source-table-wrap) { max-width: 100%; overflow-x: auto; }
+.source-original pre { white-space: pre-wrap; }
+.source-original table { width: 100%; border-collapse: collapse; }
+.source-original :where(th, td) { padding: var(--space-12); border: var(--border-thin) solid var(--semantic-line-solid-normal); vertical-align: top; }
+.source-original th { background: var(--semantic-background-normal-alternative); font-weight: var(--font-weight-semibold); }
+.source-original a { color: var(--semantic-primary-normal); text-decoration: underline; text-underline-offset: .2em; }
+.source-original blockquote { padding-inline-start: var(--space-20); border-inline-start: var(--border-thin) solid var(--semantic-line-solid-normal); }
+.source-original > :first-child { margin-top: 0; }
+.source-original > :last-child { margin-bottom: 0; }
+.source-original .source-spacer { margin: 0; height: var(--space-8); font-size: 0; line-height: 0; }

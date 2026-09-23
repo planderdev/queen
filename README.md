@@ -67,6 +67,10 @@ find public app -name '*.php' -exec php -l {} \;
 Get-ChildItem public,app -Filter *.php -Recurse | ForEach-Object { php -l $_.FullName }
 ```
 
+## 실서비스 (web/)
+
+`web/`에 Next.js + Supabase 기반 실서비스가 있습니다. 회원가입·기부 신청(계좌이체 입금 확인)·정기기부·나의 후원·운영 관리를 제공하며, 데모(`/demo/`)와 브랜드 가이드(`/design-system/`)는 같은 배포 안에서 정적으로 서빙됩니다. 설정과 배포 절차는 [web/README.md](web/README.md), DB 스키마는 `supabase/migrations/`를 참고하세요.
+
 ## 배포 (Vercel)
 
 PHP는 페이지 셸만 조립하고 요청별 로직이 없어서, 배포 시에는 `tools/prerender.mjs`가 모든 `public/**/index.php`를 정적 HTML로 미리 렌더링해 `dist/`에 두고 Vercel이 정적 파일로 서빙합니다. Vercel 빌드 이미지에는 PHP가 없어 스크립트가 static-php 빌드(PHP 8.3, Linux x86_64)를 `tools/php/`에 내려받아 사용합니다. 로컬에서는 설치된 `php`를 그대로 씁니다.
@@ -78,7 +82,7 @@ vercel deploy --prod
 ```
 
 - 프로젝트: `planderdevs-projects/queen-mandeok`, 프로덕션 https://queen-mandeok.vercel.app
-- 데모는 `/demo/` 아래에 배포됩니다(예: https://queen-mandeok.vercel.app/demo/). `tools/prerender.mjs`가 빌드 시 PHP 출력·JS·CSS의 절대 경로를 `/demo/…`로 바꾸므로 소스는 루트 경로 그대로 두고 `php -S`로 로컬 개발합니다. 기준 경로는 `DEMO_BASE` 환경 변수로 바꿀 수 있고(빈 값 = 루트), 도메인 루트 `/`는 실서비스가 올라가기 전까지 `/demo/`로 임시 리다이렉트됩니다. 예전 루트 주소(`/donate/` 등)는 `/demo/` 아래로 영구 리다이렉트됩니다.
+- Vercel 프로젝트의 Root Directory는 `web`입니다. `web`의 `prebuild`가 `tools/build-guide.mjs`와 `tools/prerender.mjs`를 실행해 데모를 `web/public/demo/`, 가이드를 `web/public/design-system/`에 생성한 뒤 `next build`가 실행됩니다. `tools/prerender.mjs`는 PHP 출력·JS·CSS의 절대 경로를 `/demo/…`로 바꾸므로 데모 소스는 루트 경로 그대로 두고 `php -S`로 로컬 개발합니다(기준 경로 `DEMO_BASE`, 출력 위치 `DEMO_OUT`).
 - 브랜드 가이드 `/design-system/`은 데모가 아니라 브랜드 문서이므로 루트에 그대로 둡니다.
 - GitHub `planderdev/queen`의 `main` 브랜치가 연결되어 있어 푸시하면 자동으로 프로덕션에 배포됩니다.
 - 설정은 `vercel.json`(빌드 명령, 출력 폴더, trailing slash, 정적 자산 캐시 헤더)에 있습니다.

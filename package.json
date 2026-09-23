@@ -7,8 +7,11 @@
     "start": "php -S 127.0.0.1:8080 -t public",
     "check:styles": "node tests/style-contract.cjs && node tools/audit-css.cjs && node tools/audit-css.cjs --admin",
     "build:tokens": "node tools/build-tokens.mjs",
-    "build": "node tools/build-guide.mjs && node tools/prerender.mjs",
-    "build:guide": "node tools/build-guide.mjs"
+    "build": "npm --prefix web run build",
+    "build:guide": "node tools/build-guide.mjs",
+    "build:demo": "node tools/build-guide.mjs && node tools/prerender.mjs",
+    "seed:sql": "node web/scripts/seed-sql.mjs",
+    "dev:web": "npm --prefix web run dev"
   },
   "dependencies": {
     "aos": "2.3.4",

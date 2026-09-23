@@ -1,0 +1,19 @@
+/* React admin port: native forms instead of the demo's rich editor; keep sports-admin sizing. */
+body[data-page="admin"] .editor-section { display: grid; gap: 16px; padding: 24px; border: 1px solid var(--admin-line); border-radius: 8px; background: var(--admin-panel); margin-bottom: 16px; }
+body[data-page="admin"] .editor-section .field { display: grid; gap: 6px; font-size: 13px; }
+body[data-page="admin"] .editor-section .field > span { font-weight: 600; }
+body[data-page="admin"] .editor-section input, body[data-page="admin"] .editor-section select, body[data-page="admin"] .editor-section textarea { width: 100%; border: 1px solid var(--admin-line); border-radius: 6px; padding: 10px 12px; font: inherit; }
+body[data-page="admin"] .editor-section textarea { min-height: 140px; }
+body[data-page="admin"] .editor-section .field-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+body[data-page="admin"] .form-error:empty { display: none; }
+body[data-page="admin"] .form-error { color: var(--semantic-status-negative, #c33737); font-size: 13px; }
+body[data-page="admin"] .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+body[data-page="admin"] .data-table td .actions { flex-wrap: nowrap; }
+body[data-page="admin"] .admin-filters { display: flex; gap: 8px; flex-wrap: wrap; align-items: end; margin-bottom: 16px; }
+body[data-page="admin"] .admin-filters input, body[data-page="admin"] .admin-filters select { border: 1px solid var(--admin-line); border-radius: 6px; padding: 8px 10px; font: inherit; }
+body[data-page="admin"] .admin-work-summary a { text-decoration: none; color: inherit; }
+body[data-page="admin"] .muted { color: var(--admin-muted); }
+body[data-page="admin"] .checkbox { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+body[data-page="admin"] .checkbox input { width: auto; }
+body[data-page="admin"] #toast { position: fixed; bottom: 24px; left: 50%; transform: translate(-50%, 15px); background: #1b1b1f; color: #fff; padding: 12px 20px; border-radius: 10px; opacity: 0; pointer-events: none; transition: opacity .18s, transform .18s; z-index: 10000; font-size: 13px; }
+body[data-page="admin"] #toast.show { opacity: 1; transform: translate(-50%, 0); }

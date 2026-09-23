@@ -1,0 +1,101 @@
+// Admin reads. Callers must already be an admin (RLS + requireAdmin in pages).
+import { createClient } from '@/lib/supabase/server';
+import { hasSupabase } from '@/lib/env';
+import type { AuditLog, Campaign, Content, Donation, Fundraiser, Inquiry, Organization, Profile, RecurringPlan, RefundRequest } from './types';
+
+const empty = <T,>(): T[] => [];
+
+export async function adminCounts() {
+  if (!hasSupabase) return { pendingDonations: 0, refunds: 0, inquiries: 0, reports: 0, reviewFundraisers: 0 };
+  const supabase = await createClient();
+  const count = async (table: string, col: string, val: string | boolean) => (await supabase.from(table).select('id', { count: 'exact', head: true }).eq(col, val)).count ?? 0;
+  const [pendingDonations, refunds, reports, reviewFundraisers] = await Promise.all([count('donations', 'status', 'pending'), count('refund_requests', 'status', 'requested'), count('comment_reports', 'status', 'requested'), count('fundraisers', 'review', 'submitted')]);
+  const { count: inquiries } = await supabase.from('inquiries').select('id', { count: 'exact', head: true }).is('answer', null);
+  return { pendingDonations, refunds, inquiries: inquiries ?? 0, reports, reviewFundraisers };
+}
+
+export async function adminDonations(filter: { status?: string; q?: string } = {}): Promise<Donation[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  let q = supabase.from('donations').select('*, fundraiser:fundraisers(id, slug, title), organization:organizations(id, slug, name), profile:profiles(name, email)').order('created_at', { ascending: false }).limit(300);
+  if (filter.status) q = q.eq('status', filter.status);
+  if (filter.q) q = q.or(`number.ilike.%${filter.q}%,depositor_name.ilike.%${filter.q}%`);
+  const { data } = await q;
+  return (data ?? []) as (Donation & { profile?: { name: string; email: string | null } | null })[];
+}
+
+export async function adminRefunds(): Promise<(RefundRequest & { donation: Donation | null; profile: { name: string } | null })[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('refund_requests').select('*, donation:donations(id, number, amount, status, created_at, fundraiser:fundraisers(id, title)), profile:profiles(name)').order('created_at', { ascending: false });
+  return (data ?? []) as never;
+}
+
+export async function adminFundraisers(): Promise<(Fundraiser & { organization: Pick<Organization, 'id' | 'name'> | null })[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('fundraisers').select('*, organization:organizations(id, name)').order('created_at', { ascending: false });
+  return (data ?? []) as never;
+}
+export async function adminFundraiser(id: string): Promise<Fundraiser | null> {
+  if (!hasSupabase) return null;
+  const supabase = await createClient();
+  const { data } = await supabase.from('fundraisers').select('*').eq('id', id).maybeSingle();
+  return (data as Fundraiser) ?? null;
+}
+export async function adminOrganizations(): Promise<Organization[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('organizations').select('*').order('name');
+  return (data ?? []) as Organization[];
+}
+export async function adminCampaigns(): Promise<Campaign[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('campaigns').select('*').order('created_at', { ascending: false });
+  return (data ?? []) as Campaign[];
+}
+export async function adminContent(type?: string): Promise<Content[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  let q = supabase.from('content').select('*').order('created_at', { ascending: false });
+  if (type) q = q.eq('type', type);
+  const { data } = await q;
+  return (data ?? []) as Content[];
+}
+export async function adminContentItem(id: string): Promise<Content | null> {
+  if (!hasSupabase) return null;
+  const supabase = await createClient();
+  const { data } = await supabase.from('content').select('*').eq('id', id).maybeSingle();
+  return (data as Content) ?? null;
+}
+export async function adminInquiries(): Promise<(Inquiry & { profile: { name: string } | null })[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('inquiries').select('*, profile:profiles(name)').order('created_at', { ascending: false });
+  return (data ?? []) as never;
+}
+export async function adminUsers(): Promise<Profile[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('profiles').select('*').order('created_at', { ascending: false }).limit(500);
+  return (data ?? []) as Profile[];
+}
+export async function adminReports() {
+  if (!hasSupabase) return empty<{ id: string; reason: string; status: string; resolution: string | null; created_at: string; comment: { id: string; body: string; hidden: boolean } | null; profile: { name: string } | null }>();
+  const supabase = await createClient();
+  const { data } = await supabase.from('comment_reports').select('*, comment:comments(id, body, hidden), profile:profiles(name)').order('created_at', { ascending: false });
+  return (data ?? []) as never;
+}
+export async function adminPlans(): Promise<(RecurringPlan & { profile: { name: string } | null; organization: { name: string } | null })[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('recurring_plans').select('*, profile:profiles(name), organization:organizations(name)').order('created_at', { ascending: false });
+  return (data ?? []) as never;
+}
+export async function adminLogs(): Promise<AuditLog[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('audit_logs').select('*, actor:profiles(name)').order('created_at', { ascending: false }).limit(200);
+  return (data ?? []).map((l) => ({ ...l, actor_name: l.actor?.name ?? null })) as AuditLog[];
+}

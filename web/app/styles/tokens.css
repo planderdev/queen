@@ -1,0 +1,159 @@
+/* Generated from design-system-foundations.js. Run npm run build:tokens. */
+:root {
+  /* color */
+  --primary-normal: #d73b50;
+  --primary-strong: #bc2b44;
+  --primary-heavy: #9e3844;
+  --label-normal: #171719;
+  --label-strong: #000;
+  --label-neutral: #46474c;
+  --label-alternative: #68696f;
+  --label-assistive: #989ba2;
+  --label-disable: #c4c5c9;
+  --fill-normal: #70737c14;
+  --fill-strong: #70737c29;
+  --fill-alternative: #70737c0a;
+  --line-normal: #70737c29;
+  --line-neutral: #70737c1f;
+  --line-solid: #e1e2e4;
+  --background-normal: #fff;
+  --background-alternative: #f7f7f8;
+  --background-elevated: var(--background-normal);
+  --brand-soft: #fceff1;
+  --interaction-disabled: #f4f4f5;
+  --status-positive: #16834b;
+  --status-cautionary: #976017;
+  --status-negative: #c33737;
+  --material-dimmer: #17171985;
+  --palette-olive: #a3b166;
+  --palette-blue: #8696ad;
+  --palette-lavender: #ac94aa;
+  --palette-orange: #d1936a;
+  --palette-rose: #c77991;
+  --static-white: #fff;
+
+  /* spacing */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-48: 48px;
+  --space-56: 56px;
+  --space-64: 64px;
+  --space-80: 80px;
+
+  /* typography */
+  --font-family: 'Pretendard','Noto Sans KR',Arial,sans-serif;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --font-size-display-large: 56px;
+  --line-height-display-large: 72px;
+  --tracking-display-large: -0.0319em;
+  --font-size-display: 40px;
+  --line-height-display: 52px;
+  --tracking-display: -0.0282em;
+  --font-size-display-small: 36px;
+  --line-height-display-small: 48px;
+  --tracking-display-small: -0.027em;
+  --font-size-title: 32px;
+  --line-height-title: 44px;
+  --tracking-title: -0.0253em;
+  --font-size-title-medium: 28px;
+  --line-height-title-medium: 38px;
+  --tracking-title-medium: -0.0236em;
+  --font-size-title-small: 24px;
+  --line-height-title-small: 32px;
+  --tracking-title-small: -0.023em;
+  --font-size-heading: 22px;
+  --line-height-heading: 30px;
+  --tracking-heading: -0.0194em;
+  --font-size-heading-small: 20px;
+  --line-height-heading-small: 28px;
+  --tracking-heading-small: -0.012em;
+  --font-size-headline: 18px;
+  --line-height-headline: 26px;
+  --tracking-headline: -0.002em;
+  --font-size-headline-small: 17px;
+  --line-height-headline-small: 26px;
+  --tracking-headline-small: 0em;
+  --font-size-body: 16px;
+  --line-height-body: 24px;
+  --tracking-body: 0.0057em;
+  --line-height-body-reading: 26px;
+  --font-size-body-small: 15px;
+  --line-height-body-small: 22px;
+  --tracking-body-small: 0.0096em;
+  --line-height-body-small-reading: 24px;
+  --font-size-label: 14px;
+  --line-height-label: 20px;
+  --tracking-label: 0.0145em;
+  --line-height-label-reading: 22px;
+  --font-size-label-small: 13px;
+  --line-height-label-small: 18px;
+  --tracking-label-small: 0.0194em;
+  --font-size-caption: 12px;
+  --line-height-caption: 16px;
+  --tracking-caption: 0.0252em;
+  --font-size-caption-small: 11px;
+  --line-height-caption-small: 14px;
+  --tracking-caption-small: 0.0311em;
+  --type-display: var(--weight-bold) var(--font-size-display)/var(--line-height-display) var(--font-family);
+  --type-title: var(--weight-bold) var(--font-size-title)/var(--line-height-title) var(--font-family);
+  --type-heading: var(--weight-semibold) var(--font-size-heading)/var(--line-height-heading) var(--font-family);
+  --type-body: var(--weight-regular) var(--font-size-body)/var(--line-height-body) var(--font-family);
+  --type-label: var(--weight-medium) var(--font-size-label)/var(--line-height-label) var(--font-family);
+  --type-caption: var(--weight-regular) var(--font-size-caption)/var(--line-height-caption) var(--font-family);
+
+  /* radius */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-20: 20px;
+
+  /* elevation */
+  --shadow-low: 0 2px 8px #1717190a;
+  --shadow-raised: 0 8px 30px #17171910;
+  --shadow-dialog: 0 24px 90px #0003;
+
+  /* motion */
+  --motion-feedback: 180ms;
+  --motion-image: 350ms;
+  --motion-card-image: 3000ms;
+  --motion-skeleton: 1400ms;
+
+  /* layer */
+  --z-header: 20;
+  --z-mobile-cta: 30;
+  --z-demo-launch: 40;
+  --z-toast: 10000;
+
+  /* layout */
+  --layout-content-width: 1560px;
+  --layout-gutter: 60px;
+
+  /* component */
+  --carousel-gap: 40px;
+  --card-radius: 50px;
+  --card-radius-compact: 30px;
+  --button-height-small: 32px;
+  --button-height-medium: 48px;
+  --button-height-large: 56px;
+  --icon-size-16: 16px;
+  --icon-size-20: 20px;
+  --icon-size-24: 24px;
+  --icon-size-32: 32px;
+}
+@media (max-width:1440px) { :root { --layout-gutter: 50px; } }
+@media (max-width:1280px) { :root { --layout-gutter: 40px; } }
+@media (max-width:768px) { :root { --layout-gutter: 30px; } }
+@media (max-width:425px) { :root { --layout-gutter: 20px; } }
+@media (min-width:0px) { :root { --carousel-gap: 20px; } }
+@media (min-width:426px) { :root { --carousel-gap: 30px; } }
+@media (min-width:1281px) { :root { --carousel-gap: 40px; } }

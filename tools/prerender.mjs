@@ -12,7 +12,8 @@ import {fileURLToPath} from 'node:url';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const publicDir = join(root, 'public');
-const dist = join(root, 'dist');
+// Output root: the Next.js app's public folder (served as static files at /demo and /design-system).
+const dist = resolve(root, process.env.DEMO_OUT ?? 'web/public');
 const BASE = (process.env.DEMO_BASE ?? '/demo').replace(/\/$/, ''); // '' = serve at the domain root
 const STATIC_PHP = 'https://dl.static-php.dev/static-php-cli/common/php-8.3.32-cli-linux-x86_64.tar.gz';
 
@@ -73,8 +74,9 @@ function copyTree(from, to) {
 const php = findPhp();
 console.log(`php: ${php} (${execFileSync(php, ['-v']).toString().split('\n')[0]})`);
 console.log(`base path: ${BASE || '/'}`);
-rmSync(dist, {recursive: true, force: true});
 const demoDir = join(dist, BASE.replace(/^\//, ''));
+rmSync(demoDir, {recursive: true, force: true});
+rmSync(join(dist, 'design-system'), {recursive: true, force: true});
 mkdirSync(demoDir, {recursive: true});
 
 const pages = entries(publicDir).sort();
