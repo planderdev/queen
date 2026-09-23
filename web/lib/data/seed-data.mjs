@@ -1,7 +1,11 @@
 // Seed content for the production service. One source for (1) the in-memory repository used before
 // a database is connected and (2) the SQL seed migration (npm run seed:sql). All organizations,
 // stories and figures are fictional examples carried over from the demo.
-const day = (n) => new Date(Date.UTC(2026, 8, 3) + n * 86400000).toISOString(); // 2026-09-03 기준
+// Dates are relative to the build/request moment so preview data never goes stale; the SQL seed
+// emits the same offsets as now() + interval (see scripts/seed-sql.mjs).
+const BASE = Date.now();
+const day = (n) => new Date(BASE + n * 86400000).toISOString();
+export const dayOffset = (iso) => Math.round((new Date(iso).getTime() - BASE) / 86400000);
 export const photos = {
   meal: '/assets/images/meal.jpg',
   child: '/assets/images/child.jpg',

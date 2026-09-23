@@ -7,7 +7,8 @@ import * as seed from '../lib/data/seed-data.mjs';
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const out = join(root, 'supabase', 'migrations', '20260924000002_seed.sql');
-const q = (v) => v === null || v === undefined ? 'null' : typeof v === 'number' ? String(v) : typeof v === 'boolean' ? String(v) : Array.isArray(v) || typeof v === 'object' ? `'${JSON.stringify(v).replace(/'/g, "''")}'::jsonb` : `'${String(v).replace(/'/g, "''")}'`;
+const isIso = (v) => typeof v === 'string' && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d{3}Z$/.test(v);
+const q = (v) => isIso(v) ? `(now() + interval '${seed.dayOffset(v)} days')` : v === null || v === undefined ? 'null' : typeof v === 'number' ? String(v) : typeof v === 'boolean' ? String(v) : Array.isArray(v) || typeof v === 'object' ? `'${JSON.stringify(v).replace(/'/g, "''")}'::jsonb` : `'${String(v).replace(/'/g, "''")}'`;
 const insert = (table, rows, cols) => rows.length ? `insert into public.${table} (${cols.join(', ')}) values\n${rows.map((r) => `  (${cols.map((c) => q(r[c])).join(', ')})`).join(',\n')}\non conflict (id) do update set ${cols.filter((c) => c !== 'id').map((c) => `${c} = excluded.${c}`).join(', ')};\n` : '';
 
 let sql = `-- 초기 콘텐츠 시드 (생성: web/scripts/seed-sql.mjs). 단체·모금·사연·수치는 예시이며 운영 전 실제 값으로 교체합니다.\n\n`;
