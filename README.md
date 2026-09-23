@@ -16,7 +16,7 @@ php -S 127.0.0.1:8080 -t public
 .\tools\php\php.exe -S 127.0.0.1:8080 -t public
 ```
 
-벤더 JS/CSS와 이미지가 포함되어 있어 실행 시 npm 설치는 필요 없습니다. Noto Sans KR 웹폰트는 Google Fonts 연결이 필요하며 실패 시 시스템 글꼴로 표시됩니다. PHP 내장 서버는 개발용입니다.
+벤더 JS/CSS와 이미지가 포함되어 있어 실행 시 npm 설치는 필요 없습니다. 공개 사이트의 Pretendard 웹폰트는 jsDelivr CDN 연결이 필요하며 실패 시 Noto Sans KR·시스템 글꼴로 표시됩니다. 관리자 화면은 로컬 `PretendardVariable.woff2`를 사용합니다. PHP 내장 서버는 개발용입니다.
 
 ## 시작 URL
 
@@ -26,20 +26,20 @@ php -S 127.0.0.1:8080 -t public
 | 모금 목록 | http://127.0.0.1:8080/donate/ |
 | 정기기부 | http://127.0.0.1:8080/monthly/ |
 | 나의 나눔 | http://127.0.0.1:8080/my/ |
-| 모금단체 | http://127.0.0.1:8080/partner/ |
-| 기업 파트너 | http://127.0.0.1:8080/corporate/ |
 | 관리자 | http://127.0.0.1:8080/admin/ |
 | 디자인시스템 | http://127.0.0.1:8080/design-system/ |
 
-오른쪽 아래 **데모 설정**에서 역할, 회원, 관리자 권한, 기준 시각, 빈/오류/로딩 상태를 변경합니다. 단체·기업·관리자는 센터 첫 화면에서도 역할 전환이 가능합니다. 역할 전환은 보안 기능이 아닙니다.
+오른쪽 아래 **데모 설정**에서 역할, 회원, 관리자 권한, 기준 시각, 빈/오류/로딩 상태를 변경합니다. 관리자는 `/admin/` 첫 화면에서도 역할 전환이 가능합니다. 역할 전환은 보안 기능이 아닙니다.
+
+모금단체 센터(`/partner/`)와 기업 파트너 센터(`/corporate/`) 화면은 2026-09-23 정리에서 제거했습니다. 단체 신청·모금 작성·결과보고 작성·기업 제안의 상태 전이는 `services/domain.js`와 도메인 테스트에 남아 있지만, 이를 만드는 화면이 없어 관리자의 단체 신청·모금함·결과보고 심사 대기열은 초기 데이터에서 비어 있습니다. 지급·정산, 기업 매칭, 환불, 신고, 문의는 관리자 화면에서 그대로 체험할 수 있습니다.
 
 ## 연결된 주요 흐름
 
-- 단체 신청 → 보완 → 재제출 → 승인 → 7단계 모금 작성 → 심사 → 공개
+- 단체 신청 → 보완 → 재제출 → 승인 → 모금 작성 → 심사 → 공개 (도메인 서비스와 테스트로만 유지; 작성 화면 제거로 관리자 심사 대기열은 비어 있음)
 - 금액/익명/응원 → 결제 수단 → 확인 → 성공·실패·취소·처리 중 → 재시도/완료 → 거래 내역
 - 정기 약정 → 기준일 이동 → 회차 실패/성공 → 금액 변경·중지·재개·해지
-- 종료 → 지급 예정 → 지급 승인 → 지급 완료 데모 → 보고서 → 승인·공개
-- 기업 제안 → 심사 → 직접 기부 매칭 → 한도 검증 → 별도 지원금
+- 종료 → 지급 예정 → 지급 승인 → 지급 완료 데모 (결과보고 작성·심사는 도메인 서비스로만 유지)
+- 기업 캠페인 심사 → 직접 기부 매칭 → 한도 검증 → 별도 지원금
 - 환불 요청 → 승인/반려 → 원거래 연결 환불 → 순기부액 갱신
 - 댓글 신고 → 유지/숨김 → 공개 화면 반영
 - 관심 저장, 검색/필터/정렬/페이지 URL, 회원별 내역/CSV, 문의·답변, 콘텐츠 운영
@@ -48,13 +48,19 @@ php -S 127.0.0.1:8080 -t public
 
 ## 검증
 
-```powershell
-node --test tests/domain.test.js tests/storage.test.js
-# Node 16 초기 버전에서 세부 테스트 출력을 보려면:
-node tests/domain.test.js
+```bash
+npm test            # 도메인·스토리지 테스트 (node --test)
+npm run check:styles  # 토큰 계약 검사 + 공개/관리자 CSS 캐스케이드 감사
+npm run build:tokens  # design-system-foundations.js → tokens.css 재생성
 ```
 
+Node 16 초기 버전에서 세부 테스트 출력을 보려면 `node tests/domain.test.js`를 직접 실행합니다.
+
 PHP 문법 검사:
+
+```bash
+find public app -name '*.php' -exec php -l {} \;
+```
 
 ```powershell
 Get-ChildItem public,app -Filter *.php -Recurse | ForEach-Object { php -l $_.FullName }
@@ -62,15 +68,21 @@ Get-ChildItem public,app -Filter *.php -Recurse | ForEach-Object { php -l $_.Ful
 
 ## 구조
 
-- `app/layout.php`: PHP 공통 헤더/푸터/페이지 셸
+- `app/layout.php`: 공개 사이트 공통 헤더/푸터/페이지 셸
+- `app/admin-layout.php`: 관리자 전용 셸 (상단 바, 메뉴 검색, 사이드바 슬롯)
 - `public/{도메인}/index.php`: 직접 접근 가능한 PHP 페이지
+- `public/assets/js/design-system-foundations.js`: 디자인 토큰의 단일 원본. `tools/build-tokens.mjs`가 `tokens.css`를 생성
+- `public/assets/css/`: `tokens.css`(생성물) → `app.css`(공통) → `site.css`(공개 셸) → 페이지별 `home.css`, `community.css`, `programs.css`, `design-system.css`
 - `public/assets/js/data.js`, `fixtures/catalog.js`: 설정/연결된 초기 데이터
 - `stores/repository.js`: 버전 있는 localStorage 어댑터, 메모리 폴백
 - `services/domain.js`: 검증, 상태 전이, 금액 집계, 멱등 결제
-- `pages/`: 역할별 뷰
+- `pages/`: 화면별 뷰 (`home`, `public`, `programs`, `community`, `account`, `operations`, `design-system`)
 - `components/ui.js`: 공유 컴포넌트, 접근성 아코디언, 모달, CSV
+- `components/site.js`, `scroll-motion.js`, `form-controls.js`: 캐러셀, 스크롤 등장, 날짜 선택 등 공개 사이트 상호작용
+- `components/admin-*.js`: 관리자 셸, 표, 조회 조건, 렌더러, 개인화 설정
 - `app.js`: 화면 조립, 사용자 이벤트, 서비스 연결
-- `assets/vendor`: 로컬 Lucide 및 Swiper
+- `assets/vendor`: 로컬 Lucide, Swiper, AOS, flatpickr, 관리자용 `sports-admin` 스타일 (라이선스 파일 동봉)
+- `tools/`: 토큰 빌드, CSS 캐스케이드 감사
 - `docs/`: 조사, 매핑, 모델, API 인수인계와 검증 증거
 
 ## 데모 범위
@@ -83,3 +95,11 @@ localStorage 데이터는 사용자가 변경할 수 있으며 여러 기기/사
 
 
 ## 브랜드 업데이트 (2026-09-23)
+
+- 서체를 Pretendard(jsDelivr dynamic subset)로 전환했습니다. `--font-family` 폴백 순서는 Pretendard → Noto Sans KR → Arial → sans-serif입니다.
+- 로고 2종(`public/assets/brand/logo.svg`, `logo2.svg`)을 새 브랜드 시안으로 교체했습니다. 헤더는 가로형, 푸터는 세로형을 사용합니다.
+- 메인 컬러 `#c77991`(Rose)을 기준으로 팔레트 5색(Olive, Blue, Lavender, Orange, Rose)을 `--palette-*` 토큰으로 정리하고, 상태 칩 색상을 이 팔레트에 매핑했습니다.
+- 토큰 이름의 `--qm-` 접두사를 제거하고 `design-system-foundations.js` 한 곳에서 색상·간격·라운드·타이포그래피를 관리합니다. `tokens.css`는 생성물이므로 직접 수정하지 않습니다.
+- 공개 사이트 스타일을 `app.css` 하나에서 `site.css`와 페이지별 파일로 분리하고, 관리자 화면은 `sports-admin` 스타일과 flatpickr 날짜 선택기로 재구성했습니다.
+- 홈 히어로 문구가 순차 등장하고 공개 콘텐츠 섹션은 AOS로 1회 스크롤 등장합니다. `prefers-reduced-motion`에서는 정적으로 표시합니다.
+- 상세 내역과 감사 기록은 `docs/design-system.md`, `docs/token-audit/README.md`, `docs/css-cascade-audit.md`를 참고하세요.

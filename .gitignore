@@ -7,3 +7,4 @@ tools/php-releases.json
 .env.*
 !.env.example
 *.log
+.claude/

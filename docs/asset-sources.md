@@ -15,4 +15,4 @@
 
 `fallback.svg`는 프로젝트에서 직접 작성한 기본 이미지다. 외부 이미지 로딩 실패 시 적용된다.
 
-Noto Sans KR: Google Fonts 스타일시트. Lucide/Swiper 라이선스는 vendor 폴더에 포함. 상세 컴포넌트 출처는 component-sources.md.
+Pretendard: jsDelivr CDN dynamic subset 스타일시트(공개 사이트), 관리자 화면은 `public/assets/vendor/sports-admin/vendor/PretendardVariable.woff2` 로컬 파일. Noto Sans KR은 폴백 서체. Lucide/Swiper 라이선스는 vendor 폴더에 포함. 상세 컴포넌트 출처는 component-sources.md.

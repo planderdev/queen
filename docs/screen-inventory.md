@@ -16,12 +16,11 @@ URL의 query로 화면과 상태가 구분됩니다. 각각 PHP 진입점에 직
 | 인증 UI | `/auth/?view=login`, `signup`, `reset` |
 | 회원 | `/my/?view=summary`, `donations`, `monthly`, `bookmarks`, `campaigns`, `comments`, `notifications`, `profile`, `inquiries` |
 | 고객센터 | `/support/?view=faq`, `notices`, `inquiry`, `terms`, `privacy` |
-| 단체 센터 | `/partner/?view=dashboard`, `application`, `profile`, `fundraisers`, `editor`, `news`, `payouts`, `reports`, `inquiries` |
-| 모금 작성 | `/partner/?view=editor&step=1` ~ `7`, 수정 시 `&id=...` |
-| 기업 | `/corporate/?view=dashboard`, `profile`, `proposal`, `campaigns`, `contributions`, `inquiries` |
 | 관리자 | `/admin/?view=dashboard`, `users`, `organizations`, `fundraisers`, `transactions`, `recurring`, `refunds`, `payouts`, `reports`, `campaigns`, `content`, `moderation`, `inquiries`, `settings`, `permissions`, `logs` |
 | 디자인시스템 | `/design-system/` |
 
 모달: 역할/시간/초기화, 심사, 상태 변경, 환불, 정기 변경·해지·회차, 신고, 문의 답변, 신청 미리보기, 거래 상세, 영수증 상태, 공유 복사 실패 시 링크.
+
+제거된 화면: 단체 센터 `/partner/`(대시보드·신청·프로필·모금함·7단계 작성·소식·지급·보고·문의)와 기업 센터 `/corporate/`(대시보드·프로필·제안·캠페인·후원금·문의)는 2026-09-23 정리에서 삭제했다. 해당 흐름의 상태 전이는 `services/domain.js`에 남아 있다. 신청·작성 화면이 없으므로 관리자의 단체 신청·모금함·결과보고 심사 대기열은 초기 데이터에서 비어 있고, 지급·매칭·환불·신고·문의는 관리자 화면에서 처리한다.
 
 예외: 잘못된 ID → 찾을 수 없음, 미승인 비공개 → 공개 전 안내, 종료 → 기부 차단, 비회원 → 로그인, 권한 불일치 → 역할 안내, 빈 목록 → 빈 상태, 데모 오류/로딩 → 설정으로 복원.
