@@ -28,6 +28,16 @@ npm run dev                   # http://localhost:3000
 3. Authentication → URL Configuration: Site URL을 배포 주소로, Redirect URLs에 `https://<도메인>/auth/callback`(로컬 테스트 시 `http://localhost:3000/auth/callback`) 추가. 이메일 템플릿의 확인 링크는 기본값을 사용합니다.
    - Supabase 기본 메일러는 시간당 발송 한도가 매우 낮아(수 건) 가입 테스트 중 “email rate limit exceeded”가 납니다. 운영 전 Authentication → SMTP Settings에 자체 SMTP(예: Resend, AWS SES)를 연결하세요. 내부 테스트만 급하면 Authentication → Providers → Email에서 “Confirm email”을 잠시 끌 수 있습니다.
    - `example.com`, `.test` 같은 예약 도메인 주소는 Supabase가 가입을 거부합니다. 테스트에도 실제 도메인 이메일을 쓰세요.
+3-1. 운영용 메일 발송(Resend → Supabase SMTP) — 클라이언트 계정으로 진행
+   1. https://resend.com 가입(클라이언트 계정) → API Keys → “Create API Key”(권한 Sending access). 키는 한 번만 표시되니 바로 복사.
+   2. Supabase 대시보드 → Authentication → SMTP Settings → “Enable Custom SMTP” 켜고 입력:
+      - Sender email: 도메인 연결 전에는 `onboarding@resend.dev`, 연결 후에는 `no-reply@<도메인>`
+      - Sender name: 퀸만덕
+      - Host: `smtp.resend.com` · Port: `465` · Username: `resend` · Password: 위에서 만든 API 키
+      - Minimum interval between emails: 기본값(60초) 유지
+   3. 도메인 연결 전 제한: Resend는 `onboarding@resend.dev` 발신으로는 **Resend 계정 소유자 이메일에만** 메일을 보냅니다. 따라서 도메인 연결 전 가입 테스트는 그 이메일로만 가능합니다. 실제 사용자에게 보내려면 Resend → Domains에 도메인을 추가하고 안내되는 DNS 레코드(SPF·DKIM·DMARC)를 등록한 뒤 Sender email을 그 도메인 주소로 바꿉니다.
+   4. Supabase → Authentication → Rate Limits에서 “Rate limit for sending emails”를 운영 수준(예: 시간당 100)으로 올립니다. 커스텀 SMTP를 켜야 올릴 수 있습니다.
+   5. 테스트: 사이트에서 회원가입 → 인증 메일 링크 클릭 → `/my`로 돌아오면 정상.
 4. `.env.local` 또는 Vercel 환경 변수에 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL` 설정.
 5. 첫 관리자 지정: 사이트에서 회원가입 후 SQL Editor에서
    ```sql
