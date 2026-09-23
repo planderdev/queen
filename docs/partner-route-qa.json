@@ -1,0 +1,92 @@
+[
+  {
+    "error": false,
+    "overflow": false,
+    "title": "대시보드",
+    "url": "/partner/?view=dashboard"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "단체 등록 신청",
+    "url": "/partner/?view=application"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "단체 프로필",
+    "url": "/partner/?view=profile"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "내 모금함",
+    "url": "/partner/?view=fundraisers"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "모금함 작성",
+    "url": "/partner/?view=editor"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "소식 작성",
+    "url": "/partner/?view=news"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "지급·정산 내역",
+    "url": "/partner/?view=payouts"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "결과보고",
+    "url": "/partner/?view=reports"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "문의 및 알림",
+    "url": "/partner/?view=inquiries"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "파트너 대시보드",
+    "url": "/corporate/?view=dashboard"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "기업 프로필",
+    "url": "/corporate/?view=profile"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "캠페인 제안",
+    "url": "/corporate/?view=proposal"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "캠페인 및 성과",
+    "url": "/corporate/?view=campaigns"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "지원금 반영 내역",
+    "url": "/corporate/?view=contributions"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "제휴 문의",
+    "url": "/corporate/?view=inquiries"
+  }
+]

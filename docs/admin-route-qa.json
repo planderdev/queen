@@ -1,0 +1,98 @@
+[
+  {
+    "error": false,
+    "overflow": false,
+    "title": "운영 대시보드",
+    "url": "/admin/?view=dashboard"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "회원 관리",
+    "url": "/admin/?view=users"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "단체 신청 심사",
+    "url": "/admin/?view=organizations"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "모금함 심사·운영",
+    "url": "/admin/?view=fundraisers"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "기부 거래",
+    "url": "/admin/?view=transactions"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "정기기부",
+    "url": "/admin/?view=recurring"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "취소·환불 요청",
+    "url": "/admin/?view=refunds"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "지급·정산",
+    "url": "/admin/?view=payouts"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "결과보고 심사",
+    "url": "/admin/?view=reports"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "기업 캠페인",
+    "url": "/admin/?view=campaigns"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "콘텐츠 관리",
+    "url": "/admin/?view=content"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "댓글 및 신고",
+    "url": "/admin/?view=moderation"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "문의 관리",
+    "url": "/admin/?view=inquiries"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "분야·지역 설정",
+    "url": "/admin/?view=settings"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "관리자 권한",
+    "url": "/admin/?view=permissions"
+  },
+  {
+    "error": false,
+    "overflow": false,
+    "title": "운영 이력",
+    "url": "/admin/?view=logs"
+  }
+]

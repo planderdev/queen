@@ -1,0 +1,20 @@
+const fs=require('fs');
+const assert=require('assert/strict');
+const base='public/assets/css/';
+const tokenCss=fs.readFileSync(base+'tokens.css','utf8');
+const files=['app.css','design-system.css'];
+const tokenNames=[...tokenCss.matchAll(/(--[\w-]+)\s*:/g)].map(m=>m[1]);
+assert.equal(new Set(tokenNames).size,tokenNames.length,'Global tokens must be declared once');
+const css=files.map(f=>fs.readFileSync(base+f,'utf8')).join('\n');
+assert(!/:root\s*\{/.test(css),'Global tokens belong only in tokens.css');
+assert(!/#[\da-f]{3,8}\b/i.test(css),'Component colors must use tokens');
+const defined=new Set([...tokenNames,...[...css.matchAll(/(--[\w-]+)\s*:/g)].map(m=>m[1]),'--avatar-size','--ds-icon']);
+for(const [,name]of (tokenCss+css).matchAll(/var\((--[\w-]+)/g))assert(defined.has(name),`Undefined token ${name}`);
+for(const [name,value]of [...tokenCss.matchAll(/(--[\w-]+):\s*([^;]+);/g)].map(m=>[m[1],m[2]]))assert(!value.includes(`var(${name})`),`Self-referencing token ${name}`);
+for(const f of files){const text=fs.readFileSync(base+f,'utf8').replace(/\/\*[\s\S]*?\*\//g,'');const stack=[],seen=new Set;let start=0;for(let i=0;i<text.length;i++){if(text[i]==='{'){stack.push(text.slice(start,i).trim());start=i+1;}else if(text[i]===';'){const d=text.slice(start,i).trim(),split=d.indexOf(':');if(split>0){const property=d.slice(0,split),v=d.slice(split+1);const key=stack.join('|')+'|'+property;assert(!seen.has(key),`Duplicate declaration ${f}: ${key}`);seen.add(key);assert(!/\d(?:px|ms)\b|(?:^|\s)\.?\d+s\b/.test(v),`Untokenized size/motion ${f}: ${d}`);}start=i+1;}else if(text[i]==='}'){stack.pop();start=i+1;}}assert.equal(stack.length,0,`${f}: balanced rules`);}
+const page=fs.readFileSync('public/assets/js/pages/design-system.js','utf8');
+assert(!/montage|Reference & adaptation|Based on|section\('source'/i.test(page),'Reference UI must be removed');
+const layout=fs.readFileSync('app/layout.php','utf8');
+assert(!layout.includes('montage.css'),'No legacy override stylesheet');
+assert(layout.indexOf('tokens.css')<layout.indexOf('app.css'),'Tokens load before components');
+console.log(`Style contract passed: ${tokenNames.length} unique tokens, 2 stylesheets, no missing tokens or duplicate declarations.`);

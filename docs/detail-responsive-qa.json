@@ -1,0 +1,72 @@
+[
+  {
+    "header": 70,
+    "main": 1425,
+    "scroll": 1425,
+    "url": "https://together.kakao.com/fundraisings/140290/story",
+    "width": 1440
+  },
+  {
+    "header": 70,
+    "main": 1140,
+    "scroll": 1140,
+    "url": "https://together.kakao.com/fundraisings/140290/story",
+    "width": 1024
+  },
+  {
+    "header": 70,
+    "main": 1140,
+    "scroll": 1140,
+    "url": "https://together.kakao.com/fundraisings/140290/story",
+    "width": 768
+  },
+  {
+    "header": 92,
+    "main": 375,
+    "scroll": 375,
+    "url": "https://together.kakao.com/fundraisings/140290/story",
+    "width": 390
+  },
+  {
+    "header": 92,
+    "main": 345,
+    "scroll": 345,
+    "url": "https://together.kakao.com/fundraisings/140290/story",
+    "width": 360
+  },
+  {
+    "header": 87,
+    "main": 1425,
+    "scroll": 1425,
+    "url": "http://127.0.0.1:8080/donate/?id=fund-1",
+    "width": 1440
+  },
+  {
+    "header": 87,
+    "main": 1009,
+    "scroll": 1009,
+    "url": "http://127.0.0.1:8080/donate/?id=fund-1",
+    "width": 1024
+  },
+  {
+    "header": 117.59375,
+    "main": 753,
+    "scroll": 753,
+    "url": "http://127.0.0.1:8080/donate/?id=fund-1",
+    "width": 768
+  },
+  {
+    "header": 108.9375,
+    "main": 375,
+    "scroll": 375,
+    "url": "http://127.0.0.1:8080/donate/?id=fund-1",
+    "width": 390
+  },
+  {
+    "header": 108.9375,
+    "main": 345,
+    "scroll": 345,
+    "url": "http://127.0.0.1:8080/donate/?id=fund-1",
+    "width": 360
+  }
+]

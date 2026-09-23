@@ -1,0 +1,9 @@
+node_modules/
+tools/php/
+tools/*.zip
+tools/npm-cache/
+tools/php-releases.json
+.env
+.env.*
+!.env.example
+*.log
