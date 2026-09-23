@@ -17,7 +17,8 @@ URL의 query로 화면과 상태가 구분됩니다. 각각 PHP 진입점에 직
 | 회원 | `/my/?view=summary`, `donations`, `monthly`, `bookmarks`, `campaigns`, `comments`, `notifications`, `profile`, `inquiries` |
 | 고객센터 | `/support/?view=faq`, `notices`, `inquiry`, `terms`, `privacy` |
 | 관리자 | `/admin/?view=dashboard`, `users`, `organizations`, `fundraisers`, `transactions`, `recurring`, `refunds`, `payouts`, `reports`, `campaigns`, `content`, `moderation`, `inquiries`, `settings`, `permissions`, `logs` |
-| 디자인시스템 | `/design-system/` |
+| 브랜드 가이드 | `/design-system/` (정적 생성 페이지) |
+| 디자인시스템 카탈로그 | `/design-system/catalog/?topic=button&mode=web` |
 
 모달: 역할/시간/초기화, 심사, 상태 변경, 환불, 정기 변경·해지·회차, 신고, 문의 답변, 신청 미리보기, 거래 상세, 영수증 상태, 공유 복사 실패 시 링크.
 

@@ -1,7 +1,7 @@
 # 퀸만덕 (QUEEN MANDEOK) 브랜드 시스템 레퍼런스
 
 > 출처: 프로젝트 토큰 원본 `public/assets/js/design-system-foundations.js`(v1.0, 2026-09-24) + 로고 `public/assets/brand/` + 사이트 카피. 별도 무드보드 PDF는 없다.
-> 웹 가이드: [design-system/index.html](design-system/index.html) (생성기 `tools/build-guide.mjs`, `npm run build:guide`) · 배포: https://queen-mandeok.vercel.app/brand-guide/ · 컴포넌트 카탈로그: https://queen-mandeok.vercel.app/design-system/
+> 웹 가이드: [public/design-system/index.html](public/design-system/index.html) (생성기 `tools/build-guide.mjs`, `npm run build:guide`) · 배포: https://queen-mandeok.vercel.app/design-system/ · 컴포넌트 카탈로그: https://queen-mandeok.vercel.app/design-system/catalog/
 > 사이트·배너·에셋·PPT 등 모든 퀸만덕 작업은 이 문서를 기준으로 삼는다. 값 변경은 foundations.js에서만 하고 `npm run build`로 재생성한다.
 
 ## 공식 자산 — 반드시 자산 사용, 임의 재현 금지

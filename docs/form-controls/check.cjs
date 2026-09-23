@@ -32,7 +32,7 @@ for(const width of [1440,390]){
  await modalCalendar.locator('.flatpickr-next-month').focus();
  await page.keyboard.press('Enter');
  await page.keyboard.press('Escape');assert(await page.locator('dialog').evaluate(e=>e.open));assert.equal(await page.locator('dialog .flatpickr-calendar.open').count(),0);
- await page.goto('http://127.0.0.1:8080/design-system/?topic=datepicker',{waitUntil:'networkidle'});
+ await page.goto('http://127.0.0.1:8080/design-system/catalog/?topic=datepicker',{waitUntil:'networkidle'});
  await page.waitForSelector('input[name=ds-date-disabled][data-calendar-type]');
  assert(await page.locator('.date-toggle:disabled').isDisabled());
  await page.evaluate(async()=>{const {field,hydrate}=await import('/assets/js/components/ui.js');document.querySelector('#main').innerHTML='<form id="date-test">'+field('제한된 날짜','limited','','date','required min="2026-09-10" max="2026-09-20"')+'</form>';hydrate();hydrate();});

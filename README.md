@@ -27,7 +27,8 @@ php -S 127.0.0.1:8080 -t public
 | 정기기부 | http://127.0.0.1:8080/monthly/ |
 | 나의 나눔 | http://127.0.0.1:8080/my/ |
 | 관리자 | http://127.0.0.1:8080/admin/ |
-| 디자인시스템 | http://127.0.0.1:8080/design-system/ |
+| 브랜드 가이드 | http://127.0.0.1:8080/design-system/ |
+| 디자인시스템(컴포넌트 카탈로그) | http://127.0.0.1:8080/design-system/catalog/ |
 
 오른쪽 아래 **데모 설정**에서 역할, 회원, 관리자 권한, 기준 시각, 빈/오류/로딩 상태를 변경합니다. 관리자는 `/admin/` 첫 화면에서도 역할 전환이 가능합니다. 역할 전환은 보안 기능이 아닙니다.
 
@@ -82,7 +83,7 @@ vercel deploy --prod
 
 ## 브랜드 · 디자인 시스템 가이드
 
-`design-system/index.html`은 클라이언트 전달용 단일 HTML 가이드(브랜드 개요, 로고, 컬러, 타이포그래피, 표기법, 이미지 디렉션, 모티프, 아이콘, 웹 토큰, 컴포넌트, 레이아웃)입니다. `tools/build-guide.mjs`가 토큰 원본과 로고 SVG에서 생성하므로 직접 편집하지 않고 `npm run build:guide`로 다시 만듭니다. 배포 시 `/brand-guide/`로 함께 올라갑니다. 토큰·카피·규정 요약은 `BRAND.md`에 있으며 이후 배너·에셋·PPT 작업의 기준입니다.
+`public/design-system/index.html`은 클라이언트 전달용 단일 HTML 가이드(브랜드 개요, 로고, 컬러, 타이포그래피, 표기법, 이미지 디렉션, 모티프, 아이콘, 웹 토큰, 컴포넌트, 레이아웃)입니다. `tools/build-guide.mjs`가 토큰 원본과 로고 SVG에서 생성하므로 직접 편집하지 않고 `npm run build:guide`로 다시 만듭니다. 사이트의 `/design-system/`에서 서빙되고, 기존 인터랙티브 컴포넌트 카탈로그는 `/design-system/catalog/`로 옮겼습니다(`/brand-guide/`는 `/design-system/`으로 리다이렉트). 토큰·카피·규정 요약은 `BRAND.md`에 있으며 이후 배너·에셋·PPT 작업의 기준입니다.
 
 ## 구조
 

@@ -1,4 +1,4 @@
-// Builds the standalone brand / design-system guide (design-system/index.html) from the
+// Builds the standalone brand / design-system guide (public/design-system/index.html) from the
 // published token source, the brand SVG logos and the copy used on the site. Run: npm run build:guide
 import {readFileSync, writeFileSync, mkdirSync} from 'node:fs';
 import {dirname, join, resolve} from 'node:path';
@@ -8,7 +8,7 @@ import {foundations} from '../public/assets/js/design-system-foundations.js';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const artifactIndex = process.argv.indexOf('--artifact');
 const ARTIFACT = artifactIndex > -1;
-const out = ARTIFACT ? resolve(process.argv[artifactIndex + 1]) : join(root, 'design-system', 'index.html');
+const out = ARTIFACT ? resolve(process.argv[artifactIndex + 1]) : join(root, 'public', 'design-system', 'index.html');
 const T = foundations.tokens;
 const SITE = 'https://queen-mandeok.vercel.app';
 // Artifact pages may only load stylesheets from Google Fonts and no remote images, so inline photos there.
@@ -468,7 +468,7 @@ const html = `${head}
   <a class="wordmark" href="#top" aria-label="퀸만덕 디자인 시스템 처음으로">${logoH}</a>
   <div class="railsub">Design System · v${VERSION}</div>
   ${nav}
-  <div class="railfoot">사이트 <a href="${SITE}/" target="_blank" rel="noopener">queen-mandeok.vercel.app</a><br>컴포넌트 카탈로그 <a href="${SITE}/design-system/" target="_blank" rel="noopener">/design-system/</a></div>
+  <div class="railfoot">사이트 <a href="${SITE}/" target="_blank" rel="noopener">queen-mandeok.vercel.app</a><br>컴포넌트 카탈로그 <a href="${SITE}/design-system/catalog/" target="_blank" rel="noopener">/design-system/catalog/</a></div>
 </nav>
 <main id="top">
 <header class="hero">
@@ -677,7 +677,7 @@ const html = `${head}
 
 <!-- 09 -->
 <section id="components">
-  ${secHead('09 · Components', '컴포넌트', '실제 사이트(app.css)의 규격을 그대로 옮긴 동작 데모입니다. 24개 컴포넌트의 상세 사양은 사이트 안 컴포넌트 카탈로그(/design-system/)에서 확인합니다.')}
+  ${secHead('09 · Components', '컴포넌트', '실제 사이트(app.css)의 규격을 그대로 옮긴 동작 데모입니다. 24개 컴포넌트의 상세 사양은 사이트 안 컴포넌트 카탈로그(/design-system/catalog/)에서 확인합니다.')}
   <h3 class="sub">Button <small>Solid · Outlined · Assistive · Destructive / 32 · 48 · 56</small></h3>
   <div class="panel"><div class="demo left"><button class="btn primary" type="button">마음 전하기</button><button class="btn outlined" type="button">미리보기</button><button class="btn secondary" type="button">취소</button><button class="btn danger" type="button">삭제</button><button class="btn primary" type="button" disabled>비활성</button></div><div class="demo left gray"><button class="btn primary small" type="button">Small 32</button><button class="btn primary" type="button">Medium 48</button><button class="btn primary large" type="button">Large 56</button><button class="btn primary" type="button">${ic('hand-heart', 20)} 아이콘 포함</button></div><div class="caption">한 액션 영역에 Primary는 하나만. 기부하기 = Solid, 미리보기 = Outlined, 취소 = Assistive. 라운드 12px, 글자 15px 600.</div></div>
   <h3 class="sub">Icon button</h3>
@@ -718,7 +718,7 @@ const html = `${head}
 <footer>
   <div class="foot-inner">
     <div>${logoV}</div>
-    <div class="info"><b>퀸만덕 디자인 시스템 v${VERSION}</b> · ${DATE}<br>토큰 원본 <code>public/assets/js/design-system-foundations.js</code> · 로고 원본 <code>public/assets/brand/</code><br>이 문서는 <code>tools/build-guide.mjs</code>가 생성합니다. 값을 바꾸려면 원본을 수정하고 다시 빌드하세요.<br>© 2026 QUEEN MANDEOK. ALL RIGHTS RESERVED. 본 사이트는 체험용 데모입니다.</div>
+    <div class="info"><b>퀸만덕 디자인 시스템 v${VERSION}</b> · ${DATE}<br>토큰 원본 <code>public/assets/js/design-system-foundations.js</code> · 로고 원본 <code>public/assets/brand/</code> · 컴포넌트 카탈로그 <a href="${SITE}/design-system/catalog/">/design-system/catalog/</a><br>이 문서는 <code>tools/build-guide.mjs</code>가 생성합니다. 값을 바꾸려면 원본을 수정하고 다시 빌드하세요.<br>© 2026 QUEEN MANDEOK. ALL RIGHTS RESERVED. 본 사이트는 체험용 데모입니다.</div>
   </div>
 </footer>
 <div id="copytoast" role="status" aria-live="polite"></div>
@@ -762,4 +762,4 @@ ${ARTIFACT ? '' : '</body>\n</html>'}
 
 mkdirSync(dirname(out), {recursive: true});
 writeFileSync(out, html);
-console.log(`${ARTIFACT ? out : 'design-system/index.html'} 생성 (${(html.length / 1024).toFixed(1)} KB, 타입 스케일 ${typeRows.length}개, 컬러 토큰 ${Object.keys(T.color).length}개)`);
+console.log(`${ARTIFACT ? out : 'public/design-system/index.html'} 생성 (${(html.length / 1024).toFixed(1)} KB, 타입 스케일 ${typeRows.length}개, 컬러 토큰 ${Object.keys(T.color).length}개)`);

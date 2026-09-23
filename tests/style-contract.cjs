@@ -7,7 +7,8 @@ const fs=require('fs'),path=require('path'),assert=require('node:assert/strict')
  const names=Object.keys(tokens);assert.equal(new Set(names).size,names.length);
  const references=new Set();const local=new Set(['--chip-color','--ds-border','--avatar-size','--ds-icon','--sample-font-size','--sample-line-height','--sample-tracking']);
  function walk(dir){return fs.readdirSync(dir,{withFileTypes:true}).flatMap(e=>e.isDirectory()?(e.name==='vendor'?[]:walk(path.join(dir,e.name))):[path.join(dir,e.name)]);}
- const files=[...walk('public'),...walk('app')].filter(f=>/\.(css|js|php|html)$/.test(f));
+ const generated=[path.join('public','design-system','index.html')];// standalone brand guide built by tools/build-guide.mjs with its own token aliases
+ const files=[...walk('public'),...walk('app')].filter(f=>/\.(css|js|php|html)$/.test(f)&&!generated.includes(f));
  for(const file of files){
   const text=fs.readFileSync(file,'utf8').replace(/\/\*[\s\S]*?\*\//g,'');
   if(file.endsWith('.css')&&!file.endsWith('tokens.css')){

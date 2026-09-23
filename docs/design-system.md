@@ -33,7 +33,7 @@ Primary 컬러 #d73b50(Strong #bc2b44, Heavy #9e3844, Brand soft #fceff1). 로�
 
 ## 문서
 
-`/design-system/?topic=button`과 `&mode=web`으로 탐색한다. 파운데이션 8개, 컴포넌트 24개, 유틸리티 5개. 문서 검색, 상태 비교, 버튼 프리뷰, 칩 선택, 탭 키보드 이동, 스위치, 팝업 예시를 제공한다.
+`/design-system/catalog/?topic=button`과 `&mode=web`으로 탐색한다. `/design-system/`은 생성된 브랜드 가이드(`tools/build-guide.mjs`)다. 파운데이션 8개, 컴포넌트 24개, 유틸리티 5개. 문서 검색, 상태 비교, 버튼 프리뷰, 칩 선택, 탭 키보드 이동, 스위치, 팝업 예시를 제공한다.
 
 화면의 외부 디자인 출처 섹션·링크와 비교 조사 자료를 제거했다. 배포 라이브러리의 라이선스 파일은 각 vendor 파일과 함께 보관한다.
 

@@ -29,7 +29,7 @@ $ops = $page==='admin';
 <main id="main" tabindex="-1"><div class="loading container" role="status">마음이 닿는 이야기를 불러오고 있어요…</div></main>
 <footer class="site-bottom">
   <div class="site-shell">
-    <div class="bottom-links"><nav aria-label="하단 메뉴"><a href="/support/?view=terms">이용약관</a><a href="/support/?view=privacy"><strong>개인정보 안내</strong></a><a href="/about/">퀸만덕 소개</a><a href="/support/">FAQ</a><a href="/support/?view=inquiry">1:1 문의하기</a></nav><details class="footer-sites"><summary>사이트 관리 <i data-lucide="chevron-down"></i></summary><div><a href="/admin/">운영 관리</a><a href="/design-system/">디자인시스템</a></div></details></div>
+    <div class="bottom-links"><nav aria-label="하단 메뉴"><a href="/support/?view=terms">이용약관</a><a href="/support/?view=privacy"><strong>개인정보 안내</strong></a><a href="/about/">퀸만덕 소개</a><a href="/support/">FAQ</a><a href="/support/?view=inquiry">1:1 문의하기</a></nav><details class="footer-sites"><summary>사이트 관리 <i data-lucide="chevron-down"></i></summary><div><a href="/admin/">운영 관리</a><a href="/design-system/">브랜드 가이드</a><a href="/design-system/catalog/">디자인시스템</a></div></details></div>
     <div class="bottom-info"><div class="bottom-identity"><a href="/" aria-label="퀸만덕 홈"><img src="/assets/brand/logo2.svg" alt="퀸만덕" width="130" height="81"></a><div><h2>작은 마음이 모이는 곳, 퀸만덕</h2><p>작은 나눔이 모여, 더 큰 변화를 만듭니다.</p><p>본 사이트는 체험용 데모입니다. 실제 기부·결제·송금은 이루어지지 않습니다.<br>단체·사연·수치는 가상 예시이며 사진은 활동을 설명하는 스톡 이미지입니다.</p></div></div><div class="bottom-contact"><h2>후원문의·상담</h2><a href="/support/?view=inquiry">마음을 잇는 문의하기 <i data-lucide="arrow-up-right"></i></a><p>궁금한 내용을 남겨주세요.<br>내 문의와 답변은 마이페이지에서 확인할 수 있습니다.</p></div></div>
     <p class="bottom-copyright">© 2026 QUEEN MANDEOK. ALL RIGHTS RESERVED.</p>
   </div>
