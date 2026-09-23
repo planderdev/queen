@@ -10,12 +10,22 @@ export function mountAdminPresentation(){
   const host=document.createElement('div');host.className='rich-editor';area.after(host);
   import('../../vendor/sports-admin/rich-editor.js').then(({createRichEditor})=>createRichEditor(host,{body:area.value},{onChange:()=>{if(editor)area.value=editor.serialize().bodyText;}})).then(instance=>{
    if(!form.isConnected){instance.destroy();return;}editor=instance;form.adminEditor=instance;
-   area.hidden=true;area.required=false;
+   area.hidden=true;area.required=false;sync();
   });
-  form.querySelector('[name="type"]').addEventListener('change',event=>{
-   const plain=event.target.value==='recommend';host.hidden=plain;area.hidden=!plain;
-   form.adminEditor=plain?null:editor;
-  });
+  const bodyLabels={notice:'공지 본문',faq:'답변 내용',story:'스토리 본문',news:'소식 본문',banner:'배너 문구'};
+  const sync=()=>{
+   const type=form.querySelector('[name="type"]').value;
+   form.querySelectorAll('[data-content-for]').forEach(section=>{
+    const active=section.dataset.contentFor.split(' ').includes(type);
+    section.hidden=!active;
+    section.querySelectorAll('input,select,textarea').forEach(el=>el.disabled=!active);
+   });
+   const label=area.closest('.field')?.querySelector('span');if(label&&bodyLabels[type])label.textContent=bodyLabels[type];
+   const plain=type==='recommend';host.hidden=plain;form.adminEditor=plain?null:editor;
+  };
+  form.querySelector('[name="type"]').addEventListener('change',sync);
+  form.addEventListener('reset',()=>setTimeout(sync,0));
+  sync();
  }
  document.querySelectorAll('.admin-main form.panel').forEach(e=>e.className='editor-section');
 
