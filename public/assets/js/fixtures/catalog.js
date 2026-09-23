@@ -24,7 +24,11 @@ export function seedCatalog(now){
  ['장애인','누구나 편안하게\n함께하는 동네 만들기','community',3000000,3090000,30],
  ['재난·긴급지원','갑작스러운 재난 이후,\n일상으로 돌아가는 길','ocean',9000000,2010000,4],
  ['지역사회','서로의 안부를 묻는\n우리 동네 작은 식탁','meal',2500000,790000,16],
- ['어르신','이웃과 나눈 따뜻한 식탁,\n그 이후의 이야기','meal',2000000,2100000,-2]
+ ['어르신','이웃과 나눈 따뜻한 식탁,\n그 이후의 이야기','meal',2000000,2100000,-2,{publication:'ended'}],
+ // 관리자 심사 데모용: 지급 완료 후 결과보고 검토 요청 상태 (data.js의 payouts·impactReports와 연결)
+ ['아동·청소년','겨울방학에도 멈추지 않는\n아이들의 든든한 한 끼','child',3000000,3000000,-10,{publication:'ended',startDays:-40}],
+ // 관리자 심사 데모용: 새로 검토 요청된 모금함 (공개 전, 시작일 미도래)
+ ['지역사회','우리 동네 작은 도서관,\n빈 책장을 채워주세요','community',1500000,0,45,{review:'submitted',publication:'scheduled',startDays:5}]
  ];
- return specs.map((s,i)=>({id:`fund-${i+1}`,organizationId:`org-${i%3+1}`,category:s[0],title:s[1],image:photos[s[2]],target:s[3],seedAmount:s[4],region:['서울','경기','제주'][i%3],start:date(-20),end:date(s[5]),review:'approved',publication:i===8?'ended':'active',story:'한 끼의 식사, 한 권의 책, 곁을 지키는 작은 관심. 평범한 일상을 이어가는 데에는 함께하는 마음이 필요합니다. 우리 동네의 이웃들이 안정적으로 일상을 이어갈 수 있도록 여러분의 마음을 전해주세요.\n\n모인 기부금은 아래 사용 계획에 따라 사용하며, 활동 이후 결과보고를 통해 전달 과정과 집행 내역을 나누겠습니다. 이 사연은 서비스 체험을 위한 가상 예시이며 사진 속 인물은 실제 지원 대상자가 아닙니다.',budget:[{label:'물품 및 활동 지원',amount:s[3]*0.8},{label:'전달 및 운영 지원',amount:s[3]*0.2}],createdAt:date(-20+i)}));
+ return specs.map((s,i)=>{const o=s[6]||{};return {id:`fund-${i+1}`,organizationId:`org-${i%3+1}`,category:s[0],title:s[1],image:photos[s[2]],target:s[3],seedAmount:s[4],region:['서울','경기','제주'][i%3],start:date(o.startDays??-20),end:date(s[5]),review:o.review||'approved',publication:o.publication||'active',story:'한 끼의 식사, 한 권의 책, 곁을 지키는 작은 관심. 평범한 일상을 이어가는 데에는 함께하는 마음이 필요합니다. 우리 동네의 이웃들이 안정적으로 일상을 이어갈 수 있도록 여러분의 마음을 전해주세요.\n\n모인 기부금은 아래 사용 계획에 따라 사용하며, 활동 이후 결과보고를 통해 전달 과정과 집행 내역을 나누겠습니다. 이 사연은 서비스 체험을 위한 가상 예시이며 사진 속 인물은 실제 지원 대상자가 아닙니다.',budget:[{label:'물품 및 활동 지원',amount:s[3]*0.8},{label:'전달 및 운영 지원',amount:s[3]*0.2}],createdAt:date((o.startDays??-20)+i)};});
 }
