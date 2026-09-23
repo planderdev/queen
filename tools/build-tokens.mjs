@@ -1,0 +1,4 @@
+import fs from 'node:fs';
+import { foundations } from '../public/assets/js/design-system-foundations.js';
+export const tokenCss = '/* Generated from design-system-foundations.js. Run npm run build:tokens. */\n:root {\n'+Object.entries(foundations.tokens).map(([group,values])=>'  /* '+group+' */\n'+Object.entries(values).map(([name,value])=>`  ${name}: ${value};`).join('\n')).join('\n\n')+'\n}\n'+foundations.layoutBreakpoints.map(({max,gutter})=>`@media (max-width:${max}px) { :root { --layout-gutter: ${gutter}px; } }\n`).join('')+foundations.carouselBreakpoints.map(({min,gap})=>`@media (min-width:${min}px) { :root { --carousel-gap: ${gap}px; } }\n`).join('');
+if(process.argv[1]?.endsWith('build-tokens.mjs'))fs.writeFileSync(new URL('../public/assets/css/tokens.css',import.meta.url),tokenCss);

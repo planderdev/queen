@@ -1,1 +1,1 @@
-<?php $page = 'admin'; require __DIR__ . '/../../app/layout.php'; ?>
+<?php require __DIR__ . '/../../app/admin-layout.php'; ?>

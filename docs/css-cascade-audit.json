@@ -1,0 +1,100 @@
+{
+  "files": 6,
+  "duplicateProperties": 0,
+  "fragmentedSelectors": 0,
+  "fragments": [],
+  "scoped": [
+    {
+      "file": "design-system.css",
+      "selector": ".ds-stage .card-copy"
+    },
+    {
+      "file": "design-system.css",
+      "selector": ".ds-stage .table-wrap"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .container"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .narrow"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .filters"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .card-grid"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .detail-layout"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .detail-story h1"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .article-body"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .article-body h2"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .button:focus-visible"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .button.primary:focus-visible"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .card-grid"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .detail-layout"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .container"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .card-grid"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .detail-layout"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .detail-story h1"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .article-body"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site .article-body h2"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site *"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site *::before"
+    },
+    {
+      "file": "site.css",
+      "selector": ".public-site *::after"
+    }
+  ]
+}

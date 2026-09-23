@@ -1,0 +1,5 @@
+# Local visual evidence is generated, not source.
+before/
+after/
+__pycache__/
+system-*/

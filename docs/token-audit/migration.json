@@ -1,0 +1,5728 @@
+[
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "body / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "svg / width",
+    "token": "--qm-size-21",
+    "before": "var(--qm-size-21)",
+    "after": "21px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "svg / height",
+    "token": "--qm-size-21",
+    "before": "var(--qm-size-21)",
+    "after": "21px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h1 / font-size",
+    "token": "--qm-font-size-36",
+    "before": "var(--qm-font-size-36)",
+    "after": "36px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h1 / line-height",
+    "token": "--qm-leading-1_4",
+    "before": "var(--qm-leading-1_4)",
+    "after": "1.4"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h2 / font-size",
+    "token": "--qm-font-size-26",
+    "before": "var(--qm-font-size-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h2 / line-height",
+    "token": "--qm-leading-1_45",
+    "before": "var(--qm-leading-1_45)",
+    "after": "1.45"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h3 / font-size",
+    "token": "--qm-font-size-18",
+    "before": "var(--qm-font-size-18)",
+    "after": "var(--qm-font-size-headline)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h3 / line-height",
+    "token": "--qm-leading-1_6",
+    "before": "var(--qm-leading-1_6)",
+    "after": "var(--qm-leading-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".container / width",
+    "token": "--qm-container",
+    "before": "var(--qm-container)",
+    "after": "var(--qm-layout-content-width)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".container / width",
+    "token": "--qm-size-64",
+    "before": "var(--qm-size-64)",
+    "after": "64px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".skip / top",
+    "token": "--qm-size-negative-100",
+    "before": "var(--qm-size-negative-100)",
+    "after": "-100px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".skip / left",
+    "token": "--qm-size-10",
+    "before": "var(--qm-size-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".skip / z-index",
+    "token": "--qm-layer-1000",
+    "before": "var(--qm-layer-1000)",
+    "after": "var(--qm-z-skip-link)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".skip:focus / top",
+    "token": "--qm-size-8",
+    "before": "var(--qm-size-8)",
+    "after": "8px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".topline / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".topline / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".topline .container / height",
+    "token": "--qm-size-30",
+    "before": "var(--qm-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".topline span / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-header / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-header / z-index",
+    "token": "--qm-layer-20",
+    "before": "var(--qm-layer-20)",
+    "after": "var(--qm-z-header)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".header-inner / height",
+    "token": "--qm-size-86",
+    "before": "var(--qm-size-86)",
+    "after": "86px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".brand / gap",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".brand / font-size",
+    "token": "--qm-font-size-27",
+    "before": "var(--qm-font-size-27)",
+    "after": "27px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".brand / font-weight",
+    "token": "--qm-weight-900",
+    "before": "var(--qm-weight-900)",
+    "after": "900"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".brand / letter-spacing",
+    "token": "--qm-tracking-negative-1_5",
+    "before": "var(--qm-tracking-negative-1_5)",
+    "after": "-1.5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".main-nav / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".main-nav / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".main-nav a / height",
+    "token": "--qm-size-86",
+    "before": "var(--qm-size-86)",
+    "after": "86px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".main-nav a / border-bottom",
+    "token": "--qm-size-3",
+    "before": "var(--qm-size-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".main-nav a / padding-top",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".icon-button / padding",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".login-link / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-wrap / padding-top",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero / min-height",
+    "token": "--qm-size-340",
+    "before": "var(--qm-size-340)",
+    "after": "340px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-slide / min-height",
+    "token": "--qm-size-340",
+    "before": "var(--qm-size-340)",
+    "after": "340px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-text / padding",
+    "token": "--qm-space-45",
+    "before": "var(--qm-space-45)",
+    "after": "45px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-text / z-index",
+    "token": "--qm-layer-2",
+    "before": "var(--qm-layer-2)",
+    "after": "2"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero h1 / font-size",
+    "token": "--qm-font-size-35",
+    "before": "var(--qm-font-size-35)",
+    "after": "35px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero h1 / font-weight",
+    "token": "--qm-weight-750",
+    "before": "var(--qm-weight-750)",
+    "after": "750"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero h1 / line-height",
+    "token": "--qm-leading-1_45",
+    "before": "var(--qm-leading-1_45)",
+    "after": "1.45"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero h1 / letter-spacing",
+    "token": "--qm-tracking-negative-1_8",
+    "before": "var(--qm-tracking-negative-1_8)",
+    "after": "-1.8px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero p / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero p / line-height",
+    "token": "--qm-leading-1_9",
+    "before": "var(--qm-leading-1_9)",
+    "after": "1.9"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero p / margin-bottom",
+    "token": "--qm-space-23",
+    "before": "var(--qm-space-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero .button / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero .button / padding",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero .button / min-height",
+    "token": "--qm-size-42",
+    "before": "var(--qm-size-42)",
+    "after": "42px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / bottom",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / right",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / z-index",
+    "token": "--qm-layer-3",
+    "before": "var(--qm-layer-3)",
+    "after": "3"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / border-radius",
+    "token": "--qm-radius-30",
+    "before": "var(--qm-radius-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / padding",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / padding",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls button / width",
+    "token": "--qm-size-25",
+    "before": "var(--qm-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls button / height",
+    "token": "--qm-size-25",
+    "before": "var(--qm-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls button / padding",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls svg / width",
+    "token": "--qm-size-15",
+    "before": "var(--qm-size-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".hero-controls svg / height",
+    "token": "--qm-size-15",
+    "before": "var(--qm-size-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".section / padding-top",
+    "token": "--qm-space-51",
+    "before": "var(--qm-space-51)",
+    "after": "51px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".section / padding-bottom",
+    "token": "--qm-space-5",
+    "before": "var(--qm-space-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".section-head / margin-bottom",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".section-head h2 / font-size",
+    "token": "--qm-font-size-24",
+    "before": "var(--qm-font-size-24)",
+    "after": "var(--qm-font-size-title-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".section-head h2 / font-weight",
+    "token": "--qm-weight-750",
+    "before": "var(--qm-weight-750)",
+    "after": "750"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".section-head p / margin",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".section-head p / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".text-link / gap",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".text-link / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".text-link svg / width",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav / padding",
+    "token": "--qm-space-26",
+    "before": "var(--qm-space-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav / padding",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav a / gap",
+    "token": "--qm-space-9",
+    "before": "var(--qm-space-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav a / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav a / min-width",
+    "token": "--qm-size-65",
+    "before": "var(--qm-size-65)",
+    "after": "65px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav .category-icon / width",
+    "token": "--qm-size-49",
+    "before": "var(--qm-size-49)",
+    "after": "49px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav .category-icon / height",
+    "token": "--qm-size-49",
+    "before": "var(--qm-size-49)",
+    "after": "49px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav .category-icon / transition",
+    "token": "--qm-duration-200",
+    "before": "var(--qm-duration-200)",
+    "after": "var(--qm-motion-transition)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav svg / width",
+    "token": "--qm-size-25",
+    "before": "var(--qm-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav svg / height",
+    "token": "--qm-size-25",
+    "before": "var(--qm-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-nav a.active / font-weight",
+    "token": "--qm-weight-700",
+    "before": "var(--qm-weight-700)",
+    "after": "var(--qm-weight-bold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".fund-card / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".fund-card / transition",
+    "token": "--qm-duration-200",
+    "before": "var(--qm-duration-200)",
+    "after": "var(--qm-motion-transition)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".fund-card / transition",
+    "token": "--qm-duration-200",
+    "before": "var(--qm-duration-200)",
+    "after": "var(--qm-motion-transition)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".fund-card:hover / box-shadow",
+    "token": "--qm-shadow",
+    "before": "var(--qm-shadow)",
+    "after": "var(--qm-shadow-raised)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-image img / transition",
+    "token": "--qm-duration-350",
+    "before": "var(--qm-duration-350)",
+    "after": "var(--qm-motion-image)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".image-badge / top",
+    "token": "--qm-size-13",
+    "before": "var(--qm-size-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".image-badge / left",
+    "token": "--qm-size-13",
+    "before": "var(--qm-size-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".image-badge / padding",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".image-badge / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".image-badge / font-weight",
+    "token": "--qm-weight-700",
+    "before": "var(--qm-weight-700)",
+    "after": "var(--qm-weight-bold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".bookmark / right",
+    "token": "--qm-size-10",
+    "before": "var(--qm-size-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".bookmark / top",
+    "token": "--qm-size-12",
+    "before": "var(--qm-size-12)",
+    "after": "12px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".bookmark / width",
+    "token": "--qm-size-30",
+    "before": "var(--qm-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".bookmark / height",
+    "token": "--qm-size-30",
+    "before": "var(--qm-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".bookmark svg / width",
+    "token": "--qm-size-17",
+    "before": "var(--qm-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".bookmark svg / height",
+    "token": "--qm-size-17",
+    "before": "var(--qm-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-label / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".category-label / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-copy h3 / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-copy h3 / line-height",
+    "token": "--qm-leading-1_55",
+    "before": "var(--qm-leading-1_55)",
+    "after": "1.55"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-copy h3 / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-copy h3 / margin",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-copy h3 / margin",
+    "token": "--qm-space-9",
+    "before": "var(--qm-space-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-copy h3 / min-height",
+    "token": "--qm-size-49",
+    "before": "var(--qm-size-49)",
+    "after": "49px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".org-label / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".progress / height",
+    "token": "--qm-size-4",
+    "before": "var(--qm-size-4)",
+    "after": "4px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-numbers / margin-top",
+    "token": "--qm-space-11",
+    "before": "var(--qm-space-11)",
+    "after": "11px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-numbers / gap",
+    "token": "--qm-space-5",
+    "before": "var(--qm-space-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-numbers strong / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-numbers b / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-numbers b / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-numbers small / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-numbers small / font-weight",
+    "token": "--qm-weight-400",
+    "before": "var(--qm-weight-400)",
+    "after": "var(--qm-weight-regular)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip / margin-top",
+    "token": "--qm-space-34",
+    "before": "var(--qm-space-34)",
+    "after": "34px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip / border-radius",
+    "token": "--qm-radius-10",
+    "before": "var(--qm-radius-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip / padding",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip .intro / gap",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip .intro svg / width",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip .intro svg / height",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip strong / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip p / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-strip p / margin",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-number / font-size",
+    "token": "--qm-font-size-22",
+    "before": "var(--qm-font-size-22)",
+    "after": "var(--qm-font-size-heading)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-number / font-weight",
+    "token": "--qm-weight-750",
+    "before": "var(--qm-weight-750)",
+    "after": "750"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-number small / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".impact-number small / font-weight",
+    "token": "--qm-weight-400",
+    "before": "var(--qm-weight-400)",
+    "after": "var(--qm-weight-regular)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner / padding",
+    "token": "--qm-space-29",
+    "before": "var(--qm-space-29)",
+    "after": "29px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner / padding",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner h3 / font-size",
+    "token": "--qm-font-size-21",
+    "before": "var(--qm-font-size-21)",
+    "after": "21px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner h3 / margin",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner h3 / margin",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner p / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner img / width",
+    "token": "--qm-size-125",
+    "before": "var(--qm-size-125)",
+    "after": "125px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".mini-banner img / height",
+    "token": "--qm-size-125",
+    "before": "var(--qm-size-125)",
+    "after": "125px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".eyebrow / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".eyebrow / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".eyebrow / letter-spacing",
+    "token": "--qm-tracking-1",
+    "before": "var(--qm-tracking-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-grid / gap",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-card img / border-radius",
+    "token": "--qm-radius-11",
+    "before": "var(--qm-radius-11)",
+    "after": "11px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-card img / margin-bottom",
+    "token": "--qm-space-17",
+    "before": "var(--qm-space-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-card h3 / font-size",
+    "token": "--qm-font-size-17",
+    "before": "var(--qm-font-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-card h3 / margin",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-card p / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice-row / margin-top",
+    "token": "--qm-space-45",
+    "before": "var(--qm-space-45)",
+    "after": "45px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice-row / padding",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice-row / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice-row / gap",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice-row / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer / margin-top",
+    "token": "--qm-space-70",
+    "before": "var(--qm-space-70)",
+    "after": "70px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer / padding",
+    "token": "--qm-space-37",
+    "before": "var(--qm-space-37)",
+    "after": "37px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer / padding",
+    "token": "--qm-space-27",
+    "before": "var(--qm-space-27)",
+    "after": "27px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".footer-top .brand / font-size",
+    "token": "--qm-font-size-23",
+    "before": "var(--qm-font-size-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".footer-top>div,.footer-bottom>div / gap",
+    "token": "--qm-space-23",
+    "before": "var(--qm-space-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer p / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer .fine / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".site-footer .fine / line-height",
+    "token": "--qm-leading-1_9",
+    "before": "var(--qm-leading-1_9)",
+    "after": "1.9"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".footer-bottom / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".footer-bottom / margin-top",
+    "token": "--qm-space-26",
+    "before": "var(--qm-space-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".footer-bottom / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".page-heading / padding",
+    "token": "--qm-space-46",
+    "before": "var(--qm-space-46)",
+    "after": "46px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".page-heading / padding",
+    "token": "--qm-space-26",
+    "before": "var(--qm-space-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".page-heading h1 / font-size",
+    "token": "--qm-font-size-32",
+    "before": "var(--qm-font-size-32)",
+    "after": "var(--qm-font-size-title)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".page-heading h1 / margin",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".page-heading p / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.small / min-height",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.small / padding",
+    "token": "--qm-space-5",
+    "before": "var(--qm-space-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.small / padding",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.small / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".actions / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".badge / line-height",
+    "token": "--qm-leading-1_5",
+    "before": "var(--qm-leading-1_5)",
+    "after": "1.5"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".filters / gap",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".filters / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".filters / border-radius",
+    "token": "--qm-radius-10",
+    "before": "var(--qm-radius-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".filters / margin",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field>span / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field textarea,.field select / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field textarea,.field select / border-radius",
+    "token": "--qm-radius-7",
+    "before": "var(--qm-radius-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field textarea,.field select / padding",
+    "token": "--qm-space-11",
+    "before": "var(--qm-space-11)",
+    "after": "11px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field textarea,.field select / padding",
+    "token": "--qm-space-13",
+    "before": "var(--qm-space-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field textarea,.field select / min-height",
+    "token": "--qm-size-45",
+    "before": "var(--qm-size-45)",
+    "after": "45px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field textarea,.field select / outline-offset",
+    "token": "--qm-size-2",
+    "before": "var(--qm-size-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field small,.help / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".checkbox / gap",
+    "token": "--qm-space-9",
+    "before": "var(--qm-space-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".checkbox / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".checkbox input / width",
+    "token": "--qm-size-17",
+    "before": "var(--qm-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".checkbox input / height",
+    "token": "--qm-size-17",
+    "before": "var(--qm-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".list-meta / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".list-meta / margin",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".pagination / margin-top",
+    "token": "--qm-space-35",
+    "before": "var(--qm-space-35)",
+    "after": "35px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".tabs / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".tabs a / border-bottom",
+    "token": "--qm-size-2",
+    "before": "var(--qm-size-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".tabs [aria-current] / font-weight",
+    "token": "--qm-weight-700",
+    "before": "var(--qm-weight-700)",
+    "after": "var(--qm-weight-bold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".detail-layout / padding-top",
+    "token": "--qm-space-34",
+    "before": "var(--qm-space-34)",
+    "after": "34px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".breadcrumb / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".detail-story h1 / font-size",
+    "token": "--qm-font-size-34",
+    "before": "var(--qm-font-size-34)",
+    "after": "34px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".detail-story h1 / line-height",
+    "token": "--qm-leading-1_45",
+    "before": "var(--qm-leading-1_45)",
+    "after": "1.45"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".detail-story h1 / margin",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".detail-cover / margin-bottom",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".article-body / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".article-body h2 / font-size",
+    "token": "--qm-font-size-24",
+    "before": "var(--qm-font-size-24)",
+    "after": "var(--qm-font-size-title-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".article-body h2 / margin",
+    "token": "--qm-space-34",
+    "before": "var(--qm-space-34)",
+    "after": "34px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".article-caption / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".article-caption / margin",
+    "token": "--qm-space-9",
+    "before": "var(--qm-space-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".article-caption / margin",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary / top",
+    "token": "--qm-size-28",
+    "before": "var(--qm-size-28)",
+    "after": "28px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary / margin-top",
+    "token": "--qm-space-37",
+    "before": "var(--qm-space-37)",
+    "after": "37px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary / box-shadow",
+    "token": "--qm-shadow-0",
+    "before": "var(--qm-shadow-0)",
+    "after": "var(--qm-shadow-panel)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary h2 / font-size",
+    "token": "--qm-font-size-31",
+    "before": "var(--qm-font-size-31)",
+    "after": "31px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary h2 / margin",
+    "token": "--qm-space-17",
+    "before": "var(--qm-space-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary h2 / margin",
+    "token": "--qm-space-13",
+    "before": "var(--qm-space-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary .progress / height",
+    "token": "--qm-size-6",
+    "before": "var(--qm-size-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".donation-summary .progress / margin-bottom",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".summary-row / gap",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".summary-row / margin",
+    "token": "--qm-space-13",
+    "before": "var(--qm-space-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".summary-row / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".summary-org / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".summary-org / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice / margin-bottom",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice svg / width",
+    "token": "--qm-size-18",
+    "before": "var(--qm-size-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice svg / height",
+    "token": "--qm-size-18",
+    "before": "var(--qm-size-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice svg / margin-top",
+    "token": "--qm-space-2",
+    "before": "var(--qm-space-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".panel / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".panel / margin-bottom",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".panel h2 / margin-bottom",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".panel h3 / margin-bottom",
+    "token": "--qm-space-13",
+    "before": "var(--qm-space-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".narrow / max-width",
+    "token": "--qm-size-700",
+    "before": "var(--qm-size-700)",
+    "after": "700px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".auth-box / max-width",
+    "token": "--qm-size-450",
+    "before": "var(--qm-size-450)",
+    "after": "450px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".auth-box / margin",
+    "token": "--qm-space-55",
+    "before": "var(--qm-space-55)",
+    "after": "55px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".auth-box / padding",
+    "token": "--qm-space-35",
+    "before": "var(--qm-space-35)",
+    "after": "35px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".auth-box / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".auth-box / border-radius",
+    "token": "--qm-radius-14",
+    "before": "var(--qm-radius-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".steps / margin",
+    "token": "--qm-space-27",
+    "before": "var(--qm-space-27)",
+    "after": "27px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".steps li / border-bottom",
+    "token": "--qm-size-3",
+    "before": "var(--qm-size-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".steps li / padding",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".steps li / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".steps li.active / font-weight",
+    "token": "--qm-weight-700",
+    "before": "var(--qm-weight-700)",
+    "after": "var(--qm-weight-bold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".amount-options / margin",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".amount-options / margin",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".amount-options .button / padding",
+    "token": "--qm-space-9",
+    "before": "var(--qm-space-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".amount-input input / font-size",
+    "token": "--qm-font-size-27",
+    "before": "var(--qm-font-size-27)",
+    "after": "27px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".amount-input input / font-weight",
+    "token": "--qm-weight-700",
+    "before": "var(--qm-weight-700)",
+    "after": "var(--qm-weight-bold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".check-row / padding",
+    "token": "--qm-space-13",
+    "before": "var(--qm-space-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".check-row / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".check-row / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".success-icon / margin",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".success-icon / margin",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".success-icon / width",
+    "token": "--qm-size-70",
+    "before": "var(--qm-size-70)",
+    "after": "70px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".success-icon / height",
+    "token": "--qm-size-70",
+    "before": "var(--qm-size-70)",
+    "after": "70px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".success-icon svg / width",
+    "token": "--qm-size-35",
+    "before": "var(--qm-size-35)",
+    "after": "35px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".success-icon svg / height",
+    "token": "--qm-size-35",
+    "before": "var(--qm-size-35)",
+    "after": "35px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty / padding",
+    "token": "--qm-space-58",
+    "before": "var(--qm-space-58)",
+    "after": "58px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty / padding",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty>svg / width",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty>svg / height",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty h3 / font-size",
+    "token": "--qm-font-size-19",
+    "before": "var(--qm-font-size-19)",
+    "after": "19px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty h3 / margin-bottom",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".empty p / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".form-error / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".table-wrap / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "table / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "th / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "th / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "th,td / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "td .actions / gap",
+    "token": "--qm-space-5",
+    "before": "var(--qm-space-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "td .button / padding",
+    "token": "--qm-space-5",
+    "before": "var(--qm-space-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "td .button / padding",
+    "token": "--qm-space-9",
+    "before": "var(--qm-space-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "td .button / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "td .button / min-height",
+    "token": "--qm-size-30",
+    "before": "var(--qm-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "td small / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".stat / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".stat span / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".stat strong / font-size",
+    "token": "--qm-font-size-25",
+    "before": "var(--qm-font-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".stat strong / margin-top",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".stat small / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-shell / grid-template-columns",
+    "token": "--qm-size-210",
+    "before": "var(--qm-size-210)",
+    "after": "210px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-shell / min-height",
+    "token": "--qm-size-800",
+    "before": "var(--qm-size-800)",
+    "after": "800px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-shell / gap",
+    "token": "--qm-space-35",
+    "before": "var(--qm-space-35)",
+    "after": "35px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar / padding",
+    "token": "--qm-space-34",
+    "before": "var(--qm-space-34)",
+    "after": "34px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar / padding",
+    "token": "--qm-space-18",
+    "before": "var(--qm-space-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar / padding",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar / border-right",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar h2 / font-size",
+    "token": "--qm-font-size-18",
+    "before": "var(--qm-font-size-18)",
+    "after": "var(--qm-font-size-headline)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar a / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar a / padding",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar a svg / width",
+    "token": "--qm-size-17",
+    "before": "var(--qm-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar a svg / height",
+    "token": "--qm-size-17",
+    "before": "var(--qm-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar a.active / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-content / padding-bottom",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-content .page-heading / padding-top",
+    "token": "--qm-space-33",
+    "before": "var(--qm-space-33)",
+    "after": "33px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-content .page-heading h1 / font-size",
+    "token": "--qm-font-size-28",
+    "before": "var(--qm-font-size-28)",
+    "after": "28px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".comment / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".comment p / margin",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-hero / border-radius",
+    "token": "--qm-radius-15",
+    "before": "var(--qm-radius-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-hero / margin",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-hero / margin",
+    "token": "--qm-space-38",
+    "before": "var(--qm-space-38)",
+    "after": "38px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-hero>div / padding",
+    "token": "--qm-space-38",
+    "before": "var(--qm-space-38)",
+    "after": "38px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-hero img / min-height",
+    "token": "--qm-size-310",
+    "before": "var(--qm-size-310)",
+    "after": "310px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-hero h2 / margin",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".story-hero h2 / font-size",
+    "token": "--qm-font-size-30",
+    "before": "var(--qm-font-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / right",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / bottom",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / z-index",
+    "token": "--qm-layer-40",
+    "before": "var(--qm-layer-40)",
+    "after": "var(--qm-z-demo-launch)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / border-radius",
+    "token": "--qm-radius-30",
+    "before": "var(--qm-radius-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / padding",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / padding",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / box-shadow",
+    "token": "--qm-shadow-1",
+    "before": "var(--qm-shadow-1)",
+    "after": "var(--qm-shadow-floating)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch svg / width",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".demo-launch svg / height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "dialog / box-shadow",
+    "token": "--qm-shadow-2",
+    "before": "var(--qm-shadow-2)",
+    "after": "var(--qm-shadow-dialog)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".dialog-head / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".dialog-head / z-index",
+    "token": "--qm-layer-1",
+    "before": "var(--qm-layer-1)",
+    "after": "1"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".dialog-head h2 / font-size",
+    "token": "--qm-font-size-20",
+    "before": "var(--qm-font-size-20)",
+    "after": "var(--qm-font-size-heading-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / bottom",
+    "token": "--qm-size-80",
+    "before": "var(--qm-size-80)",
+    "after": "80px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / transform",
+    "token": "--qm-size-15",
+    "before": "var(--qm-size-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / z-index",
+    "token": "--qm-layer-10000",
+    "before": "var(--qm-layer-10000)",
+    "after": "var(--qm-z-toast)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / transition",
+    "token": "--qm-duration-200",
+    "before": "var(--qm-duration-200)",
+    "after": "var(--qm-motion-transition)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / max-width",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / box-shadow",
+    "token": "--qm-shadow",
+    "before": "var(--qm-shadow)",
+    "after": "var(--qm-shadow-raised)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion / border-radius",
+    "token": "--qm-radius-9",
+    "before": "var(--qm-radius-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion section+section / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion-trigger / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion-trigger small / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion-trigger small / font-weight",
+    "token": "--qm-weight-400",
+    "before": "var(--qm-weight-400)",
+    "after": "var(--qm-weight-regular)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion-trigger small / margin-top",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion-panel / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".upload-preview / max-width",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".upload-preview / max-height",
+    "token": "--qm-size-120",
+    "before": "var(--qm-size-120)",
+    "after": "120px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".upload-preview / border-radius",
+    "token": "--qm-radius-7",
+    "before": "var(--qm-radius-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".upload-preview / margin",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".skeleton / height",
+    "token": "--qm-size-130",
+    "before": "var(--qm-size-130)",
+    "after": "130px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".skeleton / border-radius",
+    "token": "--qm-radius-10",
+    "before": "var(--qm-radius-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".skeleton / animation",
+    "token": "--qm-duration-1400",
+    "before": "var(--qm-duration-1400)",
+    "after": "var(--qm-motion-skeleton)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".preview-paper / padding",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".preview-paper / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".preview-paper / border-radius",
+    "token": "--qm-radius-10",
+    "before": "var(--qm-radius-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".chart / gap",
+    "token": "--qm-space-13",
+    "before": "var(--qm-space-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".chart / height",
+    "token": "--qm-size-140",
+    "before": "var(--qm-size-140)",
+    "after": "140px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".chart-bar / min-width",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".chart-bar / border-radius",
+    "token": "--qm-radius-5",
+    "before": "var(--qm-radius-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".chart-bar / border-radius",
+    "token": "--qm-radius-5",
+    "before": "var(--qm-radius-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".file-info / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".radio-group / gap",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".radio-group label / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".radio-group label / border-radius",
+    "token": "--qm-radius-7",
+    "before": "var(--qm-radius-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".radio-group label / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1440px) / .hero / min-height",
+    "token": "--qm-size-355",
+    "before": "var(--qm-size-355)",
+    "after": "355px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1440px) / .hero-slide / min-height",
+    "token": "--qm-size-355",
+    "before": "var(--qm-size-355)",
+    "after": "355px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1440px) / .hero-text / padding-block",
+    "token": "--qm-space-44",
+    "before": "var(--qm-space-44)",
+    "after": "44px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1440px) / .hero h1 / font-size",
+    "token": "--qm-font-size-37",
+    "before": "var(--qm-font-size-37)",
+    "after": "37px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .main-nav / gap",
+    "token": "--qm-space-23",
+    "before": "var(--qm-space-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .card-grid / gap",
+    "token": "--qm-space-17",
+    "before": "var(--qm-space-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .card-copy / padding",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .card-copy h3 / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .detail-layout / grid-template-columns",
+    "token": "--qm-size-310",
+    "before": "var(--qm-size-310)",
+    "after": "310px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .detail-layout / gap",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .category-nav / gap",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .ops-shell / grid-template-columns",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .ops-shell / gap",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .hero h1 / font-size",
+    "token": "--qm-font-size-32",
+    "before": "var(--qm-font-size-32)",
+    "after": "var(--qm-font-size-title)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .stat / padding",
+    "token": "--qm-space-18",
+    "before": "var(--qm-space-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:1100px) / .stat strong / font-size",
+    "token": "--qm-font-size-22",
+    "before": "var(--qm-font-size-22)",
+    "after": "var(--qm-font-size-heading)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .container / width",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .header-inner / height",
+    "token": "--qm-size-75",
+    "before": "var(--qm-size-75)",
+    "after": "75px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .header-inner / gap",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .site-header .container / padding-top",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .brand / font-size",
+    "token": "--qm-font-size-24",
+    "before": "var(--qm-font-size-24)",
+    "after": "var(--qm-font-size-title-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .main-nav a / height",
+    "token": "--qm-size-47",
+    "before": "var(--qm-size-47)",
+    "after": "47px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .main-nav a / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .topline .container / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero-wrap / padding-top",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero-slide / min-height",
+    "token": "--qm-size-290",
+    "before": "var(--qm-size-290)",
+    "after": "290px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero / min-height",
+    "token": "--qm-size-290",
+    "before": "var(--qm-size-290)",
+    "after": "290px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero-text / padding",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero h1 / font-size",
+    "token": "--qm-font-size-27",
+    "before": "var(--qm-font-size-27)",
+    "after": "27px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero p / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero-controls / bottom",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero-controls / right",
+    "token": "--qm-size-15",
+    "before": "var(--qm-size-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero .button / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero .button / padding",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .hero .button / min-height",
+    "token": "--qm-size-38",
+    "before": "var(--qm-size-38)",
+    "after": "38px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .category-nav / gap",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .category-nav a / min-width",
+    "token": "--qm-size-60",
+    "before": "var(--qm-size-60)",
+    "after": "60px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .card-grid / gap",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .section-head h2 / font-size",
+    "token": "--qm-font-size-23",
+    "before": "var(--qm-font-size-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .card-copy h3 / font-size",
+    "token": "--qm-font-size-17",
+    "before": "var(--qm-font-size-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .mini-banner / padding",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .story-grid / gap",
+    "token": "--qm-space-18",
+    "before": "var(--qm-space-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .story-card h3 / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .mobile-donate / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .mobile-donate / gap",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .mobile-donate / z-index",
+    "token": "--qm-layer-30",
+    "before": "var(--qm-layer-30)",
+    "after": "var(--qm-z-mobile-cta)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .mobile-donate strong / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .has-mobile-cta / padding-bottom",
+    "token": "--qm-space-85",
+    "before": "var(--qm-space-85)",
+    "after": "85px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .has-mobile-cta .demo-launch / bottom",
+    "token": "--qm-size-95",
+    "before": "var(--qm-size-95)",
+    "after": "95px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .ops-sidebar / gap",
+    "token": "--qm-space-5",
+    "before": "var(--qm-space-5)",
+    "after": "5px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .footer-top>div / gap",
+    "token": "--qm-space-13",
+    "before": "var(--qm-space-13)",
+    "after": "13px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .footer-top>div / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .story-hero>div / padding",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:800px) / .story-hero h2 / font-size",
+    "token": "--qm-font-size-24",
+    "before": "var(--qm-font-size-24)",
+    "after": "var(--qm-font-size-title-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .container / width",
+    "token": "--qm-size-36",
+    "before": "var(--qm-size-36)",
+    "after": "36px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .login-link / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .brand / font-size",
+    "token": "--qm-font-size-23",
+    "before": "var(--qm-font-size-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero-wrap / padding-top",
+    "token": "--qm-space-18",
+    "before": "var(--qm-space-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero-slide / min-height",
+    "token": "--qm-size-460",
+    "before": "var(--qm-size-460)",
+    "after": "460px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero / min-height",
+    "token": "--qm-size-460",
+    "before": "var(--qm-size-460)",
+    "after": "460px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero-text / padding",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero p / margin-bottom",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero-controls / bottom",
+    "token": "--qm-size-15",
+    "before": "var(--qm-size-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-nav / padding-top",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-nav / padding-bottom",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-nav / gap",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-icon / width",
+    "token": "--qm-size-43",
+    "before": "var(--qm-size-43)",
+    "after": "43px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-icon / height",
+    "token": "--qm-size-43",
+    "before": "var(--qm-size-43)",
+    "after": "43px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-nav a / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-nav a / min-width",
+    "token": "--qm-size-53",
+    "before": "var(--qm-size-53)",
+    "after": "53px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .section-head / margin-bottom",
+    "token": "--qm-space-18",
+    "before": "var(--qm-space-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .section-head p / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .text-link / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .text-link / gap",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .category-label / font-size",
+    "token": "--qm-font-size-9",
+    "before": "var(--qm-font-size-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-copy h3 / line-height",
+    "token": "--qm-leading-1_65",
+    "before": "var(--qm-leading-1_65)",
+    "after": "1.65"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-copy h3 / min-height",
+    "token": "--qm-size-43",
+    "before": "var(--qm-size-43)",
+    "after": "43px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-copy h3 / margin",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .org-label / font-size",
+    "token": "--qm-font-size-9",
+    "before": "var(--qm-font-size-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .org-label / margin-bottom",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-numbers / gap",
+    "token": "--qm-space-2",
+    "before": "var(--qm-space-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-numbers / margin-top",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-numbers strong / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-numbers b / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-numbers small / font-size",
+    "token": "--qm-font-size-9",
+    "before": "var(--qm-font-size-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .image-badge / top",
+    "token": "--qm-size-8",
+    "before": "var(--qm-size-8)",
+    "after": "8px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .image-badge / left",
+    "token": "--qm-size-8",
+    "before": "var(--qm-size-8)",
+    "after": "8px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .image-badge / font-size",
+    "token": "--qm-font-size-9",
+    "before": "var(--qm-font-size-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .image-badge / padding",
+    "token": "--qm-space-2",
+    "before": "var(--qm-space-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .image-badge / padding",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .bookmark / top",
+    "token": "--qm-size-6",
+    "before": "var(--qm-size-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .bookmark / right",
+    "token": "--qm-size-6",
+    "before": "var(--qm-size-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .bookmark / width",
+    "token": "--qm-size-25",
+    "before": "var(--qm-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .bookmark / height",
+    "token": "--qm-size-25",
+    "before": "var(--qm-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .bookmark svg / width",
+    "token": "--qm-size-14",
+    "before": "var(--qm-size-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .bookmark svg / height",
+    "token": "--qm-size-14",
+    "before": "var(--qm-size-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .impact-number / font-size",
+    "token": "--qm-font-size-20",
+    "before": "var(--qm-font-size-20)",
+    "after": "var(--qm-font-size-heading-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .impact-number small / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .mini-banner / padding",
+    "token": "--qm-space-22",
+    "before": "var(--qm-space-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .mini-banner img / width",
+    "token": "--qm-size-82",
+    "before": "var(--qm-size-82)",
+    "after": "82px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .mini-banner img / height",
+    "token": "--qm-size-82",
+    "before": "var(--qm-size-82)",
+    "after": "82px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .mini-banner h3 / font-size",
+    "token": "--qm-font-size-19",
+    "before": "var(--qm-font-size-19)",
+    "after": "19px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .story-card / grid-template-columns",
+    "token": "--qm-size-115",
+    "before": "var(--qm-size-115)",
+    "after": "115px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .story-card / gap",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .story-card img / height",
+    "token": "--qm-size-100",
+    "before": "var(--qm-size-100)",
+    "after": "100px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .story-card h3 / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .story-card p / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .notice-row / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .site-footer / margin-top",
+    "token": "--qm-space-45",
+    "before": "var(--qm-space-45)",
+    "after": "45px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .site-footer / padding-bottom",
+    "token": "--qm-space-75",
+    "before": "var(--qm-space-75)",
+    "after": "75px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .footer-top>div / gap",
+    "token": "--qm-space-11",
+    "before": "var(--qm-space-11)",
+    "after": "11px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .site-footer .fine / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .page-heading / padding-top",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .page-heading h1 / font-size",
+    "token": "--qm-font-size-27",
+    "before": "var(--qm-font-size-27)",
+    "after": "27px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .page-heading p / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .panel h2 / font-size",
+    "token": "--qm-font-size-19",
+    "before": "var(--qm-font-size-19)",
+    "after": "19px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .filters / padding",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .field>span / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .filters select / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .filters select / padding",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .detail-story h1 / font-size",
+    "token": "--qm-font-size-27",
+    "before": "var(--qm-font-size-27)",
+    "after": "27px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .detail-layout / padding-top",
+    "token": "--qm-space-23",
+    "before": "var(--qm-space-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .article-body / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .article-body h2 / font-size",
+    "token": "--qm-font-size-21",
+    "before": "var(--qm-font-size-21)",
+    "after": "21px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .tabs / gap",
+    "token": "--qm-space-23",
+    "before": "var(--qm-space-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .tabs a / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .donation-summary / padding",
+    "token": "--qm-space-23",
+    "before": "var(--qm-space-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .stat-grid,.operations .stat-grid / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .stat strong / font-size",
+    "token": "--qm-font-size-20",
+    "before": "var(--qm-font-size-20)",
+    "after": "var(--qm-font-size-heading-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .stat span / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .story-hero img / height",
+    "token": "--qm-size-210",
+    "before": "var(--qm-size-210)",
+    "after": "210px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .story-hero h2 / font-size",
+    "token": "--qm-font-size-25",
+    "before": "var(--qm-font-size-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .dialog-head / padding",
+    "token": "--qm-space-17",
+    "before": "var(--qm-space-17)",
+    "after": "17px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .demo-launch / right",
+    "token": "--qm-size-12",
+    "before": "var(--qm-size-12)",
+    "after": "12px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .demo-launch / bottom",
+    "token": "--qm-size-12",
+    "before": "var(--qm-size-12)",
+    "after": "12px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .demo-launch / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .demo-launch / padding",
+    "token": "--qm-space-9",
+    "before": "var(--qm-space-9)",
+    "after": "9px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / table / min-width",
+    "token": "--qm-size-560",
+    "before": "var(--qm-size-560)",
+    "after": "560px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .auth-box / padding",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .auth-box / margin",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .steps li / font-size",
+    "token": "--qm-font-size-10",
+    "before": "var(--qm-font-size-10)",
+    "after": "var(--qm-font-size-compact)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .check-row / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "body / letter-spacing",
+    "token": "--qm-tracking-_0057",
+    "before": "var(--qm-tracking-_0057)",
+    "after": ".0057em"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "body / line-height",
+    "token": "--qm-leading-1_6",
+    "before": "var(--qm-leading-1_6)",
+    "after": "var(--qm-leading-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h1 / letter-spacing",
+    "token": "--qm-tracking-negative-_0253",
+    "before": "var(--qm-tracking-negative-_0253)",
+    "after": "var(--qm-tracking-title)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h2 / letter-spacing",
+    "token": "--qm-tracking-negative-_023",
+    "before": "var(--qm-tracking-negative-_023)",
+    "after": "-.023em"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "h3 / letter-spacing",
+    "token": "--qm-tracking-negative-_002",
+    "before": "var(--qm-tracking-negative-_002)",
+    "after": "var(--qm-tracking-headline)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".brand-logo / width",
+    "token": "--qm-size-222",
+    "before": "var(--qm-size-222)",
+    "after": "222px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".footer-brand img / width",
+    "token": "--qm-size-130",
+    "before": "var(--qm-size-130)",
+    "after": "130px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".card-copy h3 / letter-spacing",
+    "token": "--qm-tracking-negative-_002",
+    "before": "var(--qm-tracking-negative-_002)",
+    "after": "var(--qm-tracking-headline)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".fund-card:hover / transform",
+    "token": "--qm-size-negative-2",
+    "before": "var(--qm-size-negative-2)",
+    "after": "-2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / min-height",
+    "token": "--qm-size-48",
+    "before": "var(--qm-size-48)",
+    "after": "48px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / line-height",
+    "token": "--qm-size-22",
+    "before": "var(--qm-size-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / letter-spacing",
+    "token": "--qm-tracking-_0096",
+    "before": "var(--qm-tracking-_0096)",
+    "after": ".0096em"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / transition",
+    "token": "--qm-duration-180",
+    "before": "var(--qm-duration-180)",
+    "after": "var(--qm-motion-feedback)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button / transition",
+    "token": "--qm-duration-180",
+    "before": "var(--qm-duration-180)",
+    "after": "var(--qm-motion-feedback)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button:active:not(:disabled),.icon-button:active / box-shadow",
+    "token": "--qm-shadow-3",
+    "before": "var(--qm-shadow-3)",
+    "after": "var(--qm-shadow-pressed)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.small,td .button / min-height",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.small,td .button / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.small,td .button / line-height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".button.large / min-height",
+    "token": "--qm-size-56",
+    "before": "var(--qm-size-56)",
+    "after": "56px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".icon-button / width",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".icon-button / height",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".spinner / width",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".spinner / height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".spinner / border",
+    "token": "--qm-size-2",
+    "before": "var(--qm-size-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".spinner / animation",
+    "token": "--qm-duration-900",
+    "before": "var(--qm-duration-900)",
+    "after": "var(--qm-motion-spinner)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field / line-height",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field select,.field textarea / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field select,.field textarea / min-height",
+    "token": "--qm-size-48",
+    "before": "var(--qm-size-48)",
+    "after": "48px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field select,.field textarea / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".field input,.field select,.field textarea / line-height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".checkbox / min-height",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".notice / line-height",
+    "token": "--qm-size-22",
+    "before": "var(--qm-size-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".panel h2 / font-size",
+    "token": "--qm-font-size-22",
+    "before": "var(--qm-font-size-22)",
+    "after": "var(--qm-font-size-heading)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".panel h2 / line-height",
+    "token": "--qm-size-30",
+    "before": "var(--qm-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".tabs a / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".tabs a / line-height",
+    "token": "--qm-size-22",
+    "before": "var(--qm-size-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".badge,.image-badge / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".badge / border-radius",
+    "token": "--qm-radius-6",
+    "before": "var(--qm-radius-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".badge / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".badge.brand / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".ops-sidebar a / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".detail-layout / grid-template-columns",
+    "token": "--qm-size-340",
+    "before": "var(--qm-size-340)",
+    "after": "340px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".article-body / line-height",
+    "token": "--qm-leading-1_8",
+    "before": "var(--qm-leading-1_8)",
+    "after": "1.8"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "dialog / max-height",
+    "token": "--qm-size-760",
+    "before": "var(--qm-size-760)",
+    "after": "760px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "dialog / width",
+    "token": "--qm-size-560",
+    "before": "var(--qm-size-560)",
+    "after": "560px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "dialog / width",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "dialog::backdrop / backdrop-filter",
+    "token": "--qm-size-2",
+    "before": "var(--qm-size-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "#toast / line-height",
+    "token": "--qm-size-22",
+    "before": "var(--qm-size-22)",
+    "after": "22px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion-trigger / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".accordion-trigger / line-height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-divider / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-sr-only / width",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-sr-only / height",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-sr-only / margin",
+    "token": "--qm-space-negative-1",
+    "before": "var(--qm-space-negative-1)",
+    "after": "-1px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-type-display / letter-spacing",
+    "token": "--qm-tracking-negative-_0282",
+    "before": "var(--qm-tracking-negative-_0282)",
+    "after": "-.0282em"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-type-title / letter-spacing",
+    "token": "--qm-tracking-negative-_0253",
+    "before": "var(--qm-tracking-negative-_0253)",
+    "after": "var(--qm-tracking-title)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-type-heading / letter-spacing",
+    "token": "--qm-tracking-negative-_0194",
+    "before": "var(--qm-tracking-negative-_0194)",
+    "after": "var(--qm-tracking-heading)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-type-label / letter-spacing",
+    "token": "--qm-tracking-_0145",
+    "before": "var(--qm-tracking-_0145)",
+    "after": ".0145em"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": ".qm-type-caption / letter-spacing",
+    "token": "--qm-tracking-_0252",
+    "before": "var(--qm-tracking-_0252)",
+    "after": ".0252em"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1600px) / .hero h1 / font-size",
+    "token": "--qm-font-size-40",
+    "before": "var(--qm-font-size-40)",
+    "after": "var(--qm-font-size-display)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1600px) / .hero h1 / line-height",
+    "token": "--qm-size-52",
+    "before": "var(--qm-size-52)",
+    "after": "52px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:768px) and (max-width:991px) / .brand-logo / width",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:767px) / .brand-logo / width",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:767px) / .qm-type-display / font-size",
+    "token": "--qm-font-size-32",
+    "before": "var(--qm-font-size-32)",
+    "after": "var(--qm-font-size-title)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:767px) / .qm-type-display / line-height",
+    "token": "--qm-size-44",
+    "before": "var(--qm-size-44)",
+    "after": "44px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .brand-logo / width",
+    "token": "--qm-size-168",
+    "before": "var(--qm-size-168)",
+    "after": "168px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .button / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .card-copy h3 / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .field input,.field select / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero h1 / font-size",
+    "token": "--qm-font-size-28",
+    "before": "var(--qm-font-size-28)",
+    "after": "28px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .hero h1 / line-height",
+    "token": "--qm-size-38",
+    "before": "var(--qm-size-38)",
+    "after": "38px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .footer-brand img / width",
+    "token": "--qm-size-105",
+    "before": "var(--qm-size-105)",
+    "after": "105px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .header-tools .icon-button / width",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .section-head / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .section-head h2 / font-size",
+    "token": "--qm-font-size-18",
+    "before": "var(--qm-font-size-18)",
+    "after": "var(--qm-font-size-headline)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (max-width:480px) / .section-head h2 / line-height",
+    "token": "--qm-size-26",
+    "before": "var(--qm-size-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1600px) / .container / width",
+    "token": "--qm-container-wide",
+    "before": "var(--qm-container-wide)",
+    "after": "var(--qm-layout-wide-width)"
+  },
+  {
+    "file": "public\\assets\\css\\app.css",
+    "context": "@media (min-width:1600px) / .container / width",
+    "token": "--qm-size-64",
+    "before": "var(--qm-size-64)",
+    "after": "64px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-workspace / max-width",
+    "token": "--qm-size-1600",
+    "before": "var(--qm-size-1600)",
+    "after": "1600px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-top / height",
+    "token": "--qm-size-80",
+    "before": "var(--qm-size-80)",
+    "after": "80px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-top / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-top / z-index",
+    "token": "--qm-layer-25",
+    "before": "var(--qm-layer-25)",
+    "after": "var(--qm-z-doc-header)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-wordmark / font-size",
+    "token": "--qm-font-size-21",
+    "before": "var(--qm-font-size-21)",
+    "after": "21px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-wordmark / font-weight",
+    "token": "--qm-weight-800",
+    "before": "var(--qm-weight-800)",
+    "after": "800"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-wordmark / letter-spacing",
+    "token": "--qm-tracking-negative-_7",
+    "before": "var(--qm-tracking-negative-_7)",
+    "after": "-.7px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-wordmark span / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-wordmark span / font-weight",
+    "token": "--qm-weight-500",
+    "before": "var(--qm-weight-500)",
+    "after": "var(--qm-weight-medium)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-wordmark img / width",
+    "token": "--qm-size-150",
+    "before": "var(--qm-size-150)",
+    "after": "150px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-top nav / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-top nav / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-version / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-layout / grid-template-columns",
+    "token": "--qm-size-220",
+    "before": "var(--qm-size-220)",
+    "after": "220px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-layout / grid-template-columns",
+    "token": "--qm-size-820",
+    "before": "var(--qm-size-820)",
+    "after": "820px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-layout / grid-template-columns",
+    "token": "--qm-size-154",
+    "before": "var(--qm-size-154)",
+    "after": "154px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-sidebar / top",
+    "token": "--qm-size-80",
+    "before": "var(--qm-size-80)",
+    "after": "80px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-sidebar / height",
+    "token": "--qm-size-80",
+    "before": "var(--qm-size-80)",
+    "after": "80px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-search / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-search / padding",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-search svg / width",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-search svg / height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-search input / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group h2 / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group h2 / font-weight",
+    "token": "--qm-weight-500",
+    "before": "var(--qm-weight-500)",
+    "after": "var(--qm-weight-medium)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group h2 / margin",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group a / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group a / line-height",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group a / margin",
+    "token": "--qm-space-2",
+    "before": "var(--qm-space-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group a[aria-current] / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group a svg / width",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-nav-group a svg / height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-document / padding",
+    "token": "--qm-space-46",
+    "before": "var(--qm-space-46)",
+    "after": "46px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-breadcrumb / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-document-header h1 / font-size",
+    "token": "--qm-font-size-36",
+    "before": "var(--qm-font-size-36)",
+    "after": "36px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-document-header h1 / line-height",
+    "token": "--qm-size-48",
+    "before": "var(--qm-size-48)",
+    "after": "48px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-document-header h1 / letter-spacing",
+    "token": "--qm-tracking-negative-_027",
+    "before": "var(--qm-tracking-negative-_027)",
+    "after": "-.027em"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-document-header>p / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-document-header>p / line-height",
+    "token": "--qm-size-26",
+    "before": "var(--qm-size-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-document-header>p / max-width",
+    "token": "--qm-size-740",
+    "before": "var(--qm-size-740)",
+    "after": "740px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toc / top",
+    "token": "--qm-size-80",
+    "before": "var(--qm-size-80)",
+    "after": "80px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toc / padding-top",
+    "token": "--qm-space-55",
+    "before": "var(--qm-space-55)",
+    "after": "55px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toc / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toc / max-height",
+    "token": "--qm-size-80",
+    "before": "var(--qm-size-80)",
+    "after": "80px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toc>b / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toc a / padding",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toc a / line-height",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-mode / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-mode / margin-bottom",
+    "token": "--qm-space-44",
+    "before": "var(--qm-space-44)",
+    "after": "44px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-mode a / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-mode a / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-mode a / border-bottom",
+    "token": "--qm-size-2",
+    "before": "var(--qm-size-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section / scroll-margin-top",
+    "token": "--qm-space-108",
+    "before": "var(--qm-space-108)",
+    "after": "108px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section>h2 / font-size",
+    "token": "--qm-font-size-22",
+    "before": "var(--qm-font-size-22)",
+    "after": "var(--qm-font-size-heading)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section>h2 / line-height",
+    "token": "--qm-size-30",
+    "before": "var(--qm-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section>h2 / letter-spacing",
+    "token": "--qm-tracking-negative-_0194",
+    "before": "var(--qm-tracking-negative-_0194)",
+    "after": "var(--qm-tracking-heading)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section>p / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section>p / line-height",
+    "token": "--qm-size-26",
+    "before": "var(--qm-size-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section h3 / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-stage / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-stage / min-height",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-caption / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-caption / line-height",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-anatomy / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-anatomy li:before / width",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-anatomy li:before / height",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-anatomy li:before / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section table / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section th / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-section td,.ds-doc-section th / padding",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-playground / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-playground .ds-stage / min-height",
+    "token": "--qm-size-240",
+    "before": "var(--qm-size-240)",
+    "after": "240px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-controls / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-controls .field select / min-height",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-controls .field select / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-state-grid small / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-state-pressed / box-shadow",
+    "token": "--qm-shadow-4",
+    "before": "var(--qm-shadow-4)",
+    "after": "var(--qm-shadow-pressed-strong)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-state-grid .button / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-variant-list,.ds-spec-grid / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-variant-list>div,.ds-spec-grid>div / border-right",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-variant-list span,.ds-spec-grid small / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-variant-list b,.ds-spec-grid b / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-dodont>div / border-top",
+    "token": "--qm-size-3",
+    "before": "var(--qm-size-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-dodont b / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-dodont p / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-dodont p / line-height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-code / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-code / line-height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-footer / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-doc-footer / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-brand-stage / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-directory>div / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-directory h3 / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-directory a / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-directory a / padding",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-list / border-top",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-list>div / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-dot / width",
+    "token": "--qm-size-52",
+    "before": "var(--qm-size-52)",
+    "after": "52px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-dot / height",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-dot / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-list b / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-list b / font-weight",
+    "token": "--qm-weight-500",
+    "before": "var(--qm-weight-500)",
+    "after": "var(--qm-weight-medium)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-color-list code / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-palette>div / min-height",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-palette b / font-size",
+    "token": "--qm-font-size-15",
+    "before": "var(--qm-font-size-15)",
+    "after": "var(--qm-font-size-body-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-palette code / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-palette span / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-font-hero / font-size",
+    "token": "--qm-font-size-64",
+    "before": "var(--qm-font-size-64)",
+    "after": "64px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-font-hero / line-height",
+    "token": "--qm-leading-1_5",
+    "before": "var(--qm-leading-1_5)",
+    "after": "1.5"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-font-hero / font-weight",
+    "token": "--qm-weight-700",
+    "before": "var(--qm-weight-700)",
+    "after": "var(--qm-weight-bold)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-font-hero / letter-spacing",
+    "token": "--qm-tracking-negative-2",
+    "before": "var(--qm-tracking-negative-2)",
+    "after": "-2px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-font-hero small / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-font-hero small / font-weight",
+    "token": "--qm-weight-400",
+    "before": "var(--qm-weight-400)",
+    "after": "var(--qm-weight-regular)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-type-table>div / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-type-table>div>div / margin-bottom",
+    "token": "--qm-space-14",
+    "before": "var(--qm-space-14)",
+    "after": "14px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-type-table b / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-type-table small / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-reading / font-size",
+    "token": "--qm-font-size-16",
+    "before": "var(--qm-font-size-16)",
+    "after": "var(--qm-font-size-body)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-reading / line-height",
+    "token": "--qm-size-26",
+    "before": "var(--qm-size-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-reading / max-width",
+    "token": "--qm-size-560",
+    "before": "var(--qm-size-560)",
+    "after": "560px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-grid-preview span / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-grid-preview span / height",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-grid-preview span / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-space-list code / width",
+    "token": "--qm-size-50",
+    "before": "var(--qm-size-50)",
+    "after": "50px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-space-list code / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-space-list span / max-width",
+    "token": "--qm-size-80",
+    "before": "var(--qm-size-80)",
+    "after": "80px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-space-list span / height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-radius / width",
+    "token": "--qm-size-104",
+    "before": "var(--qm-size-104)",
+    "after": "104px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-radius / height",
+    "token": "--qm-size-104",
+    "before": "var(--qm-size-104)",
+    "after": "104px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-radius / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-radius / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-icons>div / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-icons svg / width",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-icons svg / height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-icons small / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip / gap",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip / min-height",
+    "token": "--qm-size-36",
+    "before": "var(--qm-size-36)",
+    "after": "36px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip / font-weight",
+    "token": "--qm-weight-500",
+    "before": "var(--qm-weight-500)",
+    "after": "var(--qm-weight-medium)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip / line-height",
+    "token": "--qm-size-18",
+    "before": "var(--qm-size-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip[aria-pressed=true] / font-weight",
+    "token": "--qm-weight-650",
+    "before": "var(--qm-weight-650)",
+    "after": "650"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip svg / width",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip svg / height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-chip:hover / box-shadow",
+    "token": "--qm-shadow-5",
+    "before": "var(--qm-shadow-5)",
+    "after": "var(--qm-shadow-hover)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".badge.outlined / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".badge.outlined / padding",
+    "token": "--qm-space-3",
+    "before": "var(--qm-space-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".badge.outlined / padding",
+    "token": "--qm-space-7",
+    "before": "var(--qm-space-7)",
+    "after": "7px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-list / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-list a / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-list b / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-list small / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-avatar / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-message p / font-size",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-message b / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-toast / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-skeleton / max-width",
+    "token": "--qm-size-360",
+    "before": "var(--qm-size-360)",
+    "after": "360px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-skeleton-line / height",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-example-tabs / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-example-tabs button / border-bottom",
+    "token": "--qm-size-2",
+    "before": "var(--qm-size-2)",
+    "after": "2px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-example-tabs [aria-selected=true] / font-weight",
+    "token": "--qm-weight-700",
+    "before": "var(--qm-weight-700)",
+    "after": "var(--qm-weight-bold)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-tab-panel / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-tab-panel / line-height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-row-label / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-fieldset legend / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-fieldset legend / font-weight",
+    "token": "--qm-weight-600",
+    "before": "var(--qm-weight-600)",
+    "after": "var(--qm-weight-semibold)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-switch-list / max-width",
+    "token": "--qm-size-420",
+    "before": "var(--qm-size-420)",
+    "after": "420px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-switch-list>div / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch / width",
+    "token": "--qm-size-52",
+    "before": "var(--qm-size-52)",
+    "after": "52px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch / height",
+    "token": "--qm-size-32",
+    "before": "var(--qm-size-32)",
+    "after": "32px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch / transition",
+    "token": "--qm-duration-180",
+    "before": "var(--qm-duration-180)",
+    "after": "var(--qm-motion-feedback)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch:before / left",
+    "token": "--qm-size-4",
+    "before": "var(--qm-size-4)",
+    "after": "4px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch:before / top",
+    "token": "--qm-size-4",
+    "before": "var(--qm-size-4)",
+    "after": "4px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch:before / width",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch:before / height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch:before / box-shadow",
+    "token": "--qm-shadow-6",
+    "before": "var(--qm-shadow-6)",
+    "after": "var(--qm-shadow-thumb)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch:before / transition",
+    "token": "--qm-duration-180",
+    "before": "var(--qm-duration-180)",
+    "after": "var(--qm-motion-feedback)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch:checked:before / transform",
+    "token": "--qm-size-20",
+    "before": "var(--qm-size-20)",
+    "after": "20px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch.small / width",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch.small / height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch.small:before / width",
+    "token": "--qm-size-18",
+    "before": "var(--qm-size-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch.small:before / height",
+    "token": "--qm-size-18",
+    "before": "var(--qm-size-18)",
+    "after": "18px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch.small:before / left",
+    "token": "--qm-size-3",
+    "before": "var(--qm-size-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch.small:before / top",
+    "token": "--qm-size-3",
+    "before": "var(--qm-size-3)",
+    "after": "3px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".qm-switch.small:checked:before / transform",
+    "token": "--qm-size-16",
+    "before": "var(--qm-size-16)",
+    "after": "16px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-scroll-demo / height",
+    "token": "--qm-size-180",
+    "before": "var(--qm-size-180)",
+    "after": "180px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-scroll-demo / border",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": ".ds-scroll-demo p / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:1250px) / .ds-doc-layout / grid-template-columns",
+    "token": "--qm-size-190",
+    "before": "var(--qm-size-190)",
+    "after": "190px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-doc-top / min-height",
+    "token": "--qm-size-72",
+    "before": "var(--qm-size-72)",
+    "after": "72px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-doc-top nav / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-doc-layout / grid-template-columns",
+    "token": "--qm-size-160",
+    "before": "var(--qm-size-160)",
+    "after": "160px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-sidebar / top",
+    "token": "--qm-size-72",
+    "before": "var(--qm-size-72)",
+    "after": "72px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-sidebar / height",
+    "token": "--qm-size-72",
+    "before": "var(--qm-size-72)",
+    "after": "72px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-document-header h1 / font-size",
+    "token": "--qm-font-size-30",
+    "before": "var(--qm-font-size-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-document-header h1 / line-height",
+    "token": "--qm-size-40",
+    "before": "var(--qm-size-40)",
+    "after": "40px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:800px) / .ds-font-hero / font-size",
+    "token": "--qm-font-size-40",
+    "before": "var(--qm-font-size-40)",
+    "after": "var(--qm-font-size-display)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-sidebar / max-height",
+    "token": "--qm-size-250",
+    "before": "var(--qm-size-250)",
+    "after": "250px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-sidebar / border-bottom",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-nav-group / min-width",
+    "token": "--qm-size-155",
+    "before": "var(--qm-size-155)",
+    "after": "155px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-nav-group a / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-nav-group a / padding",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-document-header>p / font-size",
+    "token": "--qm-font-size-14",
+    "before": "var(--qm-font-size-14)",
+    "after": "var(--qm-font-size-label)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-document-header>p / line-height",
+    "token": "--qm-size-24",
+    "before": "var(--qm-size-24)",
+    "after": "24px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-document-header h1 / font-size",
+    "token": "--qm-font-size-28",
+    "before": "var(--qm-font-size-28)",
+    "after": "28px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-doc-section>h2 / font-size",
+    "token": "--qm-font-size-20",
+    "before": "var(--qm-font-size-20)",
+    "after": "var(--qm-font-size-heading-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-doc-wordmark / font-size",
+    "token": "--qm-font-size-19",
+    "before": "var(--qm-font-size-19)",
+    "after": "19px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-type-table small / margin-top",
+    "token": "--qm-space-6",
+    "before": "var(--qm-space-6)",
+    "after": "6px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-font-hero / font-size",
+    "token": "--qm-font-size-32",
+    "before": "var(--qm-font-size-32)",
+    "after": "var(--qm-font-size-title)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-type-table>div>span / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-type-table>div>span / font-size",
+    "token": "--qm-font-size-32",
+    "before": "var(--qm-font-size-32)",
+    "after": "var(--qm-font-size-title)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-palette>div / min-height",
+    "token": "--qm-size-140",
+    "before": "var(--qm-size-140)",
+    "after": "140px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-state-grid .button / font-size",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-doc-section table / min-width",
+    "token": "--qm-size-460",
+    "before": "var(--qm-size-460)",
+    "after": "460px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-color-list code / font-size",
+    "token": "--qm-font-size-11",
+    "before": "var(--qm-font-size-11)",
+    "after": "var(--qm-font-size-caption-small)"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-doc-wordmark img / width",
+    "token": "--qm-size-105",
+    "before": "var(--qm-size-105)",
+    "after": "105px"
+  },
+  {
+    "file": "public\\assets\\css\\design-system.css",
+    "context": "@media (max-width:600px) / .ds-doc-top / gap",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\js\\app.js",
+    "context": "template inline style",
+    "token": "--qm-size-1",
+    "before": "var(--qm-size-1)",
+    "after": "1px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\account.js",
+    "context": "template inline style",
+    "token": "--qm-space-10",
+    "before": "var(--qm-space-10)",
+    "after": "10px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\design-system.js",
+    "context": "template inline style",
+    "token": "--qm-font-size-24",
+    "before": "var(--qm-font-size-24)",
+    "after": "var(--qm-font-size-title-small)"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\design-system.js",
+    "context": "template inline style",
+    "token": "--qm-size-220",
+    "before": "var(--qm-size-220)",
+    "after": "220px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\operations.js",
+    "context": "template inline style",
+    "token": "--qm-space-25",
+    "before": "var(--qm-space-25)",
+    "after": "25px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\public.js",
+    "context": "template inline style",
+    "token": "--qm-font-size-13",
+    "before": "var(--qm-font-size-13)",
+    "after": "var(--qm-font-size-label-small)"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\public.js",
+    "context": "template inline style",
+    "token": "--qm-font-size-12",
+    "before": "var(--qm-font-size-12)",
+    "after": "var(--qm-font-size-caption)"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\public.js",
+    "context": "template inline style",
+    "token": "--qm-space-30",
+    "before": "var(--qm-space-30)",
+    "after": "30px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\public.js",
+    "context": "template inline style",
+    "token": "--qm-font-size-23",
+    "before": "var(--qm-font-size-23)",
+    "after": "23px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\public.js",
+    "context": "template inline style",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\public.js",
+    "context": "template inline style",
+    "token": "--qm-font-size-26",
+    "before": "var(--qm-font-size-26)",
+    "after": "26px"
+  },
+  {
+    "file": "public\\assets\\js\\pages\\public.js",
+    "context": "template inline style",
+    "token": "--qm-space-15",
+    "before": "var(--qm-space-15)",
+    "after": "15px"
+  },
+  {
+    "file": "tokens.css",
+    "context": "--qm-shadow-panel",
+    "token": "--qm-shadow-tint-subtle",
+    "before": "var(--qm-shadow-tint-subtle)",
+    "after": "#233b2906"
+  },
+  {
+    "file": "tokens.css",
+    "context": "--qm-shadow-floating",
+    "token": "--qm-shadow-tint-floating",
+    "before": "var(--qm-shadow-tint-floating)",
+    "after": "#2b42231a"
+  },
+  {
+    "file": "tokens.css",
+    "context": "--qm-shadow-dialog",
+    "token": "--qm-shadow-tint-overlay",
+    "before": "var(--qm-shadow-tint-overlay)",
+    "after": "#00000033"
+  },
+  {
+    "file": "tokens.css",
+    "context": "--qm-shadow-thumb",
+    "token": "--qm-shadow-tint-thumb",
+    "before": "var(--qm-shadow-tint-thumb)",
+    "after": "#00000022"
+  }
+]

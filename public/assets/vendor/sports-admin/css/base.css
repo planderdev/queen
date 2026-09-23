@@ -1,0 +1,235 @@
+@font-face {
+    font-family: Pretendard;
+    src: url("/assets/vendor/sports-admin/vendor/PretendardVariable.woff2") format("woff2");
+    font-weight: 100 900;
+    font-display: swap
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-padding-top: 160px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--type-body-1-size);
+  line-height: var(--type-body-1-line);
+  color: var(--semantic-label-normal);
+  background: var(--semantic-background-normal-normal);
+  word-break: keep-all;
+  letter-spacing: var(--type-body-1-tracking);
+}
+
+h1, h2, h3, h4, p {
+  margin: 0;
+}
+
+h1 {
+  font-size: var(--type-display-2-size);
+  line-height: var(--type-display-2-line);
+  letter-spacing: var(--type-display-2-tracking);
+}
+
+h2 {
+  font-size: var(--type-title-1-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-title-1-line);
+  letter-spacing: var(--type-title-1-tracking);
+}
+
+h3 {
+  font-size: var(--type-heading-1-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-heading-1-line);
+  letter-spacing: var(--type-heading-1-tracking);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: .45;
+}
+
+a, button {
+  touch-action: manipulation;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+i[class^=ri-] {
+  font-size: var(--type-heading-1-size);
+  line-height: 1;
+}
+
+a:focus-visible, select:focus-visible, summary:focus-visible {
+  outline: none;
+}
+
+button, a {
+  transition: background var(--duration-normal), color var(--duration-normal), box-shadow var(--duration-normal);
+}
+
+::selection {
+  background: var(--semantic-brand-accent);
+  color: var(--semantic-primary-heavy);
+}
+
+[hidden] {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: var(--space-20);
+  z-index: var(--z-tooltip);
+  padding: var(--space-12);
+  background: var(--semantic-primary-normal);
+  color: var(--semantic-background-normal-normal);
+}
+
+.skip-link:focus {
+  top: var(--space-12);
+}
+
+small, .muted {
+  color: var(--semantic-label-alternative);
+}
+
+small {
+  font-size: var(--type-label-2-size);
+  line-height: var(--type-label-2-line);
+  letter-spacing: var(--type-label-2-tracking);
+}
+
+input, select, textarea {
+  max-width: 100%;
+  min-width: 0;
+}
+
+textarea {
+  resize: vertical;
+}
+
+hr {
+  border: 0;
+  border-top: var(--border-thin) solid var(--semantic-line-solid-normal);
+  margin: var(--space-24) 0;
+}
+
+dialog::backdrop {
+  background: var(--semantic-material-dimmer);
+}
+
+dialog {
+  border: 0;
+  padding: var(--dialog-padding);
+  border-radius: var(--dialog-radius);
+  width: min(var(--dialog-width), calc(100% - var(--space-32)));
+  max-height: 88dvh;
+  box-shadow: var(--semantic-elevation-shadow-spread-small);
+  color: var(--semantic-label-normal);
+  background: var(--semantic-background-elevated-normal);
+}
+
+dialog:focus {
+  outline: none;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+main {
+  min-height: 50vh;
+}
+
+main:focus {
+  outline: none;
+}
+
+.error-text {
+  color: var(--semantic-status-negative);
+  font-size: var(--type-label-1-size);
+  min-height: 22px;
+  line-height: var(--type-label-1-line);
+  letter-spacing: var(--type-label-1-tracking);
+}
+
+.break-anywhere {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+@media(prefers-reduced-motion:reduce) {
+  *, *:before, *:after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.reduce-motion * {
+  animation-duration: .01ms !important;
+  transition-duration: .01ms !important;
+  scroll-behavior: auto !important;
+}
+
+.reduce-motion [data-aos] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+@media(prefers-reduced-motion:no-preference) {
+  button, a {
+    transition-duration: var(--duration-normal);
+    transition-timing-function: var(--easing-standard);
+  }
+}

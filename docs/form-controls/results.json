@@ -1,0 +1,16 @@
+[
+  {
+    "width": 1440,
+    "select": true,
+    "date": true,
+    "datetime": true,
+    "errors": []
+  },
+  {
+    "width": 390,
+    "select": true,
+    "date": true,
+    "datetime": true,
+    "errors": []
+  }
+]

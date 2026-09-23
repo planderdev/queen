@@ -1,0 +1,6294 @@
+{
+  "scanned_files": [
+    "README.md",
+    "app/layout.php",
+    "docs/admin-route-qa.json",
+    "docs/api-contract.md",
+    "docs/asset-sources.md",
+    "docs/component-sources.md",
+    "docs/data-model.md",
+    "docs/design-system.md",
+    "docs/detail-responsive-qa.json",
+    "docs/information-architecture.md",
+    "docs/partner-route-qa.json",
+    "docs/public-route-qa.json",
+    "docs/qa-report.md",
+    "docs/screen-inventory.md",
+    "docs/user-flows.md",
+    "package-lock.json",
+    "package.json",
+    "public/about/index.php",
+    "public/admin/index.php",
+    "public/assets/css/app.css",
+    "public/assets/css/design-system.css",
+    "public/assets/css/tokens.css",
+    "public/assets/js/app.js",
+    "public/assets/js/components/tokens.js",
+    "public/assets/js/components/ui.js",
+    "public/assets/js/data.js",
+    "public/assets/js/fixtures/catalog.js",
+    "public/assets/js/pages/account.js",
+    "public/assets/js/pages/design-system-catalog.js",
+    "public/assets/js/pages/design-system.js",
+    "public/assets/js/pages/operations.js",
+    "public/assets/js/pages/public.js",
+    "public/assets/js/services/domain.js",
+    "public/assets/js/stores/repository.js",
+    "public/auth/index.php",
+    "public/campaigns/index.php",
+    "public/corporate/index.php",
+    "public/design-system/index.php",
+    "public/donate/index.php",
+    "public/index.php",
+    "public/monthly/index.php",
+    "public/my/index.php",
+    "public/organizations/index.php",
+    "public/partner/index.php",
+    "public/search/index.php",
+    "public/stories/index.php",
+    "public/support/index.php",
+    "tests/domain.test.js",
+    "tests/storage.test.js",
+    "tests/style-contract.cjs"
+  ],
+  "count": 133,
+  "tokens": {
+    "--qm-color-rose": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 5,
+          "value": "#c77991"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 86,
+          "context": ":root / --qm-chip-rose"
+        },
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 88,
+          "context": ":root / --qm-primary-normal"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#c77991"
+    },
+    "--qm-space-4": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 8,
+          "value": "4px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 436,
+          "context": ".impact-number small / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 957,
+          "context": ".ops-sidebar a / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1989,
+          "context": ".badge / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 701,
+          "context": ".ds-list small / margin-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 720,
+          "context": ".ds-message p / margin"
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "4px"
+    },
+    "--qm-space-8": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 9,
+          "value": "8px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 325,
+          "context": ".image-badge / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 553,
+          "context": ".button / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 663,
+          "context": ".pagination / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 793,
+          "context": ".steps / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 812,
+          "context": ".amount-options / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1026,
+          "context": ".demo-launch / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1298,
+          "context": "@media (max-width:800px) / .hero .button / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1433,
+          "context": "@media (max-width:480px) / .header-inner / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1882,
+          "context": ".button.small,td .button / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1892,
+          "context": ".button.loading-button / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1910,
+          "context": ".field / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1989,
+          "context": ".badge / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2275,
+          "context": "@media (max-width:800px) / .main-nav / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 74,
+          "context": ".ds-sidebar / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 79,
+          "context": ".ds-search / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 83,
+          "context": ".ds-search / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 118,
+          "context": ".ds-nav-group a / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 265,
+          "context": ".ds-anatomy li / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 317,
+          "context": ".ds-controls .field select / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 497,
+          "context": ".ds-palette code / margin-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 601,
+          "context": ".ds-icons>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 622,
+          "context": ".qm-chip / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 905,
+          "context": "@media (max-width:800px) / .ds-doc-top nav a / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 944,
+          "context": "@media (max-width:800px) / .ds-grid-preview / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 978,
+          "context": "@media (max-width:600px) / .ds-sidebar nav / padding-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 985,
+          "context": "@media (max-width:600px) / .ds-nav-group h2 / padding-left"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 989,
+          "context": "@media (max-width:600px) / .ds-nav-group a / padding"
+        }
+      ],
+      "count": 27,
+      "other_mentions": [],
+      "resolved": "8px"
+    },
+    "--qm-space-12": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 10,
+          "value": "12px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 134,
+          "context": ".header-tools / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 260,
+          "context": ".category-nav / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 457,
+          "context": ".mini-banner p / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 948,
+          "context": ".ops-sidebar h2 / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 955,
+          "context": ".ops-sidebar a / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1173,
+          "context": ".radio-group label / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1359,
+          "context": "@media (max-width:800px) / .mobile-donate / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1359,
+          "context": "@media (max-width:800px) / .mobile-donate / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1380,
+          "context": "@media (max-width:800px) / .filters / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1413,
+          "context": "@media (max-width:800px) / .footer-bottom>div / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1548,
+          "context": "@media (max-width:480px) / .split-banners / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1584,
+          "context": "@media (max-width:480px) / .notice-row / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1621,
+          "context": "@media (max-width:480px) / .filters / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1700,
+          "context": "@media (max-width:480px) / .demo-launch / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1839,
+          "context": ".button / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1882,
+          "context": ".button.small,td .button / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1917,
+          "context": ".field input,.field select,.field textarea / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2237,
+          "context": "@media (max-width:480px) / .card-copy / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2243,
+          "context": "@media (max-width:480px) / .card-grid / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 32,
+          "context": ".ds-doc-wordmark span / margin-left"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 112,
+          "context": ".ds-nav-group h2 / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 118,
+          "context": ".ds-nav-group a / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 250,
+          "context": ".ds-caption / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 255,
+          "context": ".ds-anatomy / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 317,
+          "context": ".ds-controls .field select / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 329,
+          "context": ".ds-state-grid>div / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 346,
+          "context": ".ds-state-grid .button / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 364,
+          "context": ".ds-variant-list span,.ds-spec-grid small / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 389,
+          "context": ".ds-dodont p / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 485,
+          "context": ".ds-palette>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 592,
+          "context": ".ds-icons / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 622,
+          "context": ".qm-chip / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 714,
+          "context": ".ds-message / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 744,
+          "context": ".ds-toast / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 788,
+          "context": ".ds-row-label / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1012,
+          "context": "@media (max-width:600px) / .ds-doc-top nav / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1039,
+          "context": "@media (max-width:600px) / .ds-state-grid / gap"
+        },
+        {
+          "file": "public/assets/js/pages/public.js",
+          "line": 10,
+          "context": "<div class=\"actions\" style=\"margin-top:var("
+        }
+      ],
+      "count": 38,
+      "other_mentions": [],
+      "resolved": "12px"
+    },
+    "--qm-space-16": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 11,
+          "value": "16px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 73,
+          "context": ".skip / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 181,
+          "context": ".hero h1 / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 524,
+          "context": ".site-footer p / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 641,
+          "context": ".checkbox / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 828,
+          "context": ".check-row / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 860,
+          "context": ".empty>svg / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 915,
+          "context": ".stat-grid / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1061,
+          "context": ".dialog-body .field / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1330,
+          "context": "@media (max-width:800px) / .split-banners / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1537,
+          "context": "@media (max-width:480px) / .impact-strip / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1596,
+          "context": "@media (max-width:480px) / .footer-top,.footer-bottom / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1666,
+          "context": "@media (max-width:480px) / .stat / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1917,
+          "context": ".field input,.field select,.field textarea / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1956,
+          "context": ".notice / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1974,
+          "context": ".tabs a / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2020,
+          "context": "th,td / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2074,
+          "context": "#toast / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2093,
+          "context": ".qm-stack / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2098,
+          "context": ".qm-flex / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2189,
+          "context": "@media (min-width:768px) and (max-width:991px) / .card-copy / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2207,
+          "context": "@media (max-width:767px) / .card-grid / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2210,
+          "context": "@media (max-width:767px) / .card-copy / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 147,
+          "context": ".ds-breadcrumb / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 175,
+          "context": ".ds-toc>b / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 195,
+          "context": ".ds-mode a / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 240,
+          "context": ".ds-stage .card-copy / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 287,
+          "context": ".ds-doc-section td,.ds-doc-section th / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 407,
+          "context": ".ds-doc-footer / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 437,
+          "context": ".ds-directory>div / padding-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 441,
+          "context": ".ds-directory h3 / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 459,
+          "context": ".ds-color-list>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 526,
+          "context": ".ds-type-table>div>div / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 559,
+          "context": ".ds-grid-preview span / padding-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 566,
+          "context": ".ds-space-list>div / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 600,
+          "context": ".ds-icons>div / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 684,
+          "context": ".ds-list a / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 715,
+          "context": ".ds-message / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 741,
+          "context": ".ds-toast / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 753,
+          "context": ".ds-skeleton-line / margin-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 769,
+          "context": ".ds-example-tabs button / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 798,
+          "context": ".ds-fieldset legend / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 806,
+          "context": ".ds-switch-list>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 859,
+          "context": ".ds-scroll-demo / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 891,
+          "context": "@media (max-width:800px) / .ds-doc-top / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 895,
+          "context": "@media (max-width:800px) / .ds-doc-top / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 901,
+          "context": "@media (max-width:800px) / .ds-doc-top nav / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 972,
+          "context": "@media (max-width:600px) / .ds-search / margin-bottom"
+        },
+        {
+          "file": "public/assets/js/pages/public.js",
+          "line": 12,
+          "context": "</b></div><p class=\"help\" style=\"overflow-wrap:anywhere;margin-top:var("
+        }
+      ],
+      "count": 48,
+      "other_mentions": [],
+      "resolved": "16px"
+    },
+    "--qm-space-20": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 12,
+          "value": "20px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 193,
+          "context": ".hero .button / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 230,
+          "context": ".section-head / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 364,
+          "context": ".org-label / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 408,
+          "context": ".impact-strip / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 447,
+          "context": ".mini-banner / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 534,
+          "context": ".footer-bottom / padding-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 596,
+          "context": ".filters / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 651,
+          "context": ".field-grid / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 692,
+          "context": ".breadcrumb / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 697,
+          "context": ".detail-story h1 / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 711,
+          "context": ".article-body h2 / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 751,
+          "context": ".summary-org / margin-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 752,
+          "context": ".summary-org / padding-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 880,
+          "context": ".table-wrap / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 988,
+          "context": ".comment / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1096,
+          "context": ".accordion-trigger / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1154,
+          "context": ".chart / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1170,
+          "context": ".radio-group / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1324,
+          "context": "@media (max-width:800px) / .impact-strip / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1359,
+          "context": "@media (max-width:800px) / .mobile-donate / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1390,
+          "context": "@media (max-width:800px) / .ops-sidebar / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1536,
+          "context": "@media (max-width:480px) / .impact-strip / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1641,
+          "context": "@media (max-width:480px) / .detail-layout / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1691,
+          "context": "@media (max-width:480px) / .dialog-body / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1694,
+          "context": "@media (max-width:480px) / .dialog-head / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1739,
+          "context": ".form-error / scroll-margin-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1805,
+          "context": ".card-grid,.story-grid,.split-banners / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1811,
+          "context": ".card-copy / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1839,
+          "context": ".button / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2079,
+          "context": ".accordion-trigger / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2087,
+          "context": ".accordion-panel / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2087,
+          "context": ".accordion-panel / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2104,
+          "context": ".qm-grid / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2165,
+          "context": ".ds-demo / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2183,
+          "context": "@media (min-width:768px) and (max-width:991px) / .main-nav / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2219,
+          "context": "@media (max-width:767px) / .dialog-head,.dialog-body / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2246,
+          "context": "@media (max-width:480px) / .panel / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 153,
+          "context": ".ds-document-header h1 / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 230,
+          "context": ".ds-stage / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 308,
+          "context": ".ds-controls / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 323,
+          "context": ".ds-state-grid / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 376,
+          "context": ".ds-dodont>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 458,
+          "context": ".ds-color-list>div / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 485,
+          "context": ".ds-palette>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 551,
+          "context": ".ds-grid-preview / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 685,
+          "context": ".ds-list a / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 786,
+          "context": ".ds-row-label / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 888,
+          "context": "@media (max-width:800px) / .ds-workspace / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 968,
+          "context": "@media (max-width:600px) / .ds-sidebar / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 999,
+          "context": "@media (max-width:600px) / .ds-stage / padding"
+        },
+        {
+          "file": "public/assets/js/pages/account.js",
+          "line": 5,
+          "context": "</strong></div><div class=\"actions\" style=\"margin-top:var("
+        },
+        {
+          "file": "public/assets/js/pages/public.js",
+          "line": 16,
+          "context": "<h2 style=\"margin-top:var("
+        },
+        {
+          "file": "public/assets/js/pages/public.js",
+          "line": 18,
+          "context": "</button><p id=\"form-error\" class=\"form-error\" role=\"alert\"></p></form><div class=\"actions\" style=\"justify-content:center;margin:var("
+        }
+      ],
+      "count": 53,
+      "other_mentions": [],
+      "resolved": "20px"
+    },
+    "--qm-space-24": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 13,
+          "value": "24px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 294,
+          "context": ".card-grid / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 407,
+          "context": ".impact-strip / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 441,
+          "context": ".split-banners / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 512,
+          "context": ".footer-top,.footer-bottom / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 919,
+          "context": ".stat / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 949,
+          "context": ".ops-sidebar h2 / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1538,
+          "context": "@media (max-width:480px) / .impact-strip / margin-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1774,
+          "context": ".header-inner / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1911,
+          "context": ".field / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1965,
+          "context": ".panel / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1977,
+          "context": ".tabs / gap"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2039,
+          "context": ".donation-summary / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2063,
+          "context": ".dialog-head / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2074,
+          "context": "#toast / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2112,
+          "context": ".qm-divider / margin"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2204,
+          "context": "@media (max-width:767px) / .detail-layout / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 210,
+          "context": ".ds-doc-section>h2 / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 250,
+          "context": ".ds-caption / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 304,
+          "context": ".ds-controls / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 356,
+          "context": ".ds-variant-list>div,.ds-spec-grid>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 372,
+          "context": ".ds-dodont / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 398,
+          "context": ".ds-code / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 404,
+          "context": ".ds-doc-footer / padding-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 520,
+          "context": ".ds-type-table>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 564,
+          "context": ".ds-space-list>div / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 601,
+          "context": ".ds-icons>div / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 741,
+          "context": ".ds-toast / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 761,
+          "context": ".ds-example-tabs / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 778,
+          "context": ".ds-tab-panel / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 912,
+          "context": "@media (max-width:800px) / .ds-doc-layout / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 926,
+          "context": "@media (max-width:800px) / .ds-stage / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 976,
+          "context": "@media (max-width:600px) / .ds-sidebar nav / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1026,
+          "context": "@media (max-width:600px) / .ds-font-hero / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1039,
+          "context": "@media (max-width:600px) / .ds-state-grid / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1048,
+          "context": "@media (max-width:600px) / .ds-brand-stage / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1049,
+          "context": "@media (max-width:600px) / .ds-brand-stage / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1052,
+          "context": "@media (max-width:600px) / .ds-directory / gap"
+        },
+        {
+          "file": "public/assets/js/app.js",
+          "line": 26,
+          "context": "pendingAction=fn;modal(title,body+`<div class=\"actions\" style=\"margin-top:var("
+        },
+        {
+          "file": "public/assets/js/app.js",
+          "line": 31,
+          "context": "<button class=\"button primary\">적용하기</button></form><hr style=\"border:0;margin:var("
+        }
+      ],
+      "count": 39,
+      "other_mentions": [],
+      "resolved": "24px"
+    },
+    "--qm-space-28": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 14,
+          "value": "28px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 670,
+          "context": ".tabs / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 916,
+          "context": ".stat-grid / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1416,
+          "context": "@media (max-width:800px) / .ops-content .page-heading / padding-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1452,
+          "context": "@media (max-width:480px) / .hero-text / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1777,
+          "context": ".main-nav / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 53,
+          "context": ".ds-doc-top nav a / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 84,
+          "context": ".ds-search / margin-bottom"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 104,
+          "context": ".ds-nav-group / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 188,
+          "context": ".ds-mode / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 255,
+          "context": ".ds-anatomy / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 420,
+          "context": ".ds-brand-stage / margin-bottom"
+        }
+      ],
+      "count": 11,
+      "other_mentions": [],
+      "resolved": "28px"
+    },
+    "--qm-space-32": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 15,
+          "value": "32px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1225,
+          "context": "@media (max-width:1100px) / .hero-text / padding-left"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1474,
+          "context": "@media (max-width:480px) / .section / padding-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2063,
+          "context": ".dialog-head / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2066,
+          "context": ".dialog-body / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 48,
+          "context": ".ds-doc-top nav / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 74,
+          "context": ".ds-sidebar / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 323,
+          "context": ".ds-state-grid / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 433,
+          "context": ".ds-directory / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 883,
+          "context": "@media (max-width:1250px) / .ds-workspace / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 919,
+          "context": "@media (max-width:800px) / .ds-document / padding-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1055,
+          "context": "@media (max-width:600px) / .ds-mode / margin-bottom"
+        }
+      ],
+      "count": 11,
+      "other_mentions": [],
+      "resolved": "32px"
+    },
+    "--qm-space-36": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 16,
+          "value": "36px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 506,
+          "context": ".ds-font-hero / padding"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "36px"
+    },
+    "--qm-space-40": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 17,
+          "value": "40px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 173,
+          "context": ".hero-text / padding"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2043,
+          "context": ".detail-layout / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 16,
+          "context": ".ds-doc-top / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 74,
+          "context": ".ds-sidebar / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 158,
+          "context": ".ds-document-header>p / margin"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 225,
+          "context": ".ds-stage / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 415,
+          "context": ".ds-brand-stage / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 416,
+          "context": ".ds-brand-stage / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 674,
+          "context": ".ds-action-examples / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 877,
+          "context": "@media (max-width:1250px) / .ds-doc-layout / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1006,
+          "context": "@media (max-width:600px) / .ds-doc-section / margin-bottom"
+        }
+      ],
+      "count": 11,
+      "other_mentions": [],
+      "resolved": "40px"
+    },
+    "--qm-space-48": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 18,
+          "value": "48px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2175,
+          "context": "@media (min-width:1600px) / .hero-text / padding-left"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 9,
+          "context": ".ds-workspace / padding"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "48px"
+    },
+    "--qm-space-56": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 19,
+          "value": "56px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 66,
+          "context": ".ds-doc-layout / gap"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 204,
+          "context": ".ds-doc-section / margin-bottom"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "56px"
+    },
+    "--qm-space-64": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 20,
+          "value": "64px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 142,
+          "context": ".ds-document / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 868,
+          "context": "@media (min-width:1600px) / .ds-workspace / padding"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 871,
+          "context": "@media (min-width:1600px) / .ds-doc-layout / gap"
+        }
+      ],
+      "count": 3,
+      "other_mentions": [],
+      "resolved": "64px"
+    },
+    "--qm-space-80": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 21,
+          "value": "80px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1122,
+          "context": ".loading / padding"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "80px"
+    },
+    "--qm-type-display": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 24,
+          "value": "700 40px/52px 'Pretendard JP','Noto Sans KR',sans-serif"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2142,
+          "context": ".qm-type-display / font"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "700 40px/52px 'Pretendard JP','Noto Sans KR',sans-serif"
+    },
+    "--qm-type-title": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 25,
+          "value": "700 32px/44px 'Pretendard JP','Noto Sans KR',sans-serif"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2146,
+          "context": ".qm-type-title / font"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "700 32px/44px 'Pretendard JP','Noto Sans KR',sans-serif"
+    },
+    "--qm-type-heading": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 26,
+          "value": "600 22px/30px 'Pretendard JP','Noto Sans KR',sans-serif"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2150,
+          "context": ".qm-type-heading / font"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "600 22px/30px 'Pretendard JP','Noto Sans KR',sans-serif"
+    },
+    "--qm-type-body": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 27,
+          "value": "400 16px/24px 'Pretendard JP','Noto Sans KR',sans-serif"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2154,
+          "context": ".qm-type-body / font"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "400 16px/24px 'Pretendard JP','Noto Sans KR',sans-serif"
+    },
+    "--qm-type-label": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 28,
+          "value": "500 14px/20px 'Pretendard JP','Noto Sans KR',sans-serif"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2157,
+          "context": ".qm-type-label / font"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "500 14px/20px 'Pretendard JP','Noto Sans KR',sans-serif"
+    },
+    "--qm-type-caption": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 29,
+          "value": "400 12px/16px 'Pretendard JP','Noto Sans KR',sans-serif"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2161,
+          "context": ".qm-type-caption / font"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "400 12px/16px 'Pretendard JP','Noto Sans KR',sans-serif"
+    },
+    "--qm-font-size-label": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 30,
+          "value": "14px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 185,
+          "context": ".hero p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 546,
+          "context": ".page-heading p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 829,
+          "context": ".check-row / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1113,
+          "context": ".accordion-panel / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1263,
+          "context": "@media (max-width:800px) / .main-nav a / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1576,
+          "context": "@media (max-width:480px) / .story-card h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1908,
+          "context": ".field / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1957,
+          "context": ".notice / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2075,
+          "context": "#toast / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2234,
+          "context": "@media (max-width:480px) / .button / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2240,
+          "context": "@media (max-width:480px) / .card-copy h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 49,
+          "context": ".ds-doc-top nav / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 367,
+          "context": ".ds-variant-list b,.ds-spec-grid b / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 387,
+          "context": ".ds-dodont p / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 440,
+          "context": ".ds-directory h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 470,
+          "context": ".ds-color-list b / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 514,
+          "context": ".ds-font-hero small / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 695,
+          "context": ".ds-list b / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 725,
+          "context": ".ds-message b / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 742,
+          "context": ".ds-toast / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 779,
+          "context": ".ds-tab-panel / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 787,
+          "context": ".ds-row-label / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 796,
+          "context": ".ds-fieldset legend / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 864,
+          "context": ".ds-scroll-demo p / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 992,
+          "context": "@media (max-width:600px) / .ds-document-header>p / font-size"
+        }
+      ],
+      "count": 25,
+      "other_mentions": [],
+      "resolved": "14px"
+    },
+    "--qm-font-family": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 31,
+          "value": "'Pretendard JP','Noto Sans KR',Arial,sans-serif"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 9,
+          "context": "body / font-family"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "'Pretendard JP','Noto Sans KR',Arial,sans-serif"
+    },
+    "--qm-font-size-body-small": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 32,
+          "value": "15px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 10,
+          "context": "body / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 387,
+          "context": ".card-numbers strong / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 420,
+          "context": ".impact-strip strong / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1206,
+          "context": "@media (max-width:1100px) / .card-copy h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1343,
+          "context": "@media (max-width:800px) / .story-card h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1370,
+          "context": "@media (max-width:800px) / .mobile-donate strong / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1644,
+          "context": "@media (max-width:480px) / .article-body / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1840,
+          "context": ".button / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1972,
+          "context": ".tabs a / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 214,
+          "context": ".ds-doc-section>p / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 493,
+          "context": ".ds-palette b / font-size"
+        }
+      ],
+      "count": 11,
+      "other_mentions": [],
+      "resolved": "15px"
+    },
+    "--qm-font-size-headline": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 33,
+          "value": "18px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 53,
+          "context": "h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 947,
+          "context": ".ops-sidebar h2 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2286,
+          "context": "@media (max-width:480px) / .section-head h2 / font-size"
+        }
+      ],
+      "count": 3,
+      "other_mentions": [],
+      "resolved": "18px"
+    },
+    "--qm-leading-body": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 34,
+          "value": "1.6"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 54,
+          "context": "h3 / line-height"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1746,
+          "context": "body / line-height"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "1.6"
+    },
+    "--qm-font-size-caption-small": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 35,
+          "value": "11px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 81,
+          "context": ".topline / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 208,
+          "context": ".hero-controls / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 351,
+          "context": ".category-label / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 363,
+          "context": ".org-label / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 423,
+          "context": ".impact-strip p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 433,
+          "context": ".impact-number small / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 570,
+          "context": ".button.small / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 717,
+          "context": ".article-caption / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 889,
+          "context": "th / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 904,
+          "context": "td .button / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 933,
+          "context": ".stat small / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1033,
+          "context": ".demo-launch / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1297,
+          "context": "@media (max-width:800px) / .hero .button / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1407,
+          "context": "@media (max-width:800px) / .footer-top>div / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1436,
+          "context": "@media (max-width:480px) / .login-link / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1470,
+          "context": "@media (max-width:480px) / .category-nav a / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1480,
+          "context": "@media (max-width:480px) / .section-head p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1583,
+          "context": "@media (max-width:480px) / .notice-row / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1672,
+          "context": "@media (max-width:480px) / .stat span / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 60,
+          "context": ".ds-version / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 107,
+          "context": ".ds-nav-group h2 / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 277,
+          "context": ".ds-anatomy li:before / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 408,
+          "context": ".ds-doc-footer / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 496,
+          "context": ".ds-palette code / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 533,
+          "context": ".ds-type-table small / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 608,
+          "context": ".ds-icons small / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1029,
+          "context": "@media (max-width:600px) / .ds-type-table>div>span / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1058,
+          "context": "@media (max-width:600px) / .ds-color-list code / font-size"
+        }
+      ],
+      "count": 28,
+      "other_mentions": [],
+      "resolved": "11px"
+    },
+    "--qm-font-size-compact": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 36,
+          "value": "10px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 91,
+          "context": ".topline span / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 328,
+          "context": ".image-badge / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 395,
+          "context": ".card-numbers small / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 528,
+          "context": ".site-footer .fine / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 536,
+          "context": ".footer-bottom / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 910,
+          "context": "td small / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1269,
+          "context": "@media (max-width:800px) / .topline .container / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1483,
+          "context": "@media (max-width:480px) / .text-link / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1511,
+          "context": "@media (max-width:480px) / .card-numbers b / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1544,
+          "context": "@media (max-width:480px) / .impact-number small / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1580,
+          "context": "@media (max-width:480px) / .story-card p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1602,
+          "context": "@media (max-width:480px) / .site-footer .fine / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1699,
+          "context": "@media (max-width:480px) / .demo-launch / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1713,
+          "context": "@media (max-width:480px) / .steps li / font-size"
+        }
+      ],
+      "count": 14,
+      "other_mentions": [],
+      "resolved": "10px"
+    },
+    "--qm-weight-bold": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 37,
+          "value": "700"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 289,
+          "context": ".category-nav a.active / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 329,
+          "context": ".image-badge / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 680,
+          "context": ".tabs [aria-current] / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 807,
+          "context": ".steps li.active / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 821,
+          "context": ".amount-input input / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 509,
+          "context": ".ds-font-hero / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 775,
+          "context": ".ds-example-tabs [aria-selected=true] / font-weight"
+        }
+      ],
+      "count": 7,
+      "other_mentions": [],
+      "resolved": "700"
+    },
+    "--qm-font-size-body": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 38,
+          "value": "16px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 118,
+          "context": ".main-nav / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 356,
+          "context": ".card-copy h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 706,
+          "context": ".article-body / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1919,
+          "context": ".field input,.field select,.field textarea / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2080,
+          "context": ".accordion-trigger / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2249,
+          "context": "@media (max-width:480px) / .field input,.field select / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 156,
+          "context": ".ds-document-header>p / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 193,
+          "context": ".ds-mode a / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 219,
+          "context": ".ds-doc-section h3 / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 384,
+          "context": ".ds-dodont b / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 544,
+          "context": ".ds-doc-section .ds-reading / font-size"
+        }
+      ],
+      "count": 11,
+      "other_mentions": [],
+      "resolved": "16px"
+    },
+    "--qm-font-size-caption": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 39,
+          "value": "12px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 149,
+          "context": ".login-link / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 248,
+          "context": ".text-link / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 267,
+          "context": ".category-nav a / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 391,
+          "context": ".card-numbers b / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 456,
+          "context": ".mini-banner p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 465,
+          "context": ".eyebrow / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 486,
+          "context": ".story-card p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 494,
+          "context": ".notice-row / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 505,
+          "context": ".site-footer / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 525,
+          "context": ".site-footer p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 633,
+          "context": ".field small,.help / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 690,
+          "context": ".breadcrumb / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 743,
+          "context": ".summary-row / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 802,
+          "context": ".steps li / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 885,
+          "context": "table / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 924,
+          "context": ".stat span / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1104,
+          "context": ".accordion-trigger small / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1163,
+          "context": ".file-info / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1290,
+          "context": "@media (max-width:800px) / .hero p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1611,
+          "context": "@media (max-width:480px) / .page-heading p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1630,
+          "context": "@media (max-width:480px) / .field>span / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1633,
+          "context": "@media (max-width:480px) / .filters select / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1716,
+          "context": "@media (max-width:480px) / .check-row / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1880,
+          "context": ".button.small,td .button / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1988,
+          "context": ".badge / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 145,
+          "context": ".ds-breadcrumb / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 167,
+          "context": ".ds-toc / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 247,
+          "context": ".ds-caption / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 283,
+          "context": ".ds-doc-section th / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 332,
+          "context": ".ds-state-grid small / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 363,
+          "context": ".ds-variant-list span,.ds-spec-grid small / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 476,
+          "context": ".ds-color-list code / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 500,
+          "context": ".ds-palette span / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 560,
+          "context": ".ds-grid-preview span / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 570,
+          "context": ".ds-space-list code / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 699,
+          "context": ".ds-list small / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 902,
+          "context": "@media (max-width:800px) / .ds-doc-top nav / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 988,
+          "context": "@media (max-width:600px) / .ds-nav-group a / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1042,
+          "context": "@media (max-width:600px) / .ds-state-grid .button / font-size"
+        },
+        {
+          "file": "public/assets/js/pages/public.js",
+          "line": 10,
+          "context": "<span class=\"muted\" style=\"font-size:var("
+        }
+      ],
+      "count": 40,
+      "other_mentions": [],
+      "resolved": "12px"
+    },
+    "--qm-font-size-label-small": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 40,
+          "value": "13px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 192,
+          "context": ".hero .button / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 242,
+          "context": ".section-head p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 640,
+          "context": ".checkbox / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 657,
+          "context": ".list-meta / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 753,
+          "context": ".summary-org / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 867,
+          "context": ".empty p / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 870,
+          "context": ".form-error / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1176,
+          "context": ".radio-group label / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1508,
+          "context": "@media (max-width:480px) / .card-numbers strong / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1656,
+          "context": "@media (max-width:480px) / .tabs a / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2027,
+          "context": ".ops-sidebar a / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 29,
+          "context": ".ds-doc-wordmark span / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 98,
+          "context": ".ds-search input / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 120,
+          "context": ".ds-nav-group a / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 173,
+          "context": ".ds-toc>b / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 259,
+          "context": ".ds-anatomy / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 280,
+          "context": ".ds-doc-section table / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 316,
+          "context": ".ds-controls .field select / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 345,
+          "context": ".ds-state-grid .button / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 399,
+          "context": ".ds-code / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 446,
+          "context": ".ds-directory a / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 530,
+          "context": ".ds-type-table b / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 587,
+          "context": ".ds-radius / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 624,
+          "context": ".qm-chip / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 721,
+          "context": ".ds-message p / font-size"
+        },
+        {
+          "file": "public/assets/js/pages/public.js",
+          "line": 8,
+          "context": "<span style=\"font-size:var("
+        }
+      ],
+      "count": 26,
+      "other_mentions": [],
+      "resolved": "13px"
+    },
+    "--qm-font-size-title-small": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 41,
+          "value": "24px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 234,
+          "context": ".section-head h2 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 710,
+          "context": ".article-body h2 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1254,
+          "context": "@media (max-width:800px) / .brand / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1425,
+          "context": "@media (max-width:800px) / .story-hero h2 / font-size"
+        },
+        {
+          "file": "public/assets/js/pages/design-system.js",
+          "line": 12,
+          "context": ";font-size:var("
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "24px"
+    },
+    "--qm-weight-semibold": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 42,
+          "value": "600"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 353,
+          "context": ".category-label / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 613,
+          "context": ".field>span / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 890,
+          "context": "th / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1842,
+          "context": ".button / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1984,
+          "context": ".badge,.image-badge / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1993,
+          "context": ".badge.brand / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 50,
+          "context": ".ds-doc-top nav / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 194,
+          "context": ".ds-mode a / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 709,
+          "context": ".ds-avatar / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 797,
+          "context": ".ds-fieldset legend / font-weight"
+        }
+      ],
+      "count": 10,
+      "other_mentions": [],
+      "resolved": "600"
+    },
+    "--qm-weight-regular": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 43,
+          "value": "400"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 397,
+          "context": ".card-numbers small / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 435,
+          "context": ".impact-number small / font-weight"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1106,
+          "context": ".accordion-trigger small / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 516,
+          "context": ".ds-font-hero small / font-weight"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "400"
+    },
+    "--qm-font-size-heading": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 44,
+          "value": "22px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 427,
+          "context": ".impact-number / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1237,
+          "context": "@media (max-width:1100px) / .stat strong / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1968,
+          "context": ".panel h2 / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 208,
+          "context": ".ds-doc-section>h2 / font-size"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "22px"
+    },
+    "--qm-font-size-title": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 45,
+          "value": "32px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 542,
+          "context": ".page-heading h1 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1222,
+          "context": "@media (max-width:1100px) / .hero h1 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2222,
+          "context": "@media (max-width:767px) / .qm-type-display / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1025,
+          "context": "@media (max-width:600px) / .ds-font-hero / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1029,
+          "context": "@media (max-width:600px) / .ds-type-table>div>span / font-size"
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "32px"
+    },
+    "--qm-font-size-heading-small": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 46,
+          "value": "20px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1057,
+          "context": ".dialog-head h2 / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1541,
+          "context": "@media (max-width:480px) / .impact-number / font-size"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1669,
+          "context": "@media (max-width:480px) / .stat strong / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1009,
+          "context": "@media (max-width:600px) / .ds-doc-section>h2 / font-size"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "20px"
+    },
+    "--qm-tracking-title": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 47,
+          "value": "-.0253em"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1752,
+          "context": "h1 / letter-spacing"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2147,
+          "context": ".qm-type-title / letter-spacing"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "-.0253em"
+    },
+    "--qm-tracking-headline": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 48,
+          "value": "-.002em"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1758,
+          "context": "h3 / letter-spacing"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1814,
+          "context": ".card-copy h3 / letter-spacing"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "-.002em"
+    },
+    "--qm-tracking-heading": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 49,
+          "value": "-.0194em"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2151,
+          "context": ".qm-type-heading / letter-spacing"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 211,
+          "context": ".ds-doc-section>h2 / letter-spacing"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "-.0194em"
+    },
+    "--qm-font-size-display": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 50,
+          "value": "40px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2171,
+          "context": "@media (min-width:1600px) / .hero h1 / font-size"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 947,
+          "context": "@media (max-width:800px) / .ds-font-hero / font-size"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "40px"
+    },
+    "--qm-weight-medium": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 51,
+          "value": "500"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 30,
+          "context": ".ds-doc-wordmark span / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 108,
+          "context": ".ds-nav-group h2 / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 471,
+          "context": ".ds-color-list b / font-weight"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 625,
+          "context": ".qm-chip / font-weight"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "500"
+    },
+    "--qm-radius-8": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 54,
+          "value": "8px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 371,
+          "context": ".progress / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 377,
+          "context": ".progress span / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1487,
+          "context": "@media (max-width:480px) / .fund-card / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1879,
+          "context": ".button.small,td .button / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2026,
+          "context": ".ops-sidebar a / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 82,
+          "context": ".ds-search / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 119,
+          "context": ".ds-nav-group a / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 318,
+          "context": ".ds-controls .field select / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 465,
+          "context": ".ds-color-dot / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 618,
+          "context": ".qm-chip / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 861,
+          "context": ".ds-scroll-demo / border-radius"
+        }
+      ],
+      "count": 11,
+      "other_mentions": [],
+      "resolved": "8px"
+    },
+    "--qm-radius-12": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 55,
+          "value": "12px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 702,
+          "context": ".detail-cover / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 726,
+          "context": ".donation-summary / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 768,
+          "context": ".panel / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 854,
+          "context": ".empty / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1808,
+          "context": ".fund-card / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1838,
+          "context": ".button / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1915,
+          "context": ".field input,.field select,.field textarea / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1955,
+          "context": ".notice / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2012,
+          "context": ".table-wrap / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2033,
+          "context": ".stat / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2073,
+          "context": "#toast / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2167,
+          "context": ".ds-demo / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 352,
+          "context": ".ds-variant-list,.ds-spec-grid / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 397,
+          "context": ".ds-code / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 596,
+          "context": ".ds-icons>div / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 679,
+          "context": ".ds-list / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 716,
+          "context": ".ds-message / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 740,
+          "context": ".ds-toast / border-radius"
+        }
+      ],
+      "count": 18,
+      "other_mentions": [],
+      "resolved": "12px"
+    },
+    "--qm-radius-16": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 56,
+          "value": "16px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 157,
+          "context": ".hero / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1798,
+          "context": ".category-nav .category-icon / border-radius"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1831,
+          "context": ".mini-banner / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 481,
+          "context": ".ds-palette / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 813,
+          "context": ".qm-switch / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 1000,
+          "context": "@media (max-width:600px) / .ds-stage / border-radius"
+        }
+      ],
+      "count": 6,
+      "other_mentions": [],
+      "resolved": "16px"
+    },
+    "--qm-shadow-raised": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 57,
+          "value": "0 8px 30px #233b2910"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 305,
+          "context": ".fund-card:hover / box-shadow"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1074,
+          "context": "#toast / box-shadow"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "0 8px 30px #233b2910"
+    },
+    "--qm-radius-4": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 58,
+          "value": "4px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 326,
+          "context": ".image-badge / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 378,
+          "context": ".ds-dodont>div / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 578,
+          "context": ".ds-space-list span / border-radius"
+        }
+      ],
+      "count": 3,
+      "other_mentions": [],
+      "resolved": "4px"
+    },
+    "--qm-shadow-panel": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 59,
+          "value": "0 5px 25px #233b2906"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 728,
+          "context": ".donation-summary / box-shadow"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "0 5px 25px #233b2906"
+    },
+    "--qm-shadow-floating": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 60,
+          "value": "0 4px 17px #2b42231a"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1032,
+          "context": ".demo-launch / box-shadow"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "0 4px 17px #2b42231a"
+    },
+    "--qm-shadow-dialog": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 61,
+          "value": "0 24px 90px #00000033"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1043,
+          "context": "dialog / box-shadow"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "0 24px 90px #00000033"
+    },
+    "--qm-shadow-pressed": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 62,
+          "value": "inset 0 0 0 100px var(--qm-interaction-pressed)"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1869,
+          "context": ".button:active:not(:disabled),.icon-button:active / box-shadow"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "inset 0 0 0 100px #1717190a"
+    },
+    "--qm-radius-20": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 63,
+          "value": "20px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2053,
+          "context": "dialog / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 223,
+          "context": ".ds-stage / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 294,
+          "context": ".ds-playground / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 419,
+          "context": ".ds-brand-stage / border-radius"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 508,
+          "context": ".ds-font-hero / border-radius"
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "20px"
+    },
+    "--qm-shadow-pressed-strong": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 64,
+          "value": "inset 0 0 0 100px var(--qm-interaction-strong)"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 339,
+          "context": ".ds-state-pressed / box-shadow"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "inset 0 0 0 100px #17171918"
+    },
+    "--qm-shadow-hover": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 65,
+          "value": "inset 0 0 0 100px var(--qm-interaction-hover)"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 661,
+          "context": ".qm-chip:hover / box-shadow"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "inset 0 0 0 100px #17171908"
+    },
+    "--qm-shadow-thumb": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 66,
+          "value": "0 1px 3px #00000022"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 830,
+          "context": ".qm-switch:before / box-shadow"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "0 1px 3px #00000022"
+    },
+    "--qm-z-skip-link": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 69,
+          "value": "1000"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 71,
+          "context": ".skip / z-index"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "1000"
+    },
+    "--qm-z-header": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 70,
+          "value": "20"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 97,
+          "context": ".site-header / z-index"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "20"
+    },
+    "--qm-motion-transition": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 71,
+          "value": ".2s"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 278,
+          "context": ".category-nav .category-icon / transition"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 302,
+          "context": ".fund-card / transition"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 302,
+          "context": ".fund-card / transition"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1072,
+          "context": "#toast / transition"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": ".2s"
+    },
+    "--qm-motion-image": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 72,
+          "value": ".35s"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 316,
+          "context": ".card-image img / transition"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": ".35s"
+    },
+    "--qm-z-demo-launch": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 73,
+          "value": "40"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1024,
+          "context": ".demo-launch / z-index"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "40"
+    },
+    "--qm-z-toast": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 74,
+          "value": "10000"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1069,
+          "context": "#toast / z-index"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "10000"
+    },
+    "--qm-motion-skeleton": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 75,
+          "value": "1.4s"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1129,
+          "context": ".skeleton / animation"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "1.4s"
+    },
+    "--qm-z-mobile-cta": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 76,
+          "value": "30"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1363,
+          "context": "@media (max-width:800px) / .mobile-donate / z-index"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "30"
+    },
+    "--qm-motion-feedback": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 77,
+          "value": "180ms"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1844,
+          "context": ".button / transition"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1844,
+          "context": ".button / transition"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 817,
+          "context": ".qm-switch / transition"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 831,
+          "context": ".qm-switch:before / transition"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "180ms"
+    },
+    "--qm-motion-spinner": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 78,
+          "value": "900ms"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1900,
+          "context": ".spinner / animation"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "900ms"
+    },
+    "--qm-z-doc-header": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 79,
+          "value": "25"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 21,
+          "context": ".ds-doc-top / z-index"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "25"
+    },
+    "--qm-chip-olive": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 82,
+          "value": "#a3b166"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1997,
+          "context": ".badge.olive,.badge.green / --chip-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 375,
+          "context": ".ds-dodont>div / border-top"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 631,
+          "context": ".qm-chip.olive / --chip-color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 5,
+          "context": "nToken('--qm-label-strong')],['Inverse label',designToken('--qm-background-elevated')],['Dimmer',designToken('--qm-material-dimmer')]]]];\nexport const tones=[['olive',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system.js",
+          "line": 11,
+          "context": "</div>`)+section('status','Status mapping',table(['컬러','값','상태'],[['Olive',designToken('"
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "#a3b166"
+    },
+    "--qm-chip-blue": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 83,
+          "value": "#8696ad"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2000,
+          "context": ".badge.blue,.image-badge / --chip-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 634,
+          "context": ".qm-chip.blue / --chip-color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 5,
+          "context": ",designToken('--qm-background-elevated')],['Dimmer',designToken('--qm-material-dimmer')]]]];\nexport const tones=[['olive',designToken('--qm-chip-olive'),'승인'],['blue',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system.js",
+          "line": 11,
+          "context": "</div>`)+section('status','Status mapping',table(['컬러','값','상태'],[['Olive',designToken('--qm-chip-olive'),'승인 · 성공 · 진행 · 지급 · 처리 완료'],['Blue',designToken('"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "#8696ad"
+    },
+    "--qm-chip-lavender": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 84,
+          "value": "#ac94aa"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1981,
+          "context": ".badge,.image-badge / --chip-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2003,
+          "context": ".badge.lavender,.image-badge.ended / --chip-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 637,
+          "context": ".qm-chip.lavender / --chip-color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 5,
+          "context": "',designToken('--qm-material-dimmer')]]]];\nexport const tones=[['olive',designToken('--qm-chip-olive'),'승인'],['blue',designToken('--qm-chip-blue'),'심사 중'],['lavender',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system.js",
+          "line": 11,
+          "context": "able(['컬러','값','상태'],[['Olive',designToken('--qm-chip-olive'),'승인 · 성공 · 진행 · 지급 · 처리 완료'],['Blue',designToken('--qm-chip-blue'),'접수 · 검토 요청 · 심사 · 처리 중'],['Lavender',designToken('"
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "#ac94aa"
+    },
+    "--qm-chip-orange": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 85,
+          "value": "#d1936a"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2006,
+          "context": ".badge.orange / --chip-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 640,
+          "context": ".qm-chip.orange / --chip-color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 5,
+          "context": "nst tones=[['olive',designToken('--qm-chip-olive'),'승인'],['blue',designToken('--qm-chip-blue'),'심사 중'],['lavender',designToken('--qm-chip-lavender'),'일시중지'],['orange',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system.js",
+          "line": 11,
+          "context": "공 · 진행 · 지급 · 처리 완료'],['Blue',designToken('--qm-chip-blue'),'접수 · 검토 요청 · 심사 · 처리 중'],['Lavender',designToken('--qm-chip-lavender'),'임시저장 · 일시중지 · 종료 · 취소'],['Orange',designToken('"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "#d1936a"
+    },
+    "--qm-chip-rose": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 86,
+          "value": "var(--qm-color-rose)"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2009,
+          "context": ".badge.rose,.badge.red,.badge.brand / --chip-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 381,
+          "context": ".ds-dodont>div+div / border-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 616,
+          "context": ".qm-chip / --chip-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 643,
+          "context": ".qm-chip.rose / --chip-color"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "#c77991"
+    },
+    "--qm-chip-label": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 87,
+          "value": "var(--qm-label-normal)"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 489,
+          "context": ".ds-palette>div / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 710,
+          "context": ".ds-avatar / color"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#171719"
+    },
+    "--qm-primary-normal": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 88,
+          "value": "var(--qm-color-rose)"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 109,
+          "context": ".brand / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 129,
+          "context": ".main-nav a:hover,.main-nav [aria-current] / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 238,
+          "context": ".section-head h2 span / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 288,
+          "context": ".category-nav a.active / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 352,
+          "context": ".category-label / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 376,
+          "context": ".progress span / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 388,
+          "context": ".card-numbers strong / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 467,
+          "context": ".eyebrow / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 644,
+          "context": ".checkbox input / accent-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 678,
+          "context": ".tabs [aria-current] / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 679,
+          "context": ".tabs [aria-current] / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 805,
+          "context": ".steps li.active / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 806,
+          "context": ".steps li.active / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 964,
+          "context": ".ops-sidebar a.active / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1159,
+          "context": ".chart-bar / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1179,
+          "context": ".radio-group input / accent-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1820,
+          "context": ".bookmark.saved svg / fill"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1847,
+          "context": ".button.primary / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1848,
+          "context": ".button.primary / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1863,
+          "context": ".button.outlined / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1950,
+          "context": ".radio-group label:has(input:checked) / border-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 577,
+          "context": ".ds-space-list span / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "type-utility','Typography & Ellipsis'],['scroll','ScrollArea'],['focus','FocusScope'],['interaction','WithInteraction']]]];\nexport const colors=[['Primary',[['Normal',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 5,
+          "context": "),'승인'],['blue',designToken('--qm-chip-blue'),'심사 중'],['lavender',designToken('--qm-chip-lavender'),'일시중지'],['orange',designToken('--qm-chip-orange'),'보완 요청'],['rose',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system.js",
+          "line": 11,
+          "context": "lue'),'접수 · 검토 요청 · 심사 · 처리 중'],['Lavender',designToken('--qm-chip-lavender'),'임시저장 · 일시중지 · 종료 · 취소'],['Orange',designToken('--qm-chip-orange'),'보완 요청 · 예정'],['Rose',designToken('"
+        }
+      ],
+      "count": 25,
+      "other_mentions": [],
+      "resolved": "#c77991"
+    },
+    "--qm-primary-strong": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 89,
+          "value": "#91465e"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 630,
+          "context": ".field input:focus,.field textarea:focus / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1369,
+          "context": "@media (max-width:800px) / .mobile-donate strong / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1780,
+          "context": ".main-nav a:hover,.main-nav [aria-current] / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1792,
+          "context": ".hero .button / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1795,
+          "context": ".eyebrow,.category-label,.card-numbers strong,.section-head h2 span,.category-nav a.active,.tabs [aria-current],.steps li.active,.ops-sidebar a.active / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1802,
+          "context": ".category-nav a:hover .category-icon,.category-nav a.active .category-icon / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1821,
+          "context": ".bookmark.saved svg / stroke"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1827,
+          "context": ".impact-strip .intro svg / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1862,
+          "context": ".button.outlined / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1926,
+          "context": ".field :is(input,select,textarea):focus / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1943,
+          "context": ".checkbox input,.radio-group input / accent-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1961,
+          "context": ".notice svg / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 184,
+          "context": ".ds-toc a:hover / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 450,
+          "context": ".ds-directory a:hover / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 556,
+          "context": ".ds-grid-preview span / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 773,
+          "context": ".ds-example-tabs [aria-selected=true] / border-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 774,
+          "context": ".ds-example-tabs [aria-selected=true] / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 834,
+          "context": ".qm-switch:checked / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "l','ScrollArea'],['focus','FocusScope'],['interaction','WithInteraction']]]];\nexport const colors=[['Primary',[['Normal',designToken('--qm-primary-normal')],['Strong',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/public.js",
+          "line": 10,
+          "context": "%\"></span></div><div class=\"summary-row\"><strong style=\"color:var("
+        }
+      ],
+      "count": 20,
+      "other_mentions": [],
+      "resolved": "#91465e"
+    },
+    "--qm-primary-heavy": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 90,
+          "value": "#713348"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "eraction','WithInteraction']]]];\nexport const colors=[['Primary',[['Normal',designToken('--qm-primary-normal')],['Strong',designToken('--qm-primary-strong')],['Heavy',designToken('"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#713348"
+    },
+    "--qm-label-normal": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 91,
+          "value": "#171719"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 7,
+          "context": "body / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1044,
+          "context": "dialog / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1749,
+          "context": "h1,h2,h3 / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1918,
+          "context": ".field input,.field select,.field textarea / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 10,
+          "context": ".ds-workspace / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 57,
+          "context": ".ds-doc-top nav [aria-current] / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 130,
+          "context": ".ds-nav-group a[aria-current] / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 200,
+          "context": ".ds-mode a[aria-current] / border-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 201,
+          "context": ".ds-mode a[aria-current] / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 274,
+          "context": ".ds-anatomy li:before / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 628,
+          "context": ".qm-chip / color"
+        },
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 87,
+          "context": ":root / --qm-chip-label"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "rimary',[['Normal',designToken('--qm-primary-normal')],['Strong',designToken('--qm-primary-strong')],['Heavy',designToken('--qm-primary-heavy')]]],['Label',[['Normal',designToken('"
+        }
+      ],
+      "count": 13,
+      "other_mentions": [],
+      "resolved": "#171719"
+    },
+    "--qm-label-strong": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 92,
+          "value": "#000"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "-normal')],['Strong',designToken('--qm-primary-strong')],['Heavy',designToken('--qm-primary-heavy')]]],['Label',[['Normal',designToken('--qm-label-normal')],['Strong',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "ignToken('--qm-status-cautionary')],['Negative',designToken('--qm-status-negative')]]],['Static & inverse',[['White',designToken('--qm-background-elevated')],['Black',designToken('"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#000"
+    },
+    "--qm-label-neutral": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 93,
+          "value": "#46474c"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 330,
+          "context": ".image-badge / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 344,
+          "context": ".bookmark / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 429,
+          "context": ".impact-number / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 516,
+          "context": ".footer-top .brand / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 622,
+          "context": ".field input,.field textarea,.field select / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 709,
+          "context": ".article-body h2 / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 747,
+          "context": ".summary-row strong / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1034,
+          "context": ".demo-launch / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1789,
+          "context": ".hero p / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1799,
+          "context": ".category-nav .category-icon / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1954,
+          "context": ".notice / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2017,
+          "context": "th / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2047,
+          "context": ".article-body / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2050,
+          "context": ".article-body p / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2088,
+          "context": ".accordion-panel / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 159,
+          "context": ".ds-document-header>p / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 216,
+          "context": ".ds-doc-section>p / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 260,
+          "context": ".ds-anatomy / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 390,
+          "context": ".ds-dodont p / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 722,
+          "context": ".ds-message p / color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "y-strong')],['Heavy',designToken('--qm-primary-heavy')]]],['Label',[['Normal',designToken('--qm-label-normal')],['Strong',designToken('--qm-label-strong')],['Neutral',designToken('"
+        }
+      ],
+      "count": 21,
+      "other_mentions": [],
+      "resolved": "#46474c"
+    },
+    "--qm-label-alternative": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 94,
+          "value": "#68696f"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 57,
+          "context": "p / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 82,
+          "context": ".topline / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 150,
+          "context": ".login-link / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 249,
+          "context": ".text-link / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 268,
+          "context": ".category-nav a / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 365,
+          "context": ".org-label / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 396,
+          "context": ".card-numbers small / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 434,
+          "context": ".impact-number small / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 506,
+          "context": ".site-footer / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 530,
+          "context": ".site-footer .fine / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 634,
+          "context": ".field small,.help / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 674,
+          "context": ".tabs a / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 691,
+          "context": ".breadcrumb / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 718,
+          "context": ".article-caption / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 744,
+          "context": ".summary-row / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 799,
+          "context": ".steps li / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 909,
+          "context": "td small / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 925,
+          "context": ".stat span / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 934,
+          "context": ".stat small / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 956,
+          "context": ".ops-sidebar a / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 992,
+          "context": ".comment p / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 995,
+          "context": ".comment small / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1105,
+          "context": ".accordion-trigger small / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1140,
+          "context": ".muted / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1164,
+          "context": ".file-info / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1875,
+          "context": ".button:disabled / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1930,
+          "context": ".field :is(input,select,textarea)::placeholder / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1934,
+          "context": ".field :is(input,select,textarea):disabled / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 31,
+          "context": ".ds-doc-wordmark span / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 54,
+          "context": ".ds-doc-top nav a / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 61,
+          "context": ".ds-version / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 90,
+          "context": ".ds-search svg / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 122,
+          "context": ".ds-nav-group a / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 146,
+          "context": ".ds-breadcrumb / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 179,
+          "context": ".ds-toc a / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 248,
+          "context": ".ds-caption / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 333,
+          "context": ".ds-state-grid small / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 362,
+          "context": ".ds-variant-list span,.ds-spec-grid small / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 409,
+          "context": ".ds-doc-footer / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 445,
+          "context": ".ds-directory a / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 475,
+          "context": ".ds-color-list code / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 534,
+          "context": ".ds-type-table small / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 609,
+          "context": ".ds-icons small / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 700,
+          "context": ".ds-list small / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 770,
+          "context": ".ds-example-tabs button / color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "vy')]]],['Label',[['Normal',designToken('--qm-label-normal')],['Strong',designToken('--qm-label-strong')],['Neutral',designToken('--qm-label-neutral')],['Alternative',designToken('"
+        }
+      ],
+      "count": 46,
+      "other_mentions": [],
+      "resolved": "#68696f"
+    },
+    "--qm-label-assistive": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 95,
+          "value": "#989ba2"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1923,
+          "context": ".field :is(input,select,textarea):hover:not(:disabled) / border-color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 110,
+          "context": ".ds-nav-group h2 / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 197,
+          "context": ".ds-mode a / color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "normal')],['Strong',designToken('--qm-label-strong')],['Neutral',designToken('--qm-label-neutral')],['Alternative',designToken('--qm-label-alternative')],['Assistive',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "Token('--qm-background-alternative')],['Elevated',designToken('--qm-background-elevated')],['Brand soft',designToken('--qm-brand-soft')]]],['Interaction',[['Inactive',designToken('"
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "#989ba2"
+    },
+    "--qm-label-disable": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 96,
+          "value": "#c4c5c9"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 814,
+          "context": ".qm-switch / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "ng')],['Neutral',designToken('--qm-label-neutral')],['Alternative',designToken('--qm-label-alternative')],['Assistive',designToken('--qm-label-assistive')],['Disable',designToken('"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#c4c5c9"
+    },
+    "--qm-fill-normal": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 97,
+          "value": "#70737c14"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1866,
+          "context": ".button.secondary:hover,.icon-button:hover / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1873,
+          "context": ".button:disabled / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2036,
+          "context": ".progress / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 627,
+          "context": ".qm-chip / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "ternative',designToken('--qm-label-alternative')],['Assistive',designToken('--qm-label-assistive')],['Disable',designToken('--qm-label-disable')]]],['Fill',[['Normal',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "['Alternative',designToken('--qm-fill-alternative')]]],['Line',[['Normal',designToken('--qm-line-normal')],['Neutral',designToken('--qm-line-neutral')],['Alternative',designToken('"
+        }
+      ],
+      "count": 6,
+      "other_mentions": [],
+      "resolved": "#70737c14"
+    },
+    "--qm-fill-strong": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 98,
+          "value": "#70737c29"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "ive')],['Assistive',designToken('--qm-label-assistive')],['Disable',designToken('--qm-label-disable')]]],['Fill',[['Normal',designToken('--qm-fill-normal')],['Strong',designToken('"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#70737c29"
+    },
+    "--qm-fill-alternative": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 99,
+          "value": "#70737c0a"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2023,
+          "context": "tbody tr:hover / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2084,
+          "context": ".accordion-trigger:hover / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 126,
+          "context": ".ds-nav-group a:hover / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "stive')],['Disable',designToken('--qm-label-disable')]]],['Fill',[['Normal',designToken('--qm-fill-normal')],['Strong',designToken('--qm-fill-strong')],['Alternative',designToken('"
+        }
+      ],
+      "count": 4,
+      "other_mentions": [],
+      "resolved": "#70737c0a"
+    },
+    "--qm-line-normal": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 100,
+          "value": "#70737c29"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2111,
+          "context": ".qm-divider / border-top"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "Fill',[['Normal',designToken('--qm-fill-normal')],['Strong',designToken('--qm-fill-strong')],['Alternative',designToken('--qm-fill-alternative')]]],['Line',[['Normal',designToken('"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#70737c29"
+    },
+    "--qm-line-solid": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 101,
+          "value": "#e1e2e4"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 79,
+          "context": ".topline / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 95,
+          "context": ".site-header / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 259,
+          "context": ".category-nav / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 299,
+          "context": ".fund-card / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 491,
+          "context": ".notice-row / border-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 504,
+          "context": ".site-footer / border-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 533,
+          "context": ".footer-bottom / border-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 554,
+          "context": ".button / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 595,
+          "context": ".filters / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 669,
+          "context": ".tabs / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 725,
+          "context": ".donation-summary / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 750,
+          "context": ".summary-org / border-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 767,
+          "context": ".panel / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 786,
+          "context": ".auth-box / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 825,
+          "context": ".check-row / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 879,
+          "context": ".table-wrap / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 893,
+          "context": "th,td / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 921,
+          "context": ".stat / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 944,
+          "context": ".ops-sidebar / border-right"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 987,
+          "context": ".comment / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1050,
+          "context": ".dialog-head / border-bottom"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1081,
+          "context": ".accordion / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1086,
+          "context": ".accordion section+section / border-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1144,
+          "context": ".preview-paper / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1174,
+          "context": ".radio-group label / border"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1360,
+          "context": "@media (max-width:800px) / .mobile-donate / border-top"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1824,
+          "context": ".impact-strip / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1914,
+          "context": ".field input,.field select,.field textarea / border"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 760,
+          "context": ".ds-example-tabs / border-bottom"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "rnative')]]],['Line',[['Normal',designToken('--qm-line-normal')],['Neutral',designToken('--qm-line-neutral')],['Alternative',designToken('--qm-fill-normal')],['Solid',designToken('"
+        }
+      ],
+      "count": 30,
+      "other_mentions": [],
+      "resolved": "#e1e2e4"
+    },
+    "--qm-background-normal": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 102,
+          "value": "#fff"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 8,
+          "context": "body / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 72,
+          "context": ".skip / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 94,
+          "context": ".site-header / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 190,
+          "context": ".hero .button / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 191,
+          "context": ".hero .button / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 301,
+          "context": ".fund-card / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 327,
+          "context": ".image-badge / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 557,
+          "context": ".button.secondary / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 619,
+          "context": ".field input,.field textarea,.field select / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 770,
+          "context": ".panel / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 920,
+          "context": ".stat / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 981,
+          "context": ".operations .site-header / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1030,
+          "context": ".demo-launch / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1053,
+          "context": ".dialog-head / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1068,
+          "context": "#toast / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1099,
+          "context": ".accordion-trigger / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1858,
+          "context": ".button.primary:active / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1861,
+          "context": ".button.outlined / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 244,
+          "context": ".ds-stage .table-wrap / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 276,
+          "context": ".ds-anatomy li:before / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 309,
+          "context": ".ds-controls / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 583,
+          "context": ".ds-radius / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 651,
+          "context": ".qm-chip.outlined / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 677,
+          "context": ".ds-list / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 739,
+          "context": ".ds-toast / color"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 829,
+          "context": ".qm-switch:before / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 860,
+          "context": ".ds-scroll-demo / background"
+        },
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 104,
+          "context": ":root / --qm-background-elevated"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "al')],['Neutral',designToken('--qm-line-neutral')],['Alternative',designToken('--qm-fill-normal')],['Solid',designToken('--qm-line-solid')]]],['Background',[['Normal',designToken('"
+        }
+      ],
+      "count": 29,
+      "other_mentions": [],
+      "resolved": "#fff"
+    },
+    "--qm-background-alternative": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 103,
+          "value": "#f7f7f8"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 80,
+          "context": ".topline / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 146,
+          "context": ".icon-button:hover / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 277,
+          "context": ".category-nav .category-icon / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 404,
+          "context": ".impact-strip / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 503,
+          "context": ".site-footer / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 560,
+          "context": ".button.secondary:hover / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 594,
+          "context": ".filters / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 852,
+          "context": ".empty / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 978,
+          "context": ".operations / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1127,
+          "context": ".skeleton / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1127,
+          "context": ".skeleton / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1127,
+          "context": ".skeleton / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1145,
+          "context": ".preview-paper / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1933,
+          "context": ".field :is(input,select,textarea):disabled / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2016,
+          "context": "th / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2166,
+          "context": ".ds-demo / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 85,
+          "context": ".ds-search / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 129,
+          "context": ".ds-nav-group a[aria-current] / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "lternative',designToken('--qm-fill-normal')],['Solid',designToken('--qm-line-solid')]]],['Background',[['Normal',designToken('--qm-background-normal')],['Alternative',designToken('"
+        }
+      ],
+      "count": 19,
+      "other_mentions": [],
+      "resolved": "#f7f7f8"
+    },
+    "--qm-background-elevated": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 104,
+          "value": "var(--qm-background-normal)"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "signToken('--qm-line-solid')]]],['Background',[['Normal',designToken('--qm-background-normal')],['Alternative',designToken('--qm-background-alternative')],['Elevated',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "gnToken('--qm-status-positive')],['Cautionary',designToken('--qm-status-cautionary')],['Negative',designToken('--qm-status-negative')]]],['Static & inverse',[['White',designToken('"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "ignToken('--qm-status-negative')]]],['Static & inverse',[['White',designToken('--qm-background-elevated')],['Black',designToken('--qm-label-strong')],['Inverse label',designToken('"
+        }
+      ],
+      "count": 3,
+      "other_mentions": [],
+      "resolved": "#fff"
+    },
+    "--qm-status-positive": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 105,
+          "value": "#16834b"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 837,
+          "context": ".success-icon / color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "n('--qm-brand-soft')]]],['Interaction',[['Inactive',designToken('--qm-label-assistive')],['Disable',designToken('--qm-interaction-disabled')]]],['Status',[['Positive',designToken('"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#16834b"
+    },
+    "--qm-status-cautionary": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 106,
+          "value": "#976017"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": ",designToken('--qm-label-assistive')],['Disable',designToken('--qm-interaction-disabled')]]],['Status',[['Positive',designToken('--qm-status-positive')],['Cautionary',designToken('"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#976017"
+    },
+    "--qm-status-negative": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 107,
+          "value": "#c33737"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 563,
+          "context": ".button.danger / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 871,
+          "context": ".form-error / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1937,
+          "context": ".field [aria-invalid=true] / border-color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1940,
+          "context": ".field:has([aria-invalid=true]) .help / color"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "signToken('--qm-interaction-disabled')]]],['Status',[['Positive',designToken('--qm-status-positive')],['Cautionary',designToken('--qm-status-cautionary')],['Negative',designToken('"
+        }
+      ],
+      "count": 5,
+      "other_mentions": [],
+      "resolved": "#c33737"
+    },
+    "--qm-material-dimmer": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 108,
+          "value": "#17171985"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2059,
+          "context": "dialog::backdrop / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "rse',[['White',designToken('--qm-background-elevated')],['Black',designToken('--qm-label-strong')],['Inverse label',designToken('--qm-background-elevated')],['Dimmer',designToken('"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#17171985"
+    },
+    "--qm-brand-soft": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 109,
+          "value": "#fbf0f4"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 285,
+          "context": ".category-nav a:hover .category-icon,.category-nav a.active .category-icon / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1003,
+          "context": ".story-hero / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1783,
+          "context": ".hero / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1830,
+          "context": ".mini-banner / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1949,
+          "context": ".radio-group label:has(input:checked) / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1953,
+          "context": ".notice / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2030,
+          "context": ".ops-sidebar a.active / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 554,
+          "context": ".ds-grid-preview span / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 669,
+          "context": ".ds-filled / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 734,
+          "context": ".ds-message.tone-3 / background"
+        },
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "',designToken('--qm-background-normal')],['Alternative',designToken('--qm-background-alternative')],['Elevated',designToken('--qm-background-elevated')],['Brand soft',designToken('"
+        }
+      ],
+      "count": 11,
+      "other_mentions": [],
+      "resolved": "#fbf0f4"
+    },
+    "--qm-on-primary": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 110,
+          "value": "#fff"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1849,
+          "context": ".button.primary / color"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1854,
+          "context": ".button.primary:hover / color"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#fff"
+    },
+    "--qm-surface-glass": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 111,
+          "value": "#ffffffee"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 204,
+          "context": ".hero-controls / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#ffffffee"
+    },
+    "--qm-line-on-image": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 112,
+          "value": "#ffffff80"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 205,
+          "context": ".hero-controls / border"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#ffffff80"
+    },
+    "--qm-surface-bookmark": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 113,
+          "value": "#ffffffde"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 337,
+          "context": ".bookmark / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#ffffffde"
+    },
+    "--qm-line-soft": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 114,
+          "value": "#edf0e8"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 405,
+          "context": ".impact-strip / border"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#edf0e8"
+    },
+    "--qm-label-muted": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 115,
+          "value": "#8b938d"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 497,
+          "context": ".notice-row span / color"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#8b938d"
+    },
+    "--qm-negative-soft": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 116,
+          "value": "#fff5f4"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 564,
+          "context": ".button.danger / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#fff5f4"
+    },
+    "--qm-negative-line": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 117,
+          "value": "#edceca"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 565,
+          "context": ".button.danger / border-color"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#edceca"
+    },
+    "--qm-fill-muted": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 118,
+          "value": "#f1f1ed"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 584,
+          "context": ".badge / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#f1f1ed"
+    },
+    "--qm-label-muted-strong": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 119,
+          "value": "#697263"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 585,
+          "context": ".badge / color"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#697263"
+    },
+    "--qm-line-input": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 120,
+          "value": "#dbe2da"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 617,
+          "context": ".field input,.field textarea,.field select / border"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#dbe2da"
+    },
+    "--qm-line-step": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 121,
+          "value": "#e9ede5"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 800,
+          "context": ".steps li / border-bottom"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#e9ede5"
+    },
+    "--qm-positive-tint": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 122,
+          "value": "#e4f2e5"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 836,
+          "context": ".success-icon / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#e4f2e5"
+    },
+    "--qm-line-empty": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 123,
+          "value": "#dce4d7"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 853,
+          "context": ".empty / border"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#dce4d7"
+    },
+    "--qm-icon-empty": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 124,
+          "value": "#97aa8e"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 859,
+          "context": ".empty>svg / color"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#97aa8e"
+    },
+    "--qm-line-floating": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 125,
+          "value": "#dbe3d5"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1028,
+          "context": ".demo-launch / border"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#dbe3d5"
+    },
+    "--qm-surface-sticky": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 126,
+          "value": "#fffffff5"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1358,
+          "context": "@media (max-width:800px) / .mobile-donate / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 20,
+          "context": ".ds-doc-top / background"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#fffffff5"
+    },
+    "--qm-label-brand": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 127,
+          "value": "#39212b"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1786,
+          "context": ".hero h1 / color"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#39212b"
+    },
+    "--qm-surface-lavender": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 128,
+          "value": "#f2f0f6"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1834,
+          "context": ".mini-banner:nth-child(2) / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#f2f0f6"
+    },
+    "--qm-primary-hover": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 129,
+          "value": "#bd6b84"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1852,
+          "context": ".button.primary:hover / background"
+        },
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1853,
+          "context": ".button.primary:hover / border-color"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#bd6b84"
+    },
+    "--qm-primary-pressed": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 130,
+          "value": "#ae5b74"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1857,
+          "context": ".button.primary:active / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#ae5b74"
+    },
+    "--qm-interaction-pressed": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 131,
+          "value": "#1717190a"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 466,
+          "context": ".ds-color-dot / border"
+        },
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 62,
+          "context": ":root / --qm-shadow-pressed"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#1717190a"
+    },
+    "--qm-line-brand-soft": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 132,
+          "value": "#c7799133"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 555,
+          "context": ".ds-grid-preview span / border"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#c7799133"
+    },
+    "--qm-background-inverse": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 133,
+          "value": "#292a2d"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2072,
+          "context": "#toast / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 738,
+          "context": ".ds-toast / background"
+        }
+      ],
+      "count": 2,
+      "other_mentions": [],
+      "resolved": "#292a2d"
+    },
+    "--qm-line-doc": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 134,
+          "value": "#eeeef0"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 6,
+          "context": ".ds-workspace / --ds-border"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#eeeef0"
+    },
+    "--qm-background-preview": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 135,
+          "value": "#fafafa"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 224,
+          "context": ".ds-stage / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 284,
+          "context": ".ds-doc-section th / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 358,
+          "context": ".ds-variant-list>div,.ds-spec-grid>div / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 377,
+          "context": ".ds-dodont>div / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 417,
+          "context": ".ds-brand-stage / background"
+        },
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 507,
+          "context": ".ds-font-hero / background"
+        }
+      ],
+      "count": 6,
+      "other_mentions": [],
+      "resolved": "#fafafa"
+    },
+    "--qm-interaction-strong": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 136,
+          "value": "#17171918"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 64,
+          "context": ":root / --qm-shadow-pressed-strong"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#17171918"
+    },
+    "--qm-background-code": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 137,
+          "value": "#202124"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 395,
+          "context": ".ds-code / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#202124"
+    },
+    "--qm-label-code": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 138,
+          "value": "#e4e4e7"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 396,
+          "context": ".ds-code / color"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#e4e4e7"
+    },
+    "--qm-interaction-hover": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 139,
+          "value": "#17171908"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 65,
+          "context": ":root / --qm-shadow-hover"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#17171908"
+    },
+    "--qm-info-soft": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 140,
+          "value": "#eef0f4"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 717,
+          "context": ".ds-message / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#eef0f4"
+    },
+    "--qm-olive-soft": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 141,
+          "value": "#f2f5e7"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 728,
+          "context": ".ds-message.tone-1 / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#f2f5e7"
+    },
+    "--qm-caution-soft": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 142,
+          "value": "#fcf2e9"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/design-system.css",
+          "line": 731,
+          "context": ".ds-message.tone-2 / background"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#fcf2e9"
+    },
+    "--qm-line-neutral": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 143,
+          "value": "#70737c1f"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "al')],['Strong',designToken('--qm-fill-strong')],['Alternative',designToken('--qm-fill-alternative')]]],['Line',[['Normal',designToken('--qm-line-normal')],['Neutral',designToken('"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#70737c1f"
+    },
+    "--qm-interaction-disabled": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 144,
+          "value": "#f4f4f5"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/js/pages/design-system-catalog.js",
+          "line": 4,
+          "context": "',designToken('--qm-background-elevated')],['Brand soft',designToken('--qm-brand-soft')]]],['Interaction',[['Inactive',designToken('--qm-label-assistive')],['Disable',designToken('"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#f4f4f5"
+    },
+    "--qm-badge-label": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 147,
+          "value": "#fff"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 1983,
+          "context": ".badge,.image-badge / color"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "#fff"
+    },
+    "--qm-layout-content-width": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 150,
+          "value": "1100px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 64,
+          "context": ".container / width"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "1100px"
+    },
+    "--qm-layout-wide-width": {
+      "declarations": [
+        {
+          "file": "public/assets/css/tokens.css",
+          "line": 151,
+          "value": "1440px"
+        }
+      ],
+      "references": [
+        {
+          "file": "public/assets/css/app.css",
+          "line": 2295,
+          "context": "@media (min-width:1600px) / .container / width"
+        }
+      ],
+      "count": 1,
+      "other_mentions": [],
+      "resolved": "1440px"
+    }
+  },
+  "unused": [],
+  "undefined": {},
+  "duplicates": {},
+  "equal_values": {
+    "#c77991": [
+      "--qm-color-rose",
+      "--qm-chip-rose",
+      "--qm-primary-normal"
+    ],
+    "4px": [
+      "--qm-space-4",
+      "--qm-radius-4"
+    ],
+    "8px": [
+      "--qm-space-8",
+      "--qm-radius-8"
+    ],
+    "12px": [
+      "--qm-space-12",
+      "--qm-font-size-caption",
+      "--qm-radius-12"
+    ],
+    "16px": [
+      "--qm-space-16",
+      "--qm-font-size-body",
+      "--qm-radius-16"
+    ],
+    "20px": [
+      "--qm-space-20",
+      "--qm-font-size-heading-small",
+      "--qm-radius-20"
+    ],
+    "24px": [
+      "--qm-space-24",
+      "--qm-font-size-title-small"
+    ],
+    "32px": [
+      "--qm-space-32",
+      "--qm-font-size-title"
+    ],
+    "40px": [
+      "--qm-space-40",
+      "--qm-font-size-display"
+    ],
+    "#171719": [
+      "--qm-chip-label",
+      "--qm-label-normal"
+    ],
+    "#70737c29": [
+      "--qm-fill-strong",
+      "--qm-line-normal"
+    ],
+    "#fff": [
+      "--qm-background-normal",
+      "--qm-background-elevated",
+      "--qm-on-primary",
+      "--qm-badge-label"
+    ]
+  },
+  "cycles": []
+}

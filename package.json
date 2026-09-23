@@ -5,9 +5,12 @@
   "scripts": {
     "test": "node --test tests/domain.test.js tests/storage.test.js",
     "start": "php -S 127.0.0.1:8080 -t public",
-    "check:styles": "node tests/style-contract.cjs"
+    "check:styles": "node tests/style-contract.cjs && node tools/audit-css.cjs",
+    "build:tokens": "node tools/build-tokens.mjs"
   },
   "dependencies": {
+    "aos": "2.3.4",
+    "flatpickr": "4.6.13",
     "lucide": "1.47.0",
     "swiper": "14.2.0"
   }

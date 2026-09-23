@@ -1,0 +1,232 @@
+.container {
+  width: min(var(--container), calc(100% - 96px));
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 88px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: var(--space-24);
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  font-size: var(--type-label-2-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--type-label-2-tracking);
+  color: var(--semantic-primary-normal);
+  margin-bottom: var(--space-12);
+  line-height: var(--type-label-2-line);
+}
+
+.section-head p {
+  color: var(--semantic-label-alternative);
+  margin-top: var(--space-10);
+}
+
+.section-head .more {
+  white-space: nowrap;
+}
+
+.more {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  font-size: var(--type-headline-1-size);
+  font-weight: var(--font-weight-semibold);
+  min-height: 44px;
+  line-height: var(--type-headline-1-line);
+  letter-spacing: var(--type-headline-1-tracking);
+}
+
+.more:hover {
+  color: var(--semantic-primary-normal);
+}
+
+.soft-section {
+  background: var(--semantic-background-normal-alternative);
+}
+
+.back-top {
+  position: fixed;
+  bottom: 30px;
+  right: var(--space-24);
+  border: var(--border-thin) solid var(--semantic-line-solid-normal);
+  background: var(--semantic-background-normal-normal);
+  box-shadow: var(--semantic-elevation-shadow-normal-small);
+  z-index: var(--z-overlay);
+}
+
+.page-heading {
+  padding: 46px 0 36px;
+  border-bottom: var(--border-thin) solid var(--semantic-line-solid-normal);
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-10);
+  font-size: var(--type-label-2-size);
+  color: var(--semantic-label-alternative);
+  margin-bottom: var(--space-24);
+  line-height: var(--type-label-2-line);
+  letter-spacing: var(--type-label-2-tracking);
+}
+
+.page-heading p {
+  margin-top: 14px;
+  color: var(--semantic-label-alternative);
+}
+
+.sub-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  padding-block: var(--space-48) 90px;
+}
+
+.content-section {
+  padding: 44px 0 88px;
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-64);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-40);
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-24);
+}
+
+.stack {
+  display: grid;
+  gap: var(--space-24);
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  flex-wrap: wrap;
+}
+
+.spread {
+  justify-content: space-between;
+}
+
+.narrow {
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+.two-column>div, .audience-layout>div, .section-head>div, .event-section-tools>.tabs {
+  min-width: 0;
+}
+
+.section-head>div {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width:1600px) {
+  .section {
+    padding-block: var(--space-120);
+  }
+}
+
+@media (max-width:1100px) {
+  .container {
+    width: calc(100% - 64px);
+  }
+
+  .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .two-column {
+    gap: 36px;
+  }
+}
+
+@media (max-width:800px) {
+  html {
+    scroll-padding-top: 90px;
+  }
+
+  .container {
+    width: calc(100% - 40px);
+  }
+
+  .section {
+    padding-block: var(--space-56);
+  }
+
+  .section-head {
+    margin-bottom: var(--space-24);
+    align-items: center;
+  }
+
+  .section-head p {
+    font-size: var(--type-label-1-size);
+    line-height: var(--type-label-1-line);
+    letter-spacing: var(--type-label-1-tracking);
+  }
+
+  .section-head .more {
+    font-size: var(--type-label-2-size);
+    line-height: var(--type-label-2-line);
+    letter-spacing: var(--type-label-2-tracking);
+  }
+
+  .two-column, .sub-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-32);
+  }
+
+  .sub-layout {
+    padding-top: var(--space-24);
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .page-heading {
+    padding-top: var(--space-28);
+  }
+
+  .content-section {
+    padding-top: var(--space-28);
+  }
+
+  .back-top {
+    right: var(--space-12);
+    bottom: var(--space-16);
+  }
+
+  .two-column, .audience-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .event-section-tools .tabs {
+    max-width: 100%;
+  }
+}
+
+@media (max-width:480px) {
+  .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}

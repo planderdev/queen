@@ -1,0 +1,175 @@
+{
+  "declarations_compared": 1835,
+  "declaration_differences": {},
+  "added_declarations": {
+    "design-system.css / .ds-type-table>div>span / font-size": "var(--sample-font-size)",
+    "design-system.css / .ds-type-table>div>span / line-height": "var(--sample-line-height)",
+    "design-system.css / .ds-type-table>div>span / letter-spacing": "var(--sample-tracking)"
+  },
+  "screens": [
+    {
+      "file": "1440-0",
+      "elements_before": 410,
+      "elements_after": 410,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-1",
+      "elements_before": 318,
+      "elements_after": 318,
+      "differences": [],
+      "pixel_difference_bbox": [
+        451,
+        643,
+        709,
+        810
+      ]
+    },
+    {
+      "file": "1440-10",
+      "elements_before": 95,
+      "elements_after": 95,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-2",
+      "elements_before": 106,
+      "elements_after": 106,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-3",
+      "elements_before": 90,
+      "elements_after": 90,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-4",
+      "elements_before": 71,
+      "elements_after": 71,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-5",
+      "elements_before": 199,
+      "elements_after": 199,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-6",
+      "elements_before": 260,
+      "elements_after": 260,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-7",
+      "elements_before": 299,
+      "elements_after": 299,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-8",
+      "elements_before": 278,
+      "elements_after": 278,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "1440-9",
+      "elements_before": 118,
+      "elements_after": 118,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-0",
+      "elements_before": 410,
+      "elements_after": 410,
+      "differences": [],
+      "pixel_difference_bbox": [
+        18,
+        852,
+        371,
+        3453
+      ]
+    },
+    {
+      "file": "390-1",
+      "elements_before": 318,
+      "elements_after": 318,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-10",
+      "elements_before": 95,
+      "elements_after": 95,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-2",
+      "elements_before": 106,
+      "elements_after": 106,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-3",
+      "elements_before": 90,
+      "elements_after": 90,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-4",
+      "elements_before": 71,
+      "elements_after": 71,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-5",
+      "elements_before": 199,
+      "elements_after": 199,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-6",
+      "elements_before": 260,
+      "elements_after": 260,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-7",
+      "elements_before": 299,
+      "elements_after": 299,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-8",
+      "elements_before": 278,
+      "elements_after": 278,
+      "differences": [],
+      "pixel_difference_bbox": null
+    },
+    {
+      "file": "390-9",
+      "elements_before": 118,
+      "elements_after": 118,
+      "differences": [],
+      "pixel_difference_bbox": null
+    }
+  ]
+}

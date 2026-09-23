@@ -17,6 +17,6 @@
 
 - Lucide: https://lucide.dev/icons/ — npm `lucide`, 로컬 UMD, ISC 라이선스 파일 `public/assets/vendor/LUCIDE-LICENSE`.
 - Swiper: https://swiperjs.com/ — npm `swiper`, 로컬 ES Modules와 CSS, MIT 라이선스 파일 `public/assets/vendor/SWIPER-LICENSE`. 홈 배너만 제어. 일시정지, reduced-motion, 키보드 버튼 제공.
-- 복잡한 모션 필요성이 없어 GSAP/AOS/Lenis는 사용하지 않는다. 스크롤 가로채기 없음.
+- AOS: https://github.com/michalsnik/aos — npm `aos` 2.3.4, 로컬 JS/CSS와 MIT 라이선스 `public/assets/vendor/aos/LICENSE`. 공개 콘텐츠 섹션의 1회 스크롤 등장에 사용하며 기존 모션·간격 토큰을 사용한다. reduced-motion에서는 정적으로 표시한다. GSAP/Lenis와 스크롤 가로채기는 사용하지 않는다.
 
 설치 버전은 package.json / package-lock.json에 고정되어 있다.
