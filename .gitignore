@@ -8,3 +8,5 @@ tools/php-releases.json
 !.env.example
 *.log
 .claude/
+dist/
+.vercel

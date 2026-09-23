@@ -66,6 +66,20 @@ find public app -name '*.php' -exec php -l {} \;
 Get-ChildItem public,app -Filter *.php -Recurse | ForEach-Object { php -l $_.FullName }
 ```
 
+## 배포 (Vercel)
+
+PHP는 페이지 셸만 조립하고 요청별 로직이 없어서, 배포 시에는 `tools/prerender.mjs`가 모든 `public/**/index.php`를 정적 HTML로 미리 렌더링해 `dist/`에 두고 Vercel이 정적 파일로 서빙합니다. Vercel 빌드 이미지에는 PHP가 없어 스크립트가 static-php 빌드(PHP 8.3, Linux x86_64)를 `tools/php/`에 내려받아 사용합니다. 로컬에서는 설치된 `php`를 그대로 씁니다.
+
+```bash
+npm run build      # dist/ 생성 (로컬 확인용)
+vercel deploy      # 프리뷰 배포
+vercel deploy --prod
+```
+
+- 프로젝트: `planderdevs-projects/queen-mandeok`, 프로덕션 https://queen-mandeok.vercel.app
+- GitHub `planderdev/queen`의 `main` 브랜치가 연결되어 있어 푸시하면 자동으로 프로덕션에 배포됩니다.
+- 설정은 `vercel.json`(빌드 명령, 출력 폴더, trailing slash, 정적 자산 캐시 헤더)에 있습니다.
+
 ## 구조
 
 - `app/layout.php`: 공개 사이트 공통 헤더/푸터/페이지 셸

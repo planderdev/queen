@@ -6,7 +6,8 @@
     "test": "node --test tests/domain.test.js tests/storage.test.js",
     "start": "php -S 127.0.0.1:8080 -t public",
     "check:styles": "node tests/style-contract.cjs && node tools/audit-css.cjs && node tools/audit-css.cjs --admin",
-    "build:tokens": "node tools/build-tokens.mjs"
+    "build:tokens": "node tools/build-tokens.mjs",
+    "build": "node tools/prerender.mjs"
   },
   "dependencies": {
     "aos": "2.3.4",
