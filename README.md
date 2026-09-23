@@ -80,6 +80,10 @@ vercel deploy --prod
 - GitHub `planderdev/queen`의 `main` 브랜치가 연결되어 있어 푸시하면 자동으로 프로덕션에 배포됩니다.
 - 설정은 `vercel.json`(빌드 명령, 출력 폴더, trailing slash, 정적 자산 캐시 헤더)에 있습니다.
 
+## 브랜드 · 디자인 시스템 가이드
+
+`design-system/index.html`은 클라이언트 전달용 단일 HTML 가이드(브랜드 개요, 로고, 컬러, 타이포그래피, 표기법, 이미지 디렉션, 모티프, 아이콘, 웹 토큰, 컴포넌트, 레이아웃)입니다. `tools/build-guide.mjs`가 토큰 원본과 로고 SVG에서 생성하므로 직접 편집하지 않고 `npm run build:guide`로 다시 만듭니다. 배포 시 `/brand-guide/`로 함께 올라갑니다. 토큰·카피·규정 요약은 `BRAND.md`에 있으며 이후 배너·에셋·PPT 작업의 기준입니다.
+
 ## 구조
 
 - `app/layout.php`: 공개 사이트 공통 헤더/푸터/페이지 셸
