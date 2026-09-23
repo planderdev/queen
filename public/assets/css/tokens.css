@@ -1,9 +1,9 @@
 /* Generated from design-system-foundations.js. Run npm run build:tokens. */
 :root {
   /* color */
-  --primary-normal: var(--palette-rose);
-  --primary-strong: #91465e;
-  --primary-heavy: #713348;
+  --primary-normal: #d73b50;
+  --primary-strong: #bc2b44;
+  --primary-heavy: #9e3844;
   --label-normal: #171719;
   --label-strong: #000;
   --label-neutral: #46474c;
@@ -19,7 +19,7 @@
   --background-normal: #fff;
   --background-alternative: #f7f7f8;
   --background-elevated: var(--background-normal);
-  --brand-soft: #fbf0f4;
+  --brand-soft: #fceff1;
   --interaction-disabled: #f4f4f5;
   --status-positive: #16834b;
   --status-cautionary: #976017;

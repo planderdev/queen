@@ -21,7 +21,7 @@
 
 ## 브랜드
 
-메인 컬러 #c77991. 로고 2종은 `public/assets/brand/`에 원본으로 보관한다.
+Primary 컬러 #d73b50(Strong #bc2b44, Heavy #9e3844, Brand soft #fceff1). 로고 보석 5색은 상태 팔레트이며 Primary와 별개다. 로고 2종은 `public/assets/brand/`에 원본으로 보관한다.
 
 | 칩 색상 | 값 | 상태 |
 |---|---|---|
@@ -29,7 +29,7 @@
 | Blue | #8696ad | 접수·심사·처리 중 |
 | Lavender | #ac94aa | 임시저장·일시중지·종료·취소 |
 | Orange | #d1936a | 보완 요청·예정 |
-| Rose | #c77991 | 실패·반려·추천 |
+| Rose | #c77991 | 실패·반려·추천·관심 |
 
 ## 문서
 

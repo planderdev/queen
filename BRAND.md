@@ -19,14 +19,15 @@
 - **키 메시지**: ① 작은 나눔이 모여, 더 큰 변화를 만듭니다. ② 마음이 닿는 이야기를 만나고, 그 다음의 변화까지 함께하세요. ③ 매달 이어지는 마음, 함께 자라는 내일. ④ 작은 마음이 모이는 곳, 퀸만덕
 
 ## 컬러
-- **팔레트 5색(로고 보석)**: Orange #D1936A(보완·예정) · **Rose #C77991(Primary, 실패·반려·추천)** · Olive #A3B166(승인·성공·진행·완료) · Blue #8696AD(접수·심사·처리 중) · Lavender #AC94AA(임시저장·일시중지·종료·취소). 의미 고정, 장식용 혼용 금지.
-- **Primary 세트**: Normal #C77991 · Strong #91465E(호버·라벨·링크) · Heavy #713348(프레스·어두운 배경) · Brand soft #FBF0F4(연한 배경)
-- **Rose 스케일(확장 제안, 토큰 미등록)**: 50 #FBF4F6 · 100 #F6EAED · 200 #EDD4DC · 300 #E2B9C6 · 400 #D499AB · 500 #C77991 · 600 #91465E · 700 #713348 · 800 #572737 · 900 #411C29 · 950 #30141D
+- **Primary**: 브랜드 레드 **#D73B50** (2026-09-24 변경). 로고 보석 색과 별개.
+- **상태 팔레트 5색(로고 보석)**: Orange #D1936A(보완·예정) · Rose #C77991(실패·반려·추천·관심) · Olive #A3B166(승인·성공·진행·완료) · Blue #8696AD(접수·심사·처리 중) · Lavender #AC94AA(임시저장·일시중지·종료·취소). 의미 고정, 장식용 혼용 금지.
+- **Primary 세트**: Normal #D73B50 · Strong #BC2B44(호버·라벨·링크) · Heavy #9E3844(프레스·어두운 배경) · Brand soft #FCEFF1(연한 배경)
+- **Primary 스케일(확장 제안, 토큰 미등록)**: 50 #FDF3F5 · 100 #FAE7EA · 200 #F5CCD2 · 300 #EDA9B2 · 400 #E37685 · 500 #D73B50 · 600 #BC2B44 · 700 #9E3844 · 800 #762A33 · 900 #551F25 · 950 #3B161A
 - **Label(그레이)**: Strong #000 · Normal #171719 · Neutral #46474C · Alternative #68696F · Assistive #989BA2 · Disable #C4C5C9
 - **Line/Fill(알파)**: line-solid #E1E2E4 · line-normal #70737C29 · line-neutral #70737C1F · fill-normal #70737C14 · fill-strong #70737C29 · fill-alternative #70737C0A
 - **Background**: normal #FFF · alternative #F7F7F8 · disabled #F4F4F5 · dimmer #17171985
 - **Status**: Positive #16834B · Cautionary #976017 · Negative #C33737
-- 그라데이션: Brand soft → Rose 300 → Rose → Heavy (히어로·큰 배너 한정)
+- 그라데이션: Brand soft → Primary 300 → Primary → Heavy (히어로·큰 배너 한정)
 
 ## 타이포그래피
 - **Pretendard** 단일 서체(국문·영문·숫자). 웹: jsDelivr `pretendard-dynamic-subset.min.css` · 관리자: `PretendardVariable.woff2` 로컬. 폴백 Noto Sans KR → Arial → sans-serif.
@@ -54,8 +55,8 @@
 - 버튼 높이 32/48/56, 아이콘 16/20/24/32. z: header 20 · mobile-cta 30 · demo 40 · toast 10000.
 
 ## 컴포넌트 규격 (app.css 기준)
-- Button: 라운드 12, 15px/600, primary Rose→hover Strong, outlined(Strong 글자·Rose 테두리), secondary, danger(Negative). 한 영역에 Primary 하나.
-- 입력: 높이 48, 라운드 12, 글자 16/24, 오류 `aria-describedby`. 체크·라디오 accent Rose, 스위치 52×32(작은 40×24).
-- Chip 36px 토글(aria-pressed) · Badge 26px 읽기 전용, 간격 8/6. Tabs 높이 58, 간격 24, 밑줄 2px Rose. 토스트 4초, 하단 80px.
-- Fund card: 이미지 1.56:1, D-day 배지 Rose(종료 Lavender), 관심 버튼 별도, 진행률 4px. 4열 272px → 2열 → 모바일 2열 148px.
+- Button: 라운드 12, 15px/600, primary #D73B50→hover Strong, outlined(Strong 글자·Primary 테두리), secondary, danger(Negative). 한 영역에 Primary 하나.
+- 입력: 높이 48, 라운드 12, 글자 16/24, 오류 `aria-describedby`. 체크·라디오 accent Primary, 스위치 52×32(작은 40×24).
+- Chip 36px 토글(aria-pressed) · Badge 26px 읽기 전용, 간격 8/6. Tabs 높이 58, 간격 24, 밑줄 2px Primary. 토스트 4초, 하단 80px.
+- Fund card: 이미지 1.56:1, D-day 배지 Primary(종료 Lavender), 관심 버튼 별도, 진행률 4px. 4열 272px → 2열 → 모바일 2열 148px.
 - 캠페인 배너: Brand soft 배경, 라운드 16, 제목 20/700.

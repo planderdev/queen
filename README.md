@@ -116,7 +116,7 @@ localStorage 데이터는 사용자가 변경할 수 있으며 여러 기기/사
 
 - 서체를 Pretendard(jsDelivr dynamic subset)로 전환했습니다. `--font-family` 폴백 순서는 Pretendard → Noto Sans KR → Arial → sans-serif입니다.
 - 로고 2종(`public/assets/brand/logo.svg`, `logo2.svg`)을 새 브랜드 시안으로 교체했습니다. 헤더는 가로형, 푸터는 세로형을 사용합니다.
-- 메인 컬러 `#c77991`(Rose)을 기준으로 팔레트 5색(Olive, Blue, Lavender, Orange, Rose)을 `--palette-*` 토큰으로 정리하고, 상태 칩 색상을 이 팔레트에 매핑했습니다.
+- Primary 컬러는 브랜드 레드 `#d73b50`(2026-09-24 변경, Strong `#bc2b44` · Heavy `#9e3844`)이고, 로고 보석 5색(Olive, Blue, Lavender, Orange, Rose)은 `--palette-*` 토큰의 상태 팔레트로 분리해 상태 칩 색상에 매핑했습니다.
 - 토큰 이름의 `--qm-` 접두사를 제거하고 `design-system-foundations.js` 한 곳에서 색상·간격·라운드·타이포그래피를 관리합니다. `tokens.css`는 생성물이므로 직접 수정하지 않습니다.
 - 공개 사이트 스타일을 `app.css` 하나에서 `site.css`와 페이지별 파일로 분리하고, 관리자 화면은 `sports-admin` 스타일과 flatpickr 날짜 선택기로 재구성했습니다.
 - 홈 히어로 문구가 순차 등장하고 공개 콘텐츠 섹션은 AOS로 1회 스크롤 등장합니다. `prefers-reduced-motion`에서는 정적으로 표시합니다.

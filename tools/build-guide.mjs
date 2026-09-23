@@ -24,17 +24,17 @@ const toHex = ([r, g, b]) => '#' + [r, g, b].map(n => Math.round(Math.max(0, Mat
 const mix = (a, b, t) => toHex(rgb(a).map((c, i) => c + (rgb(b)[i] - c) * t));
 const upper = h => hex(h).toUpperCase();
 
-// Rose scale (웹 시스템 확장 제안): tints toward white, shades toward the brand heavy tone.
-const ROSE = T.color['--palette-rose'];
+// Primary scale (웹 시스템 확장 제안): tints toward white, shades toward the brand heavy tone.
+const PRIMARY = T.color['--primary-normal'];
 const roseScale = [
-  ['50', mix(ROSE, '#ffffff', .92)], ['100', mix(ROSE, '#ffffff', .84)], ['200', mix(ROSE, '#ffffff', .68)],
-  ['300', mix(ROSE, '#ffffff', .48)], ['400', mix(ROSE, '#ffffff', .24)], ['500', ROSE],
-  ['600', T.color['--primary-strong']], ['700', T.color['--primary-heavy']], ['800', mix(T.color['--primary-heavy'], '#1a0a0f', .3)],
-  ['900', mix(T.color['--primary-heavy'], '#1a0a0f', .55)], ['950', mix(T.color['--primary-heavy'], '#1a0a0f', .75)]
+  ['50', mix(PRIMARY, '#ffffff', .94)], ['100', mix(PRIMARY, '#ffffff', .88)], ['200', mix(PRIMARY, '#ffffff', .74)],
+  ['300', mix(PRIMARY, '#ffffff', .56)], ['400', mix(PRIMARY, '#ffffff', .3)], ['500', PRIMARY],
+  ['600', T.color['--primary-strong']], ['700', T.color['--primary-heavy']], ['800', mix(T.color['--primary-heavy'], '#1a0a0c', .3)],
+  ['900', mix(T.color['--primary-heavy'], '#1a0a0c', .55)], ['950', mix(T.color['--primary-heavy'], '#1a0a0c', .75)]
 ];
 const palette = [
   ['orange', 'Orange · 살구', T.color['--palette-orange'], '보완 요청 · 예정 · 강조 배경'],
-  ['rose', 'Rose · 로즈', T.color['--palette-rose'], 'Primary · 실패 · 반려 · 추천'],
+  ['rose', 'Rose · 로즈', T.color['--palette-rose'], '실패 · 반려 · 추천 · 관심'],
   ['olive', 'Olive · 올리브', T.color['--palette-olive'], '승인 · 성공 · 진행 · 완료'],
   ['blue', 'Blue · 블루', T.color['--palette-blue'], '접수 · 심사 · 처리 중'],
   ['lavender', 'Lavender · 라벤더', T.color['--palette-lavender'], '임시저장 · 일시중지 · 종료 · 취소']
@@ -101,7 +101,7 @@ const ic = (name, size = 24) => `<svg class="ico" width="${size}" height="${size
 const css = `
   :root{
     --orange:${T.color['--palette-orange']}; --rose:${T.color['--palette-rose']}; --olive:${T.color['--palette-olive']}; --blue:${T.color['--palette-blue']}; --lavender:${T.color['--palette-lavender']};
-    --primary:${T.color['--palette-rose']}; --primary-strong:${T.color['--primary-strong']}; --primary-heavy:${T.color['--primary-heavy']};
+    --primary:${T.color['--primary-normal']}; --primary-strong:${T.color['--primary-strong']}; --primary-heavy:${T.color['--primary-heavy']};
     --brand-soft:${T.color['--brand-soft']};
     ${roseScale.map(([k, v]) => `--rose-${k}:${v};`).join(' ')}
     --label-strong:${T.color['--label-strong']}; --label-normal:${T.color['--label-normal']}; --label-neutral:${T.color['--label-neutral']}; --label-alternative:${T.color['--label-alternative']}; --label-assistive:${T.color['--label-assistive']}; --label-disable:${T.color['--label-disable']};
@@ -431,7 +431,7 @@ const swatchBtn = (label, value, sub = '', cls = '') => {
   return `<div class="bigswatch ${cls}"><button class="swatch" data-copy="${upper(value)}" aria-label="${esc(label)} ${upper(value)} 복사"><span class="swc ${alpha ? 'checker' : ''}" style="${alpha ? `--c:${value}` : `background:${value}`}"></span><span class="lab"><b>${esc(label)}</b><span>${esc(sub)}</span><code>${upper(value)}</code></span></button></div>`;
 };
 
-const scaleHtml = `<div class="scale">${roseScale.map(([k, v]) => `<button class="swatch ${k === '500' ? 'primary' : ''}" data-copy="${upper(v)}" aria-label="Rose ${k} ${upper(v)} 복사"><span class="swc" style="background:${v}"></span><span class="lab"><span class="step">${k}</span><span class="hex">${upper(v)}</span></span></button>`).join('')}</div>`;
+const scaleHtml = `<div class="scale">${roseScale.map(([k, v]) => `<button class="swatch ${k === '500' ? 'primary' : ''}" data-copy="${upper(v)}" aria-label="Primary ${k} ${upper(v)} 복사"><span class="swc" style="background:${v}"></span><span class="lab"><span class="step">${k}</span><span class="hex">${upper(v)}</span></span></button>`).join('')}</div>`;
 
 const typeTable = `<div class="tablewrap"><table class="tbl typescale"><thead><tr><th>스타일</th><th>예시</th><th>크기 / 행간</th><th>자간</th><th>굵기</th><th>토큰</th></tr></thead><tbody>${typeRows.map(r => `<tr><td class="name">${esc(r.label)}</td><td class="sample" style="font-size:${r.size};line-height:${r.line};letter-spacing:${r.tracking};font-weight:${r.weight}">작은 나눔이 모여</td><td class="num">${r.size} / ${r.line}</td><td class="num">${r.tracking}</td><td class="num">${r.weight}</td><td class="num"><code>--font-size-${r.name.replace(/-reading$/, '')}</code></td></tr>`).join('')}</tbody></table></div>`;
 
@@ -443,7 +443,7 @@ const colorNotes = {
   '--line-normal': '구분선(알파)', '--line-neutral': '옅은 구분선', '--line-solid': '입력창 · 카드 테두리',
   '--background-normal': '기본 배경', '--background-alternative': '섹션 · 빈 상태', '--background-elevated': '팝업 · 카드', '--brand-soft': '브랜드 연한 배경',
   '--interaction-disabled': '비활성 배경', '--status-positive': '성공', '--status-cautionary': '주의', '--status-negative': '오류', '--material-dimmer': '팝업 스크림',
-  '--palette-olive': '승인 · 성공', '--palette-blue': '접수 · 심사', '--palette-lavender': '종료 · 취소', '--palette-orange': '보완 · 예정', '--palette-rose': 'Primary', '--static-white': '항상 흰색'
+  '--palette-olive': '승인 · 성공', '--palette-blue': '접수 · 심사', '--palette-lavender': '종료 · 취소', '--palette-orange': '보완 · 예정', '--palette-rose': '실패 · 반려 · 관심', '--static-white': '항상 흰색'
 };
 const cssVars = readFileSync(join(root, 'public/assets/css/tokens.css'), 'utf8').trim();
 
@@ -456,7 +456,7 @@ const head = ARTIFACT ? `<title>퀸만덕 디자인 시스템</title>
 <title>퀸만덕 디자인 시스템</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="퀸만덕 기부 플랫폼의 브랜드 · 디자인 시스템 가이드. 로고, 컬러, 타이포그래피, 표기법, 토큰, 컴포넌트.">
-<meta name="theme-color" content="${T.color['--palette-rose']}">
+<meta name="theme-color" content="${T.color['--primary-normal']}">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
 <style>${css}</style>
@@ -477,7 +477,7 @@ const html = `${head}
     <h1>${logoH}</h1>
     <p class="slogan">작은 나눔이 모여,<br>더 큰 변화를 만듭니다.</p>
     <p class="desc">퀸만덕은 마음이 닿는 이야기를 만나고 그 다음의 변화까지 함께하는 기부 플랫폼입니다. 이 문서는 로고, 컬러, 타이포그래피, 표기법, 웹 토큰과 컴포넌트를 한곳에 모은 단일 기준입니다. 기부자, 모금단체, 기업 파트너, 운영자가 같은 언어로 서비스를 이해하도록 설계합니다.</p>
-    <div class="meta"><span>Ver ${VERSION} · ${DATE}</span><span>Pretendard</span><span><i style="background:${T.color['--palette-rose']}"></i>Primary ${upper(T.color['--palette-rose'])}</span><span>${palette.map(p => `<i style="background:${p[2]}"></i>`).join('')} 5 Palette</span></div>
+    <div class="meta"><span>Ver ${VERSION} · ${DATE}</span><span>Pretendard</span><span><i style="background:${T.color['--primary-normal']}"></i>Primary ${upper(T.color['--primary-normal'])}</span><span>${palette.map(p => `<i style="background:${p[2]}"></i>`).join('')} 5 Palette</span></div>
   </div>
   <svg class="crownart" viewBox="0 0 168 51" aria-hidden="true"><path fill="currentColor" d="M141.4,1.7l-4.4.2-4.4.2c0,.6.2,5.2,1.4,11.3H34.4c1.1-6.2,1.3-10.8,1.4-11.3l-8.9-.3C26.8,2.1,25,42.6,0,42.6v8.9c19.2,0,28.1-15.6,32.2-29.2h103.7c4.1,13.7,13,29.2,32.2,29.2v-8.9c-25,0-26.8-40.5-26.8-40.9h0Z"/></svg>
 </header>
@@ -518,7 +518,7 @@ const html = `${head}
 
 <!-- 01 -->
 <section id="logo">
-  ${secHead('01 · Logo', '로고', '퀸만덕 로고는 왕관(Queen)의 실루엣과 다섯 가지 색의 보석 바, 그리고 “퀸만덕” 워드마크로 구성됩니다. 다섯 색은 그대로 브랜드 팔레트가 됩니다.')}
+  ${secHead('01 · Logo', '로고', '퀸만덕 로고는 왕관(Queen)의 실루엣과 다섯 가지 색의 보석 바, 그리고 “퀸만덕” 워드마크로 구성됩니다. 다섯 색은 그대로 상태 팔레트가 됩니다.')}
   <h3 class="sub">구성 요소</h3>
   <div class="anatomy">
     <div class="panel"><div class="demo">${logoH}</div></div>
@@ -537,7 +537,7 @@ const html = `${head}
   <div class="grid c4">
     <div class="panel"><div class="demo">${logoH}</div><div class="caption">흰 배경 — 검정 + 보석 5색</div></div>
     <div class="panel"><div class="demo tint">${logoH}</div><div class="caption">브랜드 소프트 배경 — 검정 + 보석 5색</div></div>
-    <div class="panel"><div class="demo on-rose">${logoH}</div><div class="caption">Rose 배경 — 흰색 반전, 보석 유지</div></div>
+    <div class="panel"><div class="demo on-rose">${logoH}</div><div class="caption">Primary 배경 — 흰색 반전, 보석 유지</div></div>
     <div class="panel"><div class="demo on-dark">${logoH}</div><div class="caption">어두운 배경 — 흰색 반전, 보석 유지</div></div>
   </div>
   <h3 class="sub">최소 여백 · 최소 크기 <span class="tag ext">웹 시스템 확장 제안</span></h3>
@@ -554,13 +554,13 @@ const html = `${head}
 
 <!-- 02 -->
 <section id="color">
-  ${secHead('02 · Color', '컬러', '로고의 보석 다섯 색이 브랜드 팔레트이며, 그중 Rose가 Primary입니다. 각 색은 상태 의미를 고정으로 가지므로 장식용으로 섞어 쓰지 않습니다.')}
-  <h3 class="sub">브랜드 팔레트 <small>클릭하면 HEX가 복사됩니다</small></h3>
+  ${secHead('02 · Color', '컬러', 'Primary는 브랜드 레드 #D73B50입니다. 로고의 보석 다섯 색은 상태 의미가 고정된 팔레트로, Primary와 구분해 장식용으로 섞어 쓰지 않습니다.')}
+  <h3 class="sub">Primary 세트 <small>클릭하면 HEX가 복사됩니다</small></h3>
+  <div class="grid c3">${swatchBtn('Primary · Normal', T.color['--primary-normal'], '기본 버튼, 진행률, 활성 상태, 링크')}${swatchBtn('Primary · Strong', T.color['--primary-strong'], '호버, 분류 라벨, 텍스트 링크')}${swatchBtn('Primary · Heavy', T.color['--primary-heavy'], '프레스, 어두운 배경, 강한 강조')}</div>
+  <h3 class="sub">상태 팔레트 <small>로고 보석 5색 · 배지·칩·관리자 상태색</small></h3>
   <div class="grid c5">${palette.map(p => swatchBtn(p[1], p[2], p[3])).join('')}</div>
-  <div class="rulebox"><b>의미 고정 규칙.</b> Olive = 승인·성공·진행·완료 / Blue = 접수·심사·처리 중 / Lavender = 임시저장·일시중지·종료·취소 / Orange = 보완 요청·예정 / Rose = Primary, 실패·반려·추천. 상태 배지, 칩, 관리자 화면의 색은 모두 이 표에서 정합니다.</div>
-  <h3 class="sub">Primary 세트</h3>
-  <div class="grid c3">${swatchBtn('Primary · Normal', T.color['--palette-rose'], '기본 버튼, 진행률, 활성 상태')}${swatchBtn('Primary · Strong', T.color['--primary-strong'], '호버, 분류 라벨, 텍스트 링크')}${swatchBtn('Primary · Heavy', T.color['--primary-heavy'], '프레스, 어두운 배경, 강한 강조')}</div>
-  <h3 class="sub">Rose 스케일 <span class="tag ext">웹 시스템 확장 제안</span> <small>500 = Primary, 600·700 = Strong·Heavy 토큰과 동일</small></h3>
+  <div class="rulebox"><b>의미 고정 규칙.</b> Olive = 승인·성공·진행·완료 / Blue = 접수·심사·처리 중 / Lavender = 임시저장·일시중지·종료·취소 / Orange = 보완 요청·예정 / Rose = 실패·반려·추천·관심. 상태 배지, 칩, 관리자 화면의 색은 모두 이 표에서 정합니다. 팔레트 Rose(#C77991)는 상태색이며 Primary 레드와 다릅니다.</div>
+  <h3 class="sub">Primary 스케일 <span class="tag ext">웹 시스템 확장 제안</span> <small>500 = Primary, 600·700 = Strong·Heavy 토큰과 동일</small></h3>
   ${scaleHtml}
   <p class="note" style="margin-top:12px">토큰 원본에는 Normal·Strong·Heavy 세 단계만 있습니다. 50~400은 흰색과 혼합한 배경·테두리용 틴트, 800~950은 Heavy를 어둡게 한 텍스트용 제안값입니다. 새 화면에서 필요하면 <code>design-system-foundations.js</code>에 등록한 뒤 사용합니다.</p>
   <h3 class="sub">그레이스케일 <small>Label · Line · Background 토큰</small></h3>
@@ -570,7 +570,7 @@ const html = `${head}
   <h3 class="sub">알파 채움 · 선 <small>배경 위에 겹쳐 쓰는 반투명 토큰</small></h3>
   <div class="grid c5">${swatchBtn('Fill normal', T.color['--fill-normal'], '호버 배경, 트랙')}${swatchBtn('Fill strong', T.color['--fill-strong'], '프레스 배경')}${swatchBtn('Fill alternative', T.color['--fill-alternative'], '옅은 채움')}${swatchBtn('Line normal', T.color['--line-normal'], '구분선')}${swatchBtn('Brand soft', T.color['--brand-soft'], '브랜드 연한 배경')}</div>
   <h3 class="sub">그라데이션 · 보석 바</h3>
-  <div class="grid c2"><div><div class="gradientbar"></div><p class="note" style="margin-top:10px">Brand soft → Rose 300 → Rose → Heavy. 히어로 오버레이와 큰 배너에만 제한적으로 사용합니다.</p></div><div><div class="gembar">${palette.map(p => `<i style="background:${p[2]}"></i>`).join('')}</div><p class="note" style="margin-top:10px">다섯 색을 나란히 두는 보석 바는 로고 순서를 지킵니다. 순서를 바꾸면 로고와 어긋납니다.</p></div></div>
+  <div class="grid c2"><div><div class="gradientbar"></div><p class="note" style="margin-top:10px">Brand soft → Primary 300 → Primary → Heavy. 히어로 오버레이와 큰 배너에만 제한적으로 사용합니다.</p></div><div><div class="gembar">${palette.map(p => `<i style="background:${p[2]}"></i>`).join('')}</div><p class="note" style="margin-top:10px">다섯 색을 나란히 두는 보석 바는 로고 순서를 지킵니다. 순서를 바꾸면 로고와 어긋납니다.</p></div></div>
   <h3 class="sub">대비 원칙</h3>
   <ul class="spec-list"><li><b>텍스트</b>본문은 Label normal(#171719) 이상, 보조 텍스트는 Label alternative(#68696F)까지만 사용합니다. Assistive(#989BA2)는 플레이스홀더와 비활성 전용입니다.</li><li><b>흰 글자</b>팔레트 5색 위의 흰 글자는 배지·칩처럼 짧은 굵은 글자(13px 600 이상)에만 사용합니다. 긴 본문은 올리지 않습니다.</li><li><b>의미 전달</b>색만으로 상태를 전달하지 않고 항상 상태명 텍스트를 함께 둡니다.</li></ul>
 </section>
@@ -689,7 +689,7 @@ const html = `${head}
   <h3 class="sub">Chip · Badge <small>다섯 색은 상태 의미를 따릅니다</small></h3>
   <div class="panel"><div class="demo left" data-chips>${palette.map((p, i) => `<button class="qchip ${p[0]}" type="button" aria-pressed="${i === 1}">${ic(['clock', 'heart', 'check', 'info', 'x'][i], 18)} ${['예정', '관심', '승인', '심사 중', '취소'][i]}</button>`).join('')}</div><div class="demo left gray"><span class="qbadge olive">승인</span><span class="qbadge blue">심사 중</span><span class="qbadge lavender">일시중지</span><span class="qbadge orange">보완 요청</span><span class="qbadge rose">실패</span><span class="qbadge olive outlined">승인</span><span class="qbadge blue outlined">심사 중</span><span class="qbadge rose outlined">실패</span></div><div class="caption">Chip = 선택·필터(aria-pressed 토글, 36px). Badge = 읽기 전용 상태(26px, 클릭 없음). 배지 사이 8px, 작은 배지 6px.</div></div>
   <h3 class="sub">Tabs · Pagination</h3>
-  <div class="panel"><div class="demo col left"><div class="qtabs" role="tablist" aria-label="나눔 정보 예시"><button role="tab" aria-selected="true" data-tab="0">모금 이야기</button><button role="tab" aria-selected="false" data-tab="1">참여 내역</button><button role="tab" aria-selected="false" data-tab="2">결과보고</button></div><div class="qtab-panel" data-tab-panel>작은 나눔으로 만드는 따뜻한 이야기입니다.</div><div class="pager" data-pager><button type="button" disabled>이전</button><button type="button" aria-current="page">1</button><button type="button">2</button><button type="button">3</button><button type="button">다음</button></div></div><div class="caption">탭은 최상위 구분(높이 58, 간격 24, 선택 밑줄 2px Rose). 세부 필터는 Chip으로 분리. 현재 페이지는 aria-current와 색으로 함께 표시.</div></div>
+  <div class="panel"><div class="demo col left"><div class="qtabs" role="tablist" aria-label="나눔 정보 예시"><button role="tab" aria-selected="true" data-tab="0">모금 이야기</button><button role="tab" aria-selected="false" data-tab="1">참여 내역</button><button role="tab" aria-selected="false" data-tab="2">결과보고</button></div><div class="qtab-panel" data-tab-panel>작은 나눔으로 만드는 따뜻한 이야기입니다.</div><div class="pager" data-pager><button type="button" disabled>이전</button><button type="button" aria-current="page">1</button><button type="button">2</button><button type="button">3</button><button type="button">다음</button></div></div><div class="caption">탭은 최상위 구분(높이 58, 간격 24, 선택 밑줄 2px Primary). 세부 필터는 Chip으로 분리. 현재 페이지는 aria-current와 색으로 함께 표시.</div></div>
   <h3 class="sub">Section message · Toast · Empty</h3>
   <div class="panel"><div class="demo col left"><div class="qmsg info">${ic('info', 20)}<div><b>안내</b><p>기부 내역은 나의 나눔에서 확인할 수 있습니다.</p></div></div><div class="qmsg positive">${ic('check', 20)}<div><b>완료</b><p>요청이 정상적으로 접수되었습니다.</p></div></div><div class="qmsg caution">${ic('alert', 20)}<div><b>확인 필요</b><p>제출 전에 사용 계획을 확인해주세요.</p></div></div><div class="qmsg negative">${ic('x', 20)}<div><b>오류</b><p>금액을 확인하고 다시 입력해주세요.</p></div></div></div><div class="demo left gray"><div class="qtoast">${ic('check', 18)} 변경사항이 저장되었습니다.</div><button class="btn outlined small" type="button" data-toast="공유 링크를 복사했습니다.">토스트 실행</button></div><div class="demo"><div class="empty">${ic('inbox', 32)}<h4>아직 나눔 내역이 없어요</h4><p>마음이 닿는 이야기를 찾아 첫 나눔을 시작해보세요.</p><div style="margin-top:14px"><button class="btn secondary small" type="button">모금함 둘러보기</button></div></div></div><div class="caption">메시지는 아이콘 + 제목 + 해결 방법. 토스트 4초 노출, 하단 80px. 빈 상태는 이유와 다음 경로를 함께.</div></div>
   <h3 class="sub">Accordion</h3>
@@ -697,7 +697,7 @@ const html = `${head}
   <h3 class="sub">Fund card <small>이미지 1.56:1 · D-day 배지 · 관심 · 진행률</small></h3>
   <div class="panel"><div class="demo"><article class="fund"><div class="img"><img src="${photo('meal')}" alt="" loading="lazy"><span class="dday">D-12</span><button class="bm" type="button" aria-label="관심 등록" aria-pressed="false" data-bookmark>${ic('heart', 18)}</button></div><div class="copy"><span class="cat">어르신</span><h4>어르신의 하루에<br>따뜻한 한 끼를 전해주세요</h4><p class="org">온기나눔</p><span class="qprogress"><i style="width:64%"></i></span><div class="nums"><strong>64%</strong><b>3,240,000원 <span style="font-weight:400;font-size:12px">모금</span></b></div></div></article><article class="fund"><div class="img"><img src="${photo('child')}" alt="" loading="lazy"><span class="dday ended">모금 종료</span><button class="bm" type="button" aria-label="관심 등록" aria-pressed="true" data-bookmark>${ic('heart', 18)}</button></div><div class="copy"><span class="cat">아동·청소년</span><h4>겨울방학에도 멈추지 않는<br>아이들의 든든한 한 끼</h4><p class="org">온기나눔</p><span class="qprogress"><i style="width:100%"></i></span><div class="nums"><strong>100%</strong><b>3,000,000원 <span style="font-weight:400;font-size:12px">모금</span></b></div></div></article></div><div class="caption">제목이 상세로 가는 링크, 관심은 별도 버튼(aria-pressed). 카드 전체 링크 안에 버튼을 중첩하지 않습니다. 4열 272px → 2열 → 모바일 2열 148px.</div></div>
   <h3 class="sub">Campaign banner</h3>
-  <div class="panel"><div class="demo"><div class="banner"><div><span class="qbadge rose" style="margin-bottom:10px">기업 매칭 캠페인</span><h4>함께하면 두 배가 되는 마음</h4><p>여러분의 나눔에 초록내일 컴퍼니가 같은 마음을 보탭니다. 한도 1,000,000원.</p></div><div class="acts"><button class="btn secondary" type="button">자세히</button><button class="btn primary" type="button">함께 참여하기 ${ic('arrow-right', 18)}</button></div></div></div><div class="caption">Brand soft 배경 + 라운드 16. 제목 20/700, 설명 14. 행동 버튼은 오른쪽, 주 행동은 하나.</div></div>
+  <div class="panel"><div class="demo"><div class="banner"><div><span class="qbadge" style="--c:var(--primary);margin-bottom:10px">기업 매칭 캠페인</span><h4>함께하면 두 배가 되는 마음</h4><p>여러분의 나눔에 초록내일 컴퍼니가 같은 마음을 보탭니다. 한도 1,000,000원.</p></div><div class="acts"><button class="btn secondary" type="button">자세히</button><button class="btn primary" type="button">함께 참여하기 ${ic('arrow-right', 18)}</button></div></div></div><div class="caption">Brand soft 배경 + 라운드 16. 제목 20/700, 설명 14. 행동 버튼은 오른쪽, 주 행동은 하나.</div></div>
 </section>
 
 <!-- 10 -->
