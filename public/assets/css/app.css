@@ -322,7 +322,7 @@ p {
   display: inline-flex;
   align-items: center;
   gap: var(--space-8);
-  font-size: var(--font-size-caption);
+  font-size: var(--font-size-body);
   color: var(--label-alternative);
   white-space: nowrap;
 }
