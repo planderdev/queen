@@ -25,7 +25,9 @@ npm run dev                   # http://localhost:3000
 2. SQL Editor에서 `../supabase/migrations/` 파일을 번호 순서대로 실행하거나, Supabase CLI로 `supabase link` 후 `supabase db push`.
    - `..._init.sql`: 테이블·RLS·집계 뷰·프로필 자동 생성 트리거
    - `..._seed.sql`: 예시 단체·모금함·콘텐츠·계좌 설정 (`npm run seed:sql`로 재생성)
-3. Authentication → URL Configuration: Site URL을 배포 주소로, Redirect URLs에 `https://<도메인>/auth/callback` 추가. 이메일 템플릿의 확인 링크는 기본값을 사용합니다.
+3. Authentication → URL Configuration: Site URL을 배포 주소로, Redirect URLs에 `https://<도메인>/auth/callback`(로컬 테스트 시 `http://localhost:3000/auth/callback`) 추가. 이메일 템플릿의 확인 링크는 기본값을 사용합니다.
+   - Supabase 기본 메일러는 시간당 발송 한도가 매우 낮아(수 건) 가입 테스트 중 “email rate limit exceeded”가 납니다. 운영 전 Authentication → SMTP Settings에 자체 SMTP(예: Resend, AWS SES)를 연결하세요. 내부 테스트만 급하면 Authentication → Providers → Email에서 “Confirm email”을 잠시 끌 수 있습니다.
+   - `example.com`, `.test` 같은 예약 도메인 주소는 Supabase가 가입을 거부합니다. 테스트에도 실제 도메인 이메일을 쓰세요.
 4. `.env.local` 또는 Vercel 환경 변수에 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL` 설정.
 5. 첫 관리자 지정: 사이트에서 회원가입 후 SQL Editor에서
    ```sql
