@@ -67,7 +67,7 @@ export function enhanceAdminTables() {
               : key
                 ? r.collection(key, { includeDeleted: true })
                 : [];
-          const record = source.find((x) => x.id === id) || r.recordAt(i) || {
+          const record = source.find((x) => x.id === id) || r.recordAt(i, index) || {
             id,
             title: row.cells[nativeRecipient ? 1 : 0].textContent,
             summary: row.textContent,

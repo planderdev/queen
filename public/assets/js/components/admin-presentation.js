@@ -20,8 +20,11 @@ export function mountAdminPresentation(){
  document.querySelectorAll('.admin-main form.panel').forEach(e=>e.className='editor-section');
 
  document.querySelectorAll('.admin-main .table-wrap').forEach(w=>{w.className='data-table-wrap';w.querySelector('table').classList.add('data-table');});
+ // Palette classes from ui.js badges map onto the admin status palette (design-system chip semantics).
+ const tones={olive:'approved',blue:'received',lavender:'draft',orange:'pending',rose:'rejected'};
  document.querySelectorAll('.admin-main .badge').forEach(e=>{
-  const tone=['승인','성공','진행 중','지급 완료'].includes(e.textContent)?'approved':['반려','실패','취소'].includes(e.textContent)?'rejected':'pending';
+  const palette=[...e.classList].find(c=>tones[c]);
+  const tone=palette?tones[palette]:['승인','성공','진행 중','지급 완료'].includes(e.textContent)?'approved':['반려','실패','취소'].includes(e.textContent)?'rejected':'pending';
   e.className='badge status-'+tone;
  });
  document.querySelectorAll('.admin-main .notice').forEach(e=>e.className='admin-dashboard-section');
