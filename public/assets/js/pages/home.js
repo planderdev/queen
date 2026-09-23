@@ -5,7 +5,7 @@ import {published,canDonate} from '../services/domain.js';
 const arrow=()=>icon('arrow-up-right');
 const controls=(label)=>`<div class="home-rail-controls"><button type="button" class="rail-prev" aria-label="${label} 이전">${icon('arrow-left')}</button><span class="rail-count" aria-live="polite"></span><progress class="rail-progress" max="1" value="0" aria-label="슬라이드 진행"></progress><button type="button" class="rail-pause" aria-label="슬라이드 일시정지">${icon('pause')}</button><button type="button" class="rail-next" aria-label="${label} 다음">${icon('arrow-right')}</button></div>`;
 const title=(eyebrow,heading,url)=>`<div class="home-section-heading"><div><span class="home-kicker">${eyebrow}</span><h2>${heading}</h2></div>${url?`<a class="home-more" href="${url}" aria-label="${eyebrow} 전체보기">${icon('plus')}</a>`:''}</div>`;
-const slide=(image,heading,description,url,cta)=>`<div class="swiper-slide home-hero-slide ${image===photos.meal?'home-hero-light':''}" style="background-image:url('${image}')"><div class="home-hero-copy"><h1>${heading}</h1><p>${description}</p><a class="home-outline-link" href="${url}">${cta}${icon('arrow-right')}</a></div></div>`;
+const slide=(image,heading,description,url,cta)=>`<div class="swiper-slide home-hero-slide ${image===photos.meal?'home-hero-light':''}" style="background-image:url('${image}')"><div class="home-hero-copy"><h1 data-aos="site-reveal" data-aos-delay="0">${heading}</h1><p data-aos="site-reveal" data-aos-delay="150">${description}</p><a data-aos="site-reveal" data-aos-delay="300" class="home-outline-link" href="${url}">${cta}${icon('arrow-right')}</a></div></div>`;
 
 export function home(s){
  const campaigns=s.campaigns.filter(c=>c.review==='approved');

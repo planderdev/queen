@@ -1,4 +1,5 @@
 let editor;
+import {hydrateFormControls} from './form-controls.js';
 import {enhanceAdminTables} from './admin-tables.js';
 export function mountAdminPresentation(){
  editor?.destroy();editor=null;
@@ -25,4 +26,6 @@ export function mountAdminPresentation(){
  });
  document.querySelectorAll('.admin-main .notice').forEach(e=>e.className='admin-dashboard-section');
  enhanceAdminTables();
+ hydrateFormControls({selects:false});
+ globalThis.lucide?.createIcons({attrs:{'stroke-width':1.7}});
 }

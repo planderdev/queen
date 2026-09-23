@@ -1,6 +1,7 @@
 const fs=require('node:fs');
-const dir='public/assets/css';
-const files=fs.readdirSync(dir).filter(f=>f.endsWith('.css')&&f!=='tokens.css');
+const admin=process.argv.includes('--admin');
+const dir=admin?'public/assets/vendor/sports-admin/css':'public/assets/css';
+const files=fs.readdirSync(dir).filter(f=>f.endsWith('.css')&&!['tokens.css','admin-tokens.css'].includes(f));
 const duplicates=[],fragments=[],scoped=[];
 function selectors(value){let depth=0,buffer='',out=[];for(const c of value){if(c==='('||c==='[')depth++;if(c===')'||c===']')depth--;if(c===','&&!depth){out.push(buffer.trim());buffer='';}else buffer+=c;}out.push(buffer.trim());return out;}
 for(const file of files){
@@ -26,7 +27,7 @@ for(const file of files){
  for(const [key,count]of blocks)if(count>1)fragments.push({file,key,count});
 }
 const report={files:files.length,duplicateProperties:duplicates.length,fragmentedSelectors:fragments.length,fragments,scoped};
-if(process.argv.includes('--report'))fs.writeFileSync('docs/css-cascade-audit.json',JSON.stringify(report,null,2)+'\n');
+if(process.argv.includes('--report'))fs.writeFileSync(admin?'docs/admin-css-cascade-audit.json':'docs/css-cascade-audit.json',JSON.stringify(report,null,2)+'\n');
 console.log(`Cascade audit: ${files.length} stylesheets; ${duplicates.length} repeated selector/property declarations; ${fragments.length} fragmented selectors.`);
 if(duplicates.length){console.error(duplicates);process.exitCode=1;}
 const sharedFragments=fragments;

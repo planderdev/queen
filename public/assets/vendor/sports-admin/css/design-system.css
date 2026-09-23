@@ -17,7 +17,6 @@
 
 .workspace-brand strong {
   font-size: var(--type-title-3-size);
-  font-style: italic;
   color: var(--semantic-primary-normal);
   line-height: var(--type-title-3-line);
   letter-spacing: var(--type-title-3-tracking);

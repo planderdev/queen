@@ -76,7 +76,18 @@ export function mountCarousels(){
       navigation:{prevEl:prev,nextEl:next},watchOverflow:true,
       breakpoints:single?{}:rail?Object.fromEntries(foundations.carouselBreakpoints.map(({min,gap})=>[min,{spaceBetween:gap}])):{600:{slidesPerView:Math.min(2,total),spaceBetween:gap24},1024:{slidesPerView:Math.min(3,total),spaceBetween:gap32}},
       a11y:{enabled:true,slideRole:'',prevSlideMessage:prev?.getAttribute('aria-label')||'이전 항목',nextSlideMessage:next?.getAttribute('aria-label')||'다음 항목',slideLabelMessage:'{{index}} / {{slidesLength}}'},
-      on:{init:updateCount,slideChange:updateCount},
+      on:{
+        init:updateCount,
+        slideChange:updateCount,
+        slideChangeTransitionStart(sw){
+          if(!isHero||!window.AOS||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+          sw.slides[sw.activeIndex]?.querySelectorAll('.home-hero-copy [data-aos]').forEach(el=>el.classList.remove('aos-animate'));
+        },
+        slideChangeTransitionEnd(sw){
+          if(!isHero)return;
+          sw.slides[sw.activeIndex]?.querySelectorAll('.home-hero-copy [data-aos]').forEach(el=>el.classList.add('aos-animate'));
+        },
+      },
 
     });
     const updateRailAccess=()=>{

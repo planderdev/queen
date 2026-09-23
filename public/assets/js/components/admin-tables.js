@@ -202,7 +202,9 @@ export function enhanceAdminTables() {
         .join("");
       search.querySelector("[data-all-dates]").onclick = () => {
         search.elements.from.value = "";
+        search.elements.from._flatpickr?.clear();
         search.elements.to.value = "";
+        search.elements.to._flatpickr?.clear();
       };
       const chips = document.createElement("div");
       chips.className = "admin-filter-chips";
@@ -488,7 +490,9 @@ export function enhanceAdminTables() {
         search.reset();
         search.elements.q.value = "";
         search.elements.from.value = "";
+        search.elements.from._flatpickr?.clear();
         search.elements.to.value = "";
+        search.elements.to._flatpickr?.clear();
         selection.clear();
         render();
         sync();
@@ -501,6 +505,8 @@ export function enhanceAdminTables() {
             search.elements.from.value = kstDay(
               new Date(+now - Number(b.dataset.days) * 86400000),
             );
+            search.elements.from._flatpickr?.setDate(search.elements.from.value, true);
+            search.elements.to._flatpickr?.setDate(search.elements.to.value, true);
           }),
       );
       tabs.querySelectorAll("button").forEach(

@@ -4,11 +4,11 @@ import '../../vendor/flatpickr/ko.js';
 const pickers = new Set();
 const glyph = name => `<i data-lucide="${name}" aria-hidden="true"></i>`;
 
-export function hydrateFormControls() {
+export function hydrateFormControls({selects = true} = {}) {
   for (const picker of pickers) {
     if (!picker.input.isConnected) { picker.destroy(); pickers.delete(picker); }
   }
-  document.querySelectorAll('select:not([multiple])').forEach(select => {
+  if (selects) document.querySelectorAll('select:not([multiple])').forEach(select => {
     if (select.closest('.select-control') || select.size > 1) return;
     const wrapper = document.createElement('span');
     wrapper.className = 'select-control';
@@ -83,7 +83,7 @@ export function hydrateFormControls() {
 // Re-renders are cleaned up on hydrate; form resets synchronize the calendar state.
 document.addEventListener('reset', event => setTimeout(() => {
   event.target.querySelectorAll('[data-calendar-type]').forEach(input => {
-    input._flatpickr?.setDate(input.defaultValue, false);
+    input._flatpickr?.setDate(input.value, false);
     input.setCustomValidity('');
   });
 }, 0));
