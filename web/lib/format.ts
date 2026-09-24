@@ -27,13 +27,15 @@ export const statusNames: Record<string, string> = {
   draft: '임시저장', submitted: '검토 요청', reviewing: '심사 중', revision: '보완 요청', approved: '승인', rejected: '반려',
   active: '진행 중', paused: '일시중지', ended: '종료', scheduled: '예정',
   pending: '입금 확인 대기', processing: '처리 중', success: '성공', failed: '실패', cancelled: '취소',
-  requested: '접수', paid: '지급 완료', resolved: '처리 완료'
+  requested: '접수', paid: '지급 완료', resolved: '처리 완료',
+  confirmed: '신청 확정'
 };
 export const statusTone: Record<string, 'olive' | 'blue' | 'lavender' | 'orange' | 'rose'> = {
-  approved: 'olive', success: 'olive', active: 'olive', paid: 'olive', resolved: 'olive',
+  approved: 'olive', success: 'olive', active: 'olive', paid: 'olive', resolved: 'olive', confirmed: 'olive',
   submitted: 'blue', reviewing: 'blue', processing: 'blue', requested: 'blue', pending: 'blue',
   draft: 'lavender', paused: 'lavender', ended: 'lavender', cancelled: 'lavender',
   revision: 'orange', scheduled: 'orange',
   failed: 'rose', rejected: 'rose'
 };
 export const kindNames: Record<string, string> = { donation: '일시기부', recurring: '정기기부', refund: '환불' };
+export const campaignTypeNames: Record<string, string> = { matching: '기업 매칭', cheer: '응원 참여', event: '참가 신청' };

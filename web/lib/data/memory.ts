@@ -38,8 +38,8 @@ export const memoryRepo = {
   async comments() { return []; },
   async listOrganizations(): Promise<Organization[]> { return organizations.filter((o) => o.status === 'approved'); },
   async getOrganization(slug: string) { return organizations.find((o) => (o.slug === slug || o.id === slug) && o.status === 'approved') ?? null; },
-  async listCampaigns(): Promise<Campaign[]> { return campaigns.filter((c) => c.review === 'approved').map((c) => ({ ...c, participations: 0 })); },
-  async getCampaign(slug: string) { return campaigns.find((c) => (c.slug === slug || c.id === slug) && c.review === 'approved') ?? null; },
+  async listCampaigns(): Promise<Campaign[]> { return campaigns.filter((c) => c.review === 'approved').map((c) => ({ ...c, participations: 0, registrations: 0 } as Campaign)); },
+  async getCampaign(slug: string) { const c = campaigns.find((c) => (c.slug === slug || c.id === slug) && c.review === 'approved'); return c ? ({ ...c, participations: 0, registrations: 0 } as Campaign) : null; },
   async listContent(type: Content['type'], limit?: number): Promise<Content[]> {
     const rows = content.filter((c) => c.type === type && c.published).sort((a, b) => b.created_at.localeCompare(a.created_at));
     return limit ? rows.slice(0, limit) : rows;

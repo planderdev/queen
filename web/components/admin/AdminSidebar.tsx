@@ -9,6 +9,7 @@ export const adminMenu: { id: string; title: string; icon: string; group: string
   { id: 'recurring', title: '정기기부 약정', icon: 'calendar-line', group: '후원·정산', roles: ['super', 'finance'] },
   { id: 'fundraisers', title: '모금함 관리', icon: 'hand-heart-line', group: '모금·단체', roles: ['super', 'review'] },
   { id: 'organizations', title: '단체 관리', icon: 'building-line', group: '모금·단체', roles: ['super', 'review'] },
+  { id: 'campaigns', title: '캠페인·참가 신청', icon: 'run-line', group: '모금·단체', roles: ['super', 'review'] },
   { id: 'content', title: '콘텐츠 관리', icon: 'layout-line', group: '콘텐츠·소통', roles: ['super', 'content'] },
   { id: 'moderation', title: '댓글 및 신고', icon: 'flag-line', group: '콘텐츠·소통', roles: ['super', 'content'] },
   { id: 'inquiries', title: '문의 관리', icon: 'mail-line', group: '콘텐츠·소통', roles: ['super', 'content', 'review', 'finance'] },

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, BookOpen, Building2, Globe, HandHeart, NotebookPen, Plus, UsersRound } from 'lucide-react';
 import { repo } from '@/lib/data';
+import { campaignTypeNames } from '@/lib/format';
 import { HeroSlider } from '@/components/site/HeroSlider';
 import { Rail } from '@/components/site/Rail';
 import { Title } from '@/components/ui';
@@ -65,7 +66,7 @@ export default async function HomePage() {
           ...campaigns.map((c) => (
             <Link key={c.id} className="home-campaign-card" href={`/campaigns/${c.slug}`}>
               <div className="home-image"><img src={c.image ?? photos.community} width={440} height={480} loading="lazy" alt="캠페인 활동 참고 이미지" /></div>
-              <span>{c.type === 'matching' ? '기업 매칭 캠페인' : '참여 캠페인'}</span><div className="home-campaign-copy"><h3>{c.title}</h3><p>{c.description}</p></div>
+              <span>{campaignTypeNames[c.type]} 캠페인</span><div className="home-campaign-copy"><h3>{c.title}</h3><p>{c.description}</p></div>
             </Link>
           )),
           ...funds.map((f) => (

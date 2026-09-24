@@ -4,7 +4,8 @@ export type PublicationStatus = 'scheduled' | 'active' | 'paused' | 'ended';
 export type DonationStatus = 'pending' | 'processing' | 'success' | 'failed' | 'cancelled';
 export type DonationKind = 'donation' | 'recurring' | 'refund';
 export type PlanStatus = 'active' | 'paused' | 'cancelled';
-export type CampaignType = 'matching' | 'cheer';
+export type CampaignType = 'matching' | 'cheer' | 'event';
+export type RegistrationStatus = 'pending' | 'confirmed' | 'cancelled';
 export type ContentType = 'notice' | 'faq' | 'story' | 'news' | 'banner' | 'recommend';
 export type RequestStatus = 'requested' | 'approved' | 'rejected' | 'resolved';
 export type AdminRole = 'super' | 'content' | 'review' | 'finance';
@@ -106,7 +107,40 @@ export interface Campaign {
   start_at: string;
   end_at: string;
   created_at: string;
+  details: CampaignDetails;      // 행사(event) 캠페인 안내 문구
+  fee_amount: number;            // 참가비 (0 = 무료·미정)
+  registration_open: boolean;
+  capacity: number | null;
+  registration_count?: number;   // 트리거로 유지되는 유효 신청 수
   participations?: number;
+  registrations?: number;
+}
+
+export interface CampaignDetails {
+  intro?: string;
+  event_name?: string;
+  schedule?: string;
+  course?: string;
+  benefits?: string[];
+  agreements?: string[];
+  complete?: string;
+}
+
+export interface CampaignRegistration {
+  id: string;
+  campaign_id: string;
+  user_id: string | null;
+  name: string;
+  phone: string | null;
+  email: string;
+  gender: string | null;
+  age_group: string | null;
+  depositor_name: string | null;
+  agreements: string[];
+  status: RegistrationStatus;
+  note: string | null;
+  created_at: string;
+  updated_at: string;
 }
 
 export interface Content {

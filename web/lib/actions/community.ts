@@ -73,3 +73,30 @@ export async function updateProfile(_: ActionResult, formData: FormData): Promis
   revalidatePath('/', 'layout');
   return { ok: true, message: '프로필을 저장했습니다.' };
 }
+
+// 행사 캠페인 참가 신청 (구글 폼 대체). 비회원도 이메일로 신청할 수 있고, 회원이면 user_id를 함께 기록한다.
+const EMAIL = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+export async function registerForCampaign(_: ActionResult, formData: FormData): Promise<ActionResult> {
+  if (!hasSupabase) return { error: DB_NOT_CONNECTED };
+  const session = await getSession();
+  const campaignId = String(formData.get('campaign_id') ?? '');
+  const get = (k: string) => String(formData.get(k) ?? '').trim();
+  const name = get('name'), phone = get('phone'), email = get('email').toLowerCase(), gender = get('gender'), ageGroup = get('age_group'), depositor = get('depositor_name');
+  if (name.length < 1 || name.length > 50) return { error: '성함을 입력해주세요.' };
+  if (!EMAIL.test(email)) return { error: '이메일을 정확히 입력해주세요. 신청 확인과 안내가 이메일로 전달됩니다.' };
+  if (phone && !/^[0-9\-+() ]{9,20}$/.test(phone)) return { error: '연락처는 숫자와 하이픈(-)으로 입력해주세요.' };
+  if (gender && !['남자', '여자'].includes(gender)) return { error: '성별 값이 올바르지 않습니다.' };
+  const supabase = await createClient();
+  const { data: c } = await supabase.from('campaigns').select('id, slug, type, review, registration_open, end_at, details').eq('id', campaignId).maybeSingle();
+  if (!c || c.type !== 'event' || c.review !== 'approved') return { error: '참가 신청을 받는 캠페인이 아닙니다.' };
+  if (!c.registration_open || new Date(c.end_at).getTime() <= Date.now()) return { error: '참가 신청이 마감되었습니다.' };
+  const required: string[] = c.details?.agreements ?? [];
+  const agreed = required.filter((_, i) => formData.get(`agree_${i}`));
+  if (agreed.length < required.length) return { error: '참여 확인 항목에 모두 체크해주세요.' };
+  const { error } = await supabase.from('campaign_registrations').insert({
+    campaign_id: c.id, user_id: session?.user.id ?? null, name, phone: phone || null, email, gender: gender || null, age_group: ageGroup || null, depositor_name: depositor || null, agreements: agreed
+  });
+  if (error) return { error: error.code === '23505' ? '이미 같은 이메일로 신청되어 있습니다. 변경이 필요하면 1:1 문의로 알려주세요.' : '신청을 저장하지 못했습니다. 잠시 후 다시 시도해주세요.' };
+  revalidatePath(`/campaigns/${c.slug}`);
+  return { ok: true, message: c.details?.complete || '신청이 접수되었습니다. 입력한 이메일로 안내드립니다.' };
+}

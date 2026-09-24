@@ -4,8 +4,8 @@
 
 ## 1차 범위
 
-- 기부자: 회원가입·로그인(이메일), 모금함 탐색·상세, 일시기부 신청(계좌이체 입금 확인 방식), 정기기부 약정, 관심 저장, 응원 댓글·신고, 캠페인 응원 참여, 나의 후원(내역·CSV·환불 요청·약정 관리·문의·알림·프로필)
-- 운영자: 입금 확인, 환불 처리, 모금함·단체·콘텐츠(공지·FAQ·스토리·소식·배너·추천) 관리, 문의 답변, 댓글 신고 처리, 회원 권한, 분야·지역·계좌 설정, 운영 이력
+- 기부자: 회원가입·로그인(이메일), 모금함 탐색·상세, 일시기부 신청(계좌이체 입금 확인 방식), 정기기부 약정, 관심 저장, 응원 댓글·신고, 캠페인 응원 참여, 행사 캠페인 참가 신청(비회원 가능), 나의 후원(내역·CSV·환불 요청·약정 관리·문의·알림·프로필)
+- 운영자: 입금 확인, 환불 처리, 모금함·단체·콘텐츠(공지·FAQ·스토리·소식·배너·추천) 관리, 캠페인 공개·참가 신청자 명단(확정·취소·CSV), 문의 답변, 댓글 신고 처리, 회원 권한, 분야·지역·계좌 설정, 운영 이력
 - 결제(PG)와 자동결제, 기부금 영수증은 2차 범위입니다.
 
 ## 로컬 실행
@@ -25,6 +25,8 @@ npm run dev                   # http://localhost:3000
 2. SQL Editor에서 `../supabase/migrations/` 파일을 번호 순서대로 실행하거나, Supabase CLI로 `supabase link` 후 `supabase db push`.
    - `..._init.sql`: 테이블·RLS·집계 뷰·프로필 자동 생성 트리거
    - `..._seed.sql`: 예시 단체·모금함·콘텐츠·계좌 설정 (`npm run seed:sql`로 재생성)
+   - `..._campaign_type_event.sql` · `..._event_campaigns.sql` · `..._registration_count_column.sql`: 행사(참가 신청) 캠페인 유형과 신청자 테이블
+   - `..._salvation_run_campaign.sql`: 첫 실제 캠페인 “[우리도 오늘은 구세군] 기부런” (구글 폼 참가 신청서 이관). 예시 캠페인 2건은 숨김(draft) 처리
 3. Authentication → URL Configuration: Site URL을 배포 주소로, Redirect URLs에 `https://<도메인>/auth/callback`(로컬 테스트 시 `http://localhost:3000/auth/callback`) 추가. 이메일 템플릿의 확인 링크는 기본값을 사용합니다.
    - Supabase 기본 메일러는 시간당 발송 한도가 매우 낮아(수 건) 가입 테스트 중 “email rate limit exceeded”가 납니다. 운영 전 Authentication → SMTP Settings에 자체 SMTP(예: Resend, AWS SES)를 연결하세요. 내부 테스트만 급하면 Authentication → Providers → Email에서 “Confirm email”을 잠시 끌 수 있습니다.
    - `example.com`, `.test` 같은 예약 도메인 주소는 Supabase가 가입을 거부합니다. 테스트에도 실제 도메인 이메일을 쓰세요.
@@ -60,6 +62,13 @@ npm run dev                   # http://localhost:3000
 - `lib/auth.ts` 세션·권한 헬퍼, `proxy.ts` 세션 갱신과 `/my`, `/admin` 보호
 - `app/styles/` 데모에서 가져온 디자인 시스템 CSS (토큰 원본은 `../public/assets/js/design-system-foundations.js`)
 - `components/` 사이트·관리자 UI
+
+## 행사 캠페인 (참가 신청)
+
+- `campaigns.type = 'event'`인 캠페인은 상세 페이지에 행사 안내(`details` JSON: intro·event_name·schedule·course·benefits·agreements·complete)와 참가 신청서를 보여줍니다. 신청서 항목은 원본 구글 폼과 같습니다(성함·연락처·성별·이메일·연령대·참여 확인 3항목·참가비 입금자명).
+- 신청은 로그인 없이도 가능하며 `campaign_registrations`에 저장됩니다(캠페인당 이메일 1회). 회원이 신청하면 `user_id`가 함께 기록됩니다.
+- 운영자는 `/admin/campaigns`에서 신청자 명단을 보고 입금 확인 후 ‘참가 확정’, 필요 시 ‘취소’로 바꾸며 CSV로 내려받습니다. ‘신청 마감/재개’와 캠페인 ‘공개/숨기기’도 같은 화면에서 처리합니다.
+- 참가비 금액은 `campaigns.fee_amount`(0이면 “신청 후 개별 안내”), 정원은 `capacity`(null이면 무제한)로 관리합니다. 새 행사 캠페인은 SQL로 추가합니다(편집 화면은 2차).
 
 ## 운영 흐름 (계좌이체)
 

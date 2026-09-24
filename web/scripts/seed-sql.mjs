@@ -14,7 +14,8 @@ const insert = (table, rows, cols) => rows.length ? `insert into public.${table}
 let sql = `-- 초기 콘텐츠 시드 (생성: web/scripts/seed-sql.mjs). 단체·모금·사연·수치는 예시이며 운영 전 실제 값으로 교체합니다.\n\n`;
 sql += insert('organizations', seed.organizations, ['id', 'slug', 'name', 'category', 'description', 'image', 'status', 'created_at']);
 sql += insert('fundraisers', seed.fundraisers.map(({ seedAmount, ...f }) => ({ ...f, budget: f.budget })), ['id', 'slug', 'organization_id', 'title', 'story', 'image', 'category', 'region', 'target', 'start_at', 'end_at', 'budget', 'review', 'publication', 'created_at']);
-sql += insert('campaigns', seed.campaigns, ['id', 'slug', 'partner_name', 'title', 'description', 'type', 'fundraiser_id', 'limit_amount', 'rate', 'image', 'review', 'start_at', 'end_at', 'created_at']);
+// 행사(event) 캠페인은 enum 값이 이후 마이그레이션에서 추가되므로 시드에서 제외한다.
+sql += insert('campaigns', seed.campaigns.filter((c) => c.type !== 'event'), ['id', 'slug', 'partner_name', 'title', 'description', 'type', 'fundraiser_id', 'limit_amount', 'rate', 'image', 'review', 'start_at', 'end_at', 'created_at']);
 sql += insert('content', seed.content, ['id', 'slug', 'type', 'title', 'body', 'category', 'image', 'fundraiser_id', 'published', 'created_at']);
 sql += `insert into public.settings (key, value) values\n  ('categories', ${q(seed.categories)}),\n  ('regions', ${q(seed.regions)}),\n  ('bank', ${q(seed.bank)})\non conflict (key) do nothing;\n`;
 sql += `\n-- 예시 모금액: 데모의 초기 모금액을 익명 기부(입금 확인 완료)로 기록. 실제 운영 전 삭제하려면 아래 행을 지우거나 status를 cancelled로 바꿉니다.\n`;

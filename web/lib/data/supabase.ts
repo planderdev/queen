@@ -72,13 +72,13 @@ export const supabaseRepo = {
   async listCampaigns(): Promise<Campaign[]> {
     const supabase = await createClient();
     const { data } = await supabase.from('campaigns').select('*, participations(count)').eq('review', 'approved').order('created_at', { ascending: false });
-    return (data ?? []).map((c) => ({ ...c, participations: c.participations?.[0]?.count ?? 0 })) as Campaign[];
+    return (data ?? []).map((c) => ({ ...c, participations: c.participations?.[0]?.count ?? 0, registrations: c.registration_count ?? 0 })) as Campaign[];
   },
   async getCampaign(slug: string) {
     const supabase = await createClient();
     const isId = /^[0-9a-f-]{36}$/i.test(slug);
     const { data } = await supabase.from('campaigns').select('*, participations(count)').eq(isId ? 'id' : 'slug', slug).maybeSingle();
-    return data ? ({ ...data, participations: data.participations?.[0]?.count ?? 0 } as Campaign) : null;
+    return data ? ({ ...data, participations: data.participations?.[0]?.count ?? 0, registrations: data.registration_count ?? 0 } as Campaign) : null;
   },
   async listContent(type: Content['type'], limit?: number): Promise<Content[]> {
     const supabase = await createClient();

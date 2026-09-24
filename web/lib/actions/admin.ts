@@ -182,3 +182,36 @@ export async function saveSettings(_: ActionResult, fd: FormData): Promise<Actio
     return { ok: true, message: '설정을 저장했습니다.' };
   });
 }
+
+// 행사 캠페인 참가 신청 관리
+export async function setRegistrationStatus(id: string, status: 'pending' | 'confirmed' | 'cancelled'): Promise<ActionResult> {
+  return wrap(['review'], async ({ supabase, log, notify }) => {
+    const { data: r } = await supabase.from('campaign_registrations').select('id, user_id, name, campaign:campaigns(title, slug)').eq('id', id).maybeSingle();
+    if (!r) return { error: '신청 내역을 찾을 수 없습니다.' };
+    const { error } = await supabase.from('campaign_registrations').update({ status }).eq('id', id);
+    if (error) return { error: '상태를 바꾸지 못했습니다.' };
+    const campaign = Array.isArray(r.campaign) ? r.campaign[0] : r.campaign;
+    await log('참가 신청 상태 변경', 'campaign_registration', id, { name: r.name, status });
+    if (status === 'confirmed') await notify(r.user_id, `“${campaign?.title ?? '캠페인'}” 참가 신청이 확정되었습니다.`, campaign?.slug ? `/campaigns/${campaign.slug}` : null);
+    revalidatePath('/admin/campaigns');
+    return { ok: true, message: status === 'confirmed' ? '참가를 확정했습니다.' : status === 'cancelled' ? '신청을 취소 처리했습니다.' : '대기 상태로 되돌렸습니다.' };
+  });
+}
+export async function setRegistrationOpen(campaignId: string, open: boolean): Promise<ActionResult> {
+  return wrap(['review'], async ({ supabase, log }) => {
+    const { error } = await supabase.from('campaigns').update({ registration_open: open }).eq('id', campaignId);
+    if (error) return { error: '설정을 바꾸지 못했습니다.' };
+    await log(open ? '참가 신청 재개' : '참가 신청 마감', 'campaign', campaignId);
+    revalidatePath('/admin/campaigns'); revalidatePath('/campaigns');
+    return { ok: true, message: open ? '참가 신청을 다시 받습니다.' : '참가 신청을 마감했습니다.' };
+  });
+}
+export async function setCampaignReview(campaignId: string, review: 'approved' | 'draft'): Promise<ActionResult> {
+  return wrap(['review'], async ({ supabase, log }) => {
+    const { error } = await supabase.from('campaigns').update({ review }).eq('id', campaignId);
+    if (error) return { error: '설정을 바꾸지 못했습니다.' };
+    await log(review === 'approved' ? '캠페인 공개' : '캠페인 숨김', 'campaign', campaignId);
+    revalidatePath('/admin/campaigns'); revalidatePath('/campaigns'); revalidatePath('/');
+    return { ok: true, message: review === 'approved' ? '캠페인을 공개했습니다.' : '캠페인을 목록에서 숨겼습니다.' };
+  });
+}

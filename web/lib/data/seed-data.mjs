@@ -59,9 +59,27 @@ export const fundraisers = specs.map((s, i) => ({
   created_at: day((s[9] ?? -20) + i)
 }));
 
+const campaignBase = { details: {}, fee_amount: 0, registration_open: true, capacity: null };
+// 예시용 가상 캠페인 2건은 실제 캠페인이 등록되어 목록에서 숨김(draft). 운영자가 필요하면 승인 상태로 바꿔 다시 노출할 수 있다.
 export const campaigns = [
-  { id: '33333333-0000-4000-8000-000000000001', slug: 'double-heart', partner_name: '초록내일 컴퍼니', title: '함께하면 두 배가 되는 마음', description: '여러분의 나눔에 초록내일 컴퍼니가 같은 마음을 보탭니다.', type: 'matching', fundraiser_id: fundraisers[0].id, limit_amount: 1000000, rate: 1, review: 'approved', start_at: fundraisers[0].start_at, end_at: fundraisers[0].end_at, image: photos.community, created_at: day(-20) },
-  { id: '33333333-0000-4000-8000-000000000002', slug: 'small-promise', partner_name: '초록내일 컴퍼니', title: '지구를 위한 작은 약속', description: '오늘 한 번, 일회용품 줄이기를 함께 약속해요. 응원은 금전 기부로 환산되지 않습니다.', type: 'cheer', fundraiser_id: fundraisers[3].id, limit_amount: 0, rate: 1, review: 'approved', start_at: fundraisers[0].start_at, end_at: fundraisers[0].end_at, image: photos.forest, created_at: day(-20) }
+  { ...campaignBase, id: '33333333-0000-4000-8000-000000000001', slug: 'double-heart', partner_name: '초록내일 컴퍼니', title: '함께하면 두 배가 되는 마음', description: '여러분의 나눔에 초록내일 컴퍼니가 같은 마음을 보탭니다.', type: 'matching', fundraiser_id: fundraisers[0].id, limit_amount: 1000000, rate: 1, review: 'draft', start_at: fundraisers[0].start_at, end_at: fundraisers[0].end_at, image: photos.community, created_at: day(-20) },
+  { ...campaignBase, id: '33333333-0000-4000-8000-000000000002', slug: 'small-promise', partner_name: '초록내일 컴퍼니', title: '지구를 위한 작은 약속', description: '오늘 한 번, 일회용품 줄이기를 함께 약속해요. 응원은 금전 기부로 환산되지 않습니다.', type: 'cheer', fundraiser_id: fundraisers[3].id, limit_amount: 0, rate: 1, review: 'draft', start_at: fundraisers[0].start_at, end_at: fundraisers[0].end_at, image: photos.forest, created_at: day(-20) },
+  // 첫 번째 실제 캠페인 — 구글 폼 "[우리도 오늘은 구세군] 기부런 참가 신청서" 이관. DB에는 20260924000006 마이그레이션이 넣는다(seed:sql에서는 제외).
+  {
+    id: '33333333-0000-4000-8000-000000000010', slug: 'salvation-run-2026', partner_name: '아식스 구제주 칠성점 × 제주야미소영', title: '[우리도 오늘은 구세군] 기부런',
+    description: '함께 달리고, 함께 나누는 하루. 추운 겨울이면 우리 곁에서 사랑의 종을 울리던 구세군, 이제는 우리가 그 마음을 이어가 보려고 합니다.',
+    type: 'event', fundraiser_id: null, limit_amount: 0, rate: 1, review: 'approved', start_at: day(0), end_at: '2026-10-09T23:00:00.000Z', image: photos.ocean, created_at: day(0),
+    fee_amount: 0, registration_open: true, capacity: null,
+    details: {
+      intro: '함께 달리고, 함께 나누는 하루.\n추운 겨울이면 우리 곁에서 사랑의 종을 울리던 구세군\n\n이제는 우리가 그 마음을 이어가 보려고 합니다.\n한걸음이 모이면 따뜻한 마음이 되고\n우리의 달리기가 누군가에게 작은 희망이 됩니다.\n\n아식스 구제주 칠성점 X 제주야미소영이 함께하는 기부런, 여러분의 많은 참여를 기다립니다.',
+      event_name: '우리도 오늘은 구세군 기부런',
+      schedule: '2026년 10월 10일 (토) 08:00 ~ 10:00',
+      course: '10KM · 해변공연장 앞 집결 → 탑동 → 동한두기 → 구름다리 → 용담해안도로 → 어영공원 (왕복)',
+      benefits: ['꽝 없는 경품행사', '1등 아식스 노바 6 운동화', '2등 아식스 가방', '3등 아식스 티셔츠', '4등 아식스 고급 양말', '5등 킹스테이블 3만원 상품권 × 7매', '6등 모두에게 소정의 기념품 증정'],
+      agreements: ['본 행사는 달리기를 통해 나눔을 실천하는 기부 행사임을 확인했습니다', '참가비 및 기부금의 사용처에 대한 안내를 확인했습니다', '본인의 건강상태를 고려하며 무리하지 않고 안전하게 참여하겠습니다'],
+      complete: '신청해주셔서 감사합니다.\n\n여러분의 한 걸음이 누군가에게는 따뜻한 겨울이 될 수 있습니다.\n\n우리도 오늘은 구세군, 함께 달리고, 함께 나누겠습니다.'
+    }
+  }
 ];
 
 export const content = [

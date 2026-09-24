@@ -1,7 +1,7 @@
 // Admin reads. Callers must already be an admin (RLS + requireAdmin in pages).
 import { createClient } from '@/lib/supabase/server';
 import { hasSupabase } from '@/lib/env';
-import type { AuditLog, Campaign, Content, Donation, Fundraiser, Inquiry, Organization, Profile, RecurringPlan, RefundRequest } from './types';
+import type { AuditLog, Campaign, CampaignRegistration, Content, Donation, Fundraiser, Inquiry, Organization, Profile, RecurringPlan, RefundRequest } from './types';
 
 const empty = <T,>(): T[] => [];
 
@@ -52,8 +52,14 @@ export async function adminOrganizations(): Promise<Organization[]> {
 export async function adminCampaigns(): Promise<Campaign[]> {
   if (!hasSupabase) return empty();
   const supabase = await createClient();
-  const { data } = await supabase.from('campaigns').select('*').order('created_at', { ascending: false });
-  return (data ?? []) as Campaign[];
+  const { data } = await supabase.from('campaigns').select('*, participations(count)').order('created_at', { ascending: false });
+  return (data ?? []).map((c) => ({ ...c, registrations: c.registration_count ?? 0, participations: c.participations?.[0]?.count ?? 0 })) as Campaign[];
+}
+export async function adminRegistrations(campaignId: string): Promise<CampaignRegistration[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('campaign_registrations').select('*').eq('campaign_id', campaignId).order('created_at', { ascending: false });
+  return (data ?? []) as CampaignRegistration[];
 }
 export async function adminContent(type?: string): Promise<Content[]> {
   if (!hasSupabase) return empty();
