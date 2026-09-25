@@ -7,7 +7,9 @@ export async function proxy(request: NextRequest) {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   const { pathname } = request.nextUrl;
-  const protectedArea = pathname.startsWith('/my') || pathname.startsWith('/admin') || pathname.includes('/checkout');
+  const adminLogin = pathname === '/admin/login';
+  const adminArea = pathname === '/admin' || (pathname.startsWith('/admin/') && !adminLogin);
+  const protectedArea = pathname.startsWith('/my') || adminArea || pathname.includes('/checkout');
   let response = NextResponse.next({ request });
   if (!url || !key) {
     // Seed (preview) mode: member areas need a database; the admin UI stays viewable read-only.
@@ -25,12 +27,14 @@ export async function proxy(request: NextRequest) {
     }
   });
   const { data: { user } } = await supabase.auth.getUser();
+  // 관리자 영역은 사이트 로그인이 아니라 관리자 로그인(/admin/login)으로 보낸다
+  const next = encodeURIComponent(pathname + request.nextUrl.search);
   if (!user && protectedArea) {
-    return NextResponse.redirect(new URL(`/auth/login?next=${encodeURIComponent(pathname + request.nextUrl.search)}`, request.url));
+    return NextResponse.redirect(new URL(adminArea ? `/admin/login?next=${next}` : `/auth/login?next=${next}`, request.url));
   }
-  if (user && pathname.startsWith('/admin')) {
+  if (user && adminArea) {
     const { data: profile } = await supabase.from('profiles').select('role, suspended').eq('id', user.id).single();
-    if (!profile || profile.role !== 'admin' || profile.suspended) return NextResponse.redirect(new URL('/my?denied=admin', request.url));
+    if (!profile || profile.role !== 'admin' || profile.suspended) return NextResponse.redirect(new URL('/admin/login?denied=1', request.url));
   }
   return response;
 }

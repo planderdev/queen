@@ -18,7 +18,7 @@ export function Footer() {
             </nav>
             <details className="footer-sites">
               <summary>사이트 관리 <ChevronDown aria-hidden="true" /></summary>
-              <div><Link href="/admin">운영 관리</Link><a href="/design-system">브랜드 가이드</a><a href={env.demoUrl}>데모 버전</a></div>
+              <div><a href="/design-system">브랜드 가이드</a><a href={env.demoUrl}>데모 버전</a></div>
             </details>
           </div>
           <div className="bottom-info">

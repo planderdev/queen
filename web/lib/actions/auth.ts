@@ -68,3 +68,26 @@ export async function signOut() {
   if (hasSupabase) { const supabase = await createClient(); await supabase.auth.signOut(); }
   redirect('/');
 }
+
+// 관리자 로그인: 로그인 후 관리자 권한을 확인하고, 아니면 바로 로그아웃시킨다.
+const safeAdminNext = (raw: FormDataEntryValue | null) => { const v = String(raw ?? ''); return v.startsWith('/admin') && !v.startsWith('/admin/login') ? v : '/admin'; };
+export async function adminSignIn(_: ActionResult, formData: FormData): Promise<ActionResult> {
+  if (!hasSupabase) return { error: DB_NOT_CONNECTED };
+  const email = String(formData.get('email') ?? '').trim();
+  const password = String(formData.get('password') ?? '');
+  if (!email || !password) return { error: '이메일과 비밀번호를 입력해주세요.' };
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) return { error: authMessage(error.message) };
+  const { data: profile } = await supabase.from('profiles').select('role, suspended').eq('id', data.user.id).maybeSingle();
+  if (!profile || profile.role !== 'admin' || profile.suspended) {
+    await supabase.auth.signOut();
+    return { error: profile?.suspended ? '이용이 중지된 관리자 계정입니다.' : '관리자 권한이 없는 계정입니다.' };
+  }
+  redirect(safeAdminNext(formData.get('next')));
+}
+
+export async function adminSignOut() {
+  if (hasSupabase) { const supabase = await createClient(); await supabase.auth.signOut(); }
+  redirect('/admin/login');
+}

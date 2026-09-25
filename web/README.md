@@ -41,11 +41,12 @@ npm run dev                   # http://localhost:3000
    4. Supabase → Authentication → Rate Limits에서 “Rate limit for sending emails”를 운영 수준(예: 시간당 100)으로 올립니다. 커스텀 SMTP를 켜야 올릴 수 있습니다.
    5. 테스트: 사이트에서 회원가입 → 인증 메일 링크 클릭 → `/my`로 돌아오면 정상.
 4. `.env.local` 또는 Vercel 환경 변수에 `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL` 설정.
-5. 첫 관리자 지정: 사이트에서 회원가입 후 SQL Editor에서
+5. 첫 관리자 지정: Supabase 대시보드 → Authentication → Users → Add user(“Auto Confirm User” 체크)로 계정을 만든 뒤 SQL Editor에서
    ```sql
    update public.profiles set role = 'admin', admin_role = 'super' where email = 'admin@example.com';
    ```
    이후 관리자는 `/admin/users`에서 다른 회원을 관리자로 지정할 수 있습니다.
+   - 관리자 화면은 사이트와 분리된 `/admin/login`으로 로그인합니다(사이트 어디에도 링크하지 않음). 관리자 권한이 없는 계정은 로그인 직후 로그아웃되고, 로그인하지 않은 채 `/admin/...`에 들어오면 관리자 로그인으로 이동합니다.
 6. `/admin/settings`에서 실제 입금 계좌(은행·계좌번호·예금주)를 입력합니다. 시드의 계좌는 자리표시자입니다.
 
 ## Vercel 배포
@@ -56,7 +57,7 @@ npm run dev                   # http://localhost:3000
 
 ## 구조
 
-- `app/(site)/…` 공개 사이트와 회원 화면, `app/(admin)/admin/…` 운영 관리 (별도 루트 레이아웃)
+- `app/(site)/…` 공개 사이트와 회원 화면, `app/(admin)/admin/(panel)/…` 운영 관리 화면(셸·권한 확인), `app/(admin)/admin/login` 관리자 전용 로그인 (별도 루트 레이아웃)
 - `lib/data/` 데이터 계층: `supabase.ts`(실서비스) · `memory.ts`(미리보기) · `seed-data.mjs`(시드 원본) · `me.ts` · `admin.ts`
 - `lib/actions/` 서버 액션: `auth` · `donation` · `community` · `bookmark` · `admin`
 - `lib/auth.ts` 세션·권한 헬퍼, `proxy.ts` 세션 갱신과 `/my`, `/admin` 보호
