@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { ChevronDown, House } from 'lucide-react';
-import { navigation } from './Header';
+import { navigation, visibleNavigation } from './Header';
 
 const sections: Record<string, [string, string, string, string]> = {
   donate: ['후원하기', 'SUPPORT', '작은 관심이 누군가의 든든한 일상이 됩니다.', '/assets/images/meal.jpg'],
@@ -40,7 +40,7 @@ export function PageBanner({ page, view, title: override }: { page: string; view
         <Link className="path-home" href="/" aria-label="홈"><House aria-hidden="true" /></Link>
         <details className="path-group">
           <summary>{selected ? selected.group[0] : '전체 메뉴'}<ChevronDown aria-hidden="true" /></summary>
-          <div>{navigation.map((g) => <Link key={g[0]} href={g[1][0][0]} aria-current={selected?.group === g ? 'true' : undefined}>{g[0]}</Link>)}</div>
+          <div>{visibleNavigation.map((g) => <Link key={g[0]} href={g[1][0][0]} aria-current={selected?.group === g ? 'true' : undefined}>{g[0]}</Link>)}</div>
         </details>
         {selected ? (
           <details className="path-current">

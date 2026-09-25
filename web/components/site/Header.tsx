@@ -11,6 +11,11 @@ export const navigation: [string, [string, string][]][] = [
   ['소식', [['/stories', '나눔이야기'], ['/support?view=notices', '공지사항'], ['/support?view=inquiry', '1:1 문의']]]
 ];
 
+// 2026-09-25 요청: 오픈 초기에는 캠페인·소식만 메뉴에 노출한다. 페이지는 그대로 있고 주소로는 접근된다.
+// 다시 보이려면 이 목록을 비우면 된다.
+export const hiddenNavGroups = ['후원하기', '사업안내', '기관소개'];
+export const visibleNavigation = navigation.filter(([label]) => !hiddenNavGroups.includes(label));
+
 export async function Header({ page }: { page: string }) {
   const session = await getSession();
   return (
@@ -20,7 +25,7 @@ export async function Header({ page }: { page: string }) {
         <MenuToggle><Menu aria-hidden="true" /></MenuToggle>
         <div className="site-menu" id="site-menu">
           <nav className="site-navigation" aria-label="주 메뉴">
-            {navigation.map(([label, items]) => (
+            {visibleNavigation.map(([label, items]) => (
               <details className="nav-group" key={label}>
                 <summary>{label}<ChevronDown aria-hidden="true" /></summary>
                 <div className="nav-dropdown">
