@@ -179,3 +179,19 @@
 .form-success {display: grid;justify-items: center;gap: var(--space-16);padding: var(--space-48) var(--space-24);margin-top: var(--space-24);text-align: center;background: var(--brand-soft);border-radius: var(--radius-20);}
 .form-success svg {width: 40px;height: 40px;color: var(--primary-normal);}
 .form-success p {margin: 0;font-size: var(--font-size-headline);line-height: var(--line-height-headline);word-break: keep-all;}
+/* 행사 캠페인 — 모집 현황·입금 계좌 */
+.event-capacity {display: grid;gap: var(--space-8);padding: var(--space-24);margin-bottom: var(--space-32);border: 1px solid var(--line-normal);border-radius: var(--radius-20);}
+.event-capacity-head {display: flex;flex-wrap: wrap;align-items: baseline;justify-content: space-between;gap: var(--space-8);}
+.event-capacity-head b {font: var(--type-title);font-variant-numeric: tabular-nums;}
+.event-capacity-head b small {font-size: var(--font-size-body);color: var(--label-alternative);font-weight: var(--weight-regular);}
+.event-capacity p {margin: 0;font-size: var(--font-size-body);color: var(--label-neutral);}
+.event-capacity.is-full {background: var(--background-alternative);}
+.bank-box {display: grid;gap: var(--space-8);width: 100%;max-width: 520px;padding: var(--space-20) var(--space-24);text-align: left;background: var(--background-normal);border: 1px solid var(--line-normal);border-radius: var(--radius-16);}
+.bank-box p {margin: 0;font-size: var(--font-size-body);}
+.bank-box-label {color: var(--label-alternative);}
+.bank-box-account {display: flex;flex-wrap: wrap;align-items: center;gap: var(--space-8);}
+.bank-box-account b {font-size: var(--font-size-heading-small);font-variant-numeric: tabular-nums;letter-spacing: .01em;}
+.bank-box-notes {margin: var(--space-4) 0 0;padding-left: var(--space-20);font-size: var(--font-size-label-small);color: var(--label-neutral);display: grid;gap: var(--space-4);}
+.copy-text {display: inline-flex;align-items: center;gap: var(--space-4);}
+.copy-text svg {width: 14px;height: 14px;}
+.program-participation .bank-box {margin-top: var(--space-8);}

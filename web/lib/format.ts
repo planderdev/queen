@@ -28,7 +28,7 @@ export const statusNames: Record<string, string> = {
   active: '진행 중', paused: '일시중지', ended: '종료', scheduled: '예정',
   pending: '입금 확인 대기', processing: '처리 중', success: '성공', failed: '실패', cancelled: '취소',
   requested: '접수', paid: '지급 완료', resolved: '처리 완료',
-  confirmed: '신청 확정'
+  confirmed: '입금 확인'
 };
 export const statusTone: Record<string, 'olive' | 'blue' | 'lavender' | 'orange' | 'rose'> = {
   approved: 'olive', success: 'olive', active: 'olive', paid: 'olive', resolved: 'olive', confirmed: 'olive',

@@ -111,7 +111,8 @@ export interface Campaign {
   fee_amount: number;            // 참가비 (0 = 무료·미정)
   registration_open: boolean;
   capacity: number | null;
-  registration_count?: number;   // 트리거로 유지되는 유효 신청 수
+  registration_count?: number;   // 트리거로 유지되는 유효 신청 수 (취소 제외)
+  confirmed_count?: number;      // 트리거로 유지되는 입금 확인 인원 — capacity에 닿으면 신청 마감
   participations?: number;
   registrations?: number;
 }
@@ -124,6 +125,16 @@ export interface CampaignDetails {
   benefits?: string[];
   agreements?: string[];
   complete?: string;
+  questions?: CampaignQuestion[];   // 신청서 추가 질문 (선택형)
+  bank?: { bank: string; account: string; holder: string };   // 참가비 입금 계좌
+}
+
+export interface CampaignQuestion {
+  key: string;
+  label: string;
+  short?: string;       // 관리자 표·CSV 머리글
+  options: string[];
+  required?: boolean;
 }
 
 export interface CampaignRegistration {
@@ -137,6 +148,7 @@ export interface CampaignRegistration {
   age_group: string | null;
   depositor_name: string | null;
   agreements: string[];
+  answers: Record<string, string>;
   status: RegistrationStatus;
   note: string | null;
   created_at: string;

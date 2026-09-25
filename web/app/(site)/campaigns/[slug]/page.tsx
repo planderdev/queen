@@ -7,9 +7,10 @@ import { createClient } from '@/lib/supabase/server';
 import { hasSupabase } from '@/lib/env';
 import { money, date, dateTime } from '@/lib/format';
 import { PageBanner } from '@/components/site/PageBanner';
-import { Notice, SectionTitle } from '@/components/ui';
+import { Notice, Progress, SectionTitle } from '@/components/ui';
 import { ParticipateButton } from '@/components/site/ParticipateButton';
 import { RegistrationForm } from '@/components/site/RegistrationForm';
+import { BankBox } from '@/components/site/BankBox';
 import type { Campaign } from '@/lib/data/types';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -60,8 +61,11 @@ export default async function CampaignPage({ params }: Props) {
 // 행사(참가 신청) 캠페인: 행사 안내 + 참가 신청서. 신청은 회원·비회원 모두 가능.
 function EventCampaign({ c, available, defaults }: { c: Campaign; available: boolean; defaults?: { name?: string | null; email?: string | null } }) {
   const d = c.details;
-  const open = available && c.registration_open && (c.capacity == null || (c.registrations ?? 0) < c.capacity);
+  const confirmed = c.confirmed_count ?? 0;
+  const full = c.capacity != null && confirmed >= c.capacity;
+  const open = available && c.registration_open && !full;
   const [prizeHead, ...prizes] = d.benefits ?? [];
+  const closedText = full ? `선착순 ${c.capacity}명 모집이 마감되었습니다. 함께해주셔서 감사합니다.` : '참가 신청이 마감되었습니다. 함께해주셔서 감사합니다.';
   return (
     <>
       <PageBanner page="campaigns" title={c.title} />
@@ -73,18 +77,26 @@ function EventCampaign({ c, available, defaults }: { c: Campaign; available: boo
             {d.event_name && <div><dt>행사명</dt><dd>{d.event_name}</dd></div>}
             {d.schedule && <div><dt>일시</dt><dd>{d.schedule}</dd></div>}
             {d.course && <div><dt>러닝 코스</dt><dd>{d.course}</dd></div>}
+            {c.capacity != null && <div><dt>모집 인원</dt><dd>선착순 {c.capacity}명 <small className="help">(참가비 입금 확인 순)</small></dd></div>}
             {prizeHead && <div><dt>참가자 혜택</dt><dd><b>{prizeHead}</b>{prizes.length > 0 && <ul className="event-prizes">{prizes.map((p) => <li key={p}>{p}</li>)}</ul>}</dd></div>}
-            <div><dt>참가비</dt><dd>{c.fee_amount > 0 ? money(c.fee_amount) : '신청 후 개별 안내'}</dd></div>
+            <div><dt>참가비</dt><dd>{c.fee_amount > 0 ? money(c.fee_amount) : '신청 후 개별 안내'}{d.bank && <BankBox bank={d.bank} fee={c.fee_amount} capacity={c.capacity} />}</dd></div>
             <div><dt>신청 마감</dt><dd>{dateTime(c.end_at)}</dd></div>
             <div><dt>함께하는 곳</dt><dd>{c.partner_name}</dd></div>
           </dl>
-          <p className="help">참가비와 기부금의 사용처는 행사 종료 후 소식 페이지에 공개합니다. 참가 신청 자체로 결제가 이루어지지 않으며, 참가비 입금 안내는 신청 후 이메일로 전달됩니다.</p>
+          <p className="help">참가비와 기부금의 사용처는 행사 종료 후 소식 페이지에 공개합니다. 사이트에서 결제가 이루어지지 않으며, 안내된 계좌로 입금하면 운영팀이 확인 후 참가를 확정합니다.</p>
           </section>
+          {c.capacity != null && (
+            <section className={`event-capacity${full ? ' is-full' : ''}`} aria-label="모집 현황">
+              <div className="event-capacity-head"><span>입금 확인 인원</span><b>{confirmed}<small> / {c.capacity}명</small></b></div>
+              <Progress pct={Math.round((confirmed / c.capacity) * 100)} />
+              <p>{full ? '선착순 모집이 마감되었습니다.' : `잔여 ${c.capacity - confirmed}석 · 신청 ${c.registrations ?? 0}명 중 입금이 확인된 인원만 정원에 포함됩니다.`}</p>
+            </section>
+          )}
           <section className="program-subscribe" id="register">
-            <SectionTitle title="참가 신청" text={open ? '아래 신청서를 작성해주세요. 로그인 없이도 신청할 수 있습니다.' : '참가 신청이 마감되었습니다. 함께해주셔서 감사합니다.'} />
+            <SectionTitle title="참가 신청" text={open ? '아래 신청서를 작성해주세요. 로그인 없이도 신청할 수 있습니다.' : closedText} />
             {open ? <RegistrationForm campaign={c} defaults={defaults} /> : <Notice>현재 신청을 받고 있지 않습니다. 문의는 1:1 문의로 남겨주세요.</Notice>}
           </section>
-          <Notice>현재 참가 신청 {c.registrations ?? 0}명{c.capacity ? ` / 정원 ${c.capacity}명` : ''} · 신청 정보는 행사 운영 목적으로만 사용합니다.</Notice>
+          <Notice>신청 정보는 행사 운영 목적으로만 사용합니다. 신청 내용 변경·취소는 1:1 문의로 알려주세요.</Notice>
         </article>
         <div className="program-actions"><Link className="button secondary" href="/campaigns">캠페인 목록</Link></div>
       </div>

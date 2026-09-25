@@ -87,16 +87,25 @@ export async function registerForCampaign(_: ActionResult, formData: FormData): 
   if (phone && !/^[0-9\-+() ]{9,20}$/.test(phone)) return { error: '연락처는 숫자와 하이픈(-)으로 입력해주세요.' };
   if (gender && !['남자', '여자'].includes(gender)) return { error: '성별 값이 올바르지 않습니다.' };
   const supabase = await createClient();
-  const { data: c } = await supabase.from('campaigns').select('id, slug, type, review, registration_open, end_at, details').eq('id', campaignId).maybeSingle();
+  const { data: c } = await supabase.from('campaigns').select('id, slug, type, review, registration_open, end_at, details, capacity, confirmed_count').eq('id', campaignId).maybeSingle();
   if (!c || c.type !== 'event' || c.review !== 'approved') return { error: '참가 신청을 받는 캠페인이 아닙니다.' };
   if (!c.registration_open || new Date(c.end_at).getTime() <= Date.now()) return { error: '참가 신청이 마감되었습니다.' };
+  if (c.capacity != null && (c.confirmed_count ?? 0) >= c.capacity) return { error: `선착순 ${c.capacity}명 모집이 마감되었습니다. 함께해주셔서 감사합니다.` };
+  // 추가 질문(선택형): 보기 안의 값만 받는다
+  const answers: Record<string, string> = {};
+  for (const q of (c.details?.questions ?? []) as { key: string; label: string; options: string[]; required?: boolean }[]) {
+    const v = get(`q_${q.key}`);
+    if (!v) { if (q.required) return { error: `${q.label} 항목을 선택해주세요.` }; continue; }
+    if (!q.options.includes(v)) return { error: `${q.label} 값이 올바르지 않습니다.` };
+    answers[q.key] = v;
+  }
   const required: string[] = c.details?.agreements ?? [];
   const agreed = required.filter((_, i) => formData.get(`agree_${i}`));
   if (agreed.length < required.length) return { error: '참여 확인 항목에 모두 체크해주세요.' };
   const { error } = await supabase.from('campaign_registrations').insert({
-    campaign_id: c.id, user_id: session?.user.id ?? null, name, phone: phone || null, email, gender: gender || null, age_group: ageGroup || null, depositor_name: depositor || null, agreements: agreed
+    campaign_id: c.id, user_id: session?.user.id ?? null, name, phone: phone || null, email, gender: gender || null, age_group: ageGroup || null, depositor_name: depositor || null, agreements: agreed, answers
   });
-  if (error) return { error: error.code === '23505' ? '이미 같은 이메일로 신청되어 있습니다. 변경이 필요하면 1:1 문의로 알려주세요.' : '신청을 저장하지 못했습니다. 잠시 후 다시 시도해주세요.' };
+  if (error) return { error: error.code === '23505' ? '이미 같은 이메일로 신청되어 있습니다. 변경이 필요하면 1:1 문의로 알려주세요.' : error.code === '42501' ? '참가 신청이 마감되었습니다.' : '신청을 저장하지 못했습니다. 잠시 후 다시 시도해주세요.' };
   revalidatePath(`/campaigns/${c.slug}`);
   return { ok: true, message: c.details?.complete || '신청이 접수되었습니다. 입력한 이메일로 안내드립니다.' };
 }

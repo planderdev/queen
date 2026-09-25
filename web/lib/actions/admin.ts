@@ -189,12 +189,12 @@ export async function setRegistrationStatus(id: string, status: 'pending' | 'con
     const { data: r } = await supabase.from('campaign_registrations').select('id, user_id, name, campaign:campaigns(title, slug)').eq('id', id).maybeSingle();
     if (!r) return { error: '신청 내역을 찾을 수 없습니다.' };
     const { error } = await supabase.from('campaign_registrations').update({ status }).eq('id', id);
-    if (error) return { error: '상태를 바꾸지 못했습니다.' };
+    if (error) return { error: error.message.includes('capacity_full') ? '정원이 모두 찼습니다. 입금 확인을 더 할 수 없습니다. 먼저 다른 신청의 입금 확인을 취소해주세요.' : '상태를 바꾸지 못했습니다.' };
     const campaign = Array.isArray(r.campaign) ? r.campaign[0] : r.campaign;
-    await log('참가 신청 상태 변경', 'campaign_registration', id, { name: r.name, status });
-    if (status === 'confirmed') await notify(r.user_id, `“${campaign?.title ?? '캠페인'}” 참가 신청이 확정되었습니다.`, campaign?.slug ? `/campaigns/${campaign.slug}` : null);
-    revalidatePath('/admin/campaigns');
-    return { ok: true, message: status === 'confirmed' ? '참가를 확정했습니다.' : status === 'cancelled' ? '신청을 취소 처리했습니다.' : '대기 상태로 되돌렸습니다.' };
+    await log(status === 'confirmed' ? '참가비 입금 확인' : status === 'cancelled' ? '참가 신청 취소' : '입금 확인 취소', 'campaign_registration', id, { name: r.name, status });
+    if (status === 'confirmed') await notify(r.user_id, `“${campaign?.title ?? '캠페인'}” 참가비 입금이 확인되어 참가가 확정되었습니다.`, '/my?view=events');
+    revalidatePath('/admin/campaigns'); revalidatePath('/campaigns', 'layout'); revalidatePath('/my');
+    return { ok: true, message: status === 'confirmed' ? '입금을 확인했습니다. 참가 확정 인원에 반영했습니다.' : status === 'cancelled' ? '신청을 취소 처리했습니다.' : '입금 확인을 취소하고 대기 상태로 되돌렸습니다.' };
   });
 }
 export async function setRegistrationOpen(campaignId: string, open: boolean): Promise<ActionResult> {

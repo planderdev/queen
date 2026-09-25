@@ -1,7 +1,7 @@
 // Signed-in member data (RLS limits rows to the caller).
 import { createClient } from '@/lib/supabase/server';
 import { hasSupabase } from '@/lib/env';
-import type { Donation, RecurringPlan, Inquiry, Notification, RefundRequest, Bookmark } from './types';
+import type { Donation, RecurringPlan, Inquiry, Notification, RefundRequest, Bookmark, Campaign, CampaignRegistration } from './types';
 
 const DONATION_SELECT = '*, fundraiser:fundraisers(id, slug, title), organization:organizations(id, slug, name)';
 
@@ -44,6 +44,12 @@ export async function myRefunds(userId: string): Promise<RefundRequest[]> {
   return (data ?? []) as RefundRequest[];
 }
 
+export async function myRegistrations(userId: string): Promise<(CampaignRegistration & { campaign: Pick<Campaign, 'title' | 'slug' | 'details' | 'fee_amount'> | null })[]> {
+  if (!hasSupabase) return [];
+  const supabase = await createClient();
+  const { data } = await supabase.from('campaign_registrations').select('*, campaign:campaigns(title, slug, details, fee_amount)').eq('user_id', userId).order('created_at', { ascending: false });
+  return (data ?? []) as never;
+}
 export async function myNotifications(userId: string): Promise<Notification[]> {
   if (!hasSupabase) return [];
   const supabase = await createClient();

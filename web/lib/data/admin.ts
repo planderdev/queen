@@ -58,7 +58,7 @@ export async function adminCampaigns(): Promise<Campaign[]> {
 export async function adminRegistrations(campaignId: string): Promise<CampaignRegistration[]> {
   if (!hasSupabase) return empty();
   const supabase = await createClient();
-  const { data } = await supabase.from('campaign_registrations').select('*').eq('campaign_id', campaignId).order('created_at', { ascending: false });
+  const { data } = await supabase.from('campaign_registrations').select('*').eq('campaign_id', campaignId).order('created_at', { ascending: true });
   return (data ?? []) as CampaignRegistration[];
 }
 export async function adminContent(type?: string): Promise<Content[]> {

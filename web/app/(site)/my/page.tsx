@@ -3,7 +3,8 @@ import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
 import { getSession } from '@/lib/auth';
 import { repo } from '@/lib/data';
-import { myBookmarks, myDonations, myInquiries, myNotifications, myPlans, myRefunds } from '@/lib/data/me';
+import { myBookmarks, myDonations, myInquiries, myNotifications, myPlans, myRefunds, myRegistrations } from '@/lib/data/me';
+import { BankBox } from '@/components/site/BankBox';
 import { money, date, dateTime, kindNames } from '@/lib/format';
 import { PageBanner } from '@/components/site/PageBanner';
 import { Area, Cards, Empty, Field, Notice, Select, State, Table, Tabs } from '@/components/ui';
@@ -14,7 +15,7 @@ import { DonationActions, PlanActions, SignOutButton } from '@/components/site/M
 import { createClient } from '@/lib/supabase/server';
 
 export const metadata: Metadata = { title: '나의 후원' };
-const views: [string, string][] = [['summary', '나의 나눔'], ['donations', '기부 내역'], ['monthly', '정기기부'], ['bookmarks', '관심 모금'], ['inquiries', '문의 내역'], ['notifications', '알림'], ['profile', '프로필']];
+const views: [string, string][] = [['summary', '나의 나눔'], ['donations', '기부 내역'], ['monthly', '정기기부'], ['bookmarks', '관심 모금'], ['events', '행사 신청'], ['inquiries', '문의 내역'], ['notifications', '알림'], ['profile', '프로필']];
 
 export default async function MyPage({ searchParams }: { searchParams: Promise<Record<string, string | undefined>> }) {
   const sp = await searchParams;
@@ -94,6 +95,22 @@ export default async function MyPage({ searchParams }: { searchParams: Promise<R
         {stories.length > 0 && <div className="section"><h2>관심 나눔 이야기</h2><ul>{stories.map((s) => <li key={s.id}><Link href={`/stories/${s.slug ?? s.id}`}>{s.title}</Link></li>)}</ul></div>}
       </>
     );
+  }
+  if (view === 'events') {
+    const list = await myRegistrations(uid);
+    body = list.length ? (
+      <>
+        {list.map((r) => (
+          <section className="panel" key={r.id}>
+            <h2>{r.campaign ? <Link href={`/campaigns/${r.campaign.slug}`}>{r.campaign.title}</Link> : '행사'} <State value={r.status} /></h2>
+            <p>신청일 {dateTime(r.created_at)} · {r.name}{r.depositor_name ? ` · 입금자명 ${r.depositor_name}` : ''}{(r.campaign?.details.questions ?? []).map((q) => r.answers?.[q.key] ? ` · ${q.short ?? q.label} ${r.answers[q.key]}` : '').join('')}</p>
+            {r.status === 'pending' && r.campaign?.details.bank && <BankBox bank={r.campaign.details.bank} fee={r.campaign.fee_amount} capacity={null} />}
+            {r.status === 'confirmed' && <p>참가비 입금이 확인되어 참가가 확정되었습니다. 행사 당일 뵙겠습니다.</p>}
+          </section>
+        ))}
+        <Notice>신청 내용 변경·취소는 1:1 문의로 알려주세요. 로그인하지 않고 신청한 내역은 이곳에 표시되지 않습니다.</Notice>
+      </>
+    ) : <Empty title="아직 행사 신청 내역이 없어요" text="진행 중인 캠페인에서 행사에 참가 신청해보세요." cta={false} />;
   }
   if (view === 'inquiries') {
     const list = await myInquiries(uid);
