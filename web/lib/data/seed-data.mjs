@@ -69,7 +69,7 @@ export const campaigns = [
     id: '33333333-0000-4000-8000-000000000010', slug: 'salvation-run-2026', partner_name: '아식스 구제주 칠성점 × 제주야미소영', title: '[우리도 오늘은 구세군] 기부런',
     description: '함께 달리고, 함께 나누는 하루. 추운 겨울이면 우리 곁에서 사랑의 종을 울리던 구세군, 이제는 우리가 그 마음을 이어가 보려고 합니다.',
     type: 'event', fundraiser_id: null, limit_amount: 0, rate: 1, review: 'approved', start_at: day(0), end_at: '2026-10-09T23:00:00.000Z', image: photos.ocean, created_at: day(0),
-    fee_amount: 0, registration_open: true, capacity: 50, registration_count: 0, confirmed_count: 0,
+    fee_amount: 20000, registration_open: true, capacity: 50, registration_count: 0, confirmed_count: 0,
     details: {
       intro: '함께 달리고, 함께 나누는 하루.\n추운 겨울이면 우리 곁에서 사랑의 종을 울리던 구세군\n\n이제는 우리가 그 마음을 이어가 보려고 합니다.\n한걸음이 모이면 따뜻한 마음이 되고\n우리의 달리기가 누군가에게 작은 희망이 됩니다.\n\n아식스 구제주 칠성점 X 제주야미소영이 함께하는 기부런, 여러분의 많은 참여를 기다립니다.',
       event_name: '우리도 오늘은 구세군 기부런',

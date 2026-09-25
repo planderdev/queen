@@ -42,7 +42,7 @@ export function RegistrationForm({ campaign, defaults }: { campaign: Campaign; d
         </fieldset>
       )}
       <Field label="참가비 입금자명" name="depositor_name" maxLength={50} help="참가비를 입금한(또는 입금할) 이름을 적어주세요. 신청자 성함과 다를 때만 필요합니다." />
-      {bank && <p className="help">참가비는 {bank.bank} {bank.account} (예금주 {bank.holder})로 입금해주세요. 신청 후 화면에서도 다시 안내합니다.</p>}
+      {bank && <p className="help">참가비{campaign.fee_amount > 0 ? ` ${campaign.fee_amount.toLocaleString('ko-KR')}원` : ''}은 {bank.bank} {bank.account} (예금주 {bank.holder})로 입금해주세요. 신청 후 화면에서도 다시 안내합니다.</p>}
       <p className="help">입력한 정보는 행사 운영과 참가 안내 목적으로만 사용하며 행사 종료 후 파기합니다.</p>
     </ActionForm>
   );
