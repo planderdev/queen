@@ -36,3 +36,10 @@ body[data-page="admin"] .admin-login-form .actions .button { width: 100%; height
 body[data-page="admin"] .admin-login-form .actions .button:hover:not(:disabled) { background: #bc2b44; }
 body[data-page="admin"] .admin-login-foot { margin: 4px 0 0; padding-top: 16px; border-top: 1px solid var(--admin-line); font-size: 12px; color: var(--admin-muted); }
 body[data-page="admin"] .admin-login a { color: inherit; text-decoration: underline; }
+
+/* 상단 업무 메뉴 검색 결과 — 키보드 선택 표시 */
+body[data-page="admin"] #admin-menu-results { z-index: 20; box-shadow: 0 8px 24px rgba(32, 38, 50, .08); }
+body[data-page="admin"] #admin-menu-results a { border-radius: 6px; font-size: 13px; }
+body[data-page="admin"] #admin-menu-results a[aria-selected="true"], body[data-page="admin"] #admin-menu-results a:hover { background: var(--admin-selected); color: var(--admin-blue); }
+body[data-page="admin"] #admin-menu-results p { margin: 0; padding: 10px; font-size: 13px; color: var(--admin-muted); }
+body[data-page="admin"] .admin-menu-search input { width: 100%; height: 36px; padding: 0 14px; border: 1px solid var(--admin-line); border-radius: 6px; background: var(--admin-panel); font: inherit; font-size: 13px; }

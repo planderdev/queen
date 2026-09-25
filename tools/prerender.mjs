@@ -23,19 +23,32 @@ function works(bin) {
 
 // Resolution order: PHP_BIN env, php on PATH, a project-local copy in tools/php, then a
 // one-time download of a static Linux build (the Vercel build image ships without PHP).
+// The download is retried; if it still fails (e.g. dl.static-php.dev returns 500) this returns null and
+// the build falls back to the committed snapshot in tools/demo-snapshot, so an outage there never blocks
+// a production deploy of the real service.
 function findPhp() {
   const local = join(root, 'tools', 'php', process.platform === 'win32' ? 'php.exe' : 'php');
   for (const bin of [process.env.PHP_BIN, 'php', local].filter(Boolean)) if (works(bin)) return bin;
   if (process.platform !== 'linux' || process.arch !== 'x64') {
-    throw new Error('php를 찾을 수 없습니다. PHP 8.1+를 설치하거나 PHP_BIN 환경 변수로 경로를 지정하세요.');
+    console.warn('php를 찾을 수 없습니다 → 저장된 데모 스냅샷을 사용합니다. (PHP 8.1+ 설치 또는 PHP_BIN 지정 시 다시 렌더)');
+    return null;
   }
-  console.log(`php 없음 → static-php 다운로드: ${STATIC_PHP}`);
   mkdirSync(dirname(local), {recursive: true});
-  execFileSync('bash', ['-c', `curl -fsSL "${STATIC_PHP}" | tar -xz -C "${dirname(local)}"`], {stdio: 'inherit'});
-  chmodSync(local, 0o755);
-  if (!works(local)) throw new Error('다운로드한 php 실행 파일이 동작하지 않습니다.');
-  return local;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    console.log(`php 없음 → static-php 다운로드 (${attempt}/3): ${STATIC_PHP}`);
+    try {
+      execFileSync('bash', ['-c', `curl -fsSL --retry 2 --retry-delay 3 --retry-all-errors "${STATIC_PHP}" | tar -xz -C "${dirname(local)}"`], {stdio: 'inherit'});
+      chmodSync(local, 0o755);
+      if (works(local)) return local;
+    } catch (error) {
+      console.warn(`다운로드 실패: ${error.message.split('\n')[0]}`);
+    }
+    if (attempt < 3) spawnSync('sleep', [String(attempt * 5)]);
+  }
+  console.warn('static-php 다운로드 불가 → 저장된 데모 스냅샷(tools/demo-snapshot)을 사용합니다.');
+  return null;
 }
+const snapshotDir = join(root, 'tools', 'demo-snapshot');
 
 function entries(dir) {
   return readdirSync(dir).flatMap(name => {
@@ -72,7 +85,7 @@ function copyTree(from, to) {
 }
 
 const php = findPhp();
-console.log(`php: ${php} (${execFileSync(php, ['-v']).toString().split('\n')[0]})`);
+console.log(php ? `php: ${php} (${execFileSync(php, ['-v']).toString().split('\n')[0]})` : 'php: 없음 (스냅샷 사용)');
 console.log(`base path: ${BASE || '/'}`);
 const demoDir = join(dist, BASE.replace(/^\//, ''));
 rmSync(demoDir, {recursive: true, force: true});
@@ -82,8 +95,18 @@ mkdirSync(demoDir, {recursive: true});
 const pages = entries(publicDir).sort();
 for (const file of pages) {
   const rel = relative(publicDir, dirname(file));
-  let html = execFileSync(php, ['-d', 'display_errors=stderr', '-d', 'error_reporting=E_ALL', file], {cwd: root, maxBuffer: 16 * 1024 * 1024}).toString();
-  if (!html.includes('</html>')) throw new Error(`${file}: 렌더 결과가 완전한 HTML이 아닙니다.`);
+  // PHP가 있으면 렌더하고 스냅샷을 갱신한다(커밋해 둔다). 없으면 마지막 스냅샷을 쓴다.
+  const snap = join(snapshotDir, rel, 'index.html');
+  let html;
+  if (php) {
+    html = execFileSync(php, ['-d', 'display_errors=stderr', '-d', 'error_reporting=E_ALL', file], {cwd: root, maxBuffer: 16 * 1024 * 1024}).toString();
+    if (!html.includes('</html>')) throw new Error(`${file}: 렌더 결과가 완전한 HTML이 아닙니다.`);
+    mkdirSync(dirname(snap), {recursive: true});
+    writeFileSync(snap, html);
+  } else {
+    if (!existsSync(snap)) throw new Error(`${file}: php가 없고 스냅샷(${relative(root, snap)})도 없습니다. 로컬에서 한 번 빌드해 스냅샷을 커밋하세요.`);
+    html = readFileSync(snap, 'utf8');
+  }
   html = rewrite(html, 'html');
   const out = join(demoDir, rel, 'index.html');
   mkdirSync(dirname(out), {recursive: true});

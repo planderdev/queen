@@ -6,12 +6,12 @@ import type { AuditLog, Campaign, CampaignRegistration, Content, Donation, Fundr
 const empty = <T,>(): T[] => [];
 
 export async function adminCounts() {
-  if (!hasSupabase) return { pendingDonations: 0, refunds: 0, inquiries: 0, reports: 0, reviewFundraisers: 0 };
+  if (!hasSupabase) return { pendingDonations: 0, refunds: 0, inquiries: 0, reports: 0, reviewFundraisers: 0, pendingRegistrations: 0 };
   const supabase = await createClient();
   const count = async (table: string, col: string, val: string | boolean) => (await supabase.from(table).select('id', { count: 'exact', head: true }).eq(col, val)).count ?? 0;
   const [pendingDonations, refunds, reports, reviewFundraisers] = await Promise.all([count('donations', 'status', 'pending'), count('refund_requests', 'status', 'requested'), count('comment_reports', 'status', 'requested'), count('fundraisers', 'review', 'submitted')]);
-  const { count: inquiries } = await supabase.from('inquiries').select('id', { count: 'exact', head: true }).is('answer', null);
-  return { pendingDonations, refunds, inquiries: inquiries ?? 0, reports, reviewFundraisers };
+  const [{ count: inquiries }, pendingRegistrations] = await Promise.all([supabase.from('inquiries').select('id', { count: 'exact', head: true }).is('answer', null), count('campaign_registrations', 'status', 'pending')]);
+  return { pendingDonations, refunds, inquiries: inquiries ?? 0, reports, reviewFundraisers, pendingRegistrations };
 }
 
 export async function adminDonations(filter: { status?: string; q?: string } = {}): Promise<Donation[]> {
@@ -60,6 +60,13 @@ export async function adminRegistrations(campaignId: string): Promise<CampaignRe
   const supabase = await createClient();
   const { data } = await supabase.from('campaign_registrations').select('*').eq('campaign_id', campaignId).order('created_at', { ascending: true });
   return (data ?? []) as CampaignRegistration[];
+}
+// 대시보드: 행사 캠페인 입금 대기 신청 (최근순)
+export async function adminPendingRegistrations(limit = 6): Promise<(CampaignRegistration & { campaign: { id: string; title: string } | null })[]> {
+  if (!hasSupabase) return empty();
+  const supabase = await createClient();
+  const { data } = await supabase.from('campaign_registrations').select('*, campaign:campaigns(id, title)').eq('status', 'pending').order('created_at', { ascending: false }).limit(limit);
+  return (data ?? []) as never;
 }
 export async function adminContent(type?: string): Promise<Content[]> {
   if (!hasSupabase) return empty();
