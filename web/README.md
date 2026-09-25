@@ -45,6 +45,7 @@ npm run dev                   # http://localhost:3000
    ```sql
    update public.profiles set role = 'admin', admin_role = 'super' where email = 'admin@example.com';
    ```
+   (SQL Editor처럼 직접 DB 세션에서만 가능합니다. 앱 API로는 관리자만 권한 필드를 바꿀 수 있습니다.)
    이후 관리자는 `/admin/users`에서 다른 회원을 관리자로 지정할 수 있습니다.
    - 관리자 화면은 사이트와 분리된 `/admin/login`으로 로그인합니다(사이트 어디에도 링크하지 않음). 관리자 권한이 없는 계정은 로그인 직후 로그아웃되고, 로그인하지 않은 채 `/admin/...`에 들어오면 관리자 로그인으로 이동합니다.
 6. `/admin/settings`에서 실제 입금 계좌(은행·계좌번호·예금주)를 입력합니다. 시드의 계좌는 자리표시자입니다.
