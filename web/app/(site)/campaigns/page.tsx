@@ -27,7 +27,7 @@ export default async function CampaignsPage({ searchParams }: { searchParams: Pr
           <form className="program-search" action="/campaigns"><input type="hidden" name="view" value={view} /><input type="hidden" name="category" value={category} /><label className="qm-sr-only" htmlFor="campaign-query">캠페인 검색</label><input id="campaign-query" name="q" defaultValue={q} placeholder="검색어를 입력해주세요" /><button type="submit" className="icon-button" aria-label="캠페인 검색"><Search aria-hidden="true" /></button></form>
         </div>
         <div className="program-results" aria-live="polite">총 <strong>{items.length}</strong>개의 캠페인</div>
-        {items.length ? <div className="program-grid">{items.map((c) => <ImageCard key={c.id} image={c.image ?? '/assets/images/community.jpg'} category={campaignTypeNames[c.type]} title={c.title} body={c.description} href={`/campaigns/${c.slug}`} cta={view === 'ended' ? '캠페인 살펴보기' : c.type === 'event' ? (c.capacity != null && (c.confirmed_count ?? 0) >= c.capacity ? '모집 마감' : '참가 신청하기') : '함께 참여하기'} />)}</div> : <Empty title="해당하는 캠페인이 없습니다" text="검색어 또는 캠페인 유형을 변경해보세요." cta={false} />}
+        {items.length ? <div className="program-grid">{items.map((c) => <ImageCard key={c.id} image={c.image ?? '/assets/images/community.jpg'} category={campaignTypeNames[c.type]} title={c.title} body={c.description} href={`/campaigns/${c.slug}`} cta={view === 'ended' ? '캠페인 살펴보기' : c.type === 'event' ? (c.capacity != null && (c.confirmed_count ?? 0) >= c.capacity ? '모집 마감' : '참가 신청하기') : '함께 참여하기'} share />)}</div> : <Empty title="해당하는 캠페인이 없습니다" text="검색어 또는 캠페인 유형을 변경해보세요." cta={false} />}
       </div>
     </>
   );

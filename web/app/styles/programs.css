@@ -221,3 +221,9 @@
 html {scroll-behavior: smooth;}
 #register {scroll-margin-top: 96px;}
 @media (prefers-reduced-motion: reduce) {html {scroll-behavior: auto;}}
+/* 캠페인 목록 카드 공유 버튼: 이미지 오른쪽 위 원형 버튼 */
+.program-card-wrap {position: relative;}
+.program-card-share {position: absolute;top: var(--space-16);right: var(--space-16);z-index: 2;display: grid;place-items: center;width: 44px;height: 44px;border-radius: 50%;border: 0;background: color-mix(in srgb, var(--background-normal) 92%, transparent);color: var(--label-strong);box-shadow: var(--shadow-raised);cursor: pointer;transition: background var(--motion-feedback), color var(--motion-feedback);}
+.program-card-share:hover {background: var(--background-normal);color: var(--primary-strong);}
+.program-card-share:focus-visible {outline: 2px solid var(--primary-normal);outline-offset: 2px;}
+.program-card-share svg.lucide {width: 20px;height: 20px;}
