@@ -1,7 +1,8 @@
 import Link from 'next/link';
-import { ChevronDown, Menu, UserRound } from 'lucide-react';
+import { Menu, UserRound } from 'lucide-react';
 import { getSession } from '@/lib/auth';
 import { MenuToggle } from './MenuToggle';
+import { NavGroup } from './NavGroup';
 
 export const navigation: [string, [string, string][]][] = [
   ['후원하기', [['/donate', '일시후원'], ['/monthly', '정기후원'], ['/support', '후원가이드']]],
@@ -26,12 +27,11 @@ export async function Header({ page }: { page: string }) {
         <div className="site-menu" id="site-menu">
           <nav className="site-navigation" aria-label="주 메뉴">
             {visibleNavigation.map(([label, items]) => (
-              <details className="nav-group" key={label}>
-                <summary>{label}<ChevronDown aria-hidden="true" /></summary>
+              <NavGroup label={label} key={label}>
                 <div className="nav-dropdown">
                   {items.map(([href, text]) => <Link key={href + text} href={href} aria-current={page === href.replace(/^\//, '').split('?')[0] ? 'page' : undefined}>{text}</Link>)}
                 </div>
-              </details>
+              </NavGroup>
             ))}
           </nav>
           <div className="masthead-tools">
