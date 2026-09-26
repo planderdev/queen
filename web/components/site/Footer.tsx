@@ -12,8 +12,10 @@ export function Footer() {
             <nav aria-label="하단 메뉴">
               <Link href="/support?view=terms">이용약관</Link>
               <Link href="/support?view=privacy"><strong>개인정보처리방침</strong></Link>
-              <Link href="/about">퀸만덕 소개</Link>
-              <Link href="/support">FAQ</Link>
+              {/* 열려 있는 메뉴(캠페인·소식)에 맞춘 링크. 숨긴 기관소개·후원 FAQ는 제외 */}
+              <Link href="/campaigns">나눔 캠페인</Link>
+              <Link href="/stories">나눔이야기</Link>
+              <Link href="/support?view=notices">공지사항</Link>
               <Link href="/support?view=inquiry">1:1 문의하기</Link>
             </nav>
           </div>
@@ -23,13 +25,13 @@ export function Footer() {
               <div>
                 <h2>작은 마음이 모이는 곳, 퀸만덕</h2>
                 <p>작은 나눔이 모여, 더 큰 변화를 만듭니다.</p>
-                <p>기부금은 안내된 계좌로 입금 후 운영팀 확인을 거쳐 반영됩니다.<br />단체 소개와 사진은 각 단체가 제공한 자료를 기준으로 합니다.</p>
+                <p>캠페인 참가비는 안내된 계좌로 입금 후 운영팀 확인을 거쳐 참가가 확정됩니다.<br />일부 사진은 이해를 돕기 위한 참고 이미지입니다.</p>
               </div>
             </div>
             <div className="bottom-contact">
-              <h2>후원문의·상담</h2>
+              <h2>문의·상담</h2>
               <Link href="/support?view=inquiry">마음을 잇는 문의하기 <ArrowUpRight aria-hidden="true" /></Link>
-              <p>궁금한 내용을 남겨주세요.<br />내 문의와 답변은 나의 후원에서 확인할 수 있습니다.</p>
+              <p>캠페인·참가 신청에 관해 궁금한 점을 남겨주세요.<br />회원은 나의 후원에서, 비회원은 이메일로 답변을 받습니다.</p>
             </div>
           </div>
           <p className="bottom-copyright">© 2026 QUEEN MANDEOK. ALL RIGHTS RESERVED.</p>
