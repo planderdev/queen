@@ -31,12 +31,12 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="home-hero-controls">
+        {total > 1 && <div className="home-hero-controls">
           <button id="slide-prev" type="button" aria-label="이전 배너" onClick={() => ref.current?.slidePrev()}><ChevronLeft aria-hidden="true" /></button>
           <span id="slide-count">{pad(index + 1)} / {pad(total)}</span>
           <button id="slide-next" type="button" aria-label="다음 배너" onClick={() => ref.current?.slideNext()}><ChevronRight aria-hidden="true" /></button>
           <button id="slide-pause" type="button" aria-label={paused ? '배너 재생' : '배너 일시정지'} aria-pressed={paused} onClick={() => { const sw = ref.current; if (!sw) return; if (paused) sw.autoplay.start(); else sw.autoplay.stop(); setPaused(!paused); }}>{paused ? <Play aria-hidden="true" /> : <Pause aria-hidden="true" />}</button>
-        </div>
+        </div>}
       </div>
     </section>
   );

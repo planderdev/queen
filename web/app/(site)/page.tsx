@@ -33,10 +33,8 @@ export default async function HomePage() {
   const guide: [string, string, string, string][] = [['정기후원', '매달 이어지는 따뜻한 약속', photos.child, '/monthly'], ['일시후원', '지금 필요한 곳에 전하는 마음', photos.meal, '/donate'], ['기업후원', '함께할수록 더 커지는 변화', photos.community, '/campaigns']];
   return (
     <div className="home-page">
-      <HeroSlider slides={[
-        ...eventSlides,
-        { image: photos.meal, light: true, heading: ['작은 나눔이 모여,', '더 큰 변화를 만듭니다.'], description: ['마음이 닿는 이야기를 만나고,', '그 다음의 변화까지 함께하세요.'], href: '/donate', cta: '마음 전하기' },
-        { image: photos.forest, heading: ['매달 이어지는 마음,', '함께 자라는 내일.'], description: ['우리의 작은 약속이', '누군가의 든든한 일상이 됩니다.'], href: '/monthly', cta: '정기후원 알아보기' }
+      <HeroSlider slides={eventSlides.length ? eventSlides : [
+        { image: photos.community, scrim: true, heading: ['작은 나눔이 모여,', '더 큰 변화를 만듭니다.'], description: ['진행 중인 캠페인을 만나보세요.'], href: '/campaigns', cta: '캠페인 보기' }
       ]} />
       <aside className="home-donation-callout">
         <div><h2>당신의 마음이 변화의 시작입니다</h2><p>오늘의 나눔으로 더 나은 내일을 함께 만들어요.</p></div>

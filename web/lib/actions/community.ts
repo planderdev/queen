@@ -82,10 +82,13 @@ export async function registerForCampaign(_: ActionResult, formData: FormData): 
   const campaignId = String(formData.get('campaign_id') ?? '');
   const get = (k: string) => String(formData.get(k) ?? '').trim();
   const name = get('name'), phone = get('phone'), email = get('email').toLowerCase(), gender = get('gender'), ageGroup = get('age_group'), depositor = get('depositor_name');
+  // 모든 항목 필수 (브라우저 검사를 우회한 요청도 여기서 막는다)
   if (name.length < 1 || name.length > 50) return { error: '성함을 입력해주세요.' };
+  if (!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(phone)) return { error: '연락처를 010-0000-0000 형식으로 입력해주세요.' };
   if (!EMAIL.test(email)) return { error: '이메일을 정확히 입력해주세요. 신청 확인과 안내가 이메일로 전달됩니다.' };
-  if (phone && !/^[0-9\-+() ]{9,20}$/.test(phone)) return { error: '연락처는 숫자와 하이픈(-)으로 입력해주세요.' };
-  if (gender && !['남자', '여자'].includes(gender)) return { error: '성별 값이 올바르지 않습니다.' };
+  if (!['10대', '20대', '30대', '40대', '50대', '60대 이상'].includes(ageGroup)) return { error: '연령대를 선택해주세요.' };
+  if (!['남자', '여자'].includes(gender)) return { error: '성별을 선택해주세요.' };
+  if (depositor.length < 1 || depositor.length > 50) return { error: '참가비 입금자명을 입력해주세요.' };
   const supabase = await createClient();
   const { data: c } = await supabase.from('campaigns').select('id, slug, type, review, registration_open, end_at, details, capacity, confirmed_count').eq('id', campaignId).maybeSingle();
   if (!c || c.type !== 'event' || c.review !== 'approved') return { error: '참가 신청을 받는 캠페인이 아닙니다.' };
@@ -95,7 +98,7 @@ export async function registerForCampaign(_: ActionResult, formData: FormData): 
   const answers: Record<string, string> = {};
   for (const q of (c.details?.questions ?? []) as { key: string; label: string; options: string[]; required?: boolean }[]) {
     const v = get(`q_${q.key}`);
-    if (!v) { if (q.required) return { error: `${q.label} 항목을 선택해주세요.` }; continue; }
+    if (!v) return { error: `${q.label} 항목을 선택해주세요.` };
     if (!q.options.includes(v)) return { error: `${q.label} 값이 올바르지 않습니다.` };
     answers[q.key] = v;
   }
@@ -103,7 +106,7 @@ export async function registerForCampaign(_: ActionResult, formData: FormData): 
   const agreed = required.filter((_, i) => formData.get(`agree_${i}`));
   if (agreed.length < required.length) return { error: '참여 확인 항목에 모두 체크해주세요.' };
   const { error } = await supabase.from('campaign_registrations').insert({
-    campaign_id: c.id, user_id: session?.user.id ?? null, name, phone: phone || null, email, gender: gender || null, age_group: ageGroup || null, depositor_name: depositor || null, agreements: agreed, answers
+    campaign_id: c.id, user_id: session?.user.id ?? null, name, phone, email, gender, age_group: ageGroup, depositor_name: depositor, agreements: agreed, answers
   });
   if (error) return { error: error.code === '23505' ? '이미 같은 이메일로 신청되어 있습니다. 변경이 필요하면 1:1 문의로 알려주세요.' : error.code === '42501' ? '참가 신청이 마감되었습니다.' : '신청을 저장하지 못했습니다. 잠시 후 다시 시도해주세요.' };
   revalidatePath(`/campaigns/${c.slug}`);
