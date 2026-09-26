@@ -15,7 +15,7 @@ export default function ResetPage() {
         <ActionForm action={requestPasswordReset} submitLabel="재설정 링크 보내기" pendingLabel="보내는 중…">
           <Field label="이메일" name="email" type="email" required autoComplete="email" />
         </ActionForm>
-        <div className="actions" style={{ justifyContent: 'center', margin: 'var(--space-20) 0' }}><Link className="text-link" href="/auth/login">로그인으로 돌아가기</Link></div>
+        <div className="auth-alt"><Link className="text-link" href="/auth/login">로그인으로 돌아가기</Link></div>
       </div>
     </div>
   );

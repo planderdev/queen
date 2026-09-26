@@ -20,9 +20,9 @@ export default async function SignupPage({ searchParams }: { searchParams: Promi
           <Field label="닉네임" name="name" required maxLength={20} placeholder="참여 내역에 표시될 이름" autoComplete="nickname" />
           <Field label="이메일" name="email" type="email" required autoComplete="email" />
           <Field label="비밀번호" name="password" type="password" required minLength={8} autoComplete="new-password" help="8자 이상" />
-          <label className="checkbox"><input type="checkbox" name="agree" required /> <Link href="/support?view=terms">이용약관</Link>과 <Link href="/support?view=privacy">개인정보처리방침</Link>에 동의합니다.</label>
+          <label className="checkbox"><input type="checkbox" name="agree" required /><span><Link className="text-link" href="/support?view=terms">이용약관</Link>과 <Link className="text-link" href="/support?view=privacy">개인정보처리방침</Link>에 동의합니다. (필수)</span></label>
         </ActionForm>
-        <div className="actions" style={{ justifyContent: 'center', margin: 'var(--space-20) 0' }}><Link className="text-link" href="/auth/login">이미 계정이 있어요</Link></div>
+        <div className="auth-alt"><p className="auth-divider"><span>이미 계정이 있나요?</span></p><Link className="button secondary" href="/auth/login">로그인</Link></div>
       </div>
     </div>
   );

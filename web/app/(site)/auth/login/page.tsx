@@ -20,9 +20,10 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
           <Field label="이메일" name="email" type="email" required autoComplete="email" />
           <Field label="비밀번호" name="password" type="password" required autoComplete="current-password" minLength={8} />
         </ActionForm>
-        <div className="actions" style={{ justifyContent: 'center', margin: 'var(--space-20) 0' }}>
-          <Link className="text-link" href={`/auth/signup?next=${encodeURIComponent(next)}`}>회원가입</Link>
-          <Link className="text-link" href="/auth/reset">비밀번호 재설정</Link>
+        <div className="auth-alt">
+          <p className="auth-divider"><span>아직 계정이 없나요?</span></p>
+          <Link className="button secondary" href={`/auth/signup?next=${encodeURIComponent(next)}`}>회원가입</Link>
+          <Link className="text-link" href="/auth/reset">비밀번호를 잊으셨나요?</Link>
         </div>
       </div>
     </div>
