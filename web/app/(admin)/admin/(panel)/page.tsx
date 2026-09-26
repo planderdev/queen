@@ -18,7 +18,7 @@ export default async function AdminDashboard() {
   const openReports = reports.filter((r) => r.status === 'requested');
   return (
     <>
-      <AdminTitle title="운영 대시보드" text="오늘 처리할 업무를 한눈에 확인하세요.">{!hasSupabase ? <span className="badge status-pending">미리보기 모드</span> : <a className="button small secondary" href="/" target="_blank" rel="noopener">사이트로 이동</a>}</AdminTitle>
+      <AdminTitle eyebrow="운영 현황" title="운영 대시보드" text="오늘 처리할 업무를 한눈에 확인하세요.">{!hasSupabase ? <span className="badge status-pending">미리보기 모드</span> : <a className="button small secondary" href="/" target="_blank" rel="noopener">사이트로 이동</a>}</AdminTitle>
       <section className="admin-work-summary" aria-label="처리할 업무">
         {tiles.map(([label, count, href, icon]) => <Link key={label} href={`/admin/${href}`}><i className={`ri-${icon}`} aria-hidden="true"></i><span>{label}</span><strong>{count}</strong></Link>)}
       </section>

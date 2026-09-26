@@ -16,7 +16,7 @@ export default async function FundraiserEditPage({ params }: { params: Promise<{
   const budget = f?.budget ?? [{ label: '물품 및 활동 지원', amount: 0 }, { label: '전달 및 운영 지원', amount: 0 }];
   return (
     <>
-      <AdminTitle title={isNew ? '새 모금함' : '모금함 편집'} text="목표액과 사용 계획 합계는 같아야 합니다. 시작일이 지나고 승인·진행 중 상태일 때 사용자에게 공개됩니다." />
+      <AdminTitle eyebrow="모금·단체 · 모금함 관리" title={isNew ? '새 모금함' : '모금함 편집'} text="목표액과 사용 계획 합계는 같아야 합니다. 시작일이 지나고 승인·진행 중 상태일 때 사용자에게 공개됩니다." />
       <ActionForm action={saveFundraiser} className="editor-section" submitLabel="저장">
         {!isNew && <input type="hidden" name="id" value={f!.id} />}
         <label className="field"><span>제목 (줄바꿈은 그대로 표시)</span><textarea name="title" rows={2} defaultValue={f?.title} required /></label>
