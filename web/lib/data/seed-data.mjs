@@ -101,3 +101,10 @@ export const content = [
   { id: '44444444-0000-4000-8000-000000000025', slug: null, type: 'faq', title: '정기기부 금액을 바꾸거나 잠시 쉬어갈 수 있나요?', category: '정기기부', image: null, fundraiser_id: null, body: '나의 나눔의 정기기부 메뉴에서 월 금액 변경, 일시중지, 재개 및 해지를 할 수 있습니다.', published: true, created_at: day(-30) },
   { id: '44444444-0000-4000-8000-000000000026', slug: null, type: 'faq', title: '단체와 기업은 어떻게 참여하나요?', category: '파트너', image: null, fundraiser_id: null, body: '모금단체 등록과 기업 캠페인 제안은 1:1 문의 또는 이메일로 접수합니다. 운영팀이 확인 후 절차를 안내합니다.', published: true, created_at: day(-30) }
 ];
+
+// 미리보기(데이터베이스 연결 전) 모드 전용 예시 신청자 — 관리자 명단 화면 확인용. DB 시드에는 넣지 않는다.
+const sampleNames = [['김하늘', '5~6분대', '10km 완주', '여자', '30대', 'confirmed'], ['박준호', '4~5분대', '10km 완주', '남자', '40대', 'confirmed'], ['이서연', '6~7분대', '5km 완주', '여자', '20대', 'pending'], ['최민재', '7~8분대', '5km 완주', '남자', '50대', 'pending'], ['정유나', '5~6분대', '10km 완주', '여자', '30대', 'cancelled'], ['한도윤', '3~4분대', '10km 완주', '남자', '20대', 'pending']];
+export const sampleRegistrations = sampleNames.map(([name, pace, course, gender, age, status], i) => ({
+  id: `66666666-0000-4000-8000-00000000000${i + 1}`, campaign_id: '33333333-0000-4000-8000-000000000010', user_id: null, name, phone: `010-1234-56${String(i).padStart(2, '0')}`,
+  email: `sample${i + 1}@example.com`, gender, age_group: age, depositor_name: name, agreements: [], answers: { pace, course }, status, note: null, created_at: day(-3 + i * 0.3), updated_at: day(-3 + i * 0.3)
+}));

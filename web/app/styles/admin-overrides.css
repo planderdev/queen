@@ -43,3 +43,109 @@ body[data-page="admin"] #admin-menu-results a { border-radius: 6px; font-size: 1
 body[data-page="admin"] #admin-menu-results a[aria-selected="true"], body[data-page="admin"] #admin-menu-results a:hover { background: var(--admin-selected); color: var(--admin-blue); }
 body[data-page="admin"] #admin-menu-results p { margin: 0; padding: 10px; font-size: 13px; color: var(--admin-muted); }
 body[data-page="admin"] .admin-menu-search input { width: 100%; height: 36px; padding: 0 14px; border: 1px solid var(--admin-line); border-radius: 6px; background: var(--admin-panel); font: inherit; font-size: 13px; }
+
+/* ───────────────────────────────────────────────────────────────
+   관리자 테마를 사이트(유저단) 디자인 시스템에 맞춘다 — BRAND.md 토큰
+   Primary #d73b50 · Strong #bc2b44 · Brand soft #fceff1 · 라벨 #171719/#68696f · 라인 #e1e2e4 · 배경 #f7f7f8
+   상태 배지는 사이트와 같은 로고 젬 팔레트(올리브·블루·라벤더·오렌지·로즈) 단색 + 흰 글자
+   ─────────────────────────────────────────────────────────────── */
+body[data-page="admin"] {
+  --admin-blue: #d73b50;
+  --admin-blue-hover: #bc2b44;
+  --admin-selected: #fceff1;
+  --admin-ink: #171719;
+  --admin-muted: #68696f;
+  --admin-line: #e1e2e4;
+  --admin-background: #f7f7f8;
+  --admin-radius: 10px;
+  --admin-panel-radius: 16px;
+  --admin-control: 38px;
+  --qa-olive: #a3b166; --qa-blue: #8696ad; --qa-lavender: #ac94aa; --qa-orange: #d1936a; --qa-rose: #c77991;
+  --qa-shadow: 0 8px 30px #17171910;
+}
+body[data-page="admin"] .workspace-brand strong { color: #d73b50; }
+body[data-page="admin"] .badge { border-radius: 8px; font-weight: 600; color: #fff; padding: 3px 8px; line-height: 18px; }
+body[data-page="admin"] .badge.status-approved { background: var(--qa-olive); color: #fff; }
+body[data-page="admin"] .badge.status-received { background: var(--qa-blue); color: #fff; }
+body[data-page="admin"] .badge.status-pending { background: var(--qa-orange); color: #fff; }
+body[data-page="admin"] .badge.status-draft { background: var(--qa-lavender); color: #fff; }
+body[data-page="admin"] .badge.status-rejected { background: var(--qa-rose); color: #fff; }
+body[data-page="admin"] .button { border-radius: var(--admin-radius); }
+body[data-page="admin"] .button.secondary { background: #fff; border-color: var(--admin-line); color: var(--admin-ink); }
+body[data-page="admin"] .button.secondary:hover:not(:disabled) { border-color: #d73b50; color: #bc2b44; background: #fff; }
+body[data-page="admin"] .button.ghost { background: transparent; border-color: transparent; color: var(--admin-muted); }
+body[data-page="admin"] .button.ghost:hover:not(:disabled) { color: #c33737; background: #fdf0f0; }
+body[data-page="admin"] .admin-work-summary, body[data-page="admin"] .admin-dashboard-section, body[data-page="admin"] .admin-data-card { border-radius: var(--admin-panel-radius); }
+body[data-page="admin"] .admin-work-summary strong { color: #d73b50; }
+body[data-page="admin"] .admin-menu-item:has([aria-current="page"]) { color: #bc2b44; }
+body[data-page="admin"] :focus-visible { outline-color: #d73b50; }
+
+/* ── 신청자 명단(상세) ── */
+body[data-page="admin"] .qa-roster { display: grid; gap: 20px; }
+body[data-page="admin"] .qa-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 24px; padding-bottom: 20px; border-bottom: 1px solid var(--admin-line); }
+body[data-page="admin"] .qa-head-copy { min-width: 0; }
+body[data-page="admin"] .qa-eyebrow { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: #bc2b44; }
+body[data-page="admin"] .qa-head h1 { margin: 0; font-size: 24px; line-height: 32px; letter-spacing: -.01em; color: var(--admin-ink); word-break: keep-all; }
+body[data-page="admin"] .qa-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 8px 0 0; font-size: 13px; color: var(--admin-muted); }
+body[data-page="admin"] .qa-head-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+body[data-page="admin"] .qa-head-actions .button i { font-size: 16px; }
+body[data-page="admin"] .qa-switch { display: flex; gap: 6px; }
+body[data-page="admin"] .qa-switch select { height: 32px; max-width: 260px; padding: 0 10px; border: 1px solid var(--admin-line); border-radius: var(--admin-radius); background: #fff; font: inherit; font-size: 13px; }
+
+body[data-page="admin"] .qa-stats { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 12px; }
+body[data-page="admin"] .qa-stat { display: grid; align-content: start; gap: 4px; padding: 18px 20px; background: #fff; border: 1px solid var(--admin-line); border-radius: var(--admin-panel-radius); color: var(--admin-ink); text-decoration: none; transition: border-color var(--admin-motion), box-shadow var(--admin-motion); }
+body[data-page="admin"] a.qa-stat:hover { border-color: #d73b50; box-shadow: var(--qa-shadow); }
+body[data-page="admin"] .qa-stat span { font-size: 13px; font-weight: 600; color: var(--admin-muted); }
+body[data-page="admin"] .qa-stat strong { font-size: 28px; line-height: 36px; font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.02em; }
+body[data-page="admin"] .qa-stat strong small { margin-left: 2px; font-size: 14px; font-weight: 500; color: var(--admin-muted); letter-spacing: 0; }
+body[data-page="admin"] .qa-stat em { font-style: normal; font-size: 12px; color: var(--admin-muted); }
+body[data-page="admin"] .qa-stat-main { background: #fceff1; border-color: #f4d3d9; }
+body[data-page="admin"] .qa-stat-main strong { color: #bc2b44; }
+body[data-page="admin"] .qa-meter { height: 8px; margin: 6px 0 4px; border-radius: 999px; background: #fff; overflow: hidden; }
+body[data-page="admin"] .qa-meter span { display: block; height: 100%; border-radius: inherit; background: #d73b50; transition: width .3s; }
+
+body[data-page="admin"] .qa-bank { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 0; padding: 12px 16px; border-radius: var(--admin-radius); background: #fff; border: 1px dashed #e8b9c1; font-size: 13px; color: var(--admin-muted); }
+body[data-page="admin"] .qa-bank i { color: #d73b50; font-size: 16px; }
+body[data-page="admin"] .qa-bank b { color: var(--admin-ink); font-variant-numeric: tabular-nums; }
+
+body[data-page="admin"] .qa-board { background: #fff; border: 1px solid var(--admin-line); border-radius: var(--admin-panel-radius); overflow: hidden; }
+body[data-page="admin"] .qa-toolbar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 14px 16px 0; border-bottom: 1px solid var(--admin-line); }
+body[data-page="admin"] .qa-tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; margin-bottom: -1px; }
+body[data-page="admin"] .qa-tabs a { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px 12px; border-bottom: 2px solid transparent; font-size: 14px; font-weight: 500; color: var(--admin-muted); white-space: nowrap; text-decoration: none; }
+body[data-page="admin"] .qa-tabs a span { min-width: 22px; padding: 1px 7px; border-radius: 999px; background: #f1f1f3; font-size: 12px; font-weight: 600; text-align: center; font-variant-numeric: tabular-nums; color: var(--admin-muted); }
+body[data-page="admin"] .qa-tabs a:hover { color: var(--admin-ink); }
+body[data-page="admin"] .qa-tabs a[aria-current="page"] { color: #bc2b44; font-weight: 700; border-bottom-color: #d73b50; }
+body[data-page="admin"] .qa-tabs a[aria-current="page"] span { background: #d73b50; color: #fff; }
+body[data-page="admin"] .qa-search { position: relative; display: flex; align-items: center; width: min(320px, 100%); margin-bottom: 12px; }
+body[data-page="admin"] .qa-search > i { position: absolute; left: 12px; color: var(--admin-muted); font-size: 16px; pointer-events: none; }
+body[data-page="admin"] .qa-search input { width: 100%; height: 36px; padding: 0 34px; border: 1px solid var(--admin-line); border-radius: 999px; background: #f7f7f8; font: inherit; font-size: 13px; }
+body[data-page="admin"] .qa-search input:focus { background: #fff; border-color: #d73b50; outline: none; box-shadow: 0 0 0 3px #fceff1; }
+body[data-page="admin"] .qa-search-clear { position: absolute; right: 8px; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; color: var(--admin-muted); }
+
+body[data-page="admin"] .qa-table-wrap { border: 0; border-radius: 0; }
+body[data-page="admin"] .qa-table { width: 100%; }
+body[data-page="admin"] .qa-table th { position: sticky; top: 0; z-index: 1; background: #fafafb; white-space: nowrap; }
+body[data-page="admin"] .qa-sort { display: inline-flex; align-items: center; gap: 4px; color: inherit; text-decoration: none; }
+body[data-page="admin"] .qa-sort i { font-size: 14px; color: #c4c5c9; }
+body[data-page="admin"] .qa-sort:hover, body[data-page="admin"] .qa-sort.is-active { color: #bc2b44; }
+body[data-page="admin"] .qa-sort:hover i, body[data-page="admin"] .qa-sort.is-active i { color: #d73b50; }
+body[data-page="admin"] .qa-table td small { display: block; margin-top: 2px; font-size: 12px; color: var(--admin-muted); max-width: 240px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+body[data-page="admin"] .qa-table tr.is-pending td:first-child { box-shadow: inset 3px 0 0 var(--qa-orange); }
+body[data-page="admin"] .qa-table tr.is-cancelled td { color: var(--admin-muted); }
+body[data-page="admin"] .qa-table tr.is-cancelled td b { text-decoration: line-through; font-weight: 500; }
+body[data-page="admin"] .qa-col-no { width: 56px; text-align: center; font-variant-numeric: tabular-nums; color: var(--admin-muted); }
+body[data-page="admin"] .qa-nowrap { white-space: nowrap; font-variant-numeric: tabular-nums; }
+body[data-page="admin"] .qa-col-actions { text-align: right; }
+body[data-page="admin"] .qa-actions { display: inline-flex; flex-wrap: nowrap; justify-content: flex-end; gap: 6px; }
+body[data-page="admin"] .qa-empty { display: grid; justify-items: center; gap: 10px; padding: 56px 16px; text-align: center; color: var(--admin-muted); }
+body[data-page="admin"] .qa-empty i { font-size: 32px; color: #e8b9c1; }
+body[data-page="admin"] .qa-empty p { margin: 0; }
+body[data-page="admin"] .qa-foot { margin: 0; padding: 12px 16px; border-top: 1px solid var(--admin-line); font-size: 12px; color: var(--admin-muted); background: #fafafb; }
+body[data-page="admin"] .qa-more { margin: 0; text-align: right; font-size: 13px; }
+body[data-page="admin"] .qa-more a { color: var(--admin-muted); text-decoration: none; }
+body[data-page="admin"] .qa-more a:hover { color: #bc2b44; }
+@media (max-width: 1024px) { body[data-page="admin"] .qa-stats { grid-template-columns: repeat(3, 1fr); } body[data-page="admin"] .qa-stat-main { grid-column: 1 / -1; } }
+@media (max-width: 640px) { body[data-page="admin"] .qa-stat { padding: 14px; } body[data-page="admin"] .qa-stat strong { font-size: 22px; line-height: 30px; } body[data-page="admin"] .qa-stat:not(.qa-stat-main) em { display: none; } }
+@media (max-width: 640px) { body[data-page="admin"] .qa-search { width: 100%; } body[data-page="admin"] .qa-head h1 { font-size: 20px; line-height: 28px; } }
+body[data-page="admin"] .qa-table th, body[data-page="admin"] .qa-table td { padding-left: 12px; padding-right: 12px; }
+body[data-page="admin"] .qa-table .qa-col-actions { width: 1%; white-space: nowrap; }

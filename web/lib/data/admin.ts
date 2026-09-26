@@ -50,13 +50,17 @@ export async function adminOrganizations(): Promise<Organization[]> {
   return (data ?? []) as Organization[];
 }
 export async function adminCampaigns(): Promise<Campaign[]> {
-  if (!hasSupabase) return empty();
+  if (!hasSupabase) {
+    // 미리보기 모드: 시드 캠페인과 예시 신청자로 관리자 화면을 확인할 수 있게 한다 (읽기 전용)
+    const { campaigns, sampleRegistrations } = await import('./seed-data.mjs');
+    return (campaigns as Campaign[]).map((c) => { const rs = sampleRegistrations.filter((r) => r.campaign_id === c.id); return { ...c, registrations: rs.filter((r) => r.status !== 'cancelled').length, confirmed_count: rs.filter((r) => r.status === 'confirmed').length, participations: 0 }; });
+  }
   const supabase = await createClient();
   const { data } = await supabase.from('campaigns').select('*, participations(count)').order('created_at', { ascending: false });
   return (data ?? []).map((c) => ({ ...c, registrations: c.registration_count ?? 0, participations: c.participations?.[0]?.count ?? 0 })) as Campaign[];
 }
 export async function adminRegistrations(campaignId: string): Promise<CampaignRegistration[]> {
-  if (!hasSupabase) return empty();
+  if (!hasSupabase) { const { sampleRegistrations } = await import('./seed-data.mjs'); return (sampleRegistrations as CampaignRegistration[]).filter((r) => r.campaign_id === campaignId); }
   const supabase = await createClient();
   const { data } = await supabase.from('campaign_registrations').select('*').eq('campaign_id', campaignId).order('created_at', { ascending: true });
   return (data ?? []) as CampaignRegistration[];

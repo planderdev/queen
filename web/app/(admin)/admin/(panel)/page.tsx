@@ -8,7 +8,7 @@ import { hasSupabase } from '@/lib/env';
 export default async function AdminDashboard() {
   const [counts, pending, registrations, inquiries, reports, logs] = await Promise.all([adminCounts(), adminDonations({ status: 'pending' }), adminPendingRegistrations(), adminInquiries(), adminReports(), adminLogs()]);
   const tiles: [string, number, string, string][] = [
-    ['행사 입금 대기', counts.pendingRegistrations, `campaigns${registrations[0]?.campaign ? `?id=${registrations[0].campaign.id}&status=pending#roster` : ''}`, 'run-line'],
+    ['행사 입금 대기', counts.pendingRegistrations, `campaigns${registrations[0]?.campaign ? `?id=${registrations[0].campaign.id}&status=pending` : ''}`, 'run-line'],
     ['기부 입금 대기', counts.pendingDonations, 'donations?status=pending', 'receipt-line'],
     ['모금함 심사 대기', counts.reviewFundraisers, 'fundraisers', 'hand-heart-line'],
     ['환불 처리 대기', counts.refunds, 'refunds', 'refund-2-line'],
@@ -24,7 +24,7 @@ export default async function AdminDashboard() {
       </section>
       <div className="admin-dashboard-grid">
         <section className="admin-dashboard-section"><h2>행사 참가 입금 대기 <Link href="/admin/campaigns">전체 보기</Link></h2>
-          {registrations.length ? <ul>{registrations.map((r) => <li key={r.id}><Link href={`/admin/campaigns?id=${r.campaign?.id ?? ''}&status=pending#roster`}><span>{r.name} · 입금자 {r.depositor_name || r.name}</span><small>{r.campaign?.title ?? '행사'}</small></Link><span className="admin-feed-meta"><AdminBadge value={r.status} /><time>{dateTime(r.created_at)}</time></span></li>)}</ul> : <p className="muted">입금 확인을 기다리는 참가 신청이 없습니다.</p>}
+          {registrations.length ? <ul>{registrations.map((r) => <li key={r.id}><Link href={`/admin/campaigns?id=${r.campaign?.id ?? ''}&status=pending`}><span>{r.name} · 입금자 {r.depositor_name || r.name}</span><small>{r.campaign?.title ?? '행사'}</small></Link><span className="admin-feed-meta"><AdminBadge value={r.status} /><time>{dateTime(r.created_at)}</time></span></li>)}</ul> : <p className="muted">입금 확인을 기다리는 참가 신청이 없습니다.</p>}
         </section>
         <section className="admin-dashboard-section"><h2>기부 입금 대기 <Link href="/admin/donations?status=pending">전체 보기</Link></h2>
           {pending.length ? <ul>{pending.slice(0, 6).map((d) => <li key={d.id}><Link href="/admin/donations?status=pending"><span>{d.depositor_name} · {money(d.amount)}</span><small>{d.fundraiser?.title.replace(/\n/g, ' ') ?? d.organization?.name}</small></Link><span className="admin-feed-meta"><AdminBadge value={d.status} /><time>{dateTime(d.created_at)}</time></span></li>)}</ul> : <p className="muted">입금 확인을 기다리는 기부가 없습니다.</p>}

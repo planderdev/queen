@@ -6,7 +6,7 @@ const toneClass: Record<string, string> = { olive: 'status-approved', blue: 'sta
 export function AdminTitle({ title, text, children }: { title: string; text?: string; children?: ReactNode }) {
   return <div className="admin-title"><div><h1>{title}</h1><p>{text ?? '목록을 검색하고 필요한 항목을 선택해 처리하세요.'}</p></div>{children}</div>;
 }
-export const AdminBadge = ({ value, tone }: { value: string; tone?: string }) => <span className={`badge ${toneClass[tone ?? statusTone[value] ?? 'lavender']}`}>{statusNames[value] ?? value}</span>;
+export const AdminBadge = ({ value, tone, label }: { value: string; tone?: string; label?: string }) => <span className={`badge ${toneClass[tone ?? statusTone[value] ?? 'lavender']}`}>{label ?? statusNames[value] ?? value}</span>;
 
 export function AdminTable({ headers, rows, empty = '표시할 내역이 없습니다.' }: { headers: string[]; rows: ReactNode[][]; empty?: string }) {
   if (!rows.length) return <section className="admin-dashboard-section"><p className="muted">{empty}</p></section>;
