@@ -1367,3 +1367,9 @@
    배너 아래가 비고 슬라이드 컨트롤이 아래 섹션 위에 떠 있었다 */
 .home-hero { position: relative; overflow: hidden; }
 .home-hero > .swiper, .home-hero .swiper-wrapper, .home-hero .home-hero-slide { height: 100%; }
+
+/* 홈 레일: 한 장 너비 + 오른쪽으로 다음 카드들이 이어지는 디자인. swiper 기본 overflow:hidden이
+   다음 카드를 잘라 한 장만 보이고 나머지가 빈 여백으로 남던 문제를 바로잡는다.
+   섹션 밖으로 넘친 카드는 섹션에서 잘라 가로 스크롤이 생기지 않게 한다. */
+.home-story-rail > .swiper, .home-campaign-rail > .swiper, .home-guide-rail > .swiper { overflow: visible; }
+.home-page .home-section, .home-page .home-campaign-section, .home-page [data-carousel] { overflow-x: clip; }
