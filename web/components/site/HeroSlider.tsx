@@ -7,7 +7,8 @@ import type { Swiper as SwiperType } from 'swiper';
 import { ArrowRight, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import 'swiper/css';
 
-export interface HeroSlide { image: string; light?: boolean; heading: string[]; description: string[]; href: string; cta: string }
+// scrim: 밝고 복잡한 사진 위 흰 글자 가독성을 위한 어두운 그라데이션 (캠페인 사진 슬라이드용)
+export interface HeroSlide { image: string; light?: boolean; scrim?: boolean; heading: string[]; description: string[]; href: string; cta: string }
 
 export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
   const ref = useRef<SwiperType | null>(null);
@@ -21,7 +22,7 @@ export function HeroSlider({ slides }: { slides: HeroSlide[] }) {
         <Swiper modules={[Autoplay, A11y]} loop={total > 1} speed={350} autoplay={total > 1 ? { delay: 6500, disableOnInteraction: false, pauseOnMouseEnter: true } : false}
           onSwiper={(sw) => { ref.current = sw; }} onSlideChange={(sw) => setIndex(sw.realIndex)} a11y={{ prevSlideMessage: '이전 배너', nextSlideMessage: '다음 배너' }}>
           {slides.map((s, i) => (
-            <SwiperSlide key={i} className={`home-hero-slide ${s.light ? 'home-hero-light' : ''}`} style={{ backgroundImage: `url('${s.image}')` }}>
+            <SwiperSlide key={i} className={`home-hero-slide ${s.light ? 'home-hero-light' : ''} ${s.scrim ? 'home-hero-scrim' : ''}`} style={{ backgroundImage: `url('${s.image}')` }}>
               <div className="home-hero-copy">
                 <h1 className="aos-animate">{s.heading.map((l, j) => <span key={j}>{j > 0 && <br />}{l}</span>)}</h1>
                 <p className="aos-animate">{s.description.map((l, j) => <span key={j}>{j > 0 && <br />}{l}</span>)}</p>

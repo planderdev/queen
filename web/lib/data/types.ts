@@ -127,6 +127,7 @@ export interface CampaignDetails {
   complete?: string;
   questions?: CampaignQuestion[];   // 신청서 추가 질문 (선택형)
   bank?: { bank: string; account: string; holder: string };   // 참가비 입금 계좌
+  hero?: { heading: string[]; description?: string[]; cta?: string };   // 홈 메인 배너 문구 (있으면 모집 중일 때 첫 슬라이드로 노출)
 }
 
 export interface CampaignQuestion {

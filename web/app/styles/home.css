@@ -1355,3 +1355,15 @@
     transform: none;
   }
 }
+/* 캠페인 사진 슬라이드: 글자 뒤 어두운 그라데이션 (데스크톱 좌→우, 모바일 위→아래 + 하단 컨트롤 영역) */
+.home-hero-scrim { position: relative; }
+.home-hero-scrim::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17, 17, 19, .72) 0%, rgba(17, 17, 19, .5) 34%, rgba(17, 17, 19, .12) 62%, rgba(17, 17, 19, 0) 78%); pointer-events: none; }
+.home-hero-scrim .home-hero-copy { position: relative; z-index: 1; text-shadow: 0 1px 12px rgba(0, 0, 0, .25); }
+@media (max-width:767px) {
+  .home-hero-scrim::after { background: linear-gradient(180deg, rgba(17, 17, 19, .72) 0%, rgba(17, 17, 19, .52) 50%, rgba(17, 17, 19, .2) 78%, rgba(17, 17, 19, .38) 100%); }
+}
+
+/* 슬라이더가 배너 높이(데스크톱 700px·모바일 600px)를 끝까지 채우도록 — 이전에는 swiper가 내용 높이만큼만 차지해
+   배너 아래가 비고 슬라이드 컨트롤이 아래 섹션 위에 떠 있었다 */
+.home-hero { position: relative; overflow: hidden; }
+.home-hero > .swiper, .home-hero .swiper-wrapper, .home-hero .home-hero-slide { height: 100%; }

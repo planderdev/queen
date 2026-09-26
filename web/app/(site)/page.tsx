@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, BookOpen, Building2, Globe, HandHeart, NotebookPen, Plus, UsersRound } from 'lucide-react';
 import { repo } from '@/lib/data';
 import { campaignTypeNames } from '@/lib/format';
-import { HeroSlider } from '@/components/site/HeroSlider';
+import { HeroSlider, type HeroSlide } from '@/components/site/HeroSlider';
 import { Rail } from '@/components/site/Rail';
 import { Title } from '@/components/ui';
 
@@ -21,10 +21,20 @@ export default async function HomePage() {
   const [stories, campaigns, funds, notices, banners] = await Promise.all([
     repo.listContent('story', 6), repo.listCampaigns(), repo.featuredFundraisers(2), repo.listContent('notice', 3), repo.listContent('banner', 3)
   ]);
+  // 모집 중인 행사 캠페인은 메인 배너 첫 슬라이드로 올린다 (종료·정원 마감 시 자동으로 빠짐)
+  const now = Date.now();
+  const eventSlides: HeroSlide[] = campaigns
+    .filter((c) => c.type === 'event' && c.details.hero && c.registration_open && new Date(c.start_at).getTime() <= now && now < new Date(c.end_at).getTime() && (c.capacity == null || (c.confirmed_count ?? 0) < c.capacity))
+    .map((c) => {
+      const hero = c.details.hero!;
+      const left = c.capacity != null ? c.capacity - (c.confirmed_count ?? 0) : null;
+      return { image: c.image ?? photos.community, scrim: true, heading: hero.heading, description: [...(hero.description ?? []), ...(left != null ? [`선착순 ${c.capacity}명 모집 · 잔여 ${left}석`] : [])], href: `/campaigns/${c.slug}#register`, cta: hero.cta ?? '참가 신청하기' };
+    });
   const guide: [string, string, string, string][] = [['정기후원', '매달 이어지는 따뜻한 약속', photos.child, '/monthly'], ['일시후원', '지금 필요한 곳에 전하는 마음', photos.meal, '/donate'], ['기업후원', '함께할수록 더 커지는 변화', photos.community, '/campaigns']];
   return (
     <div className="home-page">
       <HeroSlider slides={[
+        ...eventSlides,
         { image: photos.meal, light: true, heading: ['작은 나눔이 모여,', '더 큰 변화를 만듭니다.'], description: ['마음이 닿는 이야기를 만나고,', '그 다음의 변화까지 함께하세요.'], href: '/donate', cta: '마음 전하기' },
         { image: photos.forest, heading: ['매달 이어지는 마음,', '함께 자라는 내일.'], description: ['우리의 작은 약속이', '누군가의 든든한 일상이 됩니다.'], href: '/monthly', cta: '정기후원 알아보기' }
       ]} />
