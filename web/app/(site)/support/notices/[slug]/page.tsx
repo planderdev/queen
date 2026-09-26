@@ -21,7 +21,7 @@ export default async function NoticePage({ params }: Props) {
       <div className="container community-page">
         <article className="community-article">
           <header><span className="community-kicker">공지사항</span><h2>{item.title}</h2><p>{date(item.created_at)}</p><div className="community-article-share"><ShareButton /></div></header>
-          <div className="community-article-body">{item.body.split(/\n{2,}/).map((p, k) => <p key={k}>{p}</p>)}</div>
+          <div className="community-article-body">{item.body.split(/\n{2,}/).map((p, k) => <p key={k} style={{ whiteSpace: 'pre-line' }}>{p}</p>)}</div>
         </article>
         <nav className="community-article-nav" aria-label="게시글 이동">
           {nav.map(([label, post]) => <div key={label}><span>{label}</span>{post ? <Link href={`/support/notices/${post.slug ?? post.id}`}>{post.title}</Link> : <span className="community-muted">게시글이 없습니다.</span>}</div>)}

@@ -137,3 +137,13 @@
   .community-story-card>a {flex-direction: column;align-items: stretch;gap: var(--space-16);}
   .community-story-image {width: 100%;margin: 0;}
 }
+/* 공지사항 목록: 최근 7일 새 글 표시 */
+.notice-new {display: inline-block;margin-left: var(--space-8);padding: 2px 8px;border-radius: var(--radius-8);background: var(--brand-soft);color: var(--primary-strong);font-size: 12px;font-weight: var(--weight-semibold);vertical-align: middle;}
+.community-board-title:has(.notice-new) a {display: inline-block;}
+@media (max-width: 767px) {
+  /* 분류 열이 없는 목록(공지사항): 제목 → 날짜 순, 새 글 표시는 제목 옆 */
+  .community-board tr:not(:has(.community-board-category)) {gap: var(--space-8);}
+  .community-board tr:not(:has(.community-board-category)) .community-board-title {order: 0;}
+  .community-board tr:not(:has(.community-board-category)) .community-board-date {order: 1;margin-left: 0;color: var(--label-alternative);}
+  .community-board-title:has(.notice-new) a {display: inline;}
+}

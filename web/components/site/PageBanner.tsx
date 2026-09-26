@@ -13,12 +13,21 @@ const sections: Record<string, [string, string, string, string]> = {
   my: ['나의 후원', 'MY GIVING', '내가 전한 마음과 이어지는 변화를 확인하세요.', '/assets/images/forest.jpg']
 };
 const supportTitles: Record<string, string> = { notices: '공지사항', inquiry: '1:1 문의', terms: '이용약관', privacy: '개인정보처리방침' };
+// 공지사항·1:1 문의는 주 메뉴 '소식' 아래에 있으므로 소식 배너를 쓴다 (후원가이드 배너 대신)
+const newsViews: Record<string, [string, string]> = {
+  notices: ['퀸만덕의 새로운 소식과 안내를 전합니다.', '/assets/images/community.jpg'],
+  inquiry: ['궁금한 점을 남겨 주시면 확인 후 답변드립니다.', '/assets/images/community.jpg']
+};
 
 // Section hero + breadcrumb menu. `current` is the pathname (+ query for support views) to highlight.
 export function PageBanner({ page, view, title: override }: { page: string; view?: string; title?: string }) {
   const data = sections[page];
   if (!data) return null;
-  const [defaultTitle, category, description, photo] = data;
+  const news = page === 'support' && view ? newsViews[view] : undefined;
+  const [defaultTitle, baseCategory, baseDescription, basePhoto] = data;
+  const category = news ? 'NEWS' : baseCategory;
+  const description = news?.[0] ?? baseDescription;
+  const photo = news?.[1] ?? basePhoto;
   const title = override ?? (page === 'support' ? supportTitles[view ?? ''] ?? defaultTitle : defaultTitle);
   const current = `/${page}${page === 'support' && view ? `?view=${view}` : ''}`;
   let selected: { group: (typeof navigation)[number]; item: [string, string] } | null = null;
