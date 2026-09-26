@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, ArrowUpRight, BookOpen, Building2, Globe, HandHeart, NotebookPen, Plus, UsersRound } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, BookOpen, Globe, HandHeart, Megaphone, MessageCircleMore, NotebookPen, Plus } from 'lucide-react';
 import { repo } from '@/lib/data';
 import { campaignTypeNames } from '@/lib/format';
 import { HeroSlider, type HeroSlide } from '@/components/site/HeroSlider';
@@ -121,9 +121,10 @@ export default async function HomePage() {
             {stories.slice(0, 3).map((st) => <Link key={st.id} href={`/stories/${st.slug ?? st.id}`}><span className="home-news-category">나눔이야기</span><h3>{st.title}</h3><span className="home-news-date">리포트</span></Link>)}
           </div>
           <div className="home-promos">
-            <Link href="/organizations"><div><span>함께하는 단체</span><h3>변화를 만드는 사람들</h3></div><UsersRound aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
-            <Link href="/stories"><div><span>나눔 결과보고</span><h3>마음이 전해진 그 이후</h3></div><BookOpen aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
-            <Link href="/campaigns"><div><span>나눔 캠페인</span><h3>더 큰 나눔의 가능성</h3></div><Building2 aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
+            {/* 현재 열려 있는 메뉴(캠페인·소식)에 맞춘 바로가기 */}
+            <Link href="/campaigns"><div><span>나눔 캠페인</span><h3>함께 참여하는 캠페인</h3></div><Megaphone aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
+            <Link href="/stories"><div><span>나눔이야기</span><h3>마음이 전해진 그 이후</h3></div><BookOpen aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
+            <Link href="/support?view=inquiry"><div><span>1:1 문의</span><h3>궁금한 점을 남겨주세요</h3></div><MessageCircleMore aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
           </div>
         </div>
       </section>
