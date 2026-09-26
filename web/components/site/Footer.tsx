@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { ArrowUpRight, ChevronDown, ChevronUp, HandHeart } from 'lucide-react';
-import { env } from '@/lib/env';
+import { ArrowUpRight, ChevronUp } from 'lucide-react';
 import { BackToTop } from './BackToTop';
 
+// 2026-09-26 요청: 떠 있는 후원하기 버튼과 하단 '사이트 관리'(브랜드 가이드·데모 링크) 숨김. /design-system, /demo는 주소로 계속 접근 가능.
 export function Footer() {
   return (
     <>
@@ -16,10 +16,6 @@ export function Footer() {
               <Link href="/support">FAQ</Link>
               <Link href="/support?view=inquiry">1:1 문의하기</Link>
             </nav>
-            <details className="footer-sites">
-              <summary>사이트 관리 <ChevronDown aria-hidden="true" /></summary>
-              <div><a href="/design-system">브랜드 가이드</a><a href={env.demoUrl}>데모 버전</a></div>
-            </details>
           </div>
           <div className="bottom-info">
             <div className="bottom-identity">
@@ -40,7 +36,6 @@ export function Footer() {
         </div>
       </footer>
       <aside className="quick-support" aria-label="빠른 메뉴">
-        <Link href="/donate" aria-label="후원하기"><HandHeart aria-hidden="true" /><span>후원하기</span></Link>
         <BackToTop><ChevronUp aria-hidden="true" /></BackToTop>
       </aside>
     </>
