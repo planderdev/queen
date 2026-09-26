@@ -17,6 +17,7 @@ function SectionHeading({ eyebrow, heading, href }: { eyebrow: string; heading: 
   );
 }
 
+// 후원(정기·일시) 안내 영역 노출 여부 — 배너 아래 박스와 후원안내 섹션을 함께 켜고 끈다
 const SHOW_DONATION_CALLOUT = false;
 
 export default async function HomePage() {
@@ -92,15 +93,18 @@ export default async function HomePage() {
         ))} />
       </div></section>
 
+      {/* 후원안내(정기·일시·기업후원) 섹션도 후원 메뉴를 숨긴 기간 동안 숨김 */}
+      {SHOW_DONATION_CALLOUT && (
       <section className="home-section home-container home-guide" data-carousel="guide">
-        <div><SectionHeading eyebrow="후원안내" heading={'후원이 처음\n이신가요?'} /><p>나에게 맞는 방법으로<br />나눔의 첫걸음을 함께해요.</p><Link className="home-text-link" href="/support">후원 안내 <ArrowRight aria-hidden="true" /></Link></div>
-        <Rail label="후원안내" className="home-guide-rail" items={guide.map(([label, description, image, href]) => (
-          <Link key={label} className="home-guide-card" href={href}>
-            <div className="home-image"><img src={image} alt={`${label} 안내 이미지`} width={600} height={500} loading="lazy" /></div>
-            <div className="home-guide-copy"><h3>{label}<ArrowRight aria-hidden="true" /></h3><p>{description}</p></div>
-          </Link>
-        ))} />
-      </section>
+          <div><SectionHeading eyebrow="후원안내" heading={'후원이 처음\n이신가요?'} /><p>나에게 맞는 방법으로<br />나눔의 첫걸음을 함께해요.</p><Link className="home-text-link" href="/support">후원 안내 <ArrowRight aria-hidden="true" /></Link></div>
+          <Rail label="후원안내" className="home-guide-rail" items={guide.map(([label, description, image, href]) => (
+            <Link key={label} className="home-guide-card" href={href}>
+              <div className="home-image"><img src={image} alt={`${label} 안내 이미지`} width={600} height={500} loading="lazy" /></div>
+              <div className="home-guide-copy"><h3>{label}<ArrowRight aria-hidden="true" /></h3><p>{description}</p></div>
+            </Link>
+          ))} />
+        </section>
+      )}
 
       {banners.length > 0 && (
         <section className="home-section home-container" aria-label="운영자 안내">
