@@ -21,14 +21,20 @@ export default async function HomePage() {
   const [stories, campaigns, notices, banners] = await Promise.all([
     repo.listContent('story', 6), repo.listCampaigns(), repo.listContent('notice', 3), repo.listContent('banner', 3)
   ]);
-  // 모집 중인 행사 캠페인은 메인 배너 첫 슬라이드로 올린다 (종료·정원 마감 시 자동으로 빠짐)
+  // 행사 캠페인은 신청 마감일까지 메인 배너 첫 슬라이드로 올린다.
+  // 모집 중이면 잔여석과 신청 버튼, 정원이 찼거나 신청을 닫았으면 '모집 마감' 문구와 캠페인 보기 버튼.
   const now = Date.now();
   const eventSlides: HeroSlide[] = campaigns
-    .filter((c) => c.type === 'event' && c.details.hero && c.registration_open && new Date(c.start_at).getTime() <= now && now < new Date(c.end_at).getTime() && (c.capacity == null || (c.confirmed_count ?? 0) < c.capacity))
+    .filter((c) => c.type === 'event' && c.details.hero && new Date(c.start_at).getTime() <= now && now < new Date(c.end_at).getTime())
     .map((c) => {
       const hero = c.details.hero!;
+      const full = c.capacity != null && (c.confirmed_count ?? 0) >= c.capacity;
+      const open = c.registration_open && !full;
       const left = c.capacity != null ? c.capacity - (c.confirmed_count ?? 0) : null;
-      return { image: c.image ?? photos.community, scrim: true, heading: hero.heading, description: [...(hero.description ?? []), ...(left != null ? [`선착순 ${c.capacity}명 모집 · 잔여 ${left}석`] : [])], href: `/campaigns/${c.slug}#register`, cta: hero.cta ?? '참가 신청하기' };
+      const status = open
+        ? (left != null ? [`선착순 ${c.capacity}명 모집 · 잔여 ${left}석`] : [])
+        : [full && c.capacity != null ? `선착순 ${c.capacity}명 모집 마감` : '참가 신청 마감', '함께해주셔서 감사합니다'];
+      return { image: c.image ?? photos.community, scrim: true, heading: hero.heading, description: [...(hero.description ?? []), ...status], href: open ? `/campaigns/${c.slug}#register` : `/campaigns/${c.slug}`, cta: open ? hero.cta ?? '참가 신청하기' : '캠페인 보기' };
     });
   // 홈 캠페인 영역: 모금함 카드 없이 캠페인만. 진행 중인 것이 없으면 최근 캠페인을 보여 준다.
   const ongoing = campaigns.filter((c) => new Date(c.end_at).getTime() > now);
