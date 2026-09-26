@@ -17,6 +17,8 @@ function SectionHeading({ eyebrow, heading, href }: { eyebrow: string; heading: 
   );
 }
 
+const SHOW_DONATION_CALLOUT = false;
+
 export default async function HomePage() {
   const [stories, campaigns, notices, banners] = await Promise.all([
     repo.listContent('story', 6), repo.listCampaigns(), repo.listContent('notice', 3), repo.listContent('banner', 3)
@@ -45,10 +47,13 @@ export default async function HomePage() {
       <HeroSlider slides={eventSlides.length ? eventSlides : [
         { image: photos.community, scrim: true, heading: ['작은 나눔이 모여,', '더 큰 변화를 만듭니다.'], description: ['진행 중인 캠페인을 만나보세요.'], href: '/campaigns', cta: '캠페인 보기' }
       ]} />
+      {/* 2026-09-26 요청: 배너 아래 정기후원·일시후원 안내 박스 숨김 (후원 메뉴를 숨긴 기간). 다시 보이려면 SHOW_DONATION_CALLOUT를 true로 */}
+      {SHOW_DONATION_CALLOUT && (
       <aside className="home-donation-callout">
-        <div><h2>당신의 마음이 변화의 시작입니다</h2><p>오늘의 나눔으로 더 나은 내일을 함께 만들어요.</p></div>
-        <div className="home-donation-actions"><Link className="button primary" href="/monthly">정기후원 <ArrowRight aria-hidden="true" /></Link><Link className="button secondary" href="/donate">일시후원 <ArrowRight aria-hidden="true" /></Link></div>
-      </aside>
+          <div><h2>당신의 마음이 변화의 시작입니다</h2><p>오늘의 나눔으로 더 나은 내일을 함께 만들어요.</p></div>
+          <div className="home-donation-actions"><Link className="button primary" href="/monthly">정기후원 <ArrowRight aria-hidden="true" /></Link><Link className="button secondary" href="/donate">일시후원 <ArrowRight aria-hidden="true" /></Link></div>
+        </aside>
+      )}
 
       <section className="home-section home-container" data-carousel="stories">
         <SectionHeading eyebrow="나눔이야기" heading="나눔이 만들어낸 놀라운 변화" href="/stories" />
