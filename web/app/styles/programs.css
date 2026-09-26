@@ -211,3 +211,13 @@
 .program-form .field-grid {row-gap: var(--space-24);}
 .program-form fieldset.field {display: grid;gap: var(--space-4);}
 .program-form select:invalid {color: var(--label-alternative);}
+/* 행사 캠페인: 신청하기 + 공유하기 버튼 (행사 안내 아래, 신청서 하단, 신청 완료 화면) */
+.event-actions, .event-form .actions, .form-success .actions {display: grid;grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);gap: var(--space-8);width: 100%;}
+.event-actions {margin-top: var(--space-24);}
+.event-actions .button, .event-form .actions .button, .form-success .actions .button {width: 100%;min-height: 52px;font-size: var(--font-size-body);}
+.event-actions .button svg.lucide, .event-form .actions .button svg.lucide, .form-success .actions .button svg.lucide {width: 18px;height: 18px;}
+.form-success .actions {grid-template-columns: 1fr;max-width: 520px;}
+.event-actions .is-disabled {background: var(--interaction-disabled);border-color: var(--line-solid);color: var(--label-alternative);cursor: default;}
+html {scroll-behavior: smooth;}
+#register {scroll-margin-top: 96px;}
+@media (prefers-reduced-motion: reduce) {html {scroll-behavior: auto;}}

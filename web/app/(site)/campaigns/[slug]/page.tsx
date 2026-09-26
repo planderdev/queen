@@ -11,6 +11,7 @@ import { Notice, Progress, SectionTitle } from '@/components/ui';
 import { ParticipateButton } from '@/components/site/ParticipateButton';
 import { RegistrationForm } from '@/components/site/RegistrationForm';
 import { BankBox } from '@/components/site/BankBox';
+import { ShareButton } from '@/components/site/ShareButton';
 import type { Campaign } from '@/lib/data/types';
 
 type Props = { params: Promise<{ slug: string }> };
@@ -84,6 +85,10 @@ function EventCampaign({ c, available, defaults }: { c: Campaign; available: boo
             <div><dt>함께하는 곳</dt><dd>{c.partner_name}</dd></div>
           </dl>
           <p className="help">참가비와 기부금의 사용처는 행사 종료 후 소식 페이지에 공개합니다. 사이트에서 결제가 이루어지지 않으며, 안내된 계좌로 입금하면 운영팀이 확인 후 참가를 확정합니다.</p>
+          <div className="event-actions">
+            {open ? <a className="button primary" href="#register">참가 신청하기</a> : <span className="button primary is-disabled" aria-disabled="true">{full ? '모집 마감' : '신청 마감'}</span>}
+            <ShareButton label="공유하기" title={c.title} text="함께 달리고, 함께 나누는 기부런에 같이 참여해요!" />
+          </div>
           </section>
           {c.capacity != null && (
             <section className={`event-capacity${full ? ' is-full' : ''}`} aria-label="모집 현황">

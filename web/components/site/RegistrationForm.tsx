@@ -1,5 +1,6 @@
 import { ActionForm } from '@/components/site/ActionForm';
 import { BankBox } from '@/components/site/BankBox';
+import { ShareButton } from '@/components/site/ShareButton';
 import { Field, Select } from '@/components/ui';
 import { registerForCampaign } from '@/lib/actions/community';
 import type { Campaign } from '@/lib/data/types';
@@ -11,7 +12,8 @@ const AGE_GROUPS = ['10대', '20대', '30대', '40대', '50대', '60대 이상']
 export function RegistrationForm({ campaign, defaults }: { campaign: Campaign; defaults?: { name?: string | null; email?: string | null } }) {
   const { agreements = [], questions = [], bank } = campaign.details;
   return (
-    <ActionForm action={registerForCampaign} className="program-form" submitLabel="참가 신청하기" pendingLabel="신청 접수 중…" successPanel
+    <ActionForm action={registerForCampaign} className="program-form event-form" submitLabel="참가 신청하기" pendingLabel="신청 접수 중…" successPanel
+      extraActions={<ShareButton label="공유하기" title={campaign.title} text="함께 달리고, 함께 나누는 기부런에 같이 참여해요!" />}
       successExtra={bank ? <BankBox bank={bank} fee={campaign.fee_amount} capacity={campaign.capacity} /> : undefined}>
       <input type="hidden" name="campaign_id" value={campaign.id} />
       <div className="field-grid">
