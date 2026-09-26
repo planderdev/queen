@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ChevronDown, Menu, Search, UserRound } from 'lucide-react';
+import { ChevronDown, Menu, UserRound } from 'lucide-react';
 import { getSession } from '@/lib/auth';
 import { MenuToggle } from './MenuToggle';
 
@@ -35,9 +35,9 @@ export async function Header({ page }: { page: string }) {
             ))}
           </nav>
           <div className="masthead-tools">
-            <Link className="button primary" href="/my"><UserRound aria-hidden="true" /> 나의 후원</Link>
+            {/* 2026-09-26 요청: 나의 후원은 로그인한 회원에게만, 검색 버튼은 숨김 */}
+            {session && <Link className="button primary" href="/my"><UserRound aria-hidden="true" /> 나의 후원</Link>}
             {session ? <Link className="button secondary" href="/my?view=profile" id="session-label">{session.profile.name}</Link> : <Link className="button secondary" href="/auth/login" id="session-label">로그인</Link>}
-            <Link className="icon-button" href="/donate" aria-label="검색"><Search aria-hidden="true" /></Link>
           </div>
         </div>
       </div>
