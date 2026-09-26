@@ -89,7 +89,11 @@
 .program-card-corner {position:absolute;right:0;bottom:0;width:75px;height:75px;border-radius:var(--card-radius-compact) 0 0;background:var(--background-normal);opacity:0;transition:opacity var(--motion-image);display:grid;place-items:center;}
 .program-card-corner::before {content:"";position:absolute;width:var(--card-radius-compact);height:var(--card-radius-compact);background:radial-gradient(circle at top left,transparent calc(var(--card-radius-compact) - .5px),var(--background-normal) var(--card-radius-compact));pointer-events:none;right:0;bottom:100%;}
 .program-card-corner::after {content:"";position:absolute;width:var(--card-radius-compact);height:var(--card-radius-compact);background:radial-gradient(circle at top left,transparent calc(var(--card-radius-compact) - .5px),var(--background-normal) var(--card-radius-compact));pointer-events:none;right:100%;bottom:0;}
-.program-card-corner svg {width:60px;height:60px;border-radius:50%;padding:var(--space-16);background:var(--primary-normal);color:var(--static-white);box-shadow:var(--shadow-raised);}
+/* 호버 포인트: 붉은 원(일장기처럼 보임) 대신 짙은 둥근 사각 버튼 + 대각선 화살표. 호버 시 화살표가 살짝 오른쪽 위로 이동 */
+.program-card-go {display:grid;place-items:center;width:52px;height:52px;border-radius:var(--radius-16);background:var(--label-strong, #171719);color:var(--static-white);box-shadow:var(--shadow-raised);}
+.program-card-go svg.lucide {width:24px;height:24px;stroke-width:2.25;transition:transform var(--motion-image);}
+.program-card:is(:hover,:focus-visible) .program-card-go svg {transform:translate(2px,-2px);}
+@media (prefers-reduced-motion: reduce) {.program-card-go svg {transition:none;} .program-card:is(:hover,:focus-visible) .program-card-go svg {transform:none;}}
 .program-card:is(:hover,:focus-visible) .program-card-corner {opacity:1;}
 .program-card-copy>.program-category {position:absolute;top:30px;left:30px;background:var(--background-normal);border-radius:calc(var(--radius-20) * 2);padding:var(--space-4) var(--space-20);box-shadow:var(--shadow-low);}
 .program-feature-link>div {padding:var(--space-48);}
