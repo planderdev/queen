@@ -1373,3 +1373,15 @@
    섹션 밖으로 넘친 카드는 섹션에서 잘라 가로 스크롤이 생기지 않게 한다. */
 .home-story-rail > .swiper, .home-campaign-rail > .swiper, .home-guide-rail > .swiper { overflow: visible; }
 .home-page .home-section, .home-page .home-campaign-section, .home-page [data-carousel] { overflow-x: clip; }
+
+/* 캠페인이 1개일 때: 한 장을 줄 전체 너비의 가로형 카드로 */
+.home-campaign-rail.is-single { width: 100%; }
+.home-campaign-rail.is-single .home-campaign-card .home-image { aspect-ratio: auto; height: 480px; }
+.home-campaign-rail.is-single .home-image img { width: 100%; height: 100%; object-fit: cover; }
+.home-campaign-rail.is-single .home-campaign-copy p { max-width: 640px; }
+@media (max-width:767px) { .home-campaign-rail.is-single .home-campaign-card .home-image { height: 420px; } }
+
+/* 나눔이야기 라벨: 분홍 라벨(오른쪽·아래 10px 여백을 뺀 영역) 안에서 가운데 정렬 */
+.home-story>span { display: flex; align-items: center; justify-content: center; padding: 0 10px 10px 0; white-space: nowrap; line-height: 1; }
+/* 캠페인 영역 아래 빈 여백(224px) 축소 — 겹쳐 올라오는 요소가 없어 빈 붉은 띠로만 남았다 */
+@media (min-width:768px) { .home-campaign-section { padding-bottom: var(--space-80); } }

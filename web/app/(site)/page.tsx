@@ -18,8 +18,8 @@ function SectionHeading({ eyebrow, heading, href }: { eyebrow: string; heading: 
 }
 
 export default async function HomePage() {
-  const [stories, campaigns, funds, notices, banners] = await Promise.all([
-    repo.listContent('story', 6), repo.listCampaigns(), repo.featuredFundraisers(2), repo.listContent('notice', 3), repo.listContent('banner', 3)
+  const [stories, campaigns, notices, banners] = await Promise.all([
+    repo.listContent('story', 6), repo.listCampaigns(), repo.listContent('notice', 3), repo.listContent('banner', 3)
   ]);
   // 모집 중인 행사 캠페인은 메인 배너 첫 슬라이드로 올린다 (종료·정원 마감 시 자동으로 빠짐)
   const now = Date.now();
@@ -30,6 +30,9 @@ export default async function HomePage() {
       const left = c.capacity != null ? c.capacity - (c.confirmed_count ?? 0) : null;
       return { image: c.image ?? photos.community, scrim: true, heading: hero.heading, description: [...(hero.description ?? []), ...(left != null ? [`선착순 ${c.capacity}명 모집 · 잔여 ${left}석`] : [])], href: `/campaigns/${c.slug}#register`, cta: hero.cta ?? '참가 신청하기' };
     });
+  // 홈 캠페인 영역: 모금함 카드 없이 캠페인만. 진행 중인 것이 없으면 최근 캠페인을 보여 준다.
+  const ongoing = campaigns.filter((c) => new Date(c.end_at).getTime() > now);
+  const liveCampaigns = ongoing.length ? ongoing : campaigns.slice(0, 3);
   const guide: [string, string, string, string][] = [['정기후원', '매달 이어지는 따뜻한 약속', photos.child, '/monthly'], ['일시후원', '지금 필요한 곳에 전하는 마음', photos.meal, '/donate'], ['기업후원', '함께할수록 더 커지는 변화', photos.community, '/campaigns']];
   return (
     <div className="home-page">
@@ -70,20 +73,12 @@ export default async function HomePage() {
 
       <section className="home-campaign-section"><div className="home-container" data-carousel="campaigns">
         <SectionHeading eyebrow="캠페인" heading="진행 중인 캠페인" href="/campaigns" />
-        <Rail label="캠페인" className="home-campaign-rail" items={[
-          ...campaigns.map((c) => (
-            <Link key={c.id} className="home-campaign-card" href={`/campaigns/${c.slug}`}>
-              <div className="home-image"><img src={c.image ?? photos.community} width={440} height={480} loading="lazy" alt="캠페인 활동 참고 이미지" /></div>
-              <span>{campaignTypeNames[c.type]} 캠페인</span><div className="home-campaign-copy"><h3>{c.title}</h3><p>{c.description}</p></div>
-            </Link>
-          )),
-          ...funds.map((f) => (
-            <Link key={f.id} className="home-campaign-card" href={`/donate/${f.slug}`}>
-              <div className="home-image"><img src={f.image ?? photos.meal} width={440} height={480} loading="lazy" alt={`${f.category} 활동 참고 이미지`} /></div>
-              <span>{f.category} 캠페인</span><div className="home-campaign-copy"><h3><Title title={f.title} /></h3><p>우리의 작은 관심이 든든한 힘이 됩니다.</p></div>
-            </Link>
-          ))
-        ]} />
+        <Rail label="캠페인" className={`home-campaign-rail${liveCampaigns.length === 1 ? ' is-single' : ''}`} items={liveCampaigns.map((c) => (
+          <Link key={c.id} className="home-campaign-card" href={`/campaigns/${c.slug}`}>
+            <div className="home-image"><img src={c.image ?? photos.community} width={440} height={480} loading="lazy" alt="캠페인 활동 참고 이미지" /></div>
+            <span>{campaignTypeNames[c.type]} 캠페인</span><div className="home-campaign-copy"><h3>{c.title}</h3><p>{c.description}</p></div>
+          </Link>
+        ))} />
       </div></section>
 
       <section className="home-section home-container home-guide" data-carousel="guide">
