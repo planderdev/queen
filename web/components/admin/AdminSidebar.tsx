@@ -2,15 +2,17 @@
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { SHOW_DONATIONS } from '@/lib/features';
 
-export const adminMenu: { id: string; title: string; icon: string; group: string; roles: string[]; keywords?: string }[] = [
+// donation: true 인 메뉴는 lib/features.ts의 SHOW_DONATIONS가 꺼져 있으면 숨긴다(주소로는 계속 접근 가능)
+const allAdminMenu: { id: string; title: string; icon: string; group: string; roles: string[]; keywords?: string; donation?: boolean }[] = [
   { id: '', title: '운영 대시보드', icon: 'dashboard-line', group: '운영 현황', roles: ['super', 'content', 'review', 'finance'] },
-  { id: 'donations', title: '기부 입금 확인', icon: 'receipt-line', group: '후원·정산', roles: ['super', 'finance'] },
-  { id: 'refunds', title: '취소·환불 요청', icon: 'arrow-go-back-line', group: '후원·정산', roles: ['super', 'finance'] },
-  { id: 'recurring', title: '정기기부 약정', icon: 'calendar-line', group: '후원·정산', roles: ['super', 'finance'] },
-  { id: 'fundraisers', title: '모금함 관리', icon: 'hand-heart-line', group: '모금·단체', roles: ['super', 'review'] },
-  { id: 'organizations', title: '단체 관리', icon: 'building-line', group: '모금·단체', roles: ['super', 'review'] },
-  { id: 'campaigns', title: '캠페인·참가 신청', icon: 'run-line', group: '모금·단체', roles: ['super', 'review'], keywords: '행사 기부런 참가비 입금 확인 신청자 명단' },
+  { donation: true, id: 'donations', title: '기부 입금 확인', icon: 'receipt-line', group: '후원·정산', roles: ['super', 'finance'] },
+  { donation: true, id: 'refunds', title: '취소·환불 요청', icon: 'arrow-go-back-line', group: '후원·정산', roles: ['super', 'finance'] },
+  { donation: true, id: 'recurring', title: '정기기부 약정', icon: 'calendar-line', group: '후원·정산', roles: ['super', 'finance'] },
+  { donation: true, id: 'fundraisers', title: '모금함 관리', icon: 'hand-heart-line', group: '모금·단체', roles: ['super', 'review'] },
+  { donation: true, id: 'organizations', title: '단체 관리', icon: 'building-line', group: '모금·단체', roles: ['super', 'review'] },
+  { id: 'campaigns', title: '캠페인·참가 신청', icon: 'run-line', group: '캠페인', roles: ['super', 'review'], keywords: '행사 기부런 참가비 입금 확인 신청자 명단' },
   { id: 'content', title: '콘텐츠 관리', icon: 'layout-line', group: '콘텐츠·소통', roles: ['super', 'content'] },
   { id: 'moderation', title: '댓글 및 신고', icon: 'flag-line', group: '콘텐츠·소통', roles: ['super', 'content'] },
   { id: 'inquiries', title: '문의 관리', icon: 'mail-line', group: '콘텐츠·소통', roles: ['super', 'content', 'review', 'finance'] },
@@ -18,6 +20,7 @@ export const adminMenu: { id: string; title: string; icon: string; group: string
   { id: 'settings', title: '분야·지역·계좌', icon: 'settings-line', group: '설정', roles: ['super'] },
   { id: 'logs', title: '운영 이력', icon: 'history-line', group: '설정', roles: ['super', 'content', 'review', 'finance'] }
 ];
+export const adminMenu = allAdminMenu.filter((m) => SHOW_DONATIONS || !m.donation);
 
 // 관리자 개인 설정(즐겨찾기·사이드바 접힘)은 이 브라우저에만 저장한다. 저장소가 막혀 있어도 화면은 그대로 동작한다.
 const PREF_KEY = 'qm-admin-prefs';

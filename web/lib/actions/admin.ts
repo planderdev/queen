@@ -8,6 +8,8 @@ import type { ActionResult } from '@/components/site/ActionForm';
 
 type Roles = Array<'content' | 'review' | 'finance'>;
 const str = (fd: FormData, k: string) => String(fd.get(k) ?? '').trim();
+// 관리자 화면의 datetime-local 값(YYYY-MM-DDTHH:mm)은 한국 시간으로 입력된다. 서버(UTC)에서 그대로 new Date() 하면 9시간 밀리므로 +09:00을 붙여 해석한다.
+const kst = (v: string) => new Date(/[zZ]|[+-]\d{2}:?\d{2}$/.test(v) ? v : `${v.length === 16 ? `${v}:00` : v}+09:00`);
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9가-힣]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || `item-${Date.now().toString(36)}`;
 
 async function guard(roles: Roles) {
@@ -71,11 +73,11 @@ export async function saveFundraiser(_: ActionResult, fd: FormData): Promise<Act
     if (title.length < 2) return { error: '제목을 입력해주세요.' };
     if (!str(fd, 'organization_id')) return { error: '단체를 선택해주세요.' };
     if (!Number.isSafeInteger(target) || target <= 0) return { error: '목표액을 확인해주세요.' };
-    if (!str(fd, 'start_at') || !str(fd, 'end_at') || new Date(str(fd, 'start_at')) >= new Date(str(fd, 'end_at'))) return { error: '종료일은 시작일 이후여야 합니다.' };
+    if (!str(fd, 'start_at') || !str(fd, 'end_at') || kst(str(fd, 'start_at')) >= kst(str(fd, 'end_at'))) return { error: '종료일은 시작일 이후여야 합니다.' };
     if (budget.length && budget.reduce((a, b) => a + b.amount, 0) !== target) return { error: '사용 계획 합계는 목표액과 같아야 합니다.' };
     const row = {
       title, story, category, organization_id: str(fd, 'organization_id'), image: str(fd, 'image') || null, region: str(fd, 'region') || '전국', target,
-      start_at: new Date(str(fd, 'start_at')).toISOString(), end_at: new Date(str(fd, 'end_at')).toISOString(), budget,
+      start_at: kst(str(fd, 'start_at')).toISOString(), end_at: kst(str(fd, 'end_at')).toISOString(), budget,
       review: str(fd, 'review') || 'approved', publication: str(fd, 'publication') || 'active', slug: str(fd, 'slug') || slugify(title)
     };
     const { data, error } = id ? await supabase.from('fundraisers').update(row).eq('id', id).select('id').single() : await supabase.from('fundraisers').insert(row).select('id').single();
@@ -213,5 +215,70 @@ export async function setCampaignReview(campaignId: string, review: 'approved' |
     await log(review === 'approved' ? '캠페인 공개' : '캠페인 숨김', 'campaign', campaignId);
     revalidatePath('/admin/campaigns'); revalidatePath('/campaigns'); revalidatePath('/');
     return { ok: true, message: review === 'approved' ? '캠페인을 공개했습니다.' : '캠페인을 목록에서 숨겼습니다.' };
+  });
+}
+
+// 행사 캠페인 편집·등록 (관리자). 안내 문구·질문·입금 계좌·배너 문구까지 한 화면에서 저장한다.
+const lines = (v: string) => v.split(/\r?\n/).map((x) => x.trim()).filter(Boolean);
+export async function saveCampaign(_: ActionResult, fd: FormData): Promise<ActionResult> {
+  const result = await wrap(['review'], async ({ supabase, log }) => {
+    const id = str(fd, 'id');
+    const title = str(fd, 'title');
+    if (title.length < 2) return { error: '캠페인 제목을 입력해주세요.' };
+    const start = str(fd, 'start_at'), end = str(fd, 'end_at');
+    if (!start || !end || kst(start) >= kst(end)) return { error: '신청 마감일시는 시작일시 이후여야 합니다.' };
+    const capacityRaw = str(fd, 'capacity').replace(/[^\d]/g, '');
+    const capacity = capacityRaw ? Number(capacityRaw) : null;
+    const fee = Number(str(fd, 'fee_amount').replace(/[^\d]/g, '') || 0);
+    if (capacity != null && (!Number.isSafeInteger(capacity) || capacity < 1)) return { error: '정원은 1명 이상으로 입력하거나 비워 두세요(제한 없음).' };
+    let existing: { details?: Record<string, unknown>; confirmed_count?: number } | null = null;
+    if (id) {
+      const { data } = await supabase.from('campaigns').select('details, confirmed_count').eq('id', id).maybeSingle();
+      existing = data;
+      if (capacity != null && (data?.confirmed_count ?? 0) > capacity) return { error: `이미 입금 확인된 인원(${data?.confirmed_count}명)보다 정원을 작게 할 수 없습니다.` };
+    }
+    // 질문: 한 줄에 "질문 | 보기1, 보기2, …". 기존 질문 순서의 key는 유지해 이미 받은 답변과 연결을 지킨다.
+    const oldQs = ((existing?.details?.questions as { key: string }[] | undefined) ?? []);
+    const questions = [] as { key: string; label: string; short: string; required: boolean; options: string[] }[];
+    for (const [i, line] of lines(str(fd, 'questions')).entries()) {
+      const [label, opts = ''] = line.split('|').map((x) => x.trim());
+      const options = opts.split(',').map((x) => x.trim()).filter(Boolean);
+      if (!label || options.length < 2) return { error: `질문 ${i + 1}번째 줄은 "질문 | 보기1, 보기2" 형식으로 보기를 2개 이상 적어주세요.` };
+      questions.push({ key: oldQs[i]?.key ?? `q${i + 1}`, label, short: label.replace(/\s*\(.*\)\s*$/, '').slice(0, 12), required: true, options });
+    }
+    const bank = { bank: str(fd, 'bank_bank'), account: str(fd, 'bank_account'), holder: str(fd, 'bank_holder') };
+    if (fee > 0 && (!bank.bank || !bank.account || !bank.holder)) return { error: '참가비가 있으면 입금 계좌(은행·계좌번호·예금주)를 모두 입력해주세요.' };
+    const heroHeading = lines(str(fd, 'hero_heading'));
+    const details = {
+      ...(existing?.details ?? {}),
+      intro: str(fd, 'intro'), event_name: str(fd, 'event_name'), schedule: str(fd, 'schedule'), course: str(fd, 'course'),
+      benefits: lines(str(fd, 'benefits')), agreements: lines(str(fd, 'agreements')), complete: str(fd, 'complete'), questions,
+      bank: bank.bank || bank.account ? bank : undefined,
+      hero: heroHeading.length ? { heading: heroHeading, description: lines(str(fd, 'hero_description')), cta: str(fd, 'hero_cta') || undefined } : undefined
+    };
+    const row = {
+      title, description: str(fd, 'description'), partner_name: str(fd, 'partner_name'), image: str(fd, 'image') || null, type: 'event',
+      slug: str(fd, 'slug') || slugify(title), review: str(fd, 'review') === 'approved' ? 'approved' : 'draft', registration_open: fd.get('registration_open') === 'on',
+      start_at: kst(start).toISOString(), end_at: kst(end).toISOString(), capacity, fee_amount: fee, details, limit_amount: 0, rate: 1
+    };
+    const { data, error } = id ? await supabase.from('campaigns').update(row).eq('id', id).select('id, slug').single() : await supabase.from('campaigns').insert(row).select('id, slug').single();
+    if (error) return { error: error.code === '23505' ? '이미 사용 중인 주소(슬러그)입니다.' : error.message };
+    await log(id ? '캠페인 수정' : '캠페인 등록', 'campaign', data.id, { title });
+    revalidatePath('/admin/campaigns'); revalidatePath('/campaigns', 'layout'); revalidatePath('/');
+    return { ok: true, message: '캠페인을 저장했습니다.', ...(id ? {} : { redirect: `/admin/campaigns/${data.id}` }) } as ActionResult & { redirect?: string };
+  });
+  if ((result as { redirect?: string }).redirect) redirect((result as { redirect: string }).redirect);
+  return result;
+}
+
+// 신청자 메모 (환불 완료·대리 신청 등 운영 메모). 빈 값이면 지운다.
+export async function setRegistrationNote(id: string, note: string): Promise<ActionResult> {
+  return wrap(['review'], async ({ supabase, log }) => {
+    const value = note.trim().slice(0, 200) || null;
+    const { error } = await supabase.from('campaign_registrations').update({ note: value }).eq('id', id);
+    if (error) return { error: '메모를 저장하지 못했습니다.' };
+    await log('참가 신청 메모', 'campaign_registration', id, { note: value });
+    revalidatePath('/admin/campaigns');
+    return { ok: true, message: value ? '메모를 저장했습니다.' : '메모를 지웠습니다.' };
   });
 }

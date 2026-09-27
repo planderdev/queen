@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { adminCampaigns, adminRegistrations } from '@/lib/data/admin';
 import { date, dateTime, campaignTypeNames } from '@/lib/format';
 import { AdminBadge } from '@/components/admin/AdminUI';
-import { ActionButton } from '@/components/admin/AdminActions';
-import { setCampaignReview, setRegistrationOpen, setRegistrationStatus } from '@/lib/actions/admin';
+import { ActionButton, NoteAction } from '@/components/admin/AdminActions';
+import { setCampaignReview, setRegistrationNote, setRegistrationOpen, setRegistrationStatus } from '@/lib/actions/admin';
 import type { Campaign, CampaignRegistration } from '@/lib/data/types';
 
 export const metadata = { title: '캠페인·참가 신청' };
@@ -83,6 +83,7 @@ function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; ev
               <button type="submit" className="button small secondary">이동</button>
             </form>
           )}
+          <Link className="button small secondary" href={`/admin/campaigns/${c.id}`}><i className="ri-edit-line" aria-hidden="true"></i> 캠페인 편집</Link>
           <a className="button small secondary" href={`/campaigns/${c.slug}`} target="_blank" rel="noopener">사이트에서 보기 <i className="ri-external-link-line" aria-hidden="true"></i></a>
           <ActionButton label={c.registration_open ? '신청 마감' : '신청 재개'} className="button small secondary" confirmText={c.registration_open ? '신규 참가 신청을 마감할까요? 이미 받은 신청은 그대로 남습니다.' : undefined} onRun={setRegistrationOpen.bind(null, c.id, !c.registration_open)} />
           <ActionButton label={c.review === 'approved' ? '숨기기' : '공개'} className="button small secondary" onRun={setCampaignReview.bind(null, c.id, c.review === 'approved' ? 'draft' : 'approved')} />
@@ -147,6 +148,7 @@ function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; ev
                       {r.status === 'confirmed' && <ActionButton label="확인 취소" className="button small secondary" confirmText="입금 확인을 취소하고 대기 상태로 되돌릴까요? 모집 인원이 1명 줄어듭니다." onRun={setRegistrationStatus.bind(null, r.id, 'pending')} />}
                       {r.status !== 'cancelled' && <ActionButton label="신청 취소" className="button small ghost qa-danger" confirmText="이 신청을 취소 처리할까요?" onRun={setRegistrationStatus.bind(null, r.id, 'cancelled')} />}
                       {r.status === 'cancelled' && <ActionButton label="복구" className="button small secondary" onRun={setRegistrationStatus.bind(null, r.id, 'pending')} />}
+                      <NoteAction note={r.note} onRun={setRegistrationNote.bind(null, r.id)} />
                     </span></td>
                   </tr>
                 ))}
@@ -167,7 +169,7 @@ function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; ev
 function CampaignList({ campaigns }: { campaigns: Campaign[] }) {
   return (
     <div className="qa-roster">
-      <header className="qa-head"><div className="qa-head-copy"><p className="qa-eyebrow">캠페인</p><h1>전체 캠페인</h1><p className="qa-meta">사이트 공개 여부와 행사 신청 접수를 관리합니다.</p></div></header>
+      <header className="qa-head"><div className="qa-head-copy"><p className="qa-eyebrow">캠페인</p><h1>전체 캠페인</h1><p className="qa-meta">사이트 공개 여부와 행사 신청 접수를 관리합니다.</p></div><div className="qa-head-actions"><Link className="button small primary" href="/admin/campaigns/new"><i className="ri-add-line" aria-hidden="true"></i> 새 행사 캠페인</Link></div></header>
       <section className="qa-board">
         {campaigns.length ? (
           <div className="data-table-wrap admin-table-scroll qa-table-wrap" tabIndex={0}>
@@ -181,6 +183,7 @@ function CampaignList({ campaigns }: { campaigns: Campaign[] }) {
                   <td className="qa-nowrap">{c.type === 'event' ? `입금 확인 ${c.confirmed_count ?? 0}${c.capacity != null ? ` / ${c.capacity}명` : '명'} · 신청 ${c.registrations ?? 0}명` : `응원 ${c.participations ?? 0}명`}</td>
                   <td className="qa-col-actions"><span className="qa-actions">
                     {c.type === 'event' && <Link className="button small primary" href={`/admin/campaigns?id=${c.id}`}>신청자 명단</Link>}
+                    {c.type === 'event' && <Link className="button small secondary" href={`/admin/campaigns/${c.id}`}>편집</Link>}
                     <ActionButton label={c.review === 'approved' ? '숨기기' : '공개'} className="button small secondary" onRun={setCampaignReview.bind(null, c.id, c.review === 'approved' ? 'draft' : 'approved')} />
                     <a className="button small ghost" href={`/campaigns/${c.slug}`} target="_blank" rel="noopener">보기</a>
                   </span></td>

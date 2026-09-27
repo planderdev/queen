@@ -173,3 +173,24 @@ body[data-page="admin"] .admin-work-summary { border-color: var(--admin-line); b
 body[data-page="admin"] .admin-work-summary a:hover { background: #fceff1; }
 body[data-page="admin"] .admin-dashboard-section { border: 1px solid var(--admin-line); background: #fff; }
 body[data-page="admin"] .admin-dashboard-section h2 a { color: #bc2b44; }
+
+/* 캠페인 편집 폼 */
+body[data-page="admin"] .qa-editor { gap: 14px; }
+body[data-page="admin"] .qa-form-title { margin: 12px 0 0; padding-top: 18px; border-top: 1px solid var(--admin-line); font-size: 15px; line-height: 22px; font-weight: 700; color: var(--admin-ink); }
+body[data-page="admin"] .qa-form-title:first-of-type { margin-top: 0; padding-top: 0; border-top: 0; }
+body[data-page="admin"] .qa-help { margin: -4px 0 0; font-size: 12px; line-height: 18px; color: var(--admin-muted); }
+body[data-page="admin"] .qa-image-preview { width: 240px; height: auto; aspect-ratio: 16/9; object-fit: cover; border-radius: var(--admin-radius); border: 1px solid var(--admin-line); }
+body[data-page="admin"] .qa-editor .field-grid.qa-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { body[data-page="admin"] .qa-editor .field-grid.qa-grid-3 { grid-template-columns: 1fr; } }
+body[data-page="admin"] .qa-editor .checkbox { font-size: 13px; }
+body[data-page="admin"] .qa-editor .checkbox input { accent-color: #d73b50; }
+body[data-page="admin"] .qa-editor textarea { min-height: 0; line-height: 22px; }
+/* 신청자 메모: 아이콘 버튼 + 떠 있는 입력 패널 */
+body[data-page="admin"] .qa-note { position: relative; display: inline-flex; }
+body[data-page="admin"] .qa-note-btn { width: 32px; padding: 0; justify-content: center; }
+body[data-page="admin"] .qa-note-btn i { font-size: 16px; }
+body[data-page="admin"] .qa-note-btn.has-note { color: #bc2b44; }
+body[data-page="admin"] .qa-note-panel { position: fixed; z-index: 30; display: grid; gap: 8px; width: 300px; padding: 12px; background: #fff; border: 1px solid var(--admin-line); border-radius: 12px; box-shadow: 0 12px 32px rgba(23, 23, 25, .14); text-align: left; }
+body[data-page="admin"] .qa-note-panel input { width: 100%; height: 36px; padding: 0 10px; border: 1px solid var(--admin-line); border-radius: 8px; font: inherit; font-size: 13px; }
+body[data-page="admin"] .qa-note-panel input:focus { outline: none; border-color: #d73b50; box-shadow: 0 0 0 3px #fceff1; }
+body[data-page="admin"] .qa-note-actions { display: flex; justify-content: flex-end; gap: 6px; }
