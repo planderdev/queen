@@ -27,3 +27,11 @@ export function sortRows<T>(rows: T[], get: ((r: T) => string | number | null | 
 }
 
 export const includesQ = (q: string, ...values: (string | null | undefined)[]) => !q || values.some((v) => (v ?? '').toLowerCase().replace(/-/g, '').includes(q.toLowerCase().replace(/-/g, '')));
+
+// 정렬 키 이름으로 사람이 읽기 쉬운 방향 문구를 만든다
+export function sortLabel(key: string, label: string, dir: SortDir) {
+  if (key === 'no') return dir === 'asc' ? '먼저 신청한 순' : '나중에 신청한 순';
+  if (/created|time|next|end/.test(key)) return `${label} · ${dir === 'desc' ? '최신순' : '오래된순'}`;
+  if (/amount|target/.test(key)) return `${label} · ${dir === 'desc' ? '높은순' : '낮은순'}`;
+  return `${label} · ${dir === 'asc' ? '오름차순' : '내림차순'}`;
+}

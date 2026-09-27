@@ -5,6 +5,8 @@ import { AdminBadge } from '@/components/admin/AdminUI';
 import { ActionButton, NoteAction } from '@/components/admin/AdminActions';
 import { setCampaignReview, setRegistrationNote, setRegistrationOpen, setRegistrationStatus } from '@/lib/actions/admin';
 import type { Campaign, CampaignRegistration } from '@/lib/data/types';
+import { SortSelect } from '@/components/admin/SortSelect';
+import { sortLabel } from '@/lib/admin-list';
 
 export const metadata = { title: '캠페인·참가 신청' };
 
@@ -117,6 +119,7 @@ function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; ev
             <input id="qa-q" name="q" type="search" defaultValue={q} placeholder="성함·연락처·이메일·입금자명" />
             {q && <Link className="qa-search-clear" href={href({ q: '' })} aria-label="검색 지우기"><i className="ri-close-line" aria-hidden="true"></i></Link>}
           </form>
+          <SortSelect current={href({ sort, dir })} options={[['no', 'No.'], ['name', '성함'], ['depositor', '입금자명'], ...questions.map((qq): [string, string] => [`q_${qq.key}`, qq.short ?? qq.label]), ['age', '성별·연령'], ['status', '상태']].flatMap(([k, l]) => (['asc', 'desc'] as const).map((d): [string, string] => [href({ sort: k, dir: d }), sortLabel(k, l, d)]))} />
         </div>
 
         {rows.length ? (

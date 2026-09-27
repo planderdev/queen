@@ -2,6 +2,8 @@ import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { statusNames, statusTone } from '@/lib/format';
 import type { SortDir } from '@/lib/admin-list';
+import { SortSelect } from './SortSelect';
+import { sortLabel } from '@/lib/admin-list';
 
 const toneClass: Record<string, string> = { olive: 'status-approved', blue: 'status-received', lavender: 'status-draft', orange: 'status-pending', rose: 'status-rejected' };
 
@@ -31,9 +33,11 @@ export function AdminTable({ headers, rows, empty = '표시할 내역이 없습�
 }) {
   const cols = headers.map((h) => (typeof h === 'string' ? { label: h } : h));
   const last = cols.length - 1;
+  const sortOptions: [string, string][] = sort ? cols.filter((c) => c.key).flatMap((c) => ((/created|time|next|end|amount|target/.test(c.key!) ? ['desc', 'asc'] : ['asc', 'desc']) as SortDir[]).map((d): [string, string] => [sort.href(c.key!, d), sortLabel(c.key!, c.label, d)])) : [];
+  const currentSort = sort ? sort.href(sort.key, sort.dir) : '';
   return (
     <section className="qa-board">
-      {(tabs || search) && (
+      {(tabs || search || sortOptions.length > 0) && (
         <div className="qa-toolbar">
           {tabs ? <nav className="qa-tabs" aria-label={tabs.label ?? '상태'}>{tabs.items.map((t) => <Link key={t.value || 'all'} href={tabs.href(t.value)} aria-current={tabs.current === t.value ? 'page' : undefined}>{t.label}{t.count != null && <span>{t.count}</span>}</Link>)}</nav> : <span />}
           {search && (
@@ -45,6 +49,7 @@ export function AdminTable({ headers, rows, empty = '표시할 내역이 없습�
               {search.value && <Link className="qa-search-clear" href={search.clearHref} aria-label="검색 지우기"><i className="ri-close-line" aria-hidden="true"></i></Link>}
             </form>
           )}
+          {sortOptions.length > 0 && <SortSelect options={sortOptions} current={currentSort} />}
         </div>
       )}
       {rows.length ? (
