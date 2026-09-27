@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, BookOpen, Globe, HandHeart, Megaphone, MessageCircleMore, NotebookPen, Plus } from 'lucide-react';
 import { repo } from '@/lib/data';
+import { SHOW_DONATIONS } from '@/lib/features';
 import { campaignTypeNames } from '@/lib/format';
 import { HeroSlider, type HeroSlide } from '@/components/site/HeroSlider';
 import { Rail } from '@/components/site/Rail';
@@ -17,8 +18,6 @@ function SectionHeading({ eyebrow, heading, href }: { eyebrow: string; heading: 
   );
 }
 
-// 후원(정기·일시) 안내 영역 노출 여부 — 배너 아래 박스와 후원안내 섹션을 함께 켜고 끈다
-const SHOW_DONATION_CALLOUT = false;
 
 export default async function HomePage() {
   const [stories, campaigns, notices, banners] = await Promise.all([
@@ -48,8 +47,8 @@ export default async function HomePage() {
       <HeroSlider slides={eventSlides.length ? eventSlides : [
         { image: photos.community, scrim: true, heading: ['작은 나눔이 모여,', '더 큰 변화를 만듭니다.'], description: ['진행 중인 캠페인을 만나보세요.'], href: '/campaigns', cta: '캠페인 보기' }
       ]} />
-      {/* 2026-09-26 요청: 배너 아래 정기후원·일시후원 안내 박스 숨김 (후원 메뉴를 숨긴 기간). 다시 보이려면 SHOW_DONATION_CALLOUT를 true로 */}
-      {SHOW_DONATION_CALLOUT && (
+      {/* 2026-09-26 요청: 배너 아래 정기후원·일시후원 안내 박스 숨김 (후원 메뉴를 숨긴 기간). 다시 보이려면 lib/features.ts의 SHOW_DONATIONS를 true로 */}
+      {SHOW_DONATIONS && (
       <aside className="home-donation-callout">
           <div><h2>당신의 마음이 변화의 시작입니다</h2><p>오늘의 나눔으로 더 나은 내일을 함께 만들어요.</p></div>
           <div className="home-donation-actions"><Link className="button primary" href="/monthly">정기후원 <ArrowRight aria-hidden="true" /></Link><Link className="button secondary" href="/donate">일시후원 <ArrowRight aria-hidden="true" /></Link></div>
@@ -94,7 +93,7 @@ export default async function HomePage() {
       </div></section>
 
       {/* 후원안내(정기·일시·기업후원) 섹션도 후원 메뉴를 숨긴 기간 동안 숨김 */}
-      {SHOW_DONATION_CALLOUT && (
+      {SHOW_DONATIONS && (
       <section className="home-section home-container home-guide" data-carousel="guide">
           <div><SectionHeading eyebrow="후원안내" heading={'후원이 처음\n이신가요?'} /><p>나에게 맞는 방법으로<br />나눔의 첫걸음을 함께해요.</p><Link className="home-text-link" href="/support">후원 안내 <ArrowRight aria-hidden="true" /></Link></div>
           <Rail label="후원안내" className="home-guide-rail" items={guide.map(([label, description, image, href]) => (

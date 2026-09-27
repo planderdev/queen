@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { Search } from 'lucide-react';
+import { ArrowRight, Search } from 'lucide-react';
 import { repo } from '@/lib/data';
 import { date } from '@/lib/format';
 import { PageBanner } from '@/components/site/PageBanner';
@@ -29,7 +29,7 @@ export default async function StoriesPage({ searchParams }: { searchParams: Prom
           {items.map((c) => (
             <article className="community-story-card" key={c.id}><Link href={`/stories/${c.slug ?? c.id}`}>
               <div className="community-story-image"><img src={c.image ?? '/assets/images/community.jpg'} alt={`${c.category} 활동 참고 이미지`} loading="lazy" width={600} height={400} /></div>
-              <div className="community-story-copy"><span className="community-kicker">{c.category ?? '나눔 소식'}</span><h2>{c.title}</h2><p className="community-muted">{date(c.created_at)}</p></div>
+              <div className="community-story-copy"><span className="community-kicker">{c.category ?? '나눔 소식'}</span><h2>{c.title}</h2><p className="community-story-excerpt">{c.body.replace(/\s+/g, ' ').slice(0, 140)}{c.body.length > 140 ? '…' : ''}</p><p className="community-story-meta"><span className="community-muted">{date(c.created_at)}</span><span className="community-story-more">이야기 읽기 <ArrowRight aria-hidden="true" /></span></p></div>
             </Link></article>
           ))}
         </div>
