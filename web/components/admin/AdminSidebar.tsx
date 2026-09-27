@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type ReactNode } from 'react';
 import { SHOW_DONATIONS } from '@/lib/features';
 
 // donation: true 인 메뉴는 lib/features.ts의 SHOW_DONATIONS가 꺼져 있으면 숨긴다(주소로는 계속 접근 가능)
@@ -28,7 +28,7 @@ type Prefs = { favorites: string[]; collapsed: boolean };
 const readPrefs = (): Prefs => { try { const v = JSON.parse(localStorage.getItem(PREF_KEY) ?? '{}'); return { favorites: Array.isArray(v.favorites) ? v.favorites : [], collapsed: Boolean(v.collapsed) }; } catch { return { favorites: [], collapsed: false }; } };
 const writePrefs = (p: Prefs) => { try { localStorage.setItem(PREF_KEY, JSON.stringify(p)); } catch { /* 저장 불가 환경은 무시 */ } };
 
-export function AdminSidebar({ adminRole }: { adminRole: string }) {
+export function AdminSidebar({ adminRole, account }: { adminRole: string; account?: ReactNode }) {
   const pathname = usePathname();
   const [prefs, setPrefs] = useState<Prefs>({ favorites: [], collapsed: false });
   useEffect(() => { setPrefs(readPrefs()); }, []);
@@ -42,7 +42,7 @@ export function AdminSidebar({ adminRole }: { adminRole: string }) {
   const toggleFavorite = (id: string) => update({ ...prefs, favorites: prefs.favorites.includes(key(id)) ? prefs.favorites.filter((f) => f !== key(id)) : [...prefs.favorites, key(id)] });
   const link = (m: (typeof adminMenu)[number]) => <Link href={`/admin/${m.id}`} aria-current={active(m.id) ? 'page' : undefined} title={m.title}><i className={`ri-${m.icon}`} aria-hidden="true"></i><span>{m.title}</span></Link>;
   return (
-    <aside className={`admin-sidebar${prefs.collapsed ? ' is-collapsed' : ''}`}>
+    <aside id="admin-drawer" className={`admin-sidebar${prefs.collapsed ? ' is-collapsed' : ''}`}>
       <button type="button" className="admin-collapse" aria-expanded={!prefs.collapsed} aria-label={prefs.collapsed ? '사이드바 펼치기' : '사이드바 접기'} onClick={() => update({ ...prefs, collapsed: !prefs.collapsed })}><i className="ri-side-bar-line" aria-hidden="true"></i><span>업무 메뉴</span></button>
       <div className="admin-favorites"><h2>즐겨찾기</h2>
         {favorites.length ? favorites.map((m) => <div className="admin-menu-item" key={m.id}>{link(m)}</div>) : <small>별표로 메뉴를 추가하세요.</small>}
@@ -55,6 +55,7 @@ export function AdminSidebar({ adminRole }: { adminRole: string }) {
           })}
         </nav></details>
       ))}
+      {account && <div className="admin-drawer-account">{account}</div>}
     </aside>
   );
 }
@@ -84,5 +85,24 @@ export function AdminMenuSearch({ adminRole }: { adminRole: string }) {
         </div>
       )}
     </div>
+  );
+}
+
+// 모바일(768px 이하) 메뉴 버튼: 사이드바를 서랍처럼 연다. 페이지 이동·배경 클릭·Esc로 닫힌다.
+export function AdminDrawerToggle() {
+  const pathname = usePathname();
+  const [open, setOpen] = useState(false);
+  useEffect(() => { setOpen(false); }, [pathname]);
+  useEffect(() => {
+    document.body.classList.toggle('admin-drawer-open', open);
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('keydown', onKey); document.body.classList.remove('admin-drawer-open'); };
+  }, [open]);
+  return (
+    <>
+      <button type="button" className="admin-drawer-toggle" aria-expanded={open} aria-controls="admin-drawer" aria-label={open ? '메뉴 닫기' : '메뉴 열기'} onClick={() => setOpen((v) => !v)}><i className={open ? 'ri-close-line' : 'ri-menu-line'} aria-hidden="true"></i></button>
+      {open && <div className="admin-drawer-backdrop" onClick={() => setOpen(false)} aria-hidden="true" />}
+    </>
   );
 }

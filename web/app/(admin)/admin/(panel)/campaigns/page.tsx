@@ -135,13 +135,13 @@ function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; ev
               <tbody>
                 {rows.map((r) => (
                   <tr key={r.id} className={`is-${r.status}`}>
-                    <td className="qa-col-no">{r.no}</td>
-                    <td className="qa-nowrap" title={dateTime(r.created_at)}>{shortTime(r.created_at)}</td>
-                    <td><b>{r.name}</b><small>{r.phone ?? '—'} · {r.email}{r.user_id ? ' · 회원' : ''}</small></td>
-                    <td>{r.depositor_name || r.name}</td>
-                    {questions.map((qq) => <td key={qq.key} className="qa-nowrap">{r.answers?.[qq.key] ?? '—'}</td>)}
-                    <td className="qa-nowrap">{[r.gender, r.age_group].filter(Boolean).join(' · ') || '—'}</td>
-                    <td className="qa-nowrap"><AdminBadge value={r.status} label={STATUS_LABEL[r.status]} />{r.note && <small title={r.note}>{r.note}</small>}</td>
+                    <td className="qa-col-no" data-label="No.">{r.no}</td>
+                    <td className="qa-nowrap qa-cell-time" data-label="신청일시" title={dateTime(r.created_at)}>{shortTime(r.created_at)}</td>
+                    <td className="qa-cell-name" data-label="성함"><b>{r.name}</b><small>{r.phone ?? '—'} · {r.email}{r.user_id ? ' · 회원' : ''}</small></td>
+                    <td data-label="입금자명">{r.depositor_name || r.name}</td>
+                    {questions.map((qq) => <td key={qq.key} className="qa-nowrap" data-label={qq.short ?? qq.label}>{r.answers?.[qq.key] ?? '—'}</td>)}
+                    <td className="qa-nowrap" data-label="성별·연령">{[r.gender, r.age_group].filter(Boolean).join(' · ') || '—'}</td>
+                    <td className="qa-nowrap qa-cell-status" data-label="상태"><AdminBadge value={r.status} label={STATUS_LABEL[r.status]} />{r.note && <small title={r.note}>{r.note}</small>}</td>
                     <td className="qa-col-actions"><span className="qa-actions">
                       {r.status === 'pending' && !full && <ActionButton label="입금 확인" onRun={setRegistrationStatus.bind(null, r.id, 'confirmed')} />}
                       {r.status === 'pending' && full && <span className="badge status-draft">정원 마감</span>}
@@ -176,11 +176,11 @@ function CampaignList({ campaigns }: { campaigns: Campaign[] }) {
             <table className="data-table qa-table"><thead><tr><th scope="col">캠페인</th><th scope="col">유형</th><th scope="col">기간</th><th scope="col">공개</th><th scope="col">모집 현황</th><th scope="col" className="qa-col-actions">처리</th></tr></thead>
               <tbody>{campaigns.map((c) => (
                 <tr key={c.id}>
-                  <td><b>{c.title}</b><small>{c.partner_name}</small></td>
-                  <td className="qa-nowrap">{campaignTypeNames[c.type] ?? c.type}</td>
-                  <td className="qa-nowrap">{date(c.start_at)} ~ {date(c.end_at)}</td>
-                  <td><AdminBadge value={c.review === 'approved' ? 'approved' : 'draft'} /></td>
-                  <td className="qa-nowrap">{c.type === 'event' ? `입금 확인 ${c.confirmed_count ?? 0}${c.capacity != null ? ` / ${c.capacity}명` : '명'} · 신청 ${c.registrations ?? 0}명` : `응원 ${c.participations ?? 0}명`}</td>
+                  <td className="qa-cell-name" data-label="캠페인"><b>{c.title}</b><small>{c.partner_name}</small></td>
+                  <td className="qa-nowrap" data-label="유형">{campaignTypeNames[c.type] ?? c.type}</td>
+                  <td className="qa-nowrap" data-label="기간">{date(c.start_at)} ~ {date(c.end_at)}</td>
+                  <td data-label="공개"><AdminBadge value={c.review === 'approved' ? 'approved' : 'draft'} /></td>
+                  <td className="qa-nowrap" data-label="모집 현황">{c.type === 'event' ? `입금 확인 ${c.confirmed_count ?? 0}${c.capacity != null ? ` / ${c.capacity}명` : '명'} · 신청 ${c.registrations ?? 0}명` : `응원 ${c.participations ?? 0}명`}</td>
                   <td className="qa-col-actions"><span className="qa-actions">
                     {c.type === 'event' && <Link className="button small primary" href={`/admin/campaigns?id=${c.id}`}>신청자 명단</Link>}
                     {c.type === 'event' && <Link className="button small secondary" href={`/admin/campaigns/${c.id}`}>편집</Link>}

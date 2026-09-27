@@ -61,7 +61,7 @@ export function AdminTable({ headers, rows, empty = '표시할 내역이 없습�
                 </th>
               );
             })}</tr></thead>
-            <tbody>{rows.map((r, i) => <tr key={i} className={rowClass?.(i)}>{r.map((c, j) => <td key={j} className={j === last && !cols[j]?.key ? 'qa-col-actions' : cols[j]?.className}>{c}</td>)}</tr>)}</tbody>
+            <tbody>{rows.map((r, i) => <tr key={i} className={rowClass?.(i)}>{r.map((c, j) => <td key={j} data-label={cols[j]?.label} className={j === last && !cols[j]?.key ? 'qa-col-actions' : cols[j]?.className}>{c}</td>)}</tr>)}</tbody>
           </table>
         </div>
       ) : (

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { redirect } from 'next/navigation';
 import { getSession } from '@/lib/auth';
 import { hasSupabase } from '@/lib/env';
-import { AdminMenuSearch, AdminSidebar } from '@/components/admin/AdminSidebar';
+import { AdminDrawerToggle, AdminMenuSearch, AdminSidebar } from '@/components/admin/AdminSidebar';
 import { adminSignOut } from '@/lib/actions/auth';
 
 // 운영 관리 셸. 관리자가 아니면 사이트가 아닌 관리자 로그인으로 보낸다 (proxy.ts와 이중 확인).
@@ -13,6 +13,7 @@ export default async function AdminPanelLayout({ children }: { children: ReactNo
   return (
     <>
       <header className="workspace-header admin-topbar">
+        <AdminDrawerToggle />
         <Link className="workspace-brand" href="/admin"><strong>퀸만덕</strong><span>운영 관리</span></Link>
         <AdminMenuSearch adminRole={session?.profile.admin_role ?? 'super'} />
         <nav aria-label="관리자 상단 메뉴">
@@ -23,7 +24,13 @@ export default async function AdminPanelLayout({ children }: { children: ReactNo
         </nav>
       </header>
       <main id="main" tabIndex={-1}>
-        <div className="admin-shell"><AdminSidebar adminRole={session?.profile.admin_role ?? 'super'} /><div className="admin-main">{children}</div></div>
+        <div className="admin-shell"><AdminSidebar adminRole={session?.profile.admin_role ?? 'super'} account={
+          <>
+            <p><b>{session?.profile.name ?? '미리보기'}</b><span>{session ? `관리자 · ${session.profile.admin_role ?? ''}` : '데이터베이스 연결 전'}</span></p>
+            <a className="button small secondary" href="/" target="_blank" rel="noopener">사이트 보기 <i className="ri-external-link-line" aria-hidden="true"></i></a>
+            {session && <form action={adminSignOut}><button type="submit" className="button small ghost">로그아웃</button></form>}
+          </>
+        } /><div className="admin-main">{children}</div></div>
       </main>
       <footer className="workspace-footer"><span>퀸만덕 · 관리자{!hasSupabase && ' · 미리보기 모드(데이터베이스 연결 전)'}</span></footer>
     </>
