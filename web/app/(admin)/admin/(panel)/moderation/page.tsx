@@ -23,7 +23,7 @@ export default async function AdminModerationPage({ searchParams }: { searchPara
         headers={[{ label: '신고일', key: 'created' }, '신고 댓글', '신고자', '사유', { label: '상태', key: 'status' }, '처리']}
         rows={rows.map((r) => [
           <span key="t" className="qa-nowrap">{dateTime(r.created_at)}</span>, <><span className="qa-clamp">{r.comment?.body ?? '(삭제된 댓글)'}</span>{r.comment?.hidden && <small>현재 숨김</small>}</>, r.profile?.name ?? '—', r.reason, <AdminBadge key="s" value={r.status} label={r.status === 'requested' ? '검토 대기' : undefined} />,
-          r.status === 'requested' ? <span key="x" className="qa-actions"><ReasonAction label="숨김" onRun={(reason) => moderateComment(r.id, true, reason)} /><ReasonAction label="유지" className="button small secondary" onRun={(reason) => moderateComment(r.id, false, reason)} /></span> : <small key="x">{r.resolution}</small>
+          r.status === 'requested' ? <span key="x" className="qa-actions"><ReasonAction label="숨김" onRun={moderateComment.bind(null, r.id, true)} /><ReasonAction label="유지" className="button small secondary" onRun={moderateComment.bind(null, r.id, false)} /></span> : <small key="x">{r.resolution}</small>
         ])}
         empty="조건에 맞는 신고가 없습니다." />
     </>

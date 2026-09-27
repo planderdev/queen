@@ -26,7 +26,7 @@ export default async function AdminRefundsPage({ searchParams }: { searchParams:
           <span key="t" className="qa-nowrap">{dateTime(r.created_at)}</span>, r.profile?.name ?? '—',
           <><b>{r.donation?.number}</b><small>{(r.donation as unknown as { fundraiser?: { title: string } | null })?.fundraiser?.title.replace(/\n/g, ' ')}</small></>,
           <b key="a" className="qa-nowrap">{r.donation ? money(r.donation.amount) : '—'}</b>, r.reason, <AdminBadge key="s" value={r.status} />,
-          r.status === 'requested' ? <span key="x" className="qa-actions"><ReasonAction label="승인" onRun={(reason) => resolveRefund(r.id, 'approved', reason)} /><ReasonAction label="반려" className="button small secondary" onRun={(reason) => resolveRefund(r.id, 'rejected', reason)} /></span> : <small key="x">{r.review_reason}</small>
+          r.status === 'requested' ? <span key="x" className="qa-actions"><ReasonAction label="승인" onRun={resolveRefund.bind(null, r.id, 'approved')} /><ReasonAction label="반려" className="button small secondary" onRun={resolveRefund.bind(null, r.id, 'rejected')} /></span> : <small key="x">{r.review_reason}</small>
         ])}
         empty="조건에 맞는 환불 요청이 없습니다."
       />
