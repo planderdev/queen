@@ -25,7 +25,10 @@ export default async function SupportPage({ searchParams }: { searchParams: Prom
     const cats = [...new Set(faqs.map((f) => f.category ?? '기타'))];
     const filtered = faqs.filter((f) => (!category || (f.category ?? '기타') === category) && (!search || `${f.title} ${f.body}`.includes(search)));
     const url = (v: Record<string, string>) => `/support?${new URLSearchParams(Object.entries({ view: 'faq', category, search, ...v }).filter(([, x]) => x))}`;
-    body = (
+    // 아직 자주 묻는 질문이 없으면 분류·검색 대신 1:1 문의 안내
+    body = !faqs.length ? (
+      <EmptyResult title="자주 묻는 질문을 정리하고 있어요" text="궁금한 점을 1:1 문의로 남겨주시면 확인 후 답변드릴게요." action={<Link className="button secondary" href="/support?view=inquiry">1:1 문의하기</Link>} />
+    ) : (
       <>
         <div className="community-intro"><h2>무엇이 궁금하신가요?</h2><p>자주 묻는 질문에서 빠르게 확인해 보세요.</p></div>
         <Tabs items={[['', '전체', url({ category: '' })], ...cats.map((c) => [c, c, url({ category: c })] as [string, string, string])]} current={category} label="게시물 분류" />

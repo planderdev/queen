@@ -22,6 +22,8 @@ export default async function StoriesPage({ searchParams }: { searchParams: Prom
     <>
       <PageBanner page="stories" />
       <div className="container community-page">
+        {/* 아직 나눔이야기가 없으면 분류·검색 대신 준비 중 안내 */}
+        {!all.length ? <EmptyResult title="첫 나눔이야기를 준비하고 있어요" text="캠페인과 행사가 끝나면, 여러분의 마음이 어떻게 전해졌는지 이곳에서 들려드릴게요." action={<Link className="button secondary" href="/campaigns">진행 중인 캠페인 보기</Link>} /> : <>
         <Tabs items={[['', '전체', url({ category: '' })], ...cats.map((c) => [c, c, url({ category: c })] as [string, string, string])]} current={category} label="게시물 분류" />
         <div className="community-toolbar"><p>전체 <strong>{filtered.length}</strong>건</p>
           <form className="community-search" action="/stories" role="search"><input type="hidden" name="category" value={category} /><label><span className="qm-sr-only">제목 또는 내용 검색</span><input type="search" name="search" defaultValue={search} placeholder="검색어를 입력해 주세요" /></label><button type="submit" aria-label="검색"><Search aria-hidden="true" /></button></form></div>
@@ -35,6 +37,7 @@ export default async function StoriesPage({ searchParams }: { searchParams: Prom
         </div>
         {!filtered.length && <EmptyResult />}
         <CommunityPagination page={page} pages={pages} href={(n) => url({ page: String(n) })} />
+        </>}
       </div>
     </>
   );

@@ -55,6 +55,8 @@ export default async function HomePage() {
         </aside>
       )}
 
+      {/* 나눔이야기가 아직 없으면 섹션을 숨긴다 */}
+      {stories.length > 0 && (
       <section className="home-section home-container" data-carousel="stories">
         <SectionHeading eyebrow="나눔이야기" heading="나눔이 만들어낸 놀라운 변화" href="/stories" />
         <Rail label="나눔이야기" className="home-story-rail" items={stories.map((st) => (
@@ -64,6 +66,7 @@ export default async function HomePage() {
           </Link>
         ))} />
       </section>
+      )}
 
       <section className="home-transparency"><div className="home-container">
         <div className="home-centered-heading"><SectionHeading eyebrow="투명한 나눔" heading="퀸만덕을 소개합니다" /></div>
@@ -118,11 +121,15 @@ export default async function HomePage() {
           <div className="home-news-list">
             {notices.map((n) => <Link key={n.id} href={`/support/notices/${n.slug ?? n.id}`}><span className="home-news-category">공지사항</span><h3>{n.title}</h3><span className="home-news-date">안내</span></Link>)}
             {stories.slice(0, 3).map((st) => <Link key={st.id} href={`/stories/${st.slug ?? st.id}`}><span className="home-news-category">나눔이야기</span><h3>{st.title}</h3><span className="home-news-date">리포트</span></Link>)}
+            {/* 소식이 적을 때는 진행 중인 캠페인으로 목록을 채운다 */}
+            {liveCampaigns.slice(0, Math.max(0, 4 - notices.length - Math.min(3, stories.length))).map((c) => <Link key={c.id} href={`/campaigns/${c.slug}`}><span className="home-news-category">캠페인</span><h3>{c.title}</h3><span className="home-news-date">{campaignTypeNames[c.type]}</span></Link>)}
           </div>
           <div className="home-promos">
             {/* 현재 열려 있는 메뉴(캠페인·소식)에 맞춘 바로가기 */}
             <Link href="/campaigns"><div><span>나눔 캠페인</span><h3>함께 참여하는 캠페인</h3></div><Megaphone aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
-            <Link href="/stories"><div><span>나눔이야기</span><h3>마음이 전해진 그 이후</h3></div><BookOpen aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
+            {stories.length > 0
+              ? <Link href="/stories"><div><span>나눔이야기</span><h3>마음이 전해진 그 이후</h3></div><BookOpen aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
+              : <Link href="/support?view=notices"><div><span>공지사항</span><h3>퀸만덕의 새 소식</h3></div><BookOpen aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>}
             <Link href="/support?view=inquiry"><div><span>1:1 문의</span><h3>궁금한 점을 남겨주세요</h3></div><MessageCircleMore aria-hidden="true" /><ArrowUpRight aria-hidden="true" /></Link>
           </div>
         </div>

@@ -20,8 +20,9 @@ export function Empty({ title = '아직 내역이 없어요', text = '새로운 
   );
 }
 
-export const EmptyResult = () => (
-  <div className="community-empty"><Search aria-hidden="true" /><h3>검색 결과가 없습니다</h3><p>다른 검색어나 분류를 선택해 주세요.</p></div>
+// 검색 결과 없음(기본) 또는 아직 글이 없을 때의 안내(title·text·action을 넘긴다)
+export const EmptyResult = ({ title = '검색 결과가 없습니다', text = '다른 검색어나 분류를 선택해 주세요.', action }: { title?: string; text?: string; action?: ReactNode }) => (
+  <div className="community-empty">{action ? <Inbox aria-hidden="true" /> : <Search aria-hidden="true" />}<h3>{title}</h3><p>{text}</p>{action}</div>
 );
 
 export const Progress = ({ pct }: { pct: number }) => (
