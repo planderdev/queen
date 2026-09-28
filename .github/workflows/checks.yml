@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     defaults: { run: { working-directory: web } }
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with: { node-version: 24, cache: npm, cache-dependency-path: web/package-lock.json }
       - run: npm ci
       - run: npm run typecheck
@@ -31,8 +31,8 @@ jobs:
     name: DB 점검
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: supabase/setup-cli@v1
+      - uses: actions/checkout@v7
+      - uses: supabase/setup-cli@v3
         with: { version: latest }
       - name: 로컬 Supabase DB 시작 (마이그레이션 전부 적용)
         run: supabase db start
@@ -44,12 +44,12 @@ jobs:
     runs-on: ubuntu-latest
     defaults: { run: { working-directory: web } }
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with: { node-version: 24, cache: npm, cache-dependency-path: web/package-lock.json }
       - run: npm ci
       - run: npx playwright install --with-deps chromium
       - run: npm run test:e2e
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with: { name: playwright-traces, path: web/test-results, retention-days: 7 }
