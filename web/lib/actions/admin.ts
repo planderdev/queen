@@ -282,3 +282,18 @@ export async function setRegistrationNote(id: string, note: string): Promise<Act
     return { ok: true, message: value ? '메모를 저장했습니다.' : '메모를 지웠습니다.' };
   });
 }
+
+// 행사 종료 후 참가자 명단 파기(비식별화) — DB 함수가 최고 관리자·신청 마감 이후 조건을 다시 확인한다
+export async function purgeRegistrations(campaignId: string, confirmWord: string): Promise<ActionResult> {
+  return wrap([], async ({ session, supabase }) => {
+    if (session.profile.admin_role !== 'super') return { error: '최고 관리자만 명단을 파기할 수 있습니다.' };
+    if (confirmWord.trim() !== '파기') return { error: '확인을 위해 ‘파기’를 입력해주세요.' };
+    const { data, error } = await supabase.rpc('purge_campaign_registrations', { p_campaign: campaignId });
+    if (error) {
+      const m = error.message;
+      return { error: m.includes('not_ended') ? '신청 마감 이후에 파기할 수 있습니다.' : m.includes('forbidden') ? '최고 관리자만 명단을 파기할 수 있습니다.' : '명단을 파기하지 못했습니다. 잠시 후 다시 시도해주세요.' };
+    }
+    revalidatePath('/admin/campaigns'); revalidatePath('/admin/logs');
+    return { ok: true, message: `참가자 ${data ?? 0}명의 개인정보를 파기했습니다. 내려받은 명단 파일도 삭제해주세요.` };
+  });
+}

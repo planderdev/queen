@@ -288,3 +288,17 @@ body[data-page="admin"] .qa-sort-select { display: none; }
   body[data-page="admin"] .qa-sort-select select { width: 100%; height: 40px; padding: 0 12px 0 34px; border: 1px solid var(--admin-line); border-radius: 10px; background: #fff; font: inherit; font-size: 13px; color: var(--admin-ink); }
   body[data-page="admin"] .qa-sort-select select:focus { outline: none; border-color: #d73b50; box-shadow: 0 0 0 3px #fceff1; }
 }
+
+/* 개인정보 파기 */
+body[data-page="admin"] .qa-purge { padding: 20px 24px; border: 1px solid #f1c9cf; border-radius: var(--admin-panel-radius); background: #fff; }
+body[data-page="admin"] .qa-purge h2 { display: flex; align-items: center; gap: 6px; margin: 0 0 10px; font-size: 15px; line-height: 22px; color: #9e3844; }
+body[data-page="admin"] .qa-purge ul { margin: 0 0 14px; padding-left: 1.1em; display: grid; gap: 4px; font-size: 13px; line-height: 20px; color: var(--admin-muted); }
+body[data-page="admin"] .qa-danger-btn { background: #fff; border-color: #c33737; color: #c33737; }
+body[data-page="admin"] .qa-danger-btn:hover:not(:disabled) { background: #c33737; color: #fff; }
+body[data-page="admin"] .qa-danger-btn:disabled { opacity: .45; cursor: not-allowed; }
+body[data-page="admin"] .qa-purge-confirm { display: grid; gap: 8px; padding: 12px; border-radius: 10px; background: #fdf0f0; font-size: 13px; }
+body[data-page="admin"] .qa-purge-confirm > div { display: flex; flex-wrap: wrap; gap: 6px; }
+body[data-page="admin"] .qa-purge-confirm input { width: 120px; height: 32px; padding: 0 10px; border: 1px solid #e8b9c1; border-radius: 8px; font: inherit; }
+body[data-page="admin"] .qa-purge-done { display: flex; align-items: center; gap: 6px; margin: 0; font-size: 13px; color: var(--admin-muted); }
+body[data-page="admin"] .qa-purge-done i { color: #16834b; font-size: 16px; }
+body[data-page="admin"] .qa-purge ul { list-style: disc; }

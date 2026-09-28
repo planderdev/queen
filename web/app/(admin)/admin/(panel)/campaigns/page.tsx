@@ -3,7 +3,9 @@ import { adminCampaigns, adminRegistrations } from '@/lib/data/admin';
 import { date, dateTime, campaignTypeNames } from '@/lib/format';
 import { AdminBadge } from '@/components/admin/AdminUI';
 import { ActionButton, NoteAction } from '@/components/admin/AdminActions';
-import { setCampaignReview, setRegistrationNote, setRegistrationOpen, setRegistrationStatus } from '@/lib/actions/admin';
+import { purgeRegistrations, setCampaignReview, setRegistrationNote, setRegistrationOpen, setRegistrationStatus } from '@/lib/actions/admin';
+import { PurgeRoster } from '@/components/admin/PurgeRoster';
+import { getSession } from '@/lib/auth';
 import type { Campaign, CampaignRegistration } from '@/lib/data/types';
 import { SortSelect } from '@/components/admin/SortSelect';
 import { sortLabel } from '@/lib/admin-list';
@@ -29,10 +31,12 @@ export default async function AdminCampaignsPage({ searchParams }: { searchParam
   if (sp.view === 'list' || !events.length) return <CampaignList campaigns={campaigns} />;
   const target = events.find((c) => c.id === sp.id) ?? events.find(isLive) ?? events[0];
   const all: Row[] = (await adminRegistrations(target.id)).map((r, i) => ({ ...r, no: i + 1 }));
-  return <Roster campaign={target} events={events} rows={all} sp={sp} />;
+  const session = await getSession();
+  return <Roster campaign={target} events={events} rows={all} sp={sp} isSuper={!session || session.profile.admin_role === 'super'} />;
 }
 
-function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; events: Campaign[]; rows: Row[]; sp: SP }) {
+function Roster({ campaign: c, events, rows: all, sp, isSuper }: { campaign: Campaign; events: Campaign[]; rows: Row[]; sp: SP; isSuper: boolean }) {
+  const purged = (email: string) => email.startsWith('purged-') && email.endsWith('@purged.invalid');
   const questions = c.details.questions ?? [];
   const status = STATUS_TABS.some(([v]) => v === sp.status) ? sp.status ?? '' : '';
   const q = (sp.q ?? '').trim();
@@ -140,7 +144,7 @@ function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; ev
                   <tr key={r.id} className={`is-${r.status}`}>
                     <td className="qa-col-no" data-label="No.">{r.no}</td>
                     <td className="qa-nowrap qa-cell-time" data-label="신청일시" title={dateTime(r.created_at)}>{shortTime(r.created_at)}</td>
-                    <td className="qa-cell-name" data-label="성함"><b>{r.name}</b><small>{r.phone ?? '—'} · {r.email}{r.user_id ? ' · 회원' : ''}</small></td>
+                    <td className="qa-cell-name" data-label="성함"><b>{r.name}</b><small>{purged(r.email) ? '개인정보 파기됨' : `${r.phone ?? '—'} · ${r.email}${r.user_id ? ' · 회원' : ''}`}</small></td>
                     <td data-label="입금자명">{r.depositor_name || r.name}</td>
                     {questions.map((qq) => <td key={qq.key} className="qa-nowrap" data-label={qq.short ?? qq.label}>{r.answers?.[qq.key] ?? '—'}</td>)}
                     <td className="qa-nowrap" data-label="성별·연령">{[r.gender, r.age_group].filter(Boolean).join(' · ') || '—'}</td>
@@ -162,6 +166,10 @@ function Roster({ campaign: c, events, rows: all, sp }: { campaign: Campaign; ev
           <div className="qa-empty"><i className="ri-inbox-2-line" aria-hidden="true"></i><p>{q ? `‘${q}’에 맞는 신청자가 없습니다.` : status ? `${STATUS_TABS.find(([v]) => v === status)?.[1]} 상태의 신청이 없습니다.` : '아직 신청자가 없습니다.'}</p>{(q || status) && <Link className="button small secondary" href={href({ q: '', status: '' })}>전체 보기</Link>}</div>
         )}
         <p className="qa-foot">{rows.length}명 표시 · 참여 확인 항목은 모두 동의해야 제출되므로 명단의 모든 신청자가 동의한 상태입니다. 개인정보는 행사 운영 목적으로만 사용하고 행사 종료 후 파기해주세요.</p>
+      </section>
+      <section className="qa-purge" aria-labelledby="qa-purge-title">
+        <h2 id="qa-purge-title"><i className="ri-lock-2-line" aria-hidden="true"></i> 개인정보 파기</h2>
+        <PurgeRoster count={all.length} ended={Date.now() >= new Date(c.end_at).getTime()} deadline={dateTime(c.end_at)} isSuper={isSuper} purgedAt={c.details.purged_at ? dateTime(c.details.purged_at) : undefined} onRun={purgeRegistrations.bind(null, c.id)} />
       </section>
       <p className="qa-more"><Link href="/admin/campaigns?view=list">전체 캠페인 관리 <i className="ri-arrow-right-line" aria-hidden="true"></i></Link></p>
     </div>
