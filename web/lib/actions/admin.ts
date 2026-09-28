@@ -5,12 +5,11 @@ import { createClient } from '@/lib/supabase/server';
 import { requireAdmin } from '@/lib/auth';
 import { hasSupabase, DB_NOT_CONNECTED } from '@/lib/env';
 import { reportError } from '@/lib/report-error';
+import { kst, parseQuestions } from '@/lib/registration-rules';
 import type { ActionResult } from '@/components/site/ActionForm';
 
 type Roles = Array<'content' | 'review' | 'finance'>;
 const str = (fd: FormData, k: string) => String(fd.get(k) ?? '').trim();
-// 관리자 화면의 datetime-local 값(YYYY-MM-DDTHH:mm)은 한국 시간으로 입력된다. 서버(UTC)에서 그대로 new Date() 하면 9시간 밀리므로 +09:00을 붙여 해석한다.
-const kst = (v: string) => new Date(/[zZ]|[+-]\d{2}:?\d{2}$/.test(v) ? v : `${v.length === 16 ? `${v}:00` : v}+09:00`);
 const slugify = (s: string) => s.toLowerCase().replace(/[^a-z0-9가-힣]+/g, '-').replace(/^-|-$/g, '').slice(0, 60) || `item-${Date.now().toString(36)}`;
 
 async function guard(roles: Roles) {
@@ -243,15 +242,9 @@ export async function saveCampaign(_: ActionResult, fd: FormData): Promise<Actio
       existing = data;
       if (capacity != null && (data?.confirmed_count ?? 0) > capacity) return { error: `이미 입금 확인된 인원(${data?.confirmed_count}명)보다 정원을 작게 할 수 없습니다.` };
     }
-    // 질문: 한 줄에 "질문 | 보기1, 보기2, …". 기존 질문 순서의 key는 유지해 이미 받은 답변과 연결을 지킨다.
-    const oldQs = ((existing?.details?.questions as { key: string }[] | undefined) ?? []);
-    const questions = [] as { key: string; label: string; short: string; required: boolean; options: string[] }[];
-    for (const [i, line] of lines(str(fd, 'questions')).entries()) {
-      const [label, opts = ''] = line.split('|').map((x) => x.trim());
-      const options = opts.split(',').map((x) => x.trim()).filter(Boolean);
-      if (!label || options.length < 2) return { error: `질문 ${i + 1}번째 줄은 "질문 | 보기1, 보기2" 형식으로 보기를 2개 이상 적어주세요.` };
-      questions.push({ key: oldQs[i]?.key ?? `q${i + 1}`, label, short: label.replace(/\s*\(.*\)\s*$/, '').slice(0, 12), required: true, options });
-    }
+    const parsed = parseQuestions(str(fd, 'questions'), (existing?.details?.questions as { key: string }[] | undefined) ?? []);
+    if ('error' in parsed) return parsed;
+    const { questions } = parsed;
     const bank = { bank: str(fd, 'bank_bank'), account: str(fd, 'bank_account'), holder: str(fd, 'bank_holder') };
     if (fee > 0 && (!bank.bank || !bank.account || !bank.holder)) return { error: '참가비가 있으면 입금 계좌(은행·계좌번호·예금주)를 모두 입력해주세요.' };
     const heroHeading = lines(str(fd, 'hero_heading'));

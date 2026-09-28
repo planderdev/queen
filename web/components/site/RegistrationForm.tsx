@@ -4,8 +4,7 @@ import { ShareButton } from '@/components/site/ShareButton';
 import { Field, Select } from '@/components/ui';
 import { registerForCampaign } from '@/lib/actions/community';
 import type { Campaign } from '@/lib/data/types';
-
-const AGE_GROUPS = ['10대', '20대', '30대', '40대', '50대', '60대 이상'];
+import { AGE_GROUPS } from '@/lib/registration-rules';
 
 // 행사 캠페인 참가 신청서 — 원본 구글 폼 항목(성함·연락처·성별·이메일·연령대·참여 확인·입금자명)에
 // 캠페인별 추가 질문(details.questions, 예: 러닝 페이스·코스)을 더한다. 모든 항목이 필수이며 서버에서도 다시 확인한다.
