@@ -227,3 +227,13 @@ html {scroll-behavior: smooth;}
 .program-card-share:hover {background: var(--background-normal);color: var(--primary-strong);}
 .program-card-share:focus-visible {outline: 2px solid var(--primary-normal);outline-offset: 2px;}
 .program-card-share svg.lucide {width: 20px;height: 20px;}
+/* 개인정보 수집·이용 동의 */
+.privacy-consent details {margin-top: var(--space-4);border: 1px solid var(--line-solid);border-radius: var(--radius-12);background: var(--background-alternative);}
+.privacy-consent summary {padding: var(--space-12) var(--space-16);font-size: var(--font-size-body-small);font-weight: var(--weight-semibold);color: var(--label-neutral);cursor: pointer;}
+.privacy-consent dl {display: grid;gap: var(--space-8);margin: 0;padding: 0 var(--space-16) var(--space-8);font-size: var(--font-size-body-small);line-height: 1.6;}
+.privacy-consent dl > div {display: grid;grid-template-columns: 112px minmax(0, 1fr);gap: var(--space-12);}
+.privacy-consent dt {color: var(--label-alternative);}
+.privacy-consent dd {margin: 0;color: var(--label-normal);word-break: keep-all;}
+.privacy-consent details p {margin: 0;padding: 0 var(--space-16) var(--space-16);font-size: var(--font-size-body-small);}
+.privacy-consent details a {color: var(--primary-strong);text-decoration: underline;}
+@media (max-width: 480px) {.privacy-consent dl > div {grid-template-columns: 1fr;gap: 2px;}}

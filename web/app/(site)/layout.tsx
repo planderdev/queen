@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
+import { env } from '@/lib/env';
+import { DEFAULT_OG_IMAGE } from '@/lib/share-meta';
 import '../styles/tokens.css';
 import '../styles/app.css';
 import '../styles/site.css';
@@ -13,8 +15,11 @@ import { PageShell } from '@/components/site/PageShell';
 import { ToastProvider } from '@/components/site/Toast';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(env.siteUrl),
   title: { default: '퀸만덕 · 작은 나눔, 더 큰 변화', template: '%s · 퀸만덕' },
-  description: '마음이 닿는 이야기를 만나고, 그 다음의 변화까지 함께하세요. 퀸만덕 기부 플랫폼.'
+  description: '마음이 닿는 이야기를 만나고, 그 다음의 변화까지 함께하세요. 퀸만덕 나눔 플랫폼.',
+  openGraph: { type: 'website', siteName: '퀸만덕', locale: 'ko_KR', title: '퀸만덕 · 작은 나눔, 더 큰 변화', description: '마음이 닿는 이야기를 만나고, 그 다음의 변화까지 함께하세요.', images: [DEFAULT_OG_IMAGE] },
+  twitter: { card: 'summary_large_image', images: [DEFAULT_OG_IMAGE.url] }
 };
 export const viewport: Viewport = { themeColor: '#d73b50', width: 'device-width', initialScale: 1 };
 

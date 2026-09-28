@@ -13,9 +13,16 @@ import { RegistrationForm } from '@/components/site/RegistrationForm';
 import { BankBox } from '@/components/site/BankBox';
 import { ShareButton } from '@/components/site/ShareButton';
 import type { Campaign } from '@/lib/data/types';
+import { shareMeta } from '@/lib/share-meta';
 
 type Props = { params: Promise<{ slug: string }> };
-export async function generateMetadata({ params }: Props): Promise<Metadata> { const c = await repo.getCampaign((await params).slug); return { title: c?.title ?? '캠페인' }; }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const c = await repo.getCampaign((await params).slug);
+  if (!c) return { title: '캠페인' };
+  // 공유 미리보기: 캠페인 제목·한 줄 소개·대표 사진 (행사 캠페인은 일시를 설명 앞에)
+  const lead = c.type === 'event' && c.details.schedule ? `${c.details.schedule} · ` : '';
+  return shareMeta({ title: c.title, description: `${lead}${c.description}`, path: `/campaigns/${c.slug}`, image: c.image, imageSize: c.image?.includes('salvation-run') ? [1600, 904] : undefined });
+}
 
 export default async function CampaignPage({ params }: Props) {
   const c = await repo.getCampaign((await params).slug);

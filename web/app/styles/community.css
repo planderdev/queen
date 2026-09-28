@@ -157,3 +157,5 @@
 /* 상세 대표 이미지: 너무 길게 늘어나지 않게 16:9 */
 .community-article-body > img:first-child {width: 100%;height: auto;aspect-ratio: 16/9;object-fit: cover;}
 @media (prefers-reduced-motion: reduce) {.community-story-more svg.lucide {transition: none;}}
+.community-policy ul {margin: 0 0 var(--space-8);padding-left: 1.2em;display: grid;gap: var(--space-8);font-size: var(--font-size-headline);line-height: var(--line-height-body-reading);color: var(--label-neutral);}
+@media (max-width: 767px) {.community-policy ul {font-size: var(--font-size-body);}}

@@ -4,10 +4,14 @@ import type { Metadata } from 'next';
 import { repo } from '@/lib/data';
 import { date } from '@/lib/format';
 import { PageBanner } from '@/components/site/PageBanner';
+import { shareMeta } from '@/lib/share-meta';
 import { ShareButton } from '@/components/site/ShareButton';
 
 type Props = { params: Promise<{ slug: string }> };
-export async function generateMetadata({ params }: Props): Promise<Metadata> { const c = await repo.getContent((await params).slug); return { title: c?.title ?? '공지사항' }; }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const c = await repo.getContent((await params).slug);
+  return c ? shareMeta({ title: c.title, description: c.body, path: `/support/notices/${c.slug ?? c.id}` }) : { title: '공지사항' };
+}
 
 export default async function NoticePage({ params }: Props) {
   const item = await repo.getContent((await params).slug);

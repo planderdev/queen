@@ -8,9 +8,13 @@ import { ShareButton } from '@/components/site/ShareButton';
 import { BookmarkButton } from '@/components/site/BookmarkButton';
 import { getSavedIds } from '@/lib/actions/bookmark';
 import { SHOW_DONATIONS } from '@/lib/features';
+import { shareMeta } from '@/lib/share-meta';
 
 type Props = { params: Promise<{ slug: string }> };
-export async function generateMetadata({ params }: Props): Promise<Metadata> { const c = await repo.getContent((await params).slug); return { title: c?.title ?? '나눔이야기' }; }
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const c = await repo.getContent((await params).slug);
+  return c ? shareMeta({ title: c.title, description: c.body, path: `/stories/${c.slug ?? c.id}`, image: c.image }) : { title: '나눔이야기' };
+}
 
 export default async function StoryPage({ params }: Props) {
   const item = await repo.getContent((await params).slug);

@@ -85,7 +85,7 @@ export async function registerForCampaign(_: ActionResult, formData: FormData): 
   // 모든 항목 필수 (브라우저 검사를 우회한 요청도 여기서 막는다)
   if (name.length < 1 || name.length > 50) return { error: '성함을 입력해주세요.' };
   if (!/^0\d{1,2}-?\d{3,4}-?\d{4}$/.test(phone)) return { error: '연락처를 010-0000-0000 형식으로 입력해주세요.' };
-  if (!EMAIL.test(email)) return { error: '이메일을 정확히 입력해주세요. 신청 확인과 안내가 이메일로 전달됩니다.' };
+  if (!EMAIL.test(email)) return { error: '이메일을 정확히 입력해주세요. 행사 안내 연락에 사용합니다.' };
   if (!['10대', '20대', '30대', '40대', '50대', '60대 이상'].includes(ageGroup)) return { error: '연령대를 선택해주세요.' };
   if (!['남자', '여자'].includes(gender)) return { error: '성별을 선택해주세요.' };
   if (depositor.length < 1 || depositor.length > 50) return { error: '참가비 입금자명을 입력해주세요.' };
@@ -105,10 +105,13 @@ export async function registerForCampaign(_: ActionResult, formData: FormData): 
   const required: string[] = c.details?.agreements ?? [];
   const agreed = required.filter((_, i) => formData.get(`agree_${i}`));
   if (agreed.length < required.length) return { error: '참여 확인 항목에 모두 체크해주세요.' };
+  // 개인정보 수집·이용 동의(필수): 동의 사실을 신청 기록의 agreements에 함께 남긴다
+  if (!formData.get('privacy_consent')) return { error: '개인정보 수집·이용에 동의해야 참가 신청을 할 수 있습니다.' };
+  agreed.push('[필수] 개인정보 수집·이용 동의');
   const { error } = await supabase.from('campaign_registrations').insert({
     campaign_id: c.id, user_id: session?.user.id ?? null, name, phone, email, gender, age_group: ageGroup, depositor_name: depositor, agreements: agreed, answers
   });
   if (error) return { error: error.code === '23505' ? '이미 같은 이메일로 신청되어 있습니다. 변경이 필요하면 1:1 문의로 알려주세요.' : error.code === '42501' ? '참가 신청이 마감되었습니다.' : '신청을 저장하지 못했습니다. 잠시 후 다시 시도해주세요.' };
   revalidatePath(`/campaigns/${c.slug}`);
-  return { ok: true, message: c.details?.complete || '신청이 접수되었습니다. 입력한 이메일로 안내드립니다.' };
+  return { ok: true, message: c.details?.complete || '신청이 접수되었습니다. 참가비 입금이 확인되면 참가가 확정됩니다.' };
 }
