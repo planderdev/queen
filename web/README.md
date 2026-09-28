@@ -55,6 +55,17 @@ npm run dev                   # http://localhost:3000
 - Root Directory: `web` (프로젝트 설정). “Include source files outside of the Root Directory”가 켜져 있어야 `../tools`와 `../public`(데모 원본)을 빌드에서 읽을 수 있습니다.
 - Build Command는 `npm run build`(기본). `prebuild`가 데모와 가이드를 `public/`에 생성한 뒤 `next build`가 실행됩니다. 빌드 이미지에 PHP가 없으면 `tools/prerender.mjs`가 static-php를 내려받습니다.
 - 환경 변수 3개(위 4번)를 Production/Preview에 추가합니다.
+- 오류 알림: Rollbar(Vercel 마켓플레이스 연동)가 `ROLLBAR_…_SERVER_TOKEN_…`, `NEXT_PUBLIC_ROLLBAR_…_CLIENT_TOKEN_…`을 자동으로 넣습니다. 로컬에서는 비워두면 보고하지 않습니다.
+
+## 자동 점검과 배포 차단
+
+- main에 올리거나 PR을 열면 GitHub Actions `자동 점검`(`.github/workflows/checks.yml`)이 세 가지를 확인합니다.
+  - **규칙 점검**: 타입 검사 + `npm test`(vitest, `tests/unit`)
+  - **DB 점검**: 로컬 Supabase에 마이그레이션을 모두 적용한 뒤 `supabase/tests/registration_flow.sql`(신청·입금 확인·정원·명단 파기·권한, 끝나면 되돌림)
+  - **화면 점검**: `npm run test:e2e`(Playwright, `tests/e2e`). 데이터베이스 없이 예시 데이터로 사이트·관리자 화면을 데스크톱·모바일로 확인
+- Vercel 프로젝트의 Deployment Checks에 위 세 점검이 등록되어 있어, **셋 다 통과해야 운영 주소에 반영**됩니다. 실패하면 새 배포는 만들어지지만 운영 주소는 이전 배포를 그대로 가리킵니다.
+- 급할 때는 Vercel 배포 상세 화면의 **Force Promote**로 점검을 건너뛰고 반영할 수 있습니다.
+- GitHub Actions 작업 이름(`규칙 점검` 등)을 바꾸면 Vercel Deployment Checks의 이름도 같이 바꿔야 합니다.
 
 ## 구조
 
