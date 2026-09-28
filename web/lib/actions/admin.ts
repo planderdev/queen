@@ -4,6 +4,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { requireAdmin } from '@/lib/auth';
 import { hasSupabase, DB_NOT_CONNECTED } from '@/lib/env';
+import { reportError } from '@/lib/report-error';
 import type { ActionResult } from '@/components/site/ActionForm';
 
 type Roles = Array<'content' | 'review' | 'finance'>;
@@ -24,8 +25,13 @@ async function guard(roles: Roles) {
   };
   return { session, supabase, log, notify };
 }
+// 로그인·권한·DB 미연결처럼 예상된 거절은 그대로 안내하고, 그 밖의 예외만 오류 알림으로 보낸다.
+const EXPECTED = new Set([DB_NOT_CONNECTED, '로그인이 필요합니다.', '이용이 중지된 계정입니다. 고객센터로 문의해주세요.', '관리자만 사용할 수 있습니다.', '이 작업 권한이 없는 관리자 역할입니다.']);
 const wrap = async (roles: Roles, fn: (ctx: Awaited<ReturnType<typeof guard>>) => Promise<ActionResult>): Promise<ActionResult> => {
-  try { return await fn(await guard(roles)); } catch (e) { return { error: e instanceof Error ? e.message : '처리하지 못했습니다.' }; }
+  try { return await fn(await guard(roles)); } catch (e) {
+    if (!(e instanceof Error && EXPECTED.has(e.message))) await reportError(e, { kind: 'admin-action' });
+    return { error: e instanceof Error ? e.message : '처리하지 못했습니다.' };
+  }
 };
 
 // ---- 입금 확인 / 기부 상태 ----
